@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T13:56:45+00:00",
+ "updated": "2026-11-12T13:57:26+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -724,6 +724,97 @@
    "ticker": "FORTINET",
    "erreur": "'currentTradingPeriod'",
    "date": "2026-11-12T13:56:45+00:00"
+  },
+  "FTNT": {
+   "ticker": "FTNT",
+   "name": "Fortinet, Inc.",
+   "price": 128.1,
+   "currency": "USD",
+   "sector": "Technology",
+   "industry": "Software - Infrastructure",
+   "score": 4,
+   "verdict": "NON",
+   "fails": [
+    "Croissance BPA forward (parcours)",
+    "Croissance revenus forward (3 ans)",
+    "P/E forward"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": false,
+     "val": "0y +29 % · +1y +9 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +9 % (plancher +10 %) ; parcours composé : +18.9 %/an (barre +20 %/an). Moyenne du parcours : +19.3 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward (3 ans)",
+     "ok": false,
+     "val": "+14.9 %",
+     "barre": ">= +20 %/an",
+     "margin": "-5.1 pts vs la barre."
+    },
+    {
+     "label": "P/E forward",
+     "ok": false,
+     "val": "32.83x",
+     "barre": "<= 20x",
+     "margin": "+64 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": true,
+     "val": "3.43 Md$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": true,
+     "val": "Cash net 4.24 Md$",
+     "barre": "<= 2x",
+     "margin": "Aucune dette nette."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": true,
+     "val": "-35.0 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote -35.0 % (barre 25 % — passe) · marge sous le DCF +7.8 % (prix 128.10 vs valeur 138.87 USD — barre 20 % — échoue)."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "94.12 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "47.1x le plancher."
+    }
+   ],
+   "flags": [
+    "Bêta 1.04."
+   ],
+   "dcf": {
+    "value": 138.8693199837493,
+    "mos": 0.08406963297228187,
+    "implied": 0.17120582801406348,
+    "implied_note": null,
+    "note": "Hypothèses : FCF 3.43 Md$ en base, croissance 19.3 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+   },
+   "rdca": {
+    "anchor": 178.75999450683594,
+    "buy": [
+     71.50399780273438,
+     87.5923973083496
+    ],
+    "sm": [
+     60.77839813232422,
+     71.50399780273438
+    ],
+    "add_hi": 132.2823959350586,
+    "zone": "Add Zone",
+    "mult": "1X DCA"
+   },
+   "date": "2026-11-12T13:57:26+00:00"
   }
  }
 }
