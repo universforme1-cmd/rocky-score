@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T13:27:39+00:00",
+ "updated": "2026-11-12T13:32:47+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -446,6 +446,98 @@
     "mult": "2X DCA"
    },
    "date": "2026-11-12T13:27:39+00:00"
+  },
+  "BWXT": {
+   "ticker": "BWXT",
+   "name": "BWX Technologies, Inc.",
+   "price": 125.68,
+   "currency": "USD",
+   "sector": "Industrials",
+   "industry": "Aerospace & Defense",
+   "score": 3,
+   "verdict": "NON",
+   "fails": [
+    "Croissance BPA forward (parcours)",
+    "Croissance revenus forward (3 ans)",
+    "P/E forward",
+    "Dette nette / EBITDA"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": false,
+     "val": "0y +19 % · +1y +10 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +10 % (plancher +10 %) ; parcours composé : +14.1 %/an (barre +20 %/an). Moyenne du parcours : +14.2 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward (3 ans)",
+     "ok": false,
+     "val": "+14.6 %",
+     "barre": ">= +20 %/an",
+     "margin": "-5.4 pts vs la barre."
+    },
+    {
+     "label": "P/E forward",
+     "ok": false,
+     "val": "24.08x",
+     "barre": "<= 20x",
+     "margin": "+20 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": true,
+     "val": "372 M$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": false,
+     "val": "2.92x",
+     "barre": "<= 2x",
+     "margin": "Dette nette 1.45 Md$ / EBITDA 497 M$."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": true,
+     "val": "-48.0 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote -48.0 % (barre 25 % — passe) · marge sous le DCF -59.3 % (prix 125.68 vs valeur 78.90 USD — barre 20 % — échoue)."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "11.52 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "5.8x le plancher."
+    }
+   ],
+   "flags": [
+    "Bêta 0.72."
+   ],
+   "dcf": {
+    "value": 78.90401518354034,
+    "mos": -0.37218320191326915,
+    "implied": 0.24610258115863937,
+    "implied_note": null,
+    "note": "Hypothèses : FCF 372 M$ en base, croissance 14.2 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+   },
+   "rdca": {
+    "anchor": 215.7605438232422,
+    "buy": [
+     86.30421752929688,
+     105.72266647338867
+    ],
+    "sm": [
+     73.35858489990235,
+     86.30421752929688
+    ],
+    "add_hi": 159.66280242919922,
+    "zone": "Add Zone",
+    "mult": "1X DCA"
+   },
+   "date": "2026-11-12T13:32:47+00:00"
   }
  }
 }
