@@ -10,7 +10,8 @@ Filtre (7 checks, 1 point chacun) :
   1. Croissance BPA forward (parcours, amendement du 11 nov. 2026) : chaque
      année forward >= +10 % (plancher) ET parcours composé >= +20 %/an —
      jamais la moyenne du parcours (elle flatte un bond déjà réalisé).
-  2. Croissance revenus forward >= +20 %/an (3 ans)
+  2. Croissance revenus forward >= +20 %/an (horizon réel nommé sur la
+     fiche : Yahoo donne rarement 3 années d'estimations)
   3. P/E forward <= 20x
   4. FCF TTM > 0 (critère bloquant)
   5. Dette nette / EBITDA <= 2x
@@ -21,6 +22,8 @@ Filtre (7 checks, 1 point chacun) :
 Verdict : 7/7 = PASSE, 6/7 = PAS ENCORE, <= 5/7 = NON.
 Hors note : DCF inverse (croissance impliquée par le prix) et zones R-DCA.
 La valeur DCF alimente la 2e branche du check 6 (ancre prix).
+Qualité du capital (hors note) : ROE, ROIC, ROIIC (incrémental 3 ans), ROCE
+— mini-jauges texte, seuils repères 15 % / 10 % / 10 % / 10 %.
 
 Données : Yahoo Finance (gratuit, sans clé). Les chiffres peuvent différer
 légèrement d'une source à l'autre (Nasdaq, stockanalysis) — la fiche indique
@@ -169,21 +172,29 @@ def fetch(ticker):
     except Exception:  # noqa: BLE001
         pass
 
-    # Croissance revenus forward 3 ans (CAGR des estimations)
+    # Croissance revenus forward — honnête sur l'horizon (correction du
+    # 12 nov. 2026) : Yahoo donne rarement plus de 2 années d'estimations.
+    # On compose les niveaux annuels disponibles (CAGR) ; à défaut, moyenne
+    # des seules lignes ANNUELLES de la colonne growth — jamais les lignes
+    # trimestrielles, qui faussaient l'ancien calcul étiqueté « 3 ans ».
     d["rev_growth"] = None
+    d["rev_note"] = None
     try:
         rev = tk.revenue_estimate
-        if rev is not None and not rev.empty and "avg" in rev.columns:
-            vals = []
-            for idx, row in rev.iterrows():
-                if str(idx).endswith("y") and row.get("avg"):
-                    vals.append(float(row["avg"]))
-            if len(vals) >= 3 and vals[0] > 0:
-                d["rev_growth"] = (vals[-1] / vals[0]) ** (1.0 / (len(vals) - 1)) - 1
-        if d["rev_growth"] is None and rev is not None and "growth" in rev.columns:
-            gs = [pct(v) for v in rev["growth"] if pct(v) is not None]
-            if gs:
-                d["rev_growth"] = sum(gs) / len(gs)
+        if rev is not None and not rev.empty:
+            annual = [(str(idx), row) for idx, row in rev.iterrows()
+                      if str(idx).endswith("y")]
+            if "avg" in rev.columns:
+                vals = [float(r["avg"]) for _, r in annual if r.get("avg")]
+                if len(vals) >= 2 and vals[0] > 0:
+                    d["rev_growth"] = (vals[-1] / vals[0]) ** (1.0 / (len(vals) - 1)) - 1
+                    d["rev_note"] = f"CAGR sur {len(vals)} années d'estimations de revenus (Yahoo)"
+            if d["rev_growth"] is None and "growth" in rev.columns:
+                gs = [pct(r.get("growth")) for _, r in annual]
+                gs = [g for g in gs if g is not None]
+                if gs:
+                    d["rev_growth"] = sum(gs) / len(gs)
+                    d["rev_note"] = f"Moyenne des croissances annuelles estimées ({len(gs)} année(s), Yahoo)"
     except Exception:  # noqa: BLE001
         pass
 
@@ -226,6 +237,65 @@ def fetch(ticker):
     except Exception:  # noqa: BLE001
         pass
 
+    # Qualité du capital (ROE / ROIC / ROIIC / ROCE) — AFFICHAGE SEULEMENT,
+    # hors note (demande de Marc, 12 nov. 2026). Calculs tolérants : « n/d »
+    # (None) dès qu'une donnée manque ou qu'un dénominateur est inutilisable.
+    d["roe"] = info.get("returnOnEquity")
+    d["roic"] = d["roiic"] = d["roce"] = None
+    try:
+        fin, bs = tk.financials, tk.balance_sheet
+
+        def _rows(df, names):
+            if df is None or df.empty:
+                return None
+            for n in names:
+                if n in df.index:
+                    out = {}
+                    for k, v in df.loc[n].items():
+                        try:
+                            fv = float(v)
+                        except (TypeError, ValueError):
+                            continue
+                        if fv == fv:  # pas NaN
+                            out[str(k)[:10]] = fv
+                    if out:
+                        return out
+            return None
+
+        ebit = _rows(fin, ("EBIT", "Operating Income"))
+        debt_s = _rows(bs, ("Total Debt",))
+        eq_s = _rows(bs, ("Stockholders Equity", "Total Equity Gross Minority Interest",
+                          "Common Stock Equity"))
+        cash_s = _rows(bs, ("Cash And Cash Equivalents",
+                            "Cash Cash Equivalents And Short Term Investments")) or {}
+        tax_s = _rows(fin, ("Tax Rate For Calcs",))
+        pret_s = _rows(fin, ("Pretax Income",))
+        prov_s = _rows(fin, ("Tax Provision",))
+        if ebit and debt_s and eq_s:
+            ic = {dt: debt_s[dt] + eq_s[dt] - cash_s.get(dt, 0.0)
+                  for dt in ebit if dt in debt_s and dt in eq_s}
+            dates = sorted(ic, reverse=True)
+            if dates:
+                def _tax(dt):
+                    if tax_s and dt in tax_s:
+                        return min(0.40, max(0.0, tax_s[dt]))
+                    if pret_s and prov_s and dt in pret_s and pret_s[dt] > 0:
+                        return min(0.40, max(0.0, prov_s[dt] / pret_s[dt]))
+                    return 0.21
+
+                nopat = {dt: ebit[dt] * (1 - _tax(dt)) for dt in ic}
+                last = dates[0]
+                if ic[last] > 0:
+                    d["roic"] = nopat[last] / ic[last]
+                    d["roce"] = ebit[last] / ic[last]
+                if len(dates) >= 4:
+                    old = dates[3]
+                    dic = ic[last] - ic[old]
+                    if dic > 0.02 * ic[last]:
+                        d["roiic"] = (nopat[last] - nopat[old]) / dic
+    except Exception:  # noqa: BLE001
+        pass
+
     # R-DCA : ancre = plus haute clôture mensuelle (24 mois)
     d["rdca"] = None
     try:
@@ -240,6 +310,16 @@ def fetch(ticker):
     except Exception:  # noqa: BLE001
         pass
     return d
+
+
+def cagr_parcours(path):
+    """Croissance composée d'un parcours de taux annuels [(label, g), ...]."""
+    if not path:
+        return None
+    comp = 1.0
+    for _, g in path:
+        comp *= (1 + g)
+    return comp ** (1.0 / len(path)) - 1
 
 
 def dcf_value(fcf, g, net_debt, shares, r=TAUX_ACTU, tg=CROISS_TERMINALE, n=ANNEES_DCF):
@@ -283,13 +363,16 @@ def analyse(ticker):
         net_debt = d["debt"] - d["cash"]
     shares = d["shares"] or (d["cap"] / price if d["cap"] and price else None)
     if d["fcf"] and d["fcf"] > 0 and price and shares:
-        path0 = d["eps_path"]
-        if path0:
-            g = sum(g for _, g in path0) / len(path0)
-        elif d["rev_growth"] is not None:
-            g = d["rev_growth"]
-        else:
-            g = None
+        # Hypothèse PRUDENTE (correction du 12 nov. 2026) : le minimum des
+        # mesures de croissance disponibles — jamais la moyenne du parcours,
+        # que le check 1 interdit (elle flatte un bond déjà réalisé).
+        candidats = []
+        c_eps = cagr_parcours(d["eps_path"])
+        if c_eps is not None:
+            candidats.append(c_eps)
+        if d["rev_growth"] is not None:
+            candidats.append(d["rev_growth"])
+        g = min(candidats) if candidats else None
         if g is not None:
             g = max(0.0, min(g, 0.25))
             v = dcf_value(d["fcf"], g, net_debt, shares)
@@ -298,7 +381,7 @@ def analyse(ticker):
             imp, imp_note = reverse_dcf(d["fcf"], price, net_debt, shares)
             dcf["implied"] = imp
             dcf["implied_note"] = imp_note
-            dcf["note"] = (f"Hypothèses : FCF {fmt_money(d['fcf'])} en base, croissance {g * 100:.1f} %/an "
+            dcf["note"] = (f"Hypothèses : FCF {fmt_money(d['fcf'])} en base, croissance prudente (min. des mesures) {g * 100:.1f} %/an "
                            f"(plafonnée à 25 %), actualisation {TAUX_ACTU * 100:.0f} %, "
                            f"croissance terminale {CROISS_TERMINALE * 100:.0f} %, {ANNEES_DCF} ans.")
 
@@ -309,10 +392,7 @@ def analyse(ticker):
     path = d["eps_path"]
     if path:
         worst = min(g for _, g in path)
-        comp = 1.0
-        for _, g in path:
-            comp *= (1 + g)
-        cagr = comp ** (1.0 / len(path)) - 1
+        cagr = cagr_parcours(path)
         ok = worst >= PLANCHER_BPA and cagr >= BARRE_PARCOURS
         val = " · ".join(f"{k} {g * 100:+.0f} %" for k, g in path)
         margin = (f"Année la plus faible : {worst * 100:+.0f} % (plancher +10 %) ; "
@@ -323,14 +403,17 @@ def analyse(ticker):
         ok, val, margin = False, "n/d", "Estimations annuelles indisponibles (Yahoo)."
     checks.append(("Croissance BPA forward (parcours)", ok, val, "plancher +10 % · parcours >= +20 %/an", margin))
 
-    # 2. Revenus forward
+    # 2. Revenus forward — l'horizon réel est nommé dans la marge
+    # (correction du 12 nov. 2026 : plus d'étiquette « 3 ans » mensongère).
     rg = d["rev_growth"]
     if rg is not None:
         ok = rg >= BARRE_REV
         margin = f"{(rg - BARRE_REV) * 100:+.1f} pts vs la barre."
+        if d.get("rev_note"):
+            margin += f" Base : {d['rev_note']}."
     else:
         ok, margin = False, "Estimations de revenus indisponibles."
-    checks.append(("Croissance revenus forward (3 ans)", ok, fmt_pct(rg), ">= +20 %/an", margin))
+    checks.append(("Croissance revenus forward", ok, fmt_pct(rg), ">= +20 %/an", margin))
 
     # 3. P/E forward
     pe = d["pe_fwd"]
@@ -424,6 +507,19 @@ def analyse(ticker):
     return d, checks, score, verdict, fails, flags, dcf
 
 
+SEUILS_QUALITE = {"ROE": 0.15, "ROIC": 0.10, "ROIIC": 0.10, "ROCE": 0.10}
+
+
+def gauge_txt(val, lo, hi, width=20):
+    """Mini-jauge texte : position de la valeur entre lo et hi."""
+    if val is None:
+        return "[" + "░" * width + "]"
+    pos = (val - lo) / (hi - lo)
+    pos = min(1.0, max(0.0, pos))
+    n = int(round(pos * width))
+    return "[" + "█" * n + "░" * (width - n) + "]"
+
+
 def zone_rdca(d):
     """Zone R-DCA et multiplicateur pour le prix actuel."""
     rdca, price = d.get("rdca"), d.get("price")
@@ -479,6 +575,18 @@ def print_fiche(ticker):
         print(f"  {dcf['note']}")
     else:
         print("  n/d — FCF ou données insuffisantes pour un DCF.")
+    # Qualité du capital — jauges d'information, hors note /7
+    print("-" * 64)
+    print("Qualité du capital (information — hors note /7) :")
+    for label, val, lo in (("ROE", d.get("roe"), 0.0), ("ROIC", d.get("roic"), 0.0),
+                           ("ROIIC", d.get("roiic"), -0.10), ("ROCE", d.get("roce"), 0.0)):
+        seuil = SEUILS_QUALITE[label]
+        if val is None:
+            print(f"  {label:<6}: n/d  (seuil {seuil * 100:.0f} %)")
+        else:
+            etat = "au-dessus du seuil" if val >= seuil else "EN DESSOUS du seuil"
+            print(f"  {label:<6}: {gauge_txt(val, lo, 0.40)} {val * 100:+.1f} %  "
+                  f"(seuil {seuil * 100:.0f} %) — {etat}")
     # R-DCA
     z = zone_rdca(d)
     print("-" * 64)
@@ -544,8 +652,15 @@ def fiche_dict(ticker):
         "flags": list(flags),
         "dcf": None,
         "rdca": None,
+        "qualite": [],
         "date": _now(),
     }
+    # Qualité du capital — information hors note, mêmes seuils que print_fiche
+    for label, lo in (("ROE", 0.0), ("ROIC", 0.0), ("ROIIC", -0.10), ("ROCE", 0.0)):
+        val = _num(d.get(label.lower()))
+        seuil = SEUILS_QUALITE[label]
+        out["qualite"].append({"label": label, "val": val, "seuil": seuil, "lo": lo, "hi": 0.40,
+                               "ok": (val >= seuil) if val is not None else None})
     if v is not None:
         out["dcf"] = {
             "value": v,
