@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T13:32:47+00:00",
+ "updated": "2026-11-12T13:36:22+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -538,6 +538,98 @@
     "mult": "1X DCA"
    },
    "date": "2026-11-12T13:32:47+00:00"
+  },
+  "LMAT": {
+   "ticker": "LMAT",
+   "name": "LeMaitre Vascular, Inc.",
+   "price": 79.29,
+   "currency": "USD",
+   "sector": "Healthcare",
+   "industry": "Medical Instruments & Supplies",
+   "score": 3,
+   "verdict": "NON",
+   "fails": [
+    "Croissance BPA forward (parcours)",
+    "Croissance revenus forward (3 ans)",
+    "P/E forward",
+    "Capitalisation"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": false,
+     "val": "0y +11 % · +1y +12 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +11 % (plancher +10 %) ; parcours composé : +11.8 %/an (barre +20 %/an). Moyenne du parcours : +11.8 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward (3 ans)",
+     "ok": false,
+     "val": "+10.2 %",
+     "barre": ">= +20 %/an",
+     "margin": "-9.8 pts vs la barre."
+    },
+    {
+     "label": "P/E forward",
+     "ok": false,
+     "val": "25.17x",
+     "barre": "<= 20x",
+     "margin": "+26 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": true,
+     "val": "67 M$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": true,
+     "val": "Cash net 201 M$",
+     "barre": "<= 2x",
+     "margin": "Aucune dette nette."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": true,
+     "val": "-32.8 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote -32.8 % (barre 25 % — passe) · marge sous le DCF -11.8 % (prix 79.29 vs valeur 70.90 USD — barre 20 % — échoue)."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": false,
+     "val": "1.81 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "0.9x le plancher."
+    }
+   ],
+   "flags": [
+    "Bêta 0.49."
+   ],
+   "dcf": {
+    "value": 70.89528246388052,
+    "mos": -0.10587359737822533,
+    "implied": 0.14978063227237903,
+    "implied_note": null,
+    "note": "Hypothèses : FCF 67 M$ en base, croissance 11.8 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+   },
+   "rdca": {
+    "anchor": 109.15315246582031,
+    "buy": [
+     43.66126098632813,
+     53.485044708251955
+    ],
+    "sm": [
+     37.11207183837891,
+     43.66126098632813
+    ],
+    "add_hi": 80.77333282470703,
+    "zone": "Add Zone",
+    "mult": "1X DCA"
+   },
+   "date": "2026-11-12T13:36:22+00:00"
   }
  }
 }
