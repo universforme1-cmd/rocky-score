@@ -1,0 +1,364 @@
+{
+ "updated": "2026-11-12T12:59:03+00:00",
+ "fiches": {
+  "HOOD": {
+   "ticker": "HOOD",
+   "name": "Robinhood Markets, Inc.",
+   "price": 84.58,
+   "currency": "USD",
+   "sector": "Financial Services",
+   "industry": "Capital Markets",
+   "score": 5,
+   "verdict": "NON",
+   "fails": [
+    "Croissance BPA forward (parcours)",
+    "P/E forward"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": false,
+     "val": "0y +2 % · +1y +40 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +2 % (plancher +10 %) ; parcours composé : +19.6 %/an (barre +20 %/an). Moyenne du parcours : +21.0 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward (3 ans)",
+     "ok": true,
+     "val": "+28.0 %",
+     "barre": ">= +20 %/an",
+     "margin": "+8.0 pts vs la barre."
+    },
+    {
+     "label": "P/E forward",
+     "ok": false,
+     "val": "24.79x",
+     "barre": "<= 20x",
+     "margin": "+24 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": true,
+     "val": "2.97 Md$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": true,
+     "val": "Cash net 2.28 Md$",
+     "barre": "<= 2x",
+     "margin": "Aucune dette nette."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": true,
+     "val": "-39.5 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote passe (sommet 52 sem. : 139.75 USD). Branche DCF non appliquée — secteur financier (Capital Markets) : seule la décote compte."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "76.16 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "38.1x le plancher."
+    }
+   ],
+   "flags": [
+    "Bêta 2.53."
+   ],
+   "dcf": {
+    "value": 116.75744752175702,
+    "mos": 0.3804380175190001,
+    "implied": 0.12514888547176362,
+    "implied_note": null,
+    "note": "Hypothèses : FCF 2.97 Md$ en base, croissance 21.0 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+   },
+   "rdca": {
+    "anchor": 146.77999877929688,
+    "buy": [
+     58.71199951171875,
+     71.92219940185547
+    ],
+    "sm": [
+     49.90519958496094,
+     58.71199951171875
+    ],
+    "add_hi": 108.61719909667968,
+    "zone": "Add Zone",
+    "mult": "1X DCA"
+   },
+   "date": "2026-11-12T12:58:59+00:00"
+  },
+  "IESC": {
+   "ticker": "IESC",
+   "name": "IES Holdings, Inc.",
+   "price": 177.32,
+   "currency": "USD",
+   "sector": "Industrials",
+   "industry": "Engineering & Construction",
+   "score": 7,
+   "verdict": "PASSE",
+   "fails": [],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": true,
+     "val": "0y +54 % · +1y +17 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +17 % (plancher +10 %) ; parcours composé : +34.1 %/an (barre +20 %/an). Moyenne du parcours : +35.4 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward (3 ans)",
+     "ok": true,
+     "val": "+32.5 %",
+     "barre": ">= +20 %/an",
+     "margin": "+12.5 pts vs la barre."
+    },
+    {
+     "label": "P/E forward",
+     "ok": true,
+     "val": "13.13x",
+     "barre": "<= 20x",
+     "margin": "-34 % vs la barre de 20x. Source : prix / BPA estimé +1y (Yahoo)."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": true,
+     "val": "228 M$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": true,
+     "val": "Cash net 311 M$",
+     "barre": "<= 2x",
+     "margin": "Aucune dette nette."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": true,
+     "val": "-56.6 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote -56.6 % (barre 25 % — passe) · marge sous le DCF +10.3 % (prix 177.32 vs valeur 197.68 USD — barre 20 % — échoue)."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "7.52 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "3.8x le plancher."
+    }
+   ],
+   "flags": [
+    "Print dans 8 jours (2026-11-20) — binaire, pas d'achat avant.",
+    "Actions +0.0 %/an (dilution sous contrôle).",
+    "Bêta 1.85."
+   ],
+   "dcf": {
+    "value": 197.67531797710234,
+    "mos": 0.11479425883770777,
+    "implied": 0.21977054759667236,
+    "implied_note": null,
+    "note": "Hypothèses : FCF 228 M$ en base, croissance 25.0 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+   },
+   "rdca": {
+    "anchor": 372.2699890136719,
+    "buy": [
+     148.90799560546876,
+     182.41229461669923
+    ],
+    "sm": [
+     126.57179626464844,
+     148.90799560546876
+    ],
+    "add_hi": 275.4797918701172,
+    "zone": "Buy Zone",
+    "mult": "2X DCA"
+   },
+   "date": "2026-11-12T12:59:00+00:00"
+  },
+  "AXON": {
+   "ticker": "AXON",
+   "name": "Axon Enterprise, Inc.",
+   "price": 315.42,
+   "currency": "USD",
+   "sector": "Industrials",
+   "industry": "Aerospace & Defense",
+   "score": 4,
+   "verdict": "NON",
+   "fails": [
+    "Croissance BPA forward (parcours)",
+    "P/E forward",
+    "Dette nette / EBITDA"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": false,
+     "val": "0y +4 % · +1y +33 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +4 % (plancher +10 %) ; parcours composé : +17.4 %/an (barre +20 %/an). Moyenne du parcours : +18.3 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward (3 ans)",
+     "ok": true,
+     "val": "+27.5 %",
+     "barre": ">= +20 %/an",
+     "margin": "+7.5 pts vs la barre."
+    },
+    {
+     "label": "P/E forward",
+     "ok": false,
+     "val": "33.40x",
+     "barre": "<= 20x",
+     "margin": "+67 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": true,
+     "val": "81 M$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": false,
+     "val": "7.59x",
+     "barre": "<= 2x",
+     "margin": "Dette nette 1.33 Md$ / EBITDA 176 M$."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": true,
+     "val": "-52.6 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote -52.6 % (barre 25 % — passe) · marge sous le DCF -2794.3 % (prix 315.42 vs valeur 10.90 USD — barre 20 % — échoue)."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "25.69 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "12.8x le plancher."
+    }
+   ],
+   "flags": [
+    "Bêta 1.47."
+   ],
+   "dcf": {
+    "value": 10.898141340208257,
+    "mos": -0.9654487941785294,
+    "implied": null,
+    "implied_note": "> +60 %",
+    "note": "Hypothèses : FCF 81 M$ en base, croissance 18.3 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+   },
+   "rdca": {
+    "anchor": 827.9400024414062,
+    "buy": [
+     331.17600097656253,
+     405.69060119628904
+    ],
+    "sm": [
+     281.4996008300781,
+     331.17600097656253
+    ],
+    "add_hi": 612.6756018066407,
+    "zone": "Smart Money Zone ★ (zone gold)",
+    "mult": "3X DCA"
+   },
+   "date": "2026-11-12T12:59:02+00:00"
+  },
+  "CSU.TO": {
+   "ticker": "CSU.TO",
+   "name": "Constellation Software Inc.",
+   "price": 3454.21,
+   "currency": "CAD",
+   "sector": "Technology",
+   "industry": "Software - Application",
+   "score": 6,
+   "verdict": "PAS ENCORE",
+   "fails": [
+    "Croissance revenus forward (3 ans)"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": true,
+     "val": "0y +45 % · +1y +17 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +17 % (plancher +10 %) ; parcours composé : +30.4 %/an (barre +20 %/an). Moyenne du parcours : +31.2 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward (3 ans)",
+     "ok": false,
+     "val": "+nan %",
+     "barre": ">= +20 %/an",
+     "margin": "+nan pts vs la barre."
+    },
+    {
+     "label": "P/E forward",
+     "ok": true,
+     "val": "17.96x",
+     "barre": "<= 20x",
+     "margin": "-10 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": true,
+     "val": "2.80 Md$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": true,
+     "val": "1.35x",
+     "barre": "<= 2x",
+     "margin": "Dette nette 3.03 Md$ / EBITDA 2.24 Md$."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": true,
+     "val": "-2.2 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote -2.2 % (barre 25 % — échoue) · marge sous le DCF +23.7 % (prix 3,454.21 vs valeur 4,524.62 CAD — barre 20 % — passe)."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "73.20 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "36.6x le plancher."
+    }
+   ],
+   "flags": [
+    "Bêta 0.72."
+   ],
+   "dcf": {
+    "value": 4524.620783619782,
+    "mos": 0.3098858446995931,
+    "implied": 0.1812433365640843,
+    "implied_note": null,
+    "note": "Hypothèses : FCF 2.80 Md$ en base, croissance 25.0 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+   },
+   "rdca": {
+    "anchor": 4981.6083984375,
+    "buy": [
+     1992.643359375,
+     2440.988115234375
+    ],
+    "sm": [
+     1693.74685546875,
+     1992.643359375
+    ],
+    "add_hi": 3686.39021484375,
+    "zone": "Add Zone",
+    "mult": "1X DCA"
+   },
+   "date": "2026-11-12T12:59:03+00:00"
+  }
+ }
+}
