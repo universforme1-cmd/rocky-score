@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T19:11:20+00:00",
+ "updated": "2026-11-12T19:23:46+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -2259,6 +2259,131 @@
     }
    ],
    "date": "2026-11-12T19:11:20+00:00"
+  },
+  "BR": {
+   "ticker": "BR",
+   "name": "Broadridge Financial Solutions, Inc.",
+   "price": 192.74,
+   "currency": "USD",
+   "sector": "Technology",
+   "industry": "Information Technology Services",
+   "score": 4,
+   "verdict": "NON",
+   "fails": [
+    "Croissance BPA forward (parcours)",
+    "Croissance revenus forward",
+    "Ancre prix (décote ou DCF)"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": false,
+     "val": "0y +10 % · +1y +9 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +9 % (plancher +10 %) ; parcours composé : +9.8 %/an (barre +20 %/an). Moyenne du parcours : +9.8 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward",
+     "ok": false,
+     "val": "+4.7 %",
+     "barre": ">= +20 %/an",
+     "margin": "-15.3 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+    },
+    {
+     "label": "P/E forward",
+     "ok": true,
+     "val": "16.66x",
+     "barre": "<= 20x",
+     "margin": "-17 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": true,
+     "val": "1.30 Md$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": true,
+     "val": "1.87x",
+     "barre": "<= 2x",
+     "margin": "Dette nette 3.35 Md$ / EBITDA 1.79 Md$."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": false,
+     "val": "-17.3 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote -17.3 % (barre 25 % — échoue) · marge sous le DCF -27.1 % (prix 192.74 vs valeur 151.64 USD — barre 20 % — échoue)."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "21.80 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "10.9x le plancher."
+    }
+   ],
+   "flags": [
+    "Bêta 0.90."
+   ],
+   "dcf": {
+    "value": 151.64328393601838,
+    "mos": -0.21322359688690273,
+    "implied": 0.09605052962386618,
+    "implied_note": null,
+    "note": "Hypothèses : FCF 1.30 Md$ en base, croissance prudente (min. des mesures) 4.7 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+   },
+   "rdca": {
+    "anchor": 248.934326171875,
+    "buy": [
+     99.57373046875,
+     121.97781982421874
+    ],
+    "sm": [
+     84.6376708984375,
+     99.57373046875
+    ],
+    "add_hi": 184.2114013671875,
+    "zone": "Au-dessus des zones d'achat",
+    "mult": "—"
+   },
+   "qualite": [
+    {
+     "label": "ROE",
+     "val": 0.40148,
+     "seuil": 0.15,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIC",
+     "val": 0.20337046476248047,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIIC",
+     "val": 1.483887336513995,
+     "seuil": 0.1,
+     "lo": -0.1,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROCE",
+     "val": 0.26154853659765254,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    }
+   ],
+   "date": "2026-11-12T19:23:46+00:00"
   }
  }
 }
