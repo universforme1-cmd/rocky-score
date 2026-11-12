@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T15:38:09+00:00",
+ "updated": "2026-11-12T16:28:06+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -1883,6 +1883,133 @@
     }
    ],
    "date": "2026-11-12T15:38:09+00:00"
+  },
+  "ROAD": {
+   "ticker": "ROAD",
+   "name": "Construction Partners, Inc.",
+   "price": 82.975,
+   "currency": "USD",
+   "sector": "Industrials",
+   "industry": "Engineering & Construction",
+   "score": 4,
+   "verdict": "NON",
+   "fails": [
+    "Croissance revenus forward",
+    "P/E forward",
+    "Dette nette / EBITDA"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": true,
+     "val": "0y +24 % · +1y +19 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +19 % (plancher +10 %) ; parcours composé : +21.9 %/an (barre +20 %/an). Moyenne du parcours : +21.9 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward",
+     "ok": false,
+     "val": "+12.9 %",
+     "barre": ">= +20 %/an",
+     "margin": "-7.1 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+    },
+    {
+     "label": "P/E forward",
+     "ok": false,
+     "val": "25.36x",
+     "barre": "<= 20x",
+     "margin": "+27 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": true,
+     "val": "176 M$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": false,
+     "val": "3.54x",
+     "barre": "<= 2x",
+     "margin": "Dette nette 1.80 Md$ / EBITDA 507 M$."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": true,
+     "val": "-45.0 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote -45.0 % (barre 25 % — passe) · marge sous le DCF -90.5 % (prix 82.97 vs valeur 43.55 USD — barre 20 % — échoue)."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "4.71 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "2.4x le plancher."
+    }
+   ],
+   "flags": [
+    "Print dans 7 jours (2026-11-19) — binaire, pas d'achat avant.",
+    "Actions +2.4 %/an (dilution sous contrôle).",
+    "Bêta 0.93."
+   ],
+   "dcf": {
+    "value": 43.54563882326294,
+    "mos": -0.4751956755256048,
+    "implied": 0.23178251241602077,
+    "implied_note": null,
+    "note": "Hypothèses : FCF 176 M$ en base, croissance prudente (min. des mesures) 12.9 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+   },
+   "rdca": {
+    "anchor": 134.3699951171875,
+    "buy": [
+     53.747998046875004,
+     65.84129760742188
+    ],
+    "sm": [
+     45.68579833984376,
+     53.747998046875004
+    ],
+    "add_hi": 99.43379638671875,
+    "zone": "Add Zone",
+    "mult": "1X DCA"
+   },
+   "qualite": [
+    {
+     "label": "ROE",
+     "val": 0.15048,
+     "seuil": 0.15,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIC",
+     "val": 0.0696283230467023,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": false
+    },
+    {
+     "label": "ROIIC",
+     "val": 0.08748003762918978,
+     "seuil": 0.1,
+     "lo": -0.1,
+     "hi": 0.4,
+     "ok": false
+    },
+    {
+     "label": "ROCE",
+     "val": 0.09197929068256579,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": false
+    }
+   ],
+   "date": "2026-11-12T16:28:06+00:00"
   }
  }
 }
