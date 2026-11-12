@@ -1,5 +1,5 @@
 // Rocky Score — service worker : l'appli s'ouvre hors ligne.
-const CACHE = "rocky-v3";
+const CACHE = "rocky-v4";
 const SHELL = ["./", "index.html", "manifest.json", "icon-192.png", "icon-512.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => {
