@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T15:24:37+00:00",
+ "updated": "2026-11-12T15:25:39+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -1515,6 +1515,130 @@
    "ticker": "ORACLE",
    "erreur": "'currentTradingPeriod'",
    "date": "2026-11-12T15:24:37+00:00"
+  },
+  "CAT": {
+   "ticker": "CAT",
+   "name": "Caterpillar Inc.",
+   "price": 596.5,
+   "currency": "USD",
+   "sector": "Industrials",
+   "industry": "Farm & Heavy Construction Machinery",
+   "score": 5,
+   "verdict": "NON",
+   "fails": [
+    "Croissance revenus forward",
+    "Dette nette / EBITDA"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": true,
+     "val": "0y +42 % · +1y +19 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +19 % (plancher +10 %) ; parcours composé : +30.1 %/an (barre +20 %/an). Moyenne du parcours : +30.6 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward",
+     "ok": false,
+     "val": "+11.5 %",
+     "barre": ">= +20 %/an",
+     "margin": "-8.5 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+    },
+    {
+     "label": "P/E forward",
+     "ok": true,
+     "val": "18.50x",
+     "barre": "<= 20x",
+     "margin": "-8 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": true,
+     "val": "9.62 Md$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": false,
+     "val": "2.25x",
+     "barre": "<= 2x",
+     "margin": "Dette nette 38.10 Md$ / EBITDA 16.95 Md$."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": true,
+     "val": "-44.4 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote -44.4 % (barre 25 % — passe) · marge sous le DCF -67.0 % (prix 596.50 vs valeur 357.13 USD — barre 20 % — échoue)."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "272.95 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "136.5x le plancher."
+    }
+   ],
+   "flags": [
+    "Bêta 1.64."
+   ],
+   "dcf": {
+    "value": 357.1259822483504,
+    "mos": -0.4012975989130756,
+    "implied": 0.22630482653842543,
+    "implied_note": null,
+    "note": "Hypothèses : FCF 9.62 Md$ en base, croissance prudente (min. des mesures) 11.5 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+   },
+   "rdca": {
+    "anchor": 1060.40625,
+    "buy": [
+     424.1625,
+     519.5990625
+    ],
+    "sm": [
+     360.53812500000004,
+     424.1625
+    ],
+    "add_hi": 784.700625,
+    "zone": "Add Zone",
+    "mult": "1X DCA"
+   },
+   "qualite": [
+    {
+     "label": "ROE",
+     "val": 0.56135,
+     "seuil": 0.15,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIC",
+     "val": 0.16745801633496743,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIIC",
+     "val": 0.24172699625425653,
+     "seuil": 0.1,
+     "lo": -0.1,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROCE",
+     "val": 0.22029340747786638,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    }
+   ],
+   "date": "2026-11-12T15:25:39+00:00"
   }
  }
 }
