@@ -22,6 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main          # toujours la dernière version, même si le lancement a attendu son tour
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -37,6 +39,40 @@ jobs:
         run: |
           git config user.name "rocky-bot"
           git config user.email "rocky-bot@users.noreply.github.com"
+          cp data.json /tmp/nouveau.json
+          for essai in 1 2 3 4 5; do
+            # On repart de la version en ligne et on y fusionne nos fiches :
+            # pour chaque ticker, la fiche la plus récente gagne. Aucun conflit possible.
+            git fetch --quiet origin main
+            git reset --quiet --hard origin/main
+            python - <<'PY'
+          import json, os
+          def lire(p):
+              try:
+                  with open(p, encoding="utf-8") as f:
+                      d = json.load(f)
+                  return d if isinstance(d.get("fiches"), dict) else {"fiches": {}}
+              except Exception:
+                  return {"fiches": {}}
+          cle = lambda f: str(f.get("date_tentative") or f.get("date") or "")
+          en_ligne, nouveau = lire("data.json"), lire("/tmp/nouveau.json")
+          fiches = en_ligne["fiches"]
+          for t, f in nouveau["fiches"].items():
+              if t not in fiches or cle(f) >= cle(fiches[t]):
+                  fiches[t] = f
+          out = {"updated": max(str(en_ligne.get("updated") or ""), str(nouveau.get("updated") or "")), "fiches": fiches}
+          with open("data.json", "w", encoding="utf-8") as f:
+              json.dump(out, f, ensure_ascii=False, indent=1)
+          PY
+            git add data.json
+            if git diff --cached --quiet; then echo "Rien à publier."; exit 0; fi
+            git commit --quiet -m "Fiches Rocky Score"
+            if git push --quiet origin HEAD:main; then echo "Publié (essai $essai)."; exit 0; fi
+            echo "Le dépôt a changé entre-temps, nouvel essai…"
+            sleep $((essai * 3))
+          done
+          echo "Impossible de publier après 5 essais."; exit 1
+
           git add data.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "Fiches Rocky Score"
