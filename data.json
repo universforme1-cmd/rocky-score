@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T14:08:51+00:00",
+ "updated": "2026-11-12T14:09:26+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -815,6 +815,97 @@
     "mult": "1X DCA"
    },
    "date": "2026-11-12T13:57:26+00:00"
+  },
+  "ROL": {
+   "ticker": "ROL",
+   "name": "Rollins, Inc.",
+   "price": 38.47,
+   "currency": "USD",
+   "sector": "Consumer Cyclical",
+   "industry": "Personal Services",
+   "score": 4,
+   "verdict": "NON",
+   "fails": [
+    "Croissance BPA forward (parcours)",
+    "Croissance revenus forward (3 ans)",
+    "P/E forward"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": false,
+     "val": "0y +2 % · +1y +8 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +2 % (plancher +10 %) ; parcours composé : +4.8 %/an (barre +20 %/an). Moyenne du parcours : +4.9 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward (3 ans)",
+     "ok": false,
+     "val": "+6.9 %",
+     "barre": ">= +20 %/an",
+     "margin": "-13.1 pts vs la barre."
+    },
+    {
+     "label": "P/E forward",
+     "ok": false,
+     "val": "31.25x",
+     "barre": "<= 20x",
+     "margin": "+56 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": true,
+     "val": "672 M$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": true,
+     "val": "1.15x",
+     "barre": "<= 2x",
+     "margin": "Dette nette 997 M$ / EBITDA 867 M$."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": true,
+     "val": "-41.8 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote -41.8 % (barre 25 % — passe) · marge sous le DCF -89.3 % (prix 38.47 vs valeur 20.33 USD — barre 20 % — échoue)."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "18.39 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "9.2x le plancher."
+    }
+   ],
+   "flags": [
+    "Bêta 0.72."
+   ],
+   "dcf": {
+    "value": 20.32744693535926,
+    "mos": -0.4716026271026966,
+    "implied": 0.1962524030768179,
+    "implied_note": null,
+    "note": "Hypothèses : FCF 672 M$ en base, croissance 4.9 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+   },
+   "rdca": {
+    "anchor": 62.30527114868164,
+    "buy": [
+     24.922108459472657,
+     30.529582862854003
+    ],
+    "sm": [
+     21.18379219055176,
+     24.922108459472657
+    ],
+    "add_hi": 46.10590065002442,
+    "zone": "Add Zone",
+    "mult": "1X DCA"
+   },
+   "date": "2026-11-12T14:09:26+00:00"
   }
  }
 }
