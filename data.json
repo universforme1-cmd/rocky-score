@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T14:09:26+00:00",
+ "updated": "2026-11-12T14:16:05+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -906,6 +906,99 @@
     "mult": "1X DCA"
    },
    "date": "2026-11-12T14:09:26+00:00"
+  },
+  "TDG": {
+   "ticker": "TDG",
+   "name": "TransDigm Group Incorporated",
+   "price": 1245.0,
+   "currency": "USD",
+   "sector": "Industrials",
+   "industry": "Aerospace & Defense",
+   "score": 2,
+   "verdict": "NON",
+   "fails": [
+    "Croissance BPA forward (parcours)",
+    "Croissance revenus forward (3 ans)",
+    "P/E forward",
+    "Dette nette / EBITDA",
+    "Ancre prix (décote ou DCF)"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": false,
+     "val": "0y +16 % · +1y +16 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +16 % (plancher +10 %) ; parcours composé : +15.9 %/an (barre +20 %/an). Moyenne du parcours : +15.9 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward (3 ans)",
+     "ok": false,
+     "val": "+14.8 %",
+     "barre": ">= +20 %/an",
+     "margin": "-5.3 pts vs la barre."
+    },
+    {
+     "label": "P/E forward",
+     "ok": false,
+     "val": "22.42x",
+     "barre": "<= 20x",
+     "margin": "+12 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": true,
+     "val": "1.91 Md$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": false,
+     "val": "6.08x",
+     "barre": "<= 2x",
+     "margin": "Dette nette 32.56 Md$ / EBITDA 5.36 Md$."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": false,
+     "val": "-14.9 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote -14.9 % (barre 25 % — échoue) · marge sous le DCF -346.9 % (prix 1,245.00 vs valeur 278.61 USD — barre 20 % — échoue)."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "67.96 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "34.0x le plancher."
+    }
+   ],
+   "flags": [
+    "Bêta 0.95."
+   ],
+   "dcf": {
+    "value": 278.6125862316715,
+    "mos": -0.7762147901753642,
+    "implied": 0.36088359764556344,
+    "implied_note": null,
+    "note": "Hypothèses : FCF 1.91 Md$ en base, croissance 15.9 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+   },
+   "rdca": {
+    "anchor": 1504.9761962890625,
+    "buy": [
+     601.990478515625,
+     737.4383361816406
+    ],
+    "sm": [
+     511.69190673828126,
+     601.990478515625
+    ],
+    "add_hi": 1113.6823852539062,
+    "zone": "Au-dessus des zones d'achat",
+    "mult": "—"
+   },
+   "date": "2026-11-12T14:16:05+00:00"
   }
  }
 }
