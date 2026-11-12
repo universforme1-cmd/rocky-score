@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T16:28:06+00:00",
+ "updated": "2026-11-12T18:56:50+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -2010,6 +2010,129 @@
     }
    ],
    "date": "2026-11-12T16:28:06+00:00"
+  },
+  "NXT": {
+   "ticker": "NXT",
+   "name": "Nextpower Inc.",
+   "price": 95.95,
+   "currency": "USD",
+   "sector": "Technology",
+   "industry": "Solar",
+   "score": 6,
+   "verdict": "PAS ENCORE",
+   "fails": [
+    "Croissance BPA forward (parcours)"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": false,
+     "val": "0y +nan % · +1y +20 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +nan % (plancher +10 %) ; parcours composé : +nan %/an (barre +20 %/an). Moyenne du parcours : +nan % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward",
+     "ok": true,
+     "val": "+20.5 %",
+     "barre": ">= +20 %/an",
+     "margin": "+0.5 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+    },
+    {
+     "label": "P/E forward",
+     "ok": true,
+     "val": "16.68x",
+     "barre": "<= 20x",
+     "margin": "-17 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": true,
+     "val": "512 M$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": true,
+     "val": "Cash net 985 M$",
+     "barre": "<= 2x",
+     "margin": "Aucune dette nette."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": true,
+     "val": "-41.2 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote -41.2 % (barre 25 % — passe) · marge sous le DCF -89.9 % (prix 95.95 vs valeur 50.53 USD — barre 20 % — échoue)."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "14.63 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "7.3x le plancher."
+    }
+   ],
+   "flags": [
+    "Bêta 1.93."
+   ],
+   "dcf": {
+    "value": 50.525903756731445,
+    "mos": -0.4734142391169208,
+    "implied": 0.17203520366737257,
+    "implied_note": null,
+    "note": "Hypothèses : FCF 512 M$ en base, croissance prudente (min. des mesures) 0.0 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+   },
+   "rdca": {
+    "anchor": 156.39999389648438,
+    "buy": [
+     62.55999755859375,
+     76.63599700927735
+    ],
+    "sm": [
+     53.17599792480469,
+     62.55999755859375
+    ],
+    "add_hi": 115.73599548339844,
+    "zone": "Add Zone",
+    "mult": "1X DCA"
+   },
+   "qualite": [
+    {
+     "label": "ROE",
+     "val": 0.26455998,
+     "seuil": 0.15,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIC",
+     "val": 0.7996112648012529,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIIC",
+     "val": null,
+     "seuil": 0.1,
+     "lo": -0.1,
+     "hi": 0.4,
+     "ok": null
+    },
+    {
+     "label": "ROCE",
+     "val": 0.9797392685401686,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    }
+   ],
+   "date": "2026-11-12T18:56:50+00:00"
   }
  }
 }
