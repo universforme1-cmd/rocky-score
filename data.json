@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T14:38:24+00:00",
+ "updated": "2026-11-12T14:51:59+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -1389,6 +1389,127 @@
     }
    ],
    "date": "2026-11-12T14:38:24+00:00"
+  },
+  "TTMI": {
+   "ticker": "TTMI",
+   "name": "TTM Technologies, Inc.",
+   "price": 76.24,
+   "currency": "USD",
+   "sector": "Technology",
+   "industry": "Electronic Components",
+   "score": 7,
+   "verdict": "PASSE",
+   "fails": [],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": true,
+     "val": "0y +101 % · +1y +68 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +68 % (plancher +10 %) ; parcours composé : +84.1 %/an (barre +20 %/an). Moyenne du parcours : +84.8 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward",
+     "ok": true,
+     "val": "+47.2 %",
+     "barre": ">= +20 %/an",
+     "margin": "+27.2 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+    },
+    {
+     "label": "P/E forward",
+     "ok": true,
+     "val": "9.15x",
+     "barre": "<= 20x",
+     "margin": "-54 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": true,
+     "val": "15 M$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": true,
+     "val": "1.55x",
+     "barre": "<= 2x",
+     "margin": "Dette nette 905 M$ / EBITDA 585 M$."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": true,
+     "val": "-65.9 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote passe (sommet 52 sem. : 223.83 USD). DCF indisponible — seule la décote compte."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "8.03 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "4.0x le plancher."
+    }
+   ],
+   "flags": [
+    "Bêta 2.26."
+   ],
+   "dcf": {
+    "value": -3.629520143170357,
+    "mos": -1.047606507649139,
+    "implied": null,
+    "implied_note": "> +60 %",
+    "note": "Hypothèses : FCF 15 M$ en base, croissance prudente (min. des mesures) 25.0 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+   },
+   "rdca": {
+    "anchor": 187.02000427246094,
+    "buy": [
+     74.80800170898438,
+     91.63980209350586
+    ],
+    "sm": [
+     63.58680145263672,
+     74.80800170898438
+    ],
+    "add_hi": 138.3948031616211,
+    "zone": "Buy Zone",
+    "mult": "2X DCA"
+   },
+   "qualite": [
+    {
+     "label": "ROE",
+     "val": 0.14345,
+     "seuil": 0.15,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": false
+    },
+    {
+     "label": "ROIC",
+     "val": 0.09421267608166567,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": false
+    },
+    {
+     "label": "ROIIC",
+     "val": 0.23797566702405676,
+     "seuil": 0.1,
+     "lo": -0.1,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROCE",
+     "val": 0.11167442404928384,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    }
+   ],
+   "date": "2026-11-12T14:51:59+00:00"
   }
  }
 }
