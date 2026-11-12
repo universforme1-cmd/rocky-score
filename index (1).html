@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0e1116">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>Rocky Score</title>
+<style>
+:root{--bg:#0e1116;--card:#171b22;--line:#262c36;--tx:#e8ebf0;--mut:#8b94a3;--ok:#3ccf8e;--ko:#f0616d;--warn:#e9c46a;--acc:#e9c46a}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{position:sticky;top:0;z-index:5;background:var(--bg);padding:calc(12px + env(safe-area-inset-top)) 16px 10px;border-bottom:1px solid var(--line)}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+h1{font-size:20px;margin:0;letter-spacing:.3px}h1 b{color:var(--acc)}
+.icon{background:none;border:0;color:var(--mut);font-size:22px;padding:4px 8px}
+.bar{display:flex;gap:8px}
+input{flex:1;min-width:0;background:var(--card);border:1px solid var(--line);border-radius:10px;color:var(--tx);font-size:16px;padding:11px 12px}
+input:focus{outline:2px solid var(--acc);outline-offset:-1px}
+button.main{background:var(--acc);color:#1a1405;border:0;border-radius:10px;font-weight:700;font-size:15px;padding:0 16px}
+button.main:disabled{opacity:.5}
+#status{font-size:13px;color:var(--mut);margin-top:8px;min-height:18px}
+#status.err{color:var(--ko)}
+main{padding:12px 12px calc(24px + env(safe-area-inset-bottom))}
+.row{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:10px;width:100%;text-align:left;color:inherit;font:inherit}
+.badge{flex:none;width:52px;height:52px;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;font-size:20px;line-height:1}
+.badge small{font-size:10px;font-weight:600;opacity:.8;margin-top:2px}
+.v-PASSE{background:rgba(60,207,142,.16);color:var(--ok)}
+.v-PAS{background:rgba(233,196,106,.16);color:var(--warn)}
+.v-NON{background:rgba(240,97,109,.14);color:var(--ko)}
+.v-ERR{background:#22272f;color:var(--mut)}
+.info{flex:1;min-width:0}
+.info .t{font-weight:700}.info .n{color:var(--mut);font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dots{display:flex;gap:4px;margin-top:6px}.dots i{width:8px;height:8px;border-radius:50%;background:var(--ko)}.dots i.ok{background:var(--ok)}
+.right{text-align:right;font-size:13px;color:var(--mut);flex:none}.right b{display:block;color:var(--tx);font-size:15px}
+.empty{color:var(--mut);text-align:center;padding:40px 20px}
+.foot{color:var(--mut);font-size:12px;text-align:center;margin-top:14px}
+/* fiche */
+#sheet,#settings{position:fixed;inset:0;z-index:20;background:var(--bg);overflow-y:auto;transform:translateY(100%);transition:transform .22s ease;padding:calc(10px + env(safe-area-inset-top)) 14px calc(30px + env(safe-area-inset-bottom));visibility:hidden}
+#sheet.open,#settings.open{transform:none;visibility:visible}
+.shtop{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.close{background:var(--card);border:1px solid var(--line);color:var(--tx);border-radius:10px;padding:8px 14px;font-size:15px}
+h2{margin:6px 0 2px;font-size:22px}.sub{color:var(--mut);font-size:14px}
+.verdict{display:flex;align-items:center;gap:14px;border-radius:14px;padding:14px;margin:14px 0}
+.verdict .big{font-size:34px;font-weight:800;line-height:1}.verdict .lab{font-weight:700;font-size:17px}.verdict .why{font-size:13px;opacity:.9}
+h3{font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--mut);margin:22px 0 8px}
+.chk{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 12px;margin-bottom:8px;display:flex;gap:10px}
+.chk .m{flex:none;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
+.chk .m.ok{background:rgba(60,207,142,.18);color:var(--ok)}.chk .m.ko{background:rgba(240,97,109,.18);color:var(--ko)}
+.chk .l{font-weight:600}.chk .vb{font-size:14px;margin-top:2px}.chk .vb span{color:var(--mut)}.chk .mg{font-size:12.5px;color:var(--mut);margin-top:4px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px}
+.box p{margin:0 0 6px;font-size:14px}.box p:last-child{margin:0}.box .mut{color:var(--mut);font-size:12.5px}
+.kv{display:flex;justify-content:space-between;font-size:14px;padding:4px 0}.kv span{color:var(--mut)}
+ul.flags{margin:0;padding-left:18px;font-size:14px}ul.flags li{margin-bottom:4px}
+.zbar{position:relative;height:26px;border-radius:8px;overflow:hidden;display:flex;margin:26px 0 6px}
+.zbar div{height:100%}
+.zwrap{position:relative}
+.zmark{position:absolute;top:-22px;transform:translateX(-50%);font-size:11px;font-weight:700;white-space:nowrap}
+.zmark:after{content:"";position:absolute;left:50%;top:18px;width:2px;height:34px;background:var(--tx);transform:translateX(-50%)}
+.zleg{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:12px;color:var(--mut);margin-top:8px}.zleg i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:4px}
+.q{margin:10px 0}.q .qh{display:flex;justify-content:space-between;font-size:14px}.q .qh span{color:var(--mut)}.q .qh{gap:10px}.q .qh>:last-child{white-space:nowrap}
+.qbar{position:relative;height:8px;border-radius:4px;background:#262c36;margin-top:6px}.qbar i{position:absolute;left:0;top:0;bottom:0;border-radius:4px}
+.qbar u{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--tx);opacity:.7}
+.ghost{background:none;border:1px solid var(--line);color:var(--mut);border-radius:10px;padding:10px 14px;font-size:14px;width:100%;margin-top:18px}
+label{display:block;font-size:13px;color:var(--mut);margin:14px 0 5px}
+#settings input{width:100%}
+.note{font-size:13px;color:var(--mut);margin-top:10px}
+.alert{background:rgba(240,97,109,.12);border:1px solid rgba(240,97,109,.35);color:#f7a9b0;border-radius:10px;padding:10px 12px;font-size:13px;margin:10px 0}
+</style>
+</head>
+<body>
+<header>
+  <div class="top"><h1><b>R</b>ocky Score</h1><div><button class="icon" id="btnRefresh" aria-label="Actualiser">↻</button><button class="icon" id="btnSettings" aria-label="Réglages">⚙</button></div></div>
+  <form class="bar" id="form"><input id="ticker" placeholder="Ticker (ex. AXON, CSU.TO)" autocapitalize="characters" autocomplete="off" autocorrect="off" spellcheck="false" maxlength="15"><button class="main" id="btnGo" type="submit">Analyser</button></form>
+  <div id="status"></div>
+</header>
+<main><div id="list"></div><div class="foot" id="foot"></div></main>
+
+<section id="sheet" aria-hidden="true">
+  <div class="shtop"><span class="sub" id="shDate"></span><button class="close" id="shClose">Fermer</button></div>
+  <div id="shBody"></div>
+</section>
+
+<section id="settings" aria-hidden="true">
+  <div class="shtop"><h2 style="margin:0">Réglages</h2><button class="close" id="stClose">Fermer</button></div>
+  <p class="note">Le jeton autorise ce téléphone à lancer une analyse sur GitHub. Il reste enregistré sur cet appareil uniquement.</p>
+  <label for="stToken">Jeton GitHub (fine-grained)</label><input id="stToken" type="password" placeholder="github_pat_…" autocomplete="off">
+  <label for="stOwner">Compte GitHub</label><input id="stOwner" autocomplete="off" autocapitalize="none">
+  <label for="stRepo">Dépôt</label><input id="stRepo" autocomplete="off" autocapitalize="none">
+  <button class="main" id="stSave" style="width:100%;padding:13px;margin-top:20px">Enregistrer</button>
+  <button class="ghost" id="stReset">Réafficher les fiches retirées</button>
+  <p class="note">Rocky Score est un filtre personnel, pas un conseil financier. Données : Yahoo Finance.</p>
+</section>
+
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const LS = {
+  get(k, d){ try{ const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); }catch(e){ return d; } },
+  set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+};
+let fiches = LS.get("fiches", {});
+let hidden = LS.get("hidden", []);
+let updated = LS.get("updated", null);
+let busy = false;
+
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const nf = (x, d = 2) => x == null ? "n/d" : Number(x).toLocaleString("fr-CA", {minimumFractionDigits: d, maximumFractionDigits: d});
+const pc = (x, d = 1) => x == null ? "n/d" : (x >= 0 ? "+" : "") + nf(x * 100, d) + " %";
+const dt = iso => { if(!iso) return ""; const d = new Date(iso); return isNaN(d) ? "" : d.toLocaleString("fr-CA", {day:"numeric", month:"short", hour:"2-digit", minute:"2-digit"}); };
+const vclass = f => f.erreur ? "v-ERR" : f.verdict === "PASSE" ? "v-PASSE" : f.verdict === "PAS ENCORE" ? "v-PAS" : "v-NON";
+
+function cfg(){
+  const s = LS.get("cfg", {});
+  let owner = s.owner || "", repo = s.repo || "";
+  const m = location.hostname.match(/^([^.]+)\.github\.io$/);
+  if(m){ if(!owner) owner = m[1]; if(!repo) repo = location.pathname.split("/").filter(Boolean)[0] || location.hostname; }
+  return {owner, repo, token: s.token || ""};
+}
+function setStatus(msg, err){ const el = $("status"); el.textContent = msg || ""; el.className = err ? "err" : ""; }
+
+function merge(obj){
+  if(!obj || typeof obj.fiches !== "object" || !obj.fiches) return;
+  for(const [t, f] of Object.entries(obj.fiches)){
+    const old = fiches[t];
+    if(!old || String(f.date || "") >= String(old.date || "") ) fiches[t] = f;
+  }
+  if(obj.updated && (!updated || obj.updated > updated)) updated = obj.updated;
+  LS.set("fiches", fiches); LS.set("updated", updated);
+}
+
+function render(){
+  const arr = Object.values(fiches).filter(f => !hidden.includes(f.ticker))
+    .sort((a, b) => (b.score ?? -1) - (a.score ?? -1) || String(a.ticker).localeCompare(String(b.ticker)));
+  const list = $("list");
+  if(!arr.length){
+    list.innerHTML = '<div class="empty">Aucune fiche pour l’instant.<br>Tape un ticker puis « Analyser », ou attends la mise à jour du soir.</div>';
+  } else {
+    list.innerHTML = arr.map(f => {
+      if(f.erreur) return `<button class="row" data-t="${esc(f.ticker)}"><div class="badge v-ERR">?</div><div class="info"><div class="t">${esc(f.ticker)}</div><div class="n">Analyse impossible</div></div></button>`;
+      const dots = (f.checks || []).map(c => `<i class="${c.ok ? "ok" : ""}"></i>`).join("");
+      return `<button class="row" data-t="${esc(f.ticker)}"><div class="badge ${vclass(f)}">${esc(f.score)}<small>/7</small></div>
+        <div class="info"><div class="t">${esc(f.ticker)}</div><div class="n">${esc(f.name)}</div><div class="dots">${dots}</div></div>
+        <div class="right"><b>${nf(f.price)}</b>${esc(f.currency)}<br>${esc(f.rdca && f.rdca.mult !== "—" ? f.rdca.mult : "")}</div></button>`;
+    }).join("");
+  }
+  $("foot").textContent = updated ? "Dernière mise à jour : " + dt(updated) : "";
+}
+
+function zoneBar(f){
+  const z = f.rdca; if(!z || !z.anchor) return '<div class="box"><p class="mut">n/d — historique mensuel indisponible.</p></div>';
+  const a = z.anchor, lo = 0.25 * a, hi = 1.08 * a, w = x => Math.max(0, (x - lo) / (hi - lo) * 100);
+  const seg = [[lo, z.sm[0], "#7a5cf0"], [z.sm[0], z.sm[1], "#e9c46a"], [z.sm[1], z.buy[1], "#3ccf8e"], [z.buy[1], z.add_hi, "#2a9d8f"], [z.add_hi, a, "#3a4250"], [a, hi, "#f0616d"]];
+  const pos = Math.min(98, Math.max(2, w(f.price)));
+  return `<div class="box"><div class="zwrap"><div class="zmark" style="left:${pos}%">${nf(f.price)}</div>
+    <div class="zbar">${seg.map(s => `<div style="width:${w(s[1]) - w(s[0])}%;background:${s[2]}"></div>`).join("")}</div></div>
+    <p style="margin-top:10px"><b>${esc(z.zone)}</b>${z.mult !== "—" ? " → " + esc(z.mult) : ""}</p>
+    <div class="kv"><span>Smart Money Zone ★ (3X)</span><b>${nf(z.sm[0])} – ${nf(z.sm[1])}</b></div>
+    <div class="kv"><span>Buy Zone (2X)</span><b>${nf(z.buy[0])} – ${nf(z.buy[1])}</b></div>
+    <div class="kv"><span>Add Zone (1X)</span><b>${nf(z.buy[1])} – ${nf(z.add_hi)}</b></div>
+    <div class="kv"><span>Ancre / Strong Trim</span><b>${nf(a)}</b></div>
+    <div class="zleg"><span><i style="background:#7a5cf0"></i>Sous SM (4X)</span><span><i style="background:#e9c46a"></i>Smart Money</span><span><i style="background:#3ccf8e"></i>Buy</span><span><i style="background:#2a9d8f"></i>Add</span><span><i style="background:#3a4250"></i>Hors zone</span><span><i style="background:#f0616d"></i>Au-dessus de l’ancre</span></div>
+    <p class="mut" style="margin-top:8px">Ancre = plus haute clôture mensuelle sur 24 mois.</p></div>`;
+}
+
+function qualite(f){
+  const q = f.qualite; if(!q || !q.length) return "";
+  const noms = {ROE:"ROE — rendement des fonds propres", ROIC:"ROIC — rendement du capital investi", ROIIC:"ROIIC — rendement du capital ajouté (3 ans)", ROCE:"ROCE — rendement avant impôt"};
+  return `<h3>Qualité du capital <span style="text-transform:none;letter-spacing:0">(hors note)</span></h3><div class="box">${q.map(x => {
+    const w = v => Math.min(100, Math.max(0, (v - x.lo) / (x.hi - x.lo) * 100));
+    if(x.val == null) return `<div class="q"><div class="qh"><b>${esc(noms[x.label] || x.label)}</b><span>n/d</span></div><div class="qbar"><u style="left:${w(x.seuil)}%"></u></div></div>`;
+    const col = x.ok ? "var(--ok)" : "var(--ko)";
+    return `<div class="q"><div class="qh"><b>${esc(noms[x.label] || x.label)}</b><b style="color:${col}">${pc(x.val)}</b></div>
+      <div class="qbar"><i style="width:${w(x.val)}%;background:${col}"></i><u style="left:${w(x.seuil)}%"></u></div>
+      <div class="mg" style="font-size:12.5px;color:var(--mut);margin-top:4px">Seuil repère ${nf(x.seuil * 100, 0)} % — ${x.ok ? "au-dessus" : "en dessous"}</div></div>`;
+  }).join("")}<p class="mut" style="margin-top:8px">Information seulement : ces mesures ne changent pas la note sur 7. Le trait blanc marque le seuil.</p></div>`;
+}
+
+function openSheet(t){
+  const f = fiches[t]; if(!f) return;
+  $("shDate").textContent = "Fiche du " + dt(f.date);
+  let h;
+  if(f.erreur){
+    h = `<h2>${esc(f.ticker)}</h2><div class="alert">Analyse impossible : ${esc(f.erreur)}</div>
+         <p class="note">Vérifie le symbole tel qu’il apparaît sur Yahoo Finance (ex. CSU.TO pour Toronto).</p>`;
+  } else {
+    const why = f.verdict === "PASSE" ? "Les 7 checks passent." : "Échec : " + (f.fails || []).join(", ");
+    h = `<h2>${esc(f.ticker)} <span style="font-weight:400;color:var(--mut);font-size:16px">${nf(f.price)} ${esc(f.currency)}</span></h2>
+      <div class="sub">${esc(f.name)}${f.industry ? " · " + esc(f.industry) : ""}</div>
+      ${f.erreur_maj ? `<div class="alert">La dernière mise à jour a échoué (${esc(f.erreur_maj)}). Cette fiche date du ${dt(f.date)}.</div>` : ""}
+      <div class="verdict ${vclass(f)}"><div class="big">${esc(f.score)}/7</div><div><div class="lab">${esc(f.verdict)}</div><div class="why">${esc(why)}</div></div></div>
+      <h3>Les 7 checks</h3>
+      ${(f.checks || []).map((c, i) => `<div class="chk"><div class="m ${c.ok ? "ok" : "ko"}">${c.ok ? "✓" : "✗"}</div><div>
+        <div class="l">${i + 1}. ${esc(c.label)}</div><div class="vb">${esc(c.val)} <span>· barre ${esc(c.barre)}</span></div><div class="mg">${esc(c.margin)}</div></div></div>`).join("")}
+      ${(f.flags || []).length ? `<h3>Drapeaux</h3><div class="box"><ul class="flags">${f.flags.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>` : ""}
+      <h3>Valorisation (DCF)</h3>
+      ${f.dcf ? `<div class="box"><div class="kv"><span>Valeur DCF</span><b>${nf(f.dcf.value)} ${esc(f.currency)}</b></div>
+        <div class="kv"><span>Marge de sécurité</span><b style="color:${f.dcf.mos >= 0 ? "var(--ok)" : "var(--ko)"}">${pc(f.dcf.mos)}</b></div>
+        <div class="kv"><span>Croissance impliquée par le prix</span><b>${f.dcf.implied != null ? pc(f.dcf.implied) + "/an" : esc(f.dcf.implied_note || "n/d")}</b></div>
+        <p class="mut" style="margin-top:8px">${esc(f.dcf.note)}</p></div>` : '<div class="box"><p class="mut">n/d — FCF ou données insuffisantes pour un DCF.</p></div>'}
+      ${qualite(f)}
+      <h3>Zones R-DCA</h3>${zoneBar(f)}`;
+  }
+  h += `<button class="main" style="width:100%;padding:13px;margin-top:22px" data-again="${esc(f.ticker)}">Relancer l’analyse</button>
+        <button class="ghost" data-hide="${esc(f.ticker)}">Retirer de ma liste</button>`;
+  $("shBody").innerHTML = h;
+  $("sheet").classList.add("open"); $("sheet").setAttribute("aria-hidden", "false"); $("sheet").scrollTop = 0;
+}
+function closeAll(){ for(const id of ["sheet", "settings"]){ $(id).classList.remove("open"); $(id).setAttribute("aria-hidden", "true"); } }
+
+async function load(quiet){
+  try{
+    const r = await fetch("data.json?t=" + Date.now(), {cache: "no-store"});
+    if(!r.ok) throw new Error(r.status === 404 ? "pas encore de fiches (lance le robot une première fois)" : "HTTP " + r.status);
+    merge(await r.json()); render(); if(!quiet && !busy) setStatus("");
+  }catch(e){
+    render(); if(!busy) setStatus(Object.keys(fiches).length ? "Hors ligne — fiches enregistrées affichées." : "Données indisponibles : " + e.message, !Object.keys(fiches).length);
+  }
+}
+
+const gh = (path, opt = {}) => { const c = cfg(); return fetch(`https://api.github.com/repos/${encodeURIComponent(c.owner)}/${encodeURIComponent(c.repo)}/${path}`, Object.assign({}, opt, {headers: Object.assign({"Authorization": "Bearer " + c.token, "X-GitHub-Api-Version": "2022-11-28", "Accept": "application/vnd.github+json"}, opt.headers || {})})); };
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+async function analyser(raw){
+  const t = String(raw || "").trim().toUpperCase();
+  if(!/^[A-Z0-9][A-Z0-9.\-=^]{0,14}$/.test(t)){ setStatus("Ticker invalide.", true); return; }
+  const c = cfg();
+  if(!c.token || !c.owner || !c.repo){ setStatus("Ajoute d’abord ton jeton GitHub dans les réglages.", true); openSettings(); return; }
+  if(busy) return;
+  busy = true; $("btnGo").disabled = true; closeAll();
+  const before = fiches[t] ? String(fiches[t].date_tentative || fiches[t].date || "") : "";
+  try{
+    setStatus(`Lancement de l’analyse de ${t}…`);
+    const r = await gh("actions/workflows/rocky.yml/dispatches", {method: "POST", body: JSON.stringify({ref: "main", inputs: {tickers: t}})});
+    if(r.status === 401 || r.status === 403) throw new Error("jeton refusé — vérifie ses permissions (Actions : lecture et écriture).");
+    if(r.status === 404) throw new Error("dépôt ou robot introuvable — vérifie le compte, le dépôt et le fichier rocky.yml.");
+    if(r.status !== 204) throw new Error("GitHub a répondu " + r.status);
+    const t0 = Date.now(); let found = null;
+    while(Date.now() - t0 < 300000){
+      setStatus(`Analyse de ${t} en cours… ${Math.round((Date.now() - t0) / 1000)} s (1 à 3 minutes)`);
+      await sleep(8000);
+      try{
+        const g = await gh("contents/data.json?ref=main&t=" + Date.now(), {headers: {"Accept": "application/vnd.github.raw+json"}, cache: "no-store"});
+        if(g.ok){
+          const j = await g.json(); const f = j.fiches && j.fiches[t];
+          if(f && String(f.date_tentative || f.date || "") !== before){ found = j; break; }
+        }
+      }catch(e){ /* réseau instable : on réessaie */ }
+    }
+    if(!found) throw new Error("délai dépassé. Regarde l’onglet Actions du dépôt, puis touche ↻.");
+    merge(found); hidden = hidden.filter(x => x !== t); LS.set("hidden", hidden);
+    render(); setStatus(""); $("ticker").value = ""; openSheet(t);
+  }catch(e){ setStatus("Échec : " + e.message, true); }
+  finally{ busy = false; $("btnGo").disabled = false; }
+}
+
+function openSettings(){
+  const c = cfg(); $("stToken").value = c.token; $("stOwner").value = c.owner; $("stRepo").value = c.repo;
+  $("settings").classList.add("open"); $("settings").setAttribute("aria-hidden", "false");
+}
+
+$("form").addEventListener("submit", e => { e.preventDefault(); $("ticker").blur(); analyser($("ticker").value); });
+$("list").addEventListener("click", e => { const b = e.target.closest("[data-t]"); if(b) openSheet(b.dataset.t); });
+$("shBody").addEventListener("click", e => {
+  const a = e.target.closest("[data-again]"); if(a){ analyser(a.dataset.again); return; }
+  const h = e.target.closest("[data-hide]"); if(h){ hidden.push(h.dataset.hide); LS.set("hidden", hidden); closeAll(); render(); }
+});
+$("shClose").onclick = closeAll; $("stClose").onclick = closeAll;
+$("btnSettings").onclick = openSettings;
+$("btnRefresh").onclick = () => { setStatus("Actualisation…"); load(); };
+$("stSave").onclick = () => { LS.set("cfg", {token: $("stToken").value.trim(), owner: $("stOwner").value.trim(), repo: $("stRepo").value.trim()}); closeAll(); setStatus("Réglages enregistrés."); };
+$("stReset").onclick = () => { hidden = []; LS.set("hidden", hidden); closeAll(); render(); };
+document.addEventListener("visibilitychange", () => { if(!document.hidden) load(true); });
+if("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+render(); load();
+</script>
+</body>
+</html>
