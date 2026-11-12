@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T14:35:23+00:00",
+ "updated": "2026-11-12T14:36:56+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -1140,7 +1140,7 @@
   "HEI": {
    "ticker": "HEI",
    "name": "HEICO Corporation",
-   "price": 346.61,
+   "price": 348.415,
    "currency": "USD",
    "sector": "Industrials",
    "industry": "Aerospace & Defense",
@@ -1169,9 +1169,9 @@
     {
      "label": "P/E forward",
      "ok": false,
-     "val": "47.95x",
+     "val": "48.20x",
      "barre": "<= 20x",
-     "margin": "+140 % vs la barre de 20x."
+     "margin": "+141 % vs la barre de 20x."
     },
     {
      "label": "FCF TTM",
@@ -1190,16 +1190,16 @@
     {
      "label": "Ancre prix (décote ou DCF)",
      "ok": false,
-     "val": "-8.0 %",
+     "val": "-7.5 %",
      "barre": ">= 25 % ou >= 20 % sous le DCF",
-     "margin": "Décote -8.0 % (barre 25 % — échoue) · marge sous le DCF +0.2 % (prix 346.61 vs valeur 347.38 USD — barre 20 % — échoue)."
+     "margin": "Décote -7.5 % (barre 25 % — échoue) · marge sous le DCF -0.3 % (prix 348.42 vs valeur 347.38 USD — barre 20 % — échoue)."
     },
     {
      "label": "Capitalisation",
      "ok": true,
-     "val": "48.44 Md$",
+     "val": "48.69 Md$",
      "barre": ">= 2 Md$",
-     "margin": "24.2x le plancher."
+     "margin": "24.3x le plancher."
     }
    ],
    "flags": [
@@ -1208,8 +1208,8 @@
    ],
    "dcf": {
     "value": 347.37560082812354,
-    "mos": 0.0022088249852096897,
-    "implied": 0.113386143046741,
+    "mos": -0.0029832216519853905,
+    "implied": 0.1145321840089989,
     "implied_note": null,
     "note": "Hypothèses : FCF 1.03 Md$ en base, croissance prudente (min. des mesures) 11.4 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
    },
@@ -1261,7 +1261,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-12T14:35:23+00:00"
+   "date": "2026-11-12T14:36:56+00:00"
   }
  }
 }
