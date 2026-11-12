@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T18:56:50+00:00",
+ "updated": "2026-11-12T19:11:20+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -2133,6 +2133,132 @@
     }
    ],
    "date": "2026-11-12T18:56:50+00:00"
+  },
+  "OTIS": {
+   "ticker": "OTIS",
+   "name": "Otis Worldwide Corporation",
+   "price": 77.605,
+   "currency": "USD",
+   "sector": "Industrials",
+   "industry": "Specialty Industrial Machinery",
+   "score": 3,
+   "verdict": "NON",
+   "fails": [
+    "Croissance BPA forward (parcours)",
+    "Croissance revenus forward",
+    "Dette nette / EBITDA",
+    "Ancre prix (décote ou DCF)"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": false,
+     "val": "0y +0 % · +1y +10 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +0 % (plancher +10 %) ; parcours composé : +5.3 %/an (barre +20 %/an). Moyenne du parcours : +5.4 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward",
+     "ok": false,
+     "val": "+4.4 %",
+     "barre": ">= +20 %/an",
+     "margin": "-15.6 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+    },
+    {
+     "label": "P/E forward",
+     "ok": true,
+     "val": "17.29x",
+     "barre": "<= 20x",
+     "margin": "-14 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": true,
+     "val": "1.67 Md$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": false,
+     "val": "3.12x",
+     "barre": "<= 2x",
+     "margin": "Dette nette 7.83 Md$ / EBITDA 2.51 Md$."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": false,
+     "val": "-17.9 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote -17.9 % (barre 25 % — échoue) · marge sous le DCF -61.7 % (prix 77.61 vs valeur 48.01 USD — barre 20 % — échoue)."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "29.55 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "14.8x le plancher."
+    }
+   ],
+   "flags": [
+    "Bêta 0.87."
+   ],
+   "dcf": {
+    "value": 48.0053356796283,
+    "mos": -0.38141439753072226,
+    "implied": 0.13091187199297816,
+    "implied_note": null,
+    "note": "Hypothèses : FCF 1.67 Md$ en base, croissance prudente (min. des mesures) 4.4 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+   },
+   "rdca": {
+    "anchor": 100.10697937011719,
+    "buy": [
+     40.04279174804688,
+     49.052419891357424
+    ],
+    "sm": [
+     34.03637298583985,
+     40.04279174804688
+    ],
+    "add_hi": 74.07916473388671,
+    "zone": "Au-dessus des zones d'achat",
+    "mult": "—"
+   },
+   "qualite": [
+    {
+     "label": "ROE",
+     "val": null,
+     "seuil": 0.15,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": null
+    },
+    {
+     "label": "ROIC",
+     "val": 0.8252168131487889,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIIC",
+     "val": 0.1925901525229358,
+     "seuil": 0.1,
+     "lo": -0.1,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROCE",
+     "val": 1.0968858131487889,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    }
+   ],
+   "date": "2026-11-12T19:11:20+00:00"
   }
  }
 }
