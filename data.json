@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T14:37:41+00:00",
+ "updated": "2026-11-12T14:38:24+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -1267,6 +1267,128 @@
    "ticker": "NVIDIA",
    "erreur": "'currentTradingPeriod'",
    "date": "2026-11-12T14:37:41+00:00"
+  },
+  "NVDA": {
+   "ticker": "NVDA",
+   "name": "NVIDIA Corporation",
+   "price": 158.71,
+   "currency": "USD",
+   "sector": "Technology",
+   "industry": "Semiconductors",
+   "score": 7,
+   "verdict": "PASSE",
+   "fails": [],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": true,
+     "val": "0y +95 % · +1y +71 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +71 % (plancher +10 %) ; parcours composé : +82.7 %/an (barre +20 %/an). Moyenne du parcours : +83.1 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward",
+     "ok": true,
+     "val": "+68.0 %",
+     "barre": ">= +20 %/an",
+     "margin": "+48.0 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+    },
+    {
+     "label": "P/E forward",
+     "ok": true,
+     "val": "9.96x",
+     "barre": "<= 20x",
+     "margin": "-50 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": true,
+     "val": "127.01 Md$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": true,
+     "val": "Cash net 23.61 Md$",
+     "barre": "<= 2x",
+     "margin": "Aucune dette nette."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": true,
+     "val": "-34.8 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote -34.8 % (barre 25 % — passe) · marge sous le DCF +15.1 % (prix 158.71 vs valeur 186.85 USD — barre 20 % — échoue)."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "3 828.87 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "1914.4x le plancher."
+    }
+   ],
+   "flags": [
+    "Print dans 5 jours (2026-11-17) — binaire, pas d'achat avant.",
+    "Bêta 2.25."
+   ],
+   "dcf": {
+    "value": 186.85363085261523,
+    "mos": 0.17732739495063465,
+    "implied": 0.20630917442656893,
+    "implied_note": null,
+    "note": "Hypothèses : FCF 127.01 Md$ en base, croissance prudente (min. des mesures) 25.0 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+   },
+   "rdca": {
+    "anchor": 228.3800048828125,
+    "buy": [
+     91.35200195312501,
+     111.90620239257812
+    ],
+    "sm": [
+     77.64920166015625,
+     91.35200195312501
+    ],
+    "add_hi": 169.00120361328123,
+    "zone": "Add Zone",
+    "mult": "1X DCA"
+   },
+   "qualite": [
+    {
+     "label": "ROE",
+     "val": 1.17211,
+     "seuil": 0.15,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIC",
+     "val": 0.7626220485265774,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIIC",
+     "val": 0.9212805573099185,
+     "seuil": 0.1,
+     "lo": -0.1,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROCE",
+     "val": 0.8984390850071008,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    }
+   ],
+   "date": "2026-11-12T14:38:24+00:00"
   }
  }
 }
