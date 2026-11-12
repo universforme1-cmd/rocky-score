@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T15:27:54+00:00",
+ "updated": "2026-11-12T15:38:09+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -1758,6 +1758,131 @@
     }
    ],
    "date": "2026-11-12T15:27:54+00:00"
+  },
+  "POWI": {
+   "ticker": "POWI",
+   "name": "Power Integrations, Inc.",
+   "price": 45.325,
+   "currency": "USD",
+   "sector": "Technology",
+   "industry": "Semiconductors",
+   "score": 4,
+   "verdict": "NON",
+   "fails": [
+    "Croissance BPA forward (parcours)",
+    "Croissance revenus forward",
+    "P/E forward"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": false,
+     "val": "0y +19 % · +1y +20 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +19 % (plancher +10 %) ; parcours composé : +19.5 %/an (barre +20 %/an). Moyenne du parcours : +19.5 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward",
+     "ok": false,
+     "val": "+9.5 %",
+     "barre": ">= +20 %/an",
+     "margin": "-10.5 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+    },
+    {
+     "label": "P/E forward",
+     "ok": false,
+     "val": "25.39x",
+     "barre": "<= 20x",
+     "margin": "+27 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": true,
+     "val": "91 M$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": true,
+     "val": "Cash net 288 M$",
+     "barre": "<= 2x",
+     "margin": "Aucune dette nette."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": true,
+     "val": "-50.3 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote -50.3 % (barre 25 % — passe) · marge sous le DCF -23.3 % (prix 45.33 vs valeur 36.76 USD — barre 20 % — échoue)."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "2.53 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "1.3x le plancher."
+    }
+   ],
+   "flags": [
+    "Bêta 1.57."
+   ],
+   "dcf": {
+    "value": 36.75500330533124,
+    "mos": -0.1890788018680366,
+    "implied": 0.15482870997947196,
+    "implied_note": null,
+    "note": "Hypothèses : FCF 91 M$ en base, croissance prudente (min. des mesures) 9.5 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+   },
+   "rdca": {
+    "anchor": 83.6493911743164,
+    "buy": [
+     33.459756469726564,
+     40.98820167541504
+    ],
+    "sm": [
+     28.44079299926758,
+     33.459756469726564
+    ],
+    "add_hi": 61.90054946899414,
+    "zone": "Add Zone",
+    "mult": "1X DCA"
+   },
+   "qualite": [
+    {
+     "label": "ROE",
+     "val": 0.065349996,
+     "seuil": 0.15,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": false
+    },
+    {
+     "label": "ROIC",
+     "val": null,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": null
+    },
+    {
+     "label": "ROIIC",
+     "val": null,
+     "seuil": 0.1,
+     "lo": -0.1,
+     "hi": 0.4,
+     "ok": null
+    },
+    {
+     "label": "ROCE",
+     "val": null,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": null
+    }
+   ],
+   "date": "2026-11-12T15:38:09+00:00"
   }
  }
 }
