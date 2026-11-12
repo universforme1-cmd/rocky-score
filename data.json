@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T19:23:46+00:00",
+ "updated": "2026-11-12T19:27:09+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -2384,6 +2384,130 @@
     }
    ],
    "date": "2026-11-12T19:23:46+00:00"
+  },
+  "HLNE": {
+   "ticker": "HLNE",
+   "name": "Hamilton Lane Incorporated",
+   "price": 94.3,
+   "currency": "USD",
+   "sector": "Financial Services",
+   "industry": "Asset Management",
+   "score": 5,
+   "verdict": "NON",
+   "fails": [
+    "Croissance BPA forward (parcours)",
+    "Croissance revenus forward"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": false,
+     "val": "0y +32 % · +1y -3 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : -3 % (plancher +10 %) ; parcours composé : +13.2 %/an (barre +20 %/an). Moyenne du parcours : +14.5 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward",
+     "ok": false,
+     "val": "+9.6 %",
+     "barre": ">= +20 %/an",
+     "margin": "-10.4 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+    },
+    {
+     "label": "P/E forward",
+     "ok": true,
+     "val": "12.48x",
+     "barre": "<= 20x",
+     "margin": "-38 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": true,
+     "val": "272 M$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": true,
+     "val": "0.06x",
+     "barre": "<= 2x",
+     "margin": "Dette nette 25 M$ / EBITDA 391 M$."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": true,
+     "val": "-39.4 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote passe (sommet 52 sem. : 155.66 USD). Branche DCF non appliquée — secteur financier (Asset Management) : seule la décote compte."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "6.37 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "3.2x le plancher."
+    }
+   ],
+   "flags": [
+    "Bêta 1.17."
+   ],
+   "dcf": {
+    "value": 119.053228779378,
+    "mos": 0.26249447273995763,
+    "implied": 0.03998180159200826,
+    "implied_note": null,
+    "note": "Hypothèses : FCF 272 M$ en base, croissance prudente (min. des mesures) 9.6 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+   },
+   "rdca": {
+    "anchor": 153.7462921142578,
+    "buy": [
+     61.49851684570313,
+     75.33568313598633
+    ],
+    "sm": [
+     52.27373931884766,
+     61.49851684570313
+    ],
+    "add_hi": 113.77225616455078,
+    "zone": "Add Zone",
+    "mult": "1X DCA"
+   },
+   "qualite": [
+    {
+     "label": "ROE",
+     "val": 0.31159002,
+     "seuil": 0.15,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIC",
+     "val": 0.440597891640918,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIIC",
+     "val": 0.6608550914298728,
+     "seuil": 0.1,
+     "lo": -0.1,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROCE",
+     "val": 0.5264013042304875,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    }
+   ],
+   "date": "2026-11-12T19:27:09+00:00"
   }
  }
 }
