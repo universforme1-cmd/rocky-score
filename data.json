@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T14:51:59+00:00",
+ "updated": "2026-11-12T14:52:48+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -1393,7 +1393,7 @@
   "TTMI": {
    "ticker": "TTMI",
    "name": "TTM Technologies, Inc.",
-   "price": 76.24,
+   "price": 76.17,
    "currency": "USD",
    "sector": "Technology",
    "industry": "Electronic Components",
@@ -1418,7 +1418,7 @@
     {
      "label": "P/E forward",
      "ok": true,
-     "val": "9.15x",
+     "val": "9.14x",
      "barre": "<= 20x",
      "margin": "-54 % vs la barre de 20x."
     },
@@ -1439,7 +1439,7 @@
     {
      "label": "Ancre prix (décote ou DCF)",
      "ok": true,
-     "val": "-65.9 %",
+     "val": "-66.0 %",
      "barre": ">= 25 % ou >= 20 % sous le DCF",
      "margin": "Décote passe (sommet 52 sem. : 223.83 USD). DCF indisponible — seule la décote compte."
     },
@@ -1456,7 +1456,7 @@
    ],
    "dcf": {
     "value": -3.629520143170357,
-    "mos": -1.047606507649139,
+    "mos": -1.0476502578859177,
     "implied": null,
     "implied_note": "> +60 %",
     "note": "Hypothèses : FCF 15 M$ en base, croissance prudente (min. des mesures) 25.0 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
@@ -1509,7 +1509,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-12T14:51:59+00:00"
+   "date": "2026-11-12T14:52:48+00:00"
   }
  }
 }
