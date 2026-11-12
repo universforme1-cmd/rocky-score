@@ -1,0 +1,5 @@
+# Un ticker par ligne. Analysés automatiquement chaque soir de semaine.
+HOOD
+IESC
+AXON
+CSU.TO

@@ -1,0 +1,44 @@
+name: Rocky Score
+
+on:
+  schedule:
+    - cron: "30 22 * * 1-5"   # soirs de semaine, après la clôture de New York
+  workflow_dispatch:
+    inputs:
+      tickers:
+        description: "Tickers séparés par des espaces (vide = liste de tickers.txt)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rocky-score
+  cancel-in-progress: false
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Installer yfinance
+        run: pip install --quiet yfinance
+      - name: Calculer les fiches
+        env:
+          TICKERS: ${{ inputs.tickers }}
+        run: |
+          set -f
+          python rocky-score.py --json data.json $TICKERS
+      - name: Publier data.json
+        run: |
+          git config user.name "rocky-bot"
+          git config user.email "rocky-bot@users.noreply.github.com"
+          git add data.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Fiches Rocky Score"
+          git pull --rebase
+          git push
