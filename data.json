@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T14:36:56+00:00",
+ "updated": "2026-11-12T14:37:41+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -1262,6 +1262,11 @@
     }
    ],
    "date": "2026-11-12T14:36:56+00:00"
+  },
+  "NVIDIA": {
+   "ticker": "NVIDIA",
+   "erreur": "'currentTradingPeriod'",
+   "date": "2026-11-12T14:37:41+00:00"
   }
  }
 }
