@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T14:33:55+00:00",
+ "updated": "2026-11-12T14:35:23+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -1136,6 +1136,132 @@
     "mult": "—"
    },
    "date": "2026-11-12T14:16:05+00:00"
+  },
+  "HEI": {
+   "ticker": "HEI",
+   "name": "HEICO Corporation",
+   "price": 346.61,
+   "currency": "USD",
+   "sector": "Industrials",
+   "industry": "Aerospace & Defense",
+   "score": 4,
+   "verdict": "NON",
+   "fails": [
+    "Croissance revenus forward",
+    "P/E forward",
+    "Ancre prix (décote ou DCF)"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": true,
+     "val": "0y +30 % · +1y +14 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +14 % (plancher +10 %) ; parcours composé : +21.5 %/an (barre +20 %/an). Moyenne du parcours : +21.7 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward",
+     "ok": false,
+     "val": "+11.4 %",
+     "barre": ">= +20 %/an",
+     "margin": "-8.6 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+    },
+    {
+     "label": "P/E forward",
+     "ok": false,
+     "val": "47.95x",
+     "barre": "<= 20x",
+     "margin": "+140 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": true,
+     "val": "1.03 Md$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": true,
+     "val": "1.56x",
+     "barre": "<= 2x",
+     "margin": "Dette nette 2.30 Md$ / EBITDA 1.47 Md$."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": false,
+     "val": "-8.0 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote -8.0 % (barre 25 % — échoue) · marge sous le DCF +0.2 % (prix 346.61 vs valeur 347.38 USD — barre 20 % — échoue)."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "48.44 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "24.2x le plancher."
+    }
+   ],
+   "flags": [
+    "Actions +0.7 %/an (dilution sous contrôle).",
+    "Bêta 1.09."
+   ],
+   "dcf": {
+    "value": 347.37560082812354,
+    "mos": 0.0022088249852096897,
+    "implied": 0.113386143046741,
+    "implied_note": null,
+    "note": "Hypothèses : FCF 1.03 Md$ en base, croissance prudente (min. des mesures) 11.4 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+   },
+   "rdca": {
+    "anchor": 356.3599853515625,
+    "buy": [
+     142.54399414062502,
+     174.61639282226562
+    ],
+    "sm": [
+     121.16239501953126,
+     142.54399414062502
+    ],
+    "add_hi": 263.7063891601562,
+    "zone": "Au-dessus des zones d'achat",
+    "mult": "—"
+   },
+   "qualite": [
+    {
+     "label": "ROE",
+     "val": 0.17728001,
+     "seuil": 0.15,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIC",
+     "val": 0.13588786730728541,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIIC",
+     "val": 0.13038421988245574,
+     "seuil": 0.1,
+     "lo": -0.1,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROCE",
+     "val": 0.16293509269458684,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    }
+   ],
+   "date": "2026-11-12T14:35:23+00:00"
   }
  }
 }
