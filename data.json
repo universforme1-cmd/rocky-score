@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T15:25:39+00:00",
+ "updated": "2026-11-12T15:27:54+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -1639,6 +1639,125 @@
     }
    ],
    "date": "2026-11-12T15:25:39+00:00"
+  },
+  "ORCL": {
+   "ticker": "ORCL",
+   "name": "Oracle Corporation",
+   "price": 125.45,
+   "currency": "USD",
+   "sector": "Technology",
+   "industry": "Software - Infrastructure",
+   "score": 4,
+   "verdict": "NON",
+   "fails": [
+    "Croissance BPA forward (parcours)",
+    "FCF TTM",
+    "Dette nette / EBITDA"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": false,
+     "val": "0y +7 % · +1y +36 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +7 % (plancher +10 %) ; parcours composé : +20.4 %/an (barre +20 %/an). Moyenne du parcours : +21.2 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward",
+     "ok": true,
+     "val": "+45.7 %",
+     "barre": ">= +20 %/an",
+     "margin": "+25.7 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+    },
+    {
+     "label": "P/E forward",
+     "ok": true,
+     "val": "11.34x",
+     "barre": "<= 20x",
+     "margin": "-43 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": false,
+     "val": "-28.72 Md$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": false,
+     "val": "3.84x",
+     "barre": "<= 2x",
+     "margin": "Dette nette 132.07 Md$ / EBITDA 34.43 Md$."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": true,
+     "val": "-49.9 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote passe (sommet 52 sem. : 250.25 USD). DCF indisponible — seule la décote compte."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "391.12 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "195.6x le plancher."
+    }
+   ],
+   "flags": [
+    "Bêta 1.78."
+   ],
+   "dcf": null,
+   "rdca": {
+    "anchor": 277.04595947265625,
+    "buy": [
+     110.81838378906251,
+     135.75252014160156
+    ],
+    "sm": [
+     94.19562622070313,
+     110.81838378906251
+    ],
+    "add_hi": 205.01401000976563,
+    "zone": "Buy Zone",
+    "mult": "2X DCA"
+   },
+   "qualite": [
+    {
+     "label": "ROE",
+     "val": 0.41192,
+     "seuil": 0.15,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIC",
+     "val": 0.12607393350974863,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIIC",
+     "val": 0.1090142732454245,
+     "seuil": 0.1,
+     "lo": -0.1,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROCE",
+     "val": 0.1442762591990825,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    }
+   ],
+   "date": "2026-11-12T15:27:54+00:00"
   }
  }
 }
