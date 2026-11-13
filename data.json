@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13T16:05:08+00:00",
+ "updated": "2026-11-13T17:23:16+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -3109,6 +3109,127 @@
     }
    ],
    "date": "2026-11-13T16:05:08+00:00"
+  },
+  "SNDK": {
+   "ticker": "SNDK",
+   "name": "Sandisk Corporation",
+   "price": 857.99,
+   "currency": "USD",
+   "sector": "Technology",
+   "industry": "Computer Hardware",
+   "score": 6,
+   "verdict": "PAS ENCORE",
+   "fails": [
+    "Croissance BPA forward (parcours)"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": false,
+     "val": "0y +2 % · +1y +27 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +2 % (plancher +10 %) ; parcours composé : +14.0 %/an (barre +20 %/an). Moyenne du parcours : +14.6 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward",
+     "ok": true,
+     "val": "+23.7 %",
+     "barre": ">= +20 %/an",
+     "margin": "+3.7 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+    },
+    {
+     "label": "P/E forward",
+     "ok": true,
+     "val": "2.97x",
+     "barre": "<= 20x",
+     "margin": "-85 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": true,
+     "val": "17.36 Md$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": true,
+     "val": "Cash net 5.01 Md$",
+     "barre": "<= 2x",
+     "margin": "Aucune dette nette."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": true,
+     "val": "-63.6 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote -63.6 % (barre 25 % — passe) · marge sous le DCF +70.0 % (prix 857.99 vs valeur 2,858.04 USD — barre 20 % — passe)."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "122.08 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "61.0x le plancher."
+    }
+   ],
+   "flags": [],
+   "dcf": {
+    "value": 2858.0433156366685,
+    "mos": 2.331091639339233,
+    "implied": -0.1428698741732946,
+    "implied_note": null,
+    "note": "Hypothèses : FCF 17.36 Md$ en base, croissance prudente (min. des mesures) 14.0 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+   },
+   "rdca": {
+    "anchor": 2273.72998046875,
+    "buy": [
+     909.4919921875,
+     1114.1276904296874
+    ],
+    "sm": [
+     773.0681933593751,
+     909.4919921875
+    ],
+    "add_hi": 1682.560185546875,
+    "zone": "Smart Money Zone ★ (zone gold)",
+    "mult": "3X DCA"
+   },
+   "qualite": [
+    {
+     "label": "ROE",
+     "val": 1.41174,
+     "seuil": 0.15,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIC",
+     "val": 1.0330194601381042,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIIC",
+     "val": null,
+     "seuil": 0.1,
+     "lo": -0.1,
+     "hi": 0.4,
+     "ok": null
+    },
+    {
+     "label": "ROCE",
+     "val": 1.1738857501569366,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    }
+   ],
+   "date": "2026-11-13T17:23:16+00:00"
   }
  }
 }
