@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13T14:23:18+00:00",
+ "updated": "2026-11-13T16:05:08+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -2986,6 +2986,129 @@
     }
    ],
    "date": "2026-11-13T14:23:18+00:00"
+  },
+  "ON": {
+   "ticker": "ON",
+   "name": "ON Semiconductor Corporation",
+   "price": 69.01,
+   "currency": "USD",
+   "sector": "Technology",
+   "industry": "Semiconductors",
+   "score": 6,
+   "verdict": "PAS ENCORE",
+   "fails": [
+    "Croissance revenus forward"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": true,
+     "val": "0y +40 % · +1y +44 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +40 % (plancher +10 %) ; parcours composé : +42.0 %/an (barre +20 %/an). Moyenne du parcours : +42.0 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward",
+     "ok": false,
+     "val": "+14.9 %",
+     "barre": ">= +20 %/an",
+     "margin": "-5.1 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+    },
+    {
+     "label": "P/E forward",
+     "ok": true,
+     "val": "14.57x",
+     "barre": "<= 20x",
+     "margin": "-27 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": true,
+     "val": "1.62 Md$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": true,
+     "val": "0.18x",
+     "barre": "<= 2x",
+     "margin": "Dette nette 340 M$ / EBITDA 1.94 Md$."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": true,
+     "val": "-48.9 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote -48.9 % (barre 25 % — passe) · marge sous le DCF +30.2 % (prix 69.01 vs valeur 98.92 USD — barre 20 % — passe)."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "26.86 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "13.4x le plancher."
+    }
+   ],
+   "flags": [
+    "Bêta 2.15."
+   ],
+   "dcf": {
+    "value": 98.9169702910751,
+    "mos": 0.43337154457433846,
+    "implied": 0.061728463430963276,
+    "implied_note": null,
+    "note": "Hypothèses : FCF 1.62 Md$ en base, croissance prudente (min. des mesures) 14.9 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+   },
+   "rdca": {
+    "anchor": 120.62000274658203,
+    "buy": [
+     48.24800109863281,
+     59.1038013458252
+    ],
+    "sm": [
+     41.01080093383789,
+     48.24800109863281
+    ],
+    "add_hi": 89.2588020324707,
+    "zone": "Add Zone",
+    "mult": "1X DCA"
+   },
+   "qualite": [
+    {
+     "label": "ROE",
+     "val": 0.089090005,
+     "seuil": 0.15,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": false
+    },
+    {
+     "label": "ROIC",
+     "val": 0.02230469491823457,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": false
+    },
+    {
+     "label": "ROIIC",
+     "val": -0.8817181697286116,
+     "seuil": 0.1,
+     "lo": -0.1,
+     "hi": 0.4,
+     "ok": false
+    },
+    {
+     "label": "ROCE",
+     "val": 0.02370318269737999,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": false
+    }
+   ],
+   "date": "2026-11-13T16:05:08+00:00"
   }
  }
 }
