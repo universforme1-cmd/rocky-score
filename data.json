@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13T12:55:25+00:00",
+ "updated": "2026-11-13T13:50:49+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -2632,6 +2632,124 @@
     }
    ],
    "date": "2026-11-13T12:55:25+00:00"
+  },
+  "NVTS": {
+   "ticker": "NVTS",
+   "name": "Navitas Semiconductor Corporation",
+   "price": 9.56,
+   "currency": "USD",
+   "sector": "Technology",
+   "industry": "Semiconductors",
+   "score": 5,
+   "verdict": "NON",
+   "fails": [
+    "Croissance BPA forward (parcours)",
+    "FCF TTM"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": false,
+     "val": "0y +16 % · +1y -38 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : -38 % (plancher +10 %) ; parcours composé : -14.8 %/an (barre +20 %/an). Moyenne du parcours : -10.6 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward",
+     "ok": true,
+     "val": "+67.9 %",
+     "barre": ">= +20 %/an",
+     "margin": "+47.9 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+    },
+    {
+     "label": "P/E forward",
+     "ok": true,
+     "val": "-41.57x",
+     "barre": "<= 20x",
+     "margin": "-308 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": false,
+     "val": "-76 M$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": true,
+     "val": "Cash net 525 M$",
+     "barre": "<= 2x",
+     "margin": "Aucune dette nette."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": true,
+     "val": "-72.0 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote passe (sommet 52 sem. : 34.17 USD). DCF indisponible — seule la décote compte."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "2.58 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "1.3x le plancher."
+    }
+   ],
+   "flags": [
+    "Bêta 4.13."
+   ],
+   "dcf": null,
+   "rdca": {
+    "anchor": 26.600000381469727,
+    "buy": [
+     10.640000152587891,
+     13.034000186920165
+    ],
+    "sm": [
+     9.044000129699707,
+     10.640000152587891
+    ],
+    "add_hi": 19.6840002822876,
+    "zone": "Smart Money Zone ★ (zone gold)",
+    "mult": "3X DCA"
+   },
+   "qualite": [
+    {
+     "label": "ROE",
+     "val": -0.57925,
+     "seuil": 0.15,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": false
+    },
+    {
+     "label": "ROIC",
+     "val": -0.420652112755303,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": false
+    },
+    {
+     "label": "ROIIC",
+     "val": null,
+     "seuil": 0.1,
+     "lo": -0.1,
+     "hi": 0.4,
+     "ok": null
+    },
+    {
+     "label": "ROCE",
+     "val": -0.420652112755303,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": false
+    }
+   ],
+   "date": "2026-11-13T13:50:49+00:00"
   }
  }
 }
