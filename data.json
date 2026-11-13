@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13T13:50:49+00:00",
+ "updated": "2026-11-13T14:20:07+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -2750,6 +2750,124 @@
     }
    ],
    "date": "2026-11-13T13:50:49+00:00"
+  },
+  "AXTI": {
+   "ticker": "AXTI",
+   "name": "AXT, Inc.",
+   "price": 43.54,
+   "currency": "USD",
+   "sector": "Technology",
+   "industry": "Semiconductor Equipment & Materials",
+   "score": 5,
+   "verdict": "NON",
+   "fails": [
+    "Croissance BPA forward (parcours)",
+    "FCF TTM"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": false,
+     "val": "0y +4 % · +1y +116 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +4 % (plancher +10 %) ; parcours composé : +49.9 %/an (barre +20 %/an). Moyenne du parcours : +60.1 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward",
+     "ok": true,
+     "val": "+115.9 %",
+     "barre": ">= +20 %/an",
+     "margin": "+95.9 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+    },
+    {
+     "label": "P/E forward",
+     "ok": true,
+     "val": "17.09x",
+     "barre": "<= 20x",
+     "margin": "-15 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": false,
+     "val": "-20 M$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": true,
+     "val": "Cash net 396 M$",
+     "barre": "<= 2x",
+     "margin": "Aucune dette nette."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": true,
+     "val": "-69.6 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote passe (sommet 52 sem. : 143.16 USD). DCF indisponible — seule la décote compte."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "2.86 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "1.4x le plancher."
+    }
+   ],
+   "flags": [
+    "Bêta 2.01."
+   ],
+   "dcf": null,
+   "rdca": {
+    "anchor": 103.16000366210938,
+    "buy": [
+     41.26400146484375,
+     50.548401794433595
+    ],
+    "sm": [
+     35.07440124511719,
+     41.26400146484375
+    ],
+    "add_hi": 76.33840270996093,
+    "zone": "Buy Zone",
+    "mult": "2X DCA"
+   },
+   "qualite": [
+    {
+     "label": "ROE",
+     "val": 0.061240003,
+     "seuil": 0.15,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": false
+    },
+    {
+     "label": "ROIC",
+     "val": -0.06931515837311789,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": false
+    },
+    {
+     "label": "ROIIC",
+     "val": null,
+     "seuil": 0.1,
+     "lo": -0.1,
+     "hi": 0.4,
+     "ok": null
+    },
+    {
+     "label": "ROCE",
+     "val": -0.09312798384135144,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": false
+    }
+   ],
+   "date": "2026-11-13T14:20:07+00:00"
   }
  }
 }
