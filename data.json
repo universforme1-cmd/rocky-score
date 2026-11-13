@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13T14:22:27+00:00",
+ "updated": "2026-11-13T14:23:18+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -2868,6 +2868,124 @@
     }
    ],
    "date": "2026-11-13T14:22:27+00:00"
+  },
+  "AAOI": {
+   "ticker": "AAOI",
+   "name": "Applied Optoelectronics, Inc.",
+   "price": 52.85,
+   "currency": "USD",
+   "sector": "Technology",
+   "industry": "Communication Equipment",
+   "score": 5,
+   "verdict": "NON",
+   "fails": [
+    "Croissance BPA forward (parcours)",
+    "FCF TTM"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": false,
+     "val": "0y +4 % · +1y +4 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +4 % (plancher +10 %) ; parcours composé : +4.0 %/an (barre +20 %/an). Moyenne du parcours : +4.0 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward",
+     "ok": true,
+     "val": "+135.1 %",
+     "barre": ">= +20 %/an",
+     "margin": "+115.1 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+    },
+    {
+     "label": "P/E forward",
+     "ok": true,
+     "val": "14.10x",
+     "barre": "<= 20x",
+     "margin": "-30 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": false,
+     "val": "-884 M$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": true,
+     "val": "Cash net 255 M$",
+     "barre": "<= 2x",
+     "margin": "Aucune dette nette."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": true,
+     "val": "-77.4 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote passe (sommet 52 sem. : 233.67 USD). DCF indisponible — seule la décote compte."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "4.80 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "2.4x le plancher."
+    }
+   ],
+   "flags": [
+    "Bêta 3.99."
+   ],
+   "dcf": null,
+   "rdca": {
+    "anchor": 164.36000061035156,
+    "buy": [
+     65.74400024414062,
+     80.53640029907227
+    ],
+    "sm": [
+     55.88240020751954,
+     65.74400024414062
+    ],
+    "add_hi": 121.62640045166016,
+    "zone": "Sous Smart Money",
+    "mult": "4X DCA"
+   },
+   "qualite": [
+    {
+     "label": "ROE",
+     "val": -0.02341,
+     "seuil": 0.15,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": false
+    },
+    {
+     "label": "ROIC",
+     "val": -0.04555374165442219,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": false
+    },
+    {
+     "label": "ROIIC",
+     "val": 0.05372809325099001,
+     "seuil": 0.1,
+     "lo": -0.1,
+     "hi": 0.4,
+     "ok": false
+    },
+    {
+     "label": "ROCE",
+     "val": -0.05568917072667749,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": false
+    }
+   ],
+   "date": "2026-11-13T14:23:18+00:00"
   }
  }
 }
