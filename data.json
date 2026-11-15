@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T02:37:34+00:00",
+ "updated": "2026-11-15T17:35:48+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -3230,6 +3230,130 @@
     }
    ],
    "date": "2026-11-13T17:23:16+00:00"
+  },
+  "HIMS": {
+   "ticker": "HIMS",
+   "name": "Hims & Hers Health, Inc.",
+   "price": 19.73,
+   "currency": "USD",
+   "sector": "Healthcare",
+   "industry": "Drug Manufacturers - Specialty & Generic",
+   "score": 5,
+   "verdict": "NON",
+   "fails": [
+    "Croissance BPA forward (parcours)",
+    "P/E forward"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": false,
+     "val": "0y -3 % · +1y +93 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : -3 % (plancher +10 %) ; parcours composé : +36.9 %/an (barre +20 %/an). Moyenne du parcours : +45.0 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward",
+     "ok": true,
+     "val": "+22.9 %",
+     "barre": ">= +20 %/an",
+     "margin": "+2.9 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+    },
+    {
+     "label": "P/E forward",
+     "ok": false,
+     "val": "48.84x",
+     "barre": "<= 20x",
+     "margin": "+144 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": true,
+     "val": "8 M$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": true,
+     "val": "-11.23x",
+     "barre": "<= 2x",
+     "margin": "Dette nette 849 M$ / EBITDA -76 M$."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": true,
+     "val": "-51.9 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote passe (sommet 52 sem. : 40.99 USD). DCF indisponible — seule la décote compte."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "4.62 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "2.3x le plancher."
+    }
+   ],
+   "flags": [
+    "Bêta 2.50."
+   ],
+   "dcf": {
+    "value": -2.5629874501434915,
+    "mos": -1.1299030638694116,
+    "implied": null,
+    "implied_note": "> +60 %",
+    "note": "Hypothèses : FCF 8 M$ en base, croissance prudente (min. des mesures) 22.9 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+   },
+   "rdca": {
+    "anchor": 66.18000030517578,
+    "buy": [
+     26.472000122070312,
+     32.42820014953613
+    ],
+    "sm": [
+     22.501200103759768,
+     26.472000122070312
+    ],
+    "add_hi": 48.97320022583008,
+    "zone": "Sous Smart Money",
+    "mult": "4X DCA"
+   },
+   "qualite": [
+    {
+     "label": "ROE",
+     "val": -0.40765998,
+     "seuil": 0.15,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": false
+    },
+    {
+     "label": "ROIC",
+     "val": 0.05485912916584665,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": false
+    },
+    {
+     "label": "ROIIC",
+     "val": 0.12667214643058045,
+     "seuil": 0.1,
+     "lo": -0.1,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROCE",
+     "val": 0.07370566863609654,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": false
+    }
+   ],
+   "date": "2026-11-15T17:35:48+00:00"
   }
  }
 }
