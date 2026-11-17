@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T14:17:30+00:00",
+ "updated": "2026-11-17T19:27:08+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -2014,7 +2014,7 @@
   "NXT": {
    "ticker": "NXT",
    "name": "Nextpower Inc.",
-   "price": 95.95,
+   "price": 81.13,
    "currency": "USD",
    "sector": "Technology",
    "industry": "Solar",
@@ -2027,23 +2027,23 @@
     {
      "label": "Croissance BPA forward (parcours)",
      "ok": false,
-     "val": "0y +nan % · +1y +20 %",
+     "val": "0y +nan % · +1y +21 %",
      "barre": "plancher +10 % · parcours >= +20 %/an",
      "margin": "Année la plus faible : +nan % (plancher +10 %) ; parcours composé : +nan %/an (barre +20 %/an). Moyenne du parcours : +nan % — à titre de référence seulement."
     },
     {
      "label": "Croissance revenus forward",
      "ok": true,
-     "val": "+20.5 %",
+     "val": "+20.8 %",
      "barre": ">= +20 %/an",
-     "margin": "+0.5 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+     "margin": "+0.8 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
     },
     {
      "label": "P/E forward",
      "ok": true,
-     "val": "16.68x",
+     "val": "14.14x",
      "barre": "<= 20x",
-     "margin": "-17 % vs la barre de 20x."
+     "margin": "-29 % vs la barre de 20x."
     },
     {
      "label": "FCF TTM",
@@ -2062,16 +2062,16 @@
     {
      "label": "Ancre prix (décote ou DCF)",
      "ok": true,
-     "val": "-41.2 %",
+     "val": "-50.3 %",
      "barre": ">= 25 % ou >= 20 % sous le DCF",
-     "margin": "Décote -41.2 % (barre 25 % — passe) · marge sous le DCF -89.9 % (prix 95.95 vs valeur 50.53 USD — barre 20 % — échoue)."
+     "margin": "Décote -50.3 % (barre 25 % — passe) · marge sous le DCF -60.6 % (prix 81.13 vs valeur 50.53 USD — barre 20 % — échoue)."
     },
     {
      "label": "Capitalisation",
      "ok": true,
-     "val": "14.63 Md$",
+     "val": "12.37 Md$",
      "barre": ">= 2 Md$",
-     "margin": "7.3x le plancher."
+     "margin": "6.2x le plancher."
     }
    ],
    "flags": [
@@ -2079,8 +2079,8 @@
    ],
    "dcf": {
     "value": 50.525903756731445,
-    "mos": -0.4734142391169208,
-    "implied": 0.17203520366737257,
+    "mos": -0.3772229291663818,
+    "implied": 0.12621677913513196,
     "implied_note": null,
     "note": "Hypothèses : FCF 512 M$ en base, croissance prudente (min. des mesures) 0.0 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
    },
@@ -2132,7 +2132,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-12T18:56:50+00:00"
+   "date": "2026-11-17T19:27:08+00:00"
   },
   "OTIS": {
    "ticker": "OTIS",
