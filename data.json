@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T04:42:49+00:00",
+ "updated": "2026-11-17T14:15:26+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -3354,6 +3354,127 @@
     }
    ],
    "date": "2026-11-15T17:35:48+00:00"
+  },
+  "SE": {
+   "ticker": "SE",
+   "name": "Sea Limited",
+   "price": 71.63,
+   "currency": "USD",
+   "sector": "Consumer Cyclical",
+   "industry": "Internet Retail",
+   "score": 7,
+   "verdict": "PASSE",
+   "fails": [],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": true,
+     "val": "0y +15 % · +1y +30 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +15 % (plancher +10 %) ; parcours composé : +22.6 %/an (barre +20 %/an). Moyenne du parcours : +22.8 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward",
+     "ok": true,
+     "val": "+22.1 %",
+     "barre": ">= +20 %/an",
+     "margin": "+2.1 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+    },
+    {
+     "label": "P/E forward",
+     "ok": true,
+     "val": "15.02x",
+     "barre": "<= 20x",
+     "margin": "-25 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": true,
+     "val": "5.02 Md$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": true,
+     "val": "Cash net 4.66 Md$",
+     "barre": "<= 2x",
+     "margin": "Aucune dette nette."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": true,
+     "val": "-51.7 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote -51.7 % (barre 25 % — passe) · marge sous le DCF +75.2 % (prix 71.63 vs valeur 288.98 USD — barre 20 % — passe)."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "43.87 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "21.9x le plancher."
+    }
+   ],
+   "flags": [
+    "Bêta 1.56."
+   ],
+   "dcf": {
+    "value": 288.98322129708924,
+    "mos": 3.0343881236505554,
+    "implied": -0.12999446020437105,
+    "implied_note": null,
+    "note": "Hypothèses : FCF 5.02 Md$ en base, croissance prudente (min. des mesures) 22.1 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+   },
+   "rdca": {
+    "anchor": 186.5399932861328,
+    "buy": [
+     74.61599731445312,
+     91.40459671020507
+    ],
+    "sm": [
+     63.42359771728516,
+     74.61599731445312
+    ],
+    "add_hi": 138.0395950317383,
+    "zone": "Smart Money Zone ★ (zone gold)",
+    "mult": "3X DCA"
+   },
+   "qualite": [
+    {
+     "label": "ROE",
+     "val": 0.15234,
+     "seuil": 0.15,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIC",
+     "val": 0.14091669427075396,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIIC",
+     "val": 0.3787813068191667,
+     "seuil": 0.1,
+     "lo": -0.1,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROCE",
+     "val": 0.19708628569336217,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    }
+   ],
+   "date": "2026-11-17T14:15:26+00:00"
   }
  }
 }
