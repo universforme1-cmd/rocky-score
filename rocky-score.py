@@ -28,9 +28,26 @@ Qualité du capital (hors note) : ROE, ROIC, ROIIC (incrémental 3 ans), ROCE
 Données : Yahoo Finance (gratuit, sans clé). Les chiffres peuvent différer
 légèrement d'une source à l'autre (Nasdaq, stockanalysis) — la fiche indique
 la source de chaque valeur.
+
+Correctifs du 18 nov. 2026 :
+  - Parcours BPA : une année dont la base (BPA de l'année précédente) est
+    négative ou nulle est « n/d » — exclue du plancher et du parcours, et
+    signalée sur la fiche (le taux de Yahoo est alors non significatif).
+  - DCF : si la marge FCF TTM est < 2 % des revenus, la valeur DCF est un
+    artefact mécanique — affichée « non significatif », seule la décote
+    compte pour le check 6.
+  - Zones R-DCA : l'ancre est le vrai sommet (max de la plus haute clôture
+    mensuelle 24 mois et du sommet 52 sem.) et la position du prix est
+    revérifiée contre les bornes avant d'afficher un libellé de zone.
+  - Drapeaux « qualité du reporting » (hors note, via SEC EDGAR) : dépôt
+    périodique (10-Q/10-K) en retard après un print, prospectus/émission
+    récent (titres annoncés possiblement non livrés — invisibles au drapeau
+    de dilution rétrospectif), dérive du DSO (créances clients).
 """
 
+import json
 import sys
+import urllib.request
 from datetime import datetime, timezone
 
 import yfinance as yf
@@ -45,6 +62,7 @@ PLANCHER_CAP = 2e9
 TAUX_ACTU = 0.10      # taux d'actualisation DCF
 CROISS_TERMINALE = 0.03
 ANNEES_DCF = 5
+SEUIL_MARGE_FCF_DCF = 0.02  # sous 2 % de marge FCF, le DCF est « non significatif » (18 nov. 2026)
 
 
 def pct(x):
@@ -114,6 +132,7 @@ def fetch(ticker):
     d["ebitda"] = info.get("ebitda")
     d["debt"] = info.get("totalDebt")
     d["cash"] = info.get("totalCash")
+    d["revenue"] = info.get("totalRevenue")
 
     # FCF TTM : OCF - capex sur les 4 derniers trimestres (noms tolérants).
     # La ligne "Free Cash Flow" de Yahoo est souvent trouée (NaN) : on ne
@@ -159,16 +178,45 @@ def fetch(ticker):
         except Exception:  # noqa: BLE001
             pass
 
-    # Parcours annuel BPA (estimations) — examen annuel, pas moyenne 3 ans
+    # Parcours annuel BPA (estimations) — examen annuel, pas moyenne 3 ans.
+    # Correctif du 18 nov. 2026 : si la base d'une année (BPA de l'année
+    # précédente) est négative ou nulle, son taux de croissance est non
+    # significatif (« n/d ») — l'année est exclue du parcours et signalée
+    # dans d["eps_nd"]. Base de « 0y » : BPA réalisé (trailingEps) ; base
+    # de « +1y » : niveau estimé de « 0y » (colonne avg).
     d["eps_path"] = []
+    d["eps_nd"] = []
     try:
         est = tk.earnings_estimate
         if est is not None and not est.empty and "growth" in est.columns:
-            for idx, row in est.iterrows():
-                if str(idx).endswith("y"):
-                    g = pct(row.get("growth"))
-                    if g is not None:
-                        d["eps_path"].append((str(idx), g))
+            rows = [(str(idx), row) for idx, row in est.iterrows()
+                    if str(idx).endswith("y")]
+
+            def _horizon(lbl):
+                try:
+                    return int(lbl.replace("y", "").replace("+", ""))
+                except ValueError:
+                    return 99
+
+            rows.sort(key=lambda t: _horizon(t[0]))
+            levels = {}
+            for lbl, row in rows:
+                try:
+                    avg = row.get("avg")
+                    levels[lbl] = float(avg) if avg else None
+                except (TypeError, ValueError):
+                    levels[lbl] = None
+            prev_level = info.get("trailingEps")
+            for lbl, row in rows:
+                g = pct(row.get("growth"))
+                if g is None:
+                    continue
+                if prev_level is not None and prev_level <= 0:
+                    d["eps_nd"].append(lbl)
+                else:
+                    d["eps_path"].append((lbl, g))
+                if levels.get(lbl) is not None:
+                    prev_level = levels[lbl]
     except Exception:  # noqa: BLE001
         pass
 
@@ -211,12 +259,19 @@ def fetch(ticker):
         except Exception:  # noqa: BLE001
             pass
     d["earn_days"] = None
+    d["last_earn_date"] = None
     try:
-        cal = tk.get_earnings_dates(limit=2)
+        cal = tk.get_earnings_dates(limit=12)
         if cal is not None and not cal.empty:
-            nxt = cal.index[0]
-            d["earn_days"] = (nxt.date() - datetime.now(timezone.utc).date()).days
-            d["earn_date"] = str(nxt.date())
+            today = datetime.now(timezone.utc).date()
+            dates = sorted({ts.date() for ts in cal.index})
+            future = [dt for dt in dates if dt >= today]
+            past = [dt for dt in dates if dt < today]
+            if future:
+                d["earn_days"] = (future[0] - today).days
+                d["earn_date"] = str(future[0])
+            if past:
+                d["last_earn_date"] = past[-1]
     except Exception:  # noqa: BLE001
         pass
 
@@ -237,11 +292,36 @@ def fetch(ticker):
     except Exception:  # noqa: BLE001
         pass
 
+    # Dividende et historique de FCF annuel — pour le mode compounders
+    # (brouillon du 18 nov. 2026) : rendement du dividende et croissance
+    # du FCF sur les exercices disponibles.
+    dy = info.get("dividendYield")
+    if dy is not None and dy > 0.25:  # Yahoo le donne parfois en %
+        dy = dy / 100.0
+    d["div_yield"] = dy
+    d["fcf_hist"] = []
+    try:
+        cfa = tk.cashflow
+        if cfa is not None and not cfa.empty:
+            ocf = _row(cfa, ("Total Cash From Operating Activities",
+                             "Cash Flow From Operations",
+                             "Operating Cash Flow",
+                             "Net Cash Provided By Operating Activities"))
+            cap = _row(cfa, ("Capital Expenditures", "Capital Expenditure"))
+            if ocf is not None and cap is not None:
+                for o, c in zip(ocf.iloc[:5], cap.iloc[:5]):
+                    if o == o and c == c:  # pas NaN
+                        d["fcf_hist"].append(float(o) + float(c))
+    except Exception:  # noqa: BLE001
+        pass
+
     # Qualité du capital (ROE / ROIC / ROIIC / ROCE) — AFFICHAGE SEULEMENT,
     # hors note (demande de Marc, 12 nov. 2026). Calculs tolérants : « n/d »
     # (None) dès qu'une donnée manque ou qu'un dénominateur est inutilisable.
     d["roe"] = info.get("returnOnEquity")
     d["roic"] = d["roiic"] = d["roce"] = None
+    d["roic_avg"] = None
+    d["roic_years"] = 0
     try:
         fin, bs = tk.financials, tk.balance_sheet
 
@@ -288,6 +368,10 @@ def fetch(ticker):
                 if ic[last] > 0:
                     d["roic"] = nopat[last] / ic[last]
                     d["roce"] = ebit[last] / ic[last]
+                roics = [nopat[dt] / ic[dt] for dt in dates if ic[dt] > 0]
+                if roics:
+                    d["roic_avg"] = sum(roics) / len(roics)
+                    d["roic_years"] = len(roics)
                 if len(dates) >= 4:
                     old = dates[3]
                     dic = ic[last] - ic[old]
@@ -296,12 +380,16 @@ def fetch(ticker):
     except Exception:  # noqa: BLE001
         pass
 
-    # R-DCA : ancre = plus haute clôture mensuelle (24 mois)
+    # R-DCA : ancre = vrai sommet — max de la plus haute clôture mensuelle
+    # (24 mois) et du sommet 52 sem. (correctif du 18 nov. 2026 : une ancre
+    # sous le sommet récent faussait les bornes des zones).
     d["rdca"] = None
     try:
         hist = tk.history(period="2y", interval="1mo")["Close"]
         if hist is not None and len(hist) > 0:
             anchor = float(hist.max())
+            if d.get("high52"):
+                anchor = max(anchor, float(d["high52"]))
             d["rdca"] = {
                 "anchor": anchor,
                 "buy": (0.40 * anchor, 0.49 * anchor),
@@ -362,7 +450,16 @@ def analyse(ticker):
     if d["debt"] is not None and d["cash"] is not None:
         net_debt = d["debt"] - d["cash"]
     shares = d["shares"] or (d["cap"] / price if d["cap"] and price else None)
-    if d["fcf"] and d["fcf"] > 0 and price and shares:
+    # Correctif du 18 nov. 2026 : base FCF minuscule -> DCF non significatif.
+    if d["fcf"] and d["fcf"] > 0 and d.get("revenue"):
+        marge_fcf = d["fcf"] / d["revenue"]
+        if marge_fcf < SEUIL_MARGE_FCF_DCF:
+            dcf["insignificant"] = True
+            dcf["note"] = (f"DCF non significatif : marge FCF TTM {marge_fcf * 100:.1f} % des revenus "
+                           f"(sous le seuil de {SEUIL_MARGE_FCF_DCF * 100:.0f} %) — sur une base aussi mince, "
+                           f"la valeur DCF et le DCF inverse sont des artefacts mécaniques. "
+                           f"Seule la décote compte pour l'ancre prix.")
+    if d["fcf"] and d["fcf"] > 0 and price and shares and not dcf.get("insignificant"):
         # Hypothèse PRUDENTE (correction du 12 nov. 2026) : le minimum des
         # mesures de croissance disponibles — jamais la moyenne du parcours,
         # que le check 1 interdit (elle flatte un bond déjà réalisé).
@@ -390,15 +487,25 @@ def analyse(ticker):
     # 1. BPA forward — parcours (amendement 11 nov. 2026) : plancher +10 %
     # sur chaque année ET parcours composé >= +20 %/an.
     path = d["eps_path"]
+    nd_years = d.get("eps_nd") or []
     if path:
         worst = min(g for _, g in path)
         cagr = cagr_parcours(path)
         ok = worst >= PLANCHER_BPA and cagr >= BARRE_PARCOURS
         val = " · ".join(f"{k} {g * 100:+.0f} %" for k, g in path)
+        if nd_years:
+            val += " · " + " · ".join(f"{k} n/d" for k in nd_years)
         margin = (f"Année la plus faible : {worst * 100:+.0f} % (plancher +10 %) ; "
                   f"parcours composé : {cagr * 100:+.1f} %/an (barre +20 %/an). ")
         avg3 = sum(g for _, g in path) / len(path)
         margin += f"Moyenne du parcours : {avg3 * 100:+.1f} % — à titre de référence seulement."
+        if nd_years:
+            margin += (f" Année(s) {', '.join(nd_years)} exclue(s) : n/d — base BPA <= 0, "
+                       f"croissance non significative (correctif du 18 nov. 2026).")
+    elif nd_years:
+        ok, val = False, "n/d"
+        margin = ("Toutes les années forward sont non significatives (base BPA <= 0) — "
+                  "parcours n/d (correctif du 18 nov. 2026).")
     else:
         ok, val, margin = False, "n/d", "Estimations annuelles indisponibles (Yahoo)."
     checks.append(("Croissance BPA forward (parcours)", ok, val, "plancher +10 % · parcours >= +20 %/an", margin))
@@ -459,7 +566,12 @@ def analyse(ticker):
         val = f"{dd * 100:+.1f} %"
         is_fin = (d.get("sector") or "") == "Financial Services"
         v = dcf["value"]
-        if is_fin:
+        if dcf.get("insignificant"):
+            ok = ok_dd
+            margin = (f"Décote {'passe' if ok_dd else 'échoue'} (sommet 52 sem. : "
+                      f"{d['high52']:,.2f} {d['currency']}). DCF non significatif — "
+                      f"base FCF trop faible : seule la décote compte.")
+        elif is_fin:
             ok = ok_dd
             margin = (f"Décote {'passe' if ok_dd else 'échoue'} (sommet 52 sem. : "
                       f"{d['high52']:,.2f} {d['currency']}). Branche DCF non appliquée — "
@@ -501,6 +613,8 @@ def analyse(ticker):
         flags.append(f"Dilution : actions {d['dilution'] * 100:+.1f} %/an (> 5 %).")
     elif d["dilution"] is not None:
         flags.append(f"Actions {d['dilution'] * 100:+.1f} %/an (dilution sous contrôle).")
+    for rf in reporting_flags(d):
+        flags.append(rf)
     if d["beta"] is not None:
         flags.append(f"Bêta {d['beta']:.2f}.")
 
@@ -542,6 +656,202 @@ def zone_rdca(d):
             "strong_trim": a, "zone": zone, "mult": mult}
 
 
+# ---------------------------------------------------------------------------
+# Qualité du reporting (SEC EDGAR) — drapeaux d'information, hors note.
+# Correctif du 18 nov. 2026. Best-effort : un échec réseau ou une donnée
+# absente ne produit simplement aucun drapeau.
+# ---------------------------------------------------------------------------
+_CIK_CACHE = None
+
+
+def _edgar_json(url):
+    # La SEC exige un User-Agent déclaratif (nom + contact), ASCII pur —
+    # un UA générique ou accentué est rejeté (403) ou fait échouer l'en-tête.
+    req = urllib.request.Request(
+        url, headers={"User-Agent": "Rocky Score personal research admin@example.com"})
+    with urllib.request.urlopen(req, timeout=10) as resp:
+        return json.loads(resp.read().decode("utf-8"))
+
+
+def _cik_for(ticker):
+    global _CIK_CACHE
+    if _CIK_CACHE is None:
+        try:
+            data = _edgar_json("https://www.sec.gov/files/company_tickers.json")
+            _CIK_CACHE = {v["ticker"].upper(): int(v["cik_str"])
+                          for v in data.values()}
+        except Exception:  # noqa: BLE001
+            _CIK_CACHE = {}
+    return _CIK_CACHE.get(ticker.upper())
+
+
+def reporting_flags(d):
+    """Drapeaux : dépôt périodique en retard, émission récente, DSO."""
+    out = []
+    # EDGAR ne couvre que les émetteurs US : aucun drapeau EDGAR pour un
+    # ticker suffixé (.TO, .DE, ...) — un CIK homonyme serait un faux positif.
+    if "." not in d["ticker"]:
+        try:
+            cik = _cik_for(d["ticker"])
+            if cik:
+                sub = _edgar_json(
+                    f"https://data.sec.gov/submissions/CIK{cik:010d}.json")
+                recent = sub.get("filings", {}).get("recent", {})
+                filings = list(zip(recent.get("form", []),
+                                   recent.get("filingDate", [])))
+                today = datetime.now(timezone.utc).date()
+
+                def _parse(s):
+                    try:
+                        return datetime.strptime(s, "%Y-%m-%d").date()
+                    except (TypeError, ValueError):
+                        return None
+
+                # (a) Résultats publiés depuis > 21 jours sans 10-Q/10-K
+                # déposé à compter de la date du print -> dépôt en retard.
+                last_earn = d.get("last_earn_date")
+                if last_earn and (today - last_earn).days > 21:
+                    filed = any(
+                        f in ("10-Q", "10-K")
+                        and (_parse(dt) is not None and _parse(dt) >= last_earn)
+                        for f, dt in filings)
+                    if not filed:
+                        out.append(
+                            f"Qualité du reporting : résultats publiés le "
+                            f"{last_earn} sans 10-Q/10-K déposé depuis "
+                            f"({(today - last_earn).days} jours) — dépôt "
+                            f"périodique en retard.")
+                # (b) Prospectus récent (< 120 jours) : des titres annoncés
+                # peuvent ne pas être encore livrés (forward sale, ATM) —
+                # invisibles au drapeau de dilution, qui est rétrospectif.
+                for f, dt in filings:
+                    fd = _parse(dt)
+                    if (f in ("424B5", "424B3", "424B2", "FWP") and fd
+                            and (today - fd).days <= 120):
+                        out.append(
+                            f"Qualité du reporting : prospectus {f} déposé "
+                            f"le {fd} — émission récente ; vérifier les titres "
+                            f"annoncés non encore livrés (forward sale, ATM).")
+                        break
+        except Exception:  # noqa: BLE001
+            pass
+    # (c) Dérive du DSO : créances / revenus du trimestre x 91 jours,
+    # comparé au même trimestre un an plus tôt (Yahoo, trimestriel).
+    try:
+        tk = yf.Ticker(d["ticker"])
+        bs = tk.quarterly_balance_sheet
+        fin = tk.quarterly_financials
+        if bs is not None and not bs.empty and fin is not None and not fin.empty:
+            def _qrow(df, names):
+                for n in names:
+                    if n in df.index:
+                        return df.loc[n]
+                return None
+
+            ar = _qrow(bs, ("Accounts Receivable", "Receivables",
+                            "Net Receivables"))
+            rev = _qrow(fin, ("Total Revenue", "Operating Revenue"))
+            if (ar is not None and rev is not None
+                    and len(ar) >= 5 and len(rev) >= 5):
+                def _dso(i):
+                    a, r = ar.iloc[i], rev.iloc[i]
+                    if a and r and float(r) > 0:
+                        return float(a) / float(r) * 91.0
+                    return None
+
+                now_dso, old_dso = _dso(0), _dso(4)
+                if now_dso and old_dso and now_dso - old_dso > 10:
+                    out.append(
+                        f"Qualité du reporting : DSO ~{now_dso:.0f} jours, "
+                        f"en hausse de {now_dso - old_dso:.0f} jours vs le "
+                        f"même trimestre l'an passé ({old_dso:.0f} jours) — "
+                        f"créances à surveiller.")
+    except Exception:  # noqa: BLE001
+        pass
+    return out
+
+
+def analyse_compounders(d, checks):
+    """Mode compounders — BROUILLON (amendement du 18 nov. 2026, NON ADOPTÉ
+    par Marc). Verdict d'information seulement : tant que l'amendement n'est
+    pas adopté, aucun achat ne peut passer par cette porte.
+    Checks : (1) rendement espéré >= 12 %/an (formule du 12 nov. 2026 :
+    croissance BPA composée plafonnée à 25 % + dividende + rachats nets
+    - contraction du multiple vers 15x en 5 ans) ET croissance composée
+    >= +7 %/an ; (2) ROIC moyen >= 15 % ; (3) intouchables (FCF > 0,
+    levier <= 2x, cap >= 2 Md$) ; (4) retour de capital >= 2 %/an sans
+    dilution OU réinvestissement (croissance FCF >= +10 %/an à ROIC
+    >= 15 %) ; (5) ancre prix = check 6 du filtre principal."""
+    rows = []
+    path = d.get("eps_path") or []
+    cagr = cagr_parcours(path) if path else None
+    g = min(cagr, 0.25) if cagr is not None else None
+    dy_raw = d.get("div_yield") or 0.0
+    dy = min(dy_raw, 0.08)  # au-delà de 8 %, artefact de données quasi certain
+    dy_note = f" (plafonné à 8 % — donnée Yahoo brute {dy_raw * 100:.1f} %)" if dy_raw > 0.08 else ""
+    dil = d.get("dilution")
+    rachats = max(0.0, -dil) if dil is not None else 0.0
+    pe = d.get("pe_fwd")
+    contraction = 0.0
+    if pe and pe > 15:
+        contraction = 1 - (15.0 / pe) ** (1 / 5)
+    if g is not None:
+        rend = g + dy + rachats - contraction
+        ok1 = rend >= 0.12 and cagr >= 0.07
+        det1 = (f"Croissance {g * 100:+.1f} % (plafonnée à 25 %) + dividende "
+                f"{dy * 100:.1f} %{dy_note} + rachats nets {rachats * 100:.1f} % "
+                f"- contraction {contraction * 100:.1f} % = {rend * 100:+.1f} %/an "
+                f"(barre 12 % ; croissance brute {cagr * 100:+.1f} %/an, plancher +7 %).")
+    else:
+        ok1 = False
+        det1 = "Parcours BPA indisponible — rendement espéré n/d."
+    rows.append(("Rendement espéré >= 12 %/an", ok1, det1))
+
+    roic = d.get("roic_avg")
+    roic_lbl = f"moyenne sur {d.get('roic_years', 0)} exercice(s)"
+    if roic is None:
+        roic = d.get("roic")
+        roic_lbl = "dernier exercice"
+    ok2 = roic is not None and roic >= 0.15
+    det2 = (f"ROIC {roic * 100:.1f} % ({roic_lbl}) — barre 15 %."
+            if roic is not None else "ROIC n/d.")
+    rows.append(("ROIC soutenu >= 15 %", ok2, det2))
+
+    debt, cash, ebitda = d.get("debt"), d.get("cash"), d.get("ebitda")
+    lev_ok = False
+    if debt is not None and cash is not None:
+        nd = debt - cash
+        lev_ok = nd <= 0 or (bool(ebitda) and nd / ebitda <= 2)
+    ok3 = (bool(d.get("fcf")) and d["fcf"] > 0 and lev_ok
+           and bool(d.get("cap")) and d["cap"] >= PLANCHER_CAP)
+    det3 = ("FCF > 0, levier <= 2x, cap >= 2 Md$ : respectés." if ok3
+            else "FCF > 0, levier <= 2x, cap >= 2 Md$ : au moins un intouchable échoue.")
+    rows.append(("Intouchables (FCF, levier, cap)", ok3, det3))
+
+    retour = dy + rachats
+    branche_retour = retour >= 0.02 and (dil is None or dil <= 0)
+    hist = d.get("fcf_hist") or []
+    fcf_g = None
+    if len(hist) >= 3 and hist[-1] > 0 and hist[0] > 0:
+        fcf_g = (hist[0] / hist[-1]) ** (1 / (len(hist) - 1)) - 1
+    branche_reinv = (fcf_g is not None and fcf_g >= 0.10
+                     and roic is not None and roic >= 0.15)
+    ok4 = branche_retour or branche_reinv
+    det4 = (f"Retour {retour * 100:.1f} %/an (dividende + rachats nets)"
+            + (" — branche retour OK" if branche_retour else "")
+            + (f" ; croissance FCF {fcf_g * 100:+.1f} %/an" if fcf_g is not None
+               else " ; croissance FCF n/d")
+            + (" — branche réinvestissement OK." if branche_reinv else "."))
+    rows.append(("Discipline du capital", ok4, det4))
+
+    ok5 = checks[5][1] if len(checks) > 5 else False
+    rows.append(("Ancre prix (comme le filtre principal)", ok5,
+                 "Reprend le check 6 principal : décote >= 25 % ou >= 20 % sous le DCF."))
+    score = sum(1 for _, ok, _ in rows if ok)
+    verdict = "PASSE" if score == 5 else ("PAS ENCORE" if score >= 4 else "NON")
+    return rows, verdict
+
+
 def print_fiche(ticker):
     d, checks, score, verdict, fails, flags, dcf = analyse(ticker)
     cur = d.get("currency", "")
@@ -573,6 +883,8 @@ def print_fiche(ticker):
               f"{imp * 100:+.1f} %/an" if imp is not None else
               f"  DCF inverse : croissance impliquée {dcf.get('implied_note', 'n/d')}")
         print(f"  {dcf['note']}")
+    elif dcf.get("insignificant"):
+        print(f"  {dcf['note']}")
     else:
         print("  n/d — FCF ou données insuffisantes pour un DCF.")
     # Qualité du capital — jauges d'information, hors note /7
@@ -587,10 +899,19 @@ def print_fiche(ticker):
             etat = "au-dessus du seuil" if val >= seuil else "EN DESSOUS du seuil"
             print(f"  {label:<6}: {gauge_txt(val, lo, 0.40)} {val * 100:+.1f} %  "
                   f"(seuil {seuil * 100:.0f} %) — {etat}")
+    # Mode compounders — brouillon, amendement NON ADOPTÉ (information)
+    crows, cverdict = analyse_compounders(d, checks)
+    print("-" * 64)
+    print(f"Mode compounders : {cverdict} "
+          f"(BROUILLON — amendement du 18 nov. 2026 non adopté : "
+          f"verdict d'information, aucun achat par cette porte)")
+    for label, ok, det in crows:
+        mark = "✓" if ok else "✗"
+        print(f"  [{mark}] {label}\n        {det}")
     # R-DCA
     z = zone_rdca(d)
     print("-" * 64)
-    print("Zones R-DCA (ancre = plus haute clôture mensuelle, 24 mois) :")
+    print("Zones R-DCA (ancre = vrai sommet : max clôture mensuelle 24 mois / sommet 52 sem.) :")
     if z:
         print(f"  Ancre / Strong Trim : {z['anchor']:,.2f} {cur}")
         print(f"  Buy Zone : {z['buy'][0]:,.2f} – {z['buy'][1]:,.2f} {cur}")
@@ -655,12 +976,21 @@ def fiche_dict(ticker):
         "qualite": [],
         "date": _now(),
     }
+    # Mode compounders — BROUILLON non adopté, information seulement
+    try:
+        crows, cverdict = analyse_compounders(d, checks)
+        out["compounders"] = {"verdict": cverdict,
+                              "rows": [{"label": l, "ok": bool(ok), "det": str(det)} for l, ok, det in crows]}
+    except Exception:  # noqa: BLE001
+        out["compounders"] = None
     # Qualité du capital — information hors note, mêmes seuils que print_fiche
     for label, lo in (("ROE", 0.0), ("ROIC", 0.0), ("ROIIC", -0.10), ("ROCE", 0.0)):
         val = _num(d.get(label.lower()))
         seuil = SEUILS_QUALITE[label]
         out["qualite"].append({"label": label, "val": val, "seuil": seuil, "lo": lo, "hi": 0.40,
                                "ok": (val >= seuil) if val is not None else None})
+    if dcf.get("insignificant"):
+        out["dcf_nd"] = dcf.get("note") or "DCF non significatif."
     if v is not None:
         out["dcf"] = {
             "value": v,
