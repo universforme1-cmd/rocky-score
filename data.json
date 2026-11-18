@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T03:47:13+00:00",
+ "updated": "2026-11-18T14:55:06+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -1519,7 +1519,7 @@
   "CAT": {
    "ticker": "CAT",
    "name": "Caterpillar Inc.",
-   "price": 596.5,
+   "price": 558.98,
    "currency": "USD",
    "sector": "Industrials",
    "industry": "Farm & Heavy Construction Machinery",
@@ -1535,21 +1535,21 @@
      "ok": true,
      "val": "0y +42 % · +1y +19 %",
      "barre": "plancher +10 % · parcours >= +20 %/an",
-     "margin": "Année la plus faible : +19 % (plancher +10 %) ; parcours composé : +30.1 %/an (barre +20 %/an). Moyenne du parcours : +30.6 % — à titre de référence seulement."
+     "margin": "Année la plus faible : +19 % (plancher +10 %) ; parcours composé : +29.9 %/an (barre +20 %/an). Moyenne du parcours : +30.4 % — à titre de référence seulement."
     },
     {
      "label": "Croissance revenus forward",
      "ok": false,
-     "val": "+11.5 %",
+     "val": "+11.6 %",
      "barre": ">= +20 %/an",
-     "margin": "-8.5 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+     "margin": "-8.4 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
     },
     {
      "label": "P/E forward",
      "ok": true,
-     "val": "18.50x",
+     "val": "17.37x",
      "barre": "<= 20x",
-     "margin": "-8 % vs la barre de 20x."
+     "margin": "-13 % vs la barre de 20x."
     },
     {
      "label": "FCF TTM",
@@ -1568,27 +1568,27 @@
     {
      "label": "Ancre prix (décote ou DCF)",
      "ok": true,
-     "val": "-44.4 %",
+     "val": "-47.9 %",
      "barre": ">= 25 % ou >= 20 % sous le DCF",
-     "margin": "Décote -44.4 % (barre 25 % — passe) · marge sous le DCF -67.0 % (prix 596.50 vs valeur 357.13 USD — barre 20 % — échoue)."
+     "margin": "Décote -47.9 % (barre 25 % — passe) · marge sous le DCF -56.1 % (prix 558.98 vs valeur 358.17 USD — barre 20 % — échoue)."
     },
     {
      "label": "Capitalisation",
      "ok": true,
-     "val": "272.95 Md$",
+     "val": "255.79 Md$",
      "barre": ">= 2 Md$",
-     "margin": "136.5x le plancher."
+     "margin": "127.9x le plancher."
     }
    ],
    "flags": [
     "Bêta 1.64."
    ],
    "dcf": {
-    "value": 357.1259822483504,
-    "mos": -0.4012975989130756,
-    "implied": 0.22630482653842543,
+    "value": 358.1681570764816,
+    "mos": -0.3592469192520634,
+    "implied": 0.21128573736135847,
     "implied_note": null,
-    "note": "Hypothèses : FCF 9.62 Md$ en base, croissance prudente (min. des mesures) 11.5 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+    "note": "Hypothèses : FCF 9.62 Md$ en base, croissance prudente (min. des mesures) 11.6 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
    },
    "rdca": {
     "anchor": 1060.40625,
@@ -1638,7 +1638,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-12T15:25:39+00:00"
+   "date": "2026-11-18T14:55:06+00:00"
   },
   "ORCL": {
    "ticker": "ORCL",
