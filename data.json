@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T15:30:29+00:00",
+ "updated": "2026-11-18T15:56:29+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -1457,7 +1457,7 @@
   "NVDA": {
    "ticker": "NVDA",
    "name": "NVIDIA Corporation",
-   "price": 158.71,
+   "price": 152.9633,
    "currency": "USD",
    "sector": "Technology",
    "industry": "Semiconductors",
@@ -1468,23 +1468,23 @@
     {
      "label": "Croissance BPA forward (parcours)",
      "ok": true,
-     "val": "0y +95 % · +1y +71 %",
+     "val": "0y +102 % · +1y +71 %",
      "barre": "plancher +10 % · parcours >= +20 %/an",
-     "margin": "Année la plus faible : +71 % (plancher +10 %) ; parcours composé : +82.7 %/an (barre +20 %/an). Moyenne du parcours : +83.1 % — à titre de référence seulement."
+     "margin": "Année la plus faible : +71 % (plancher +10 %) ; parcours composé : +86.2 %/an (barre +20 %/an). Moyenne du parcours : +86.9 % — à titre de référence seulement."
     },
     {
      "label": "Croissance revenus forward",
      "ok": true,
-     "val": "+68.0 %",
+     "val": "+70.0 %",
      "barre": ">= +20 %/an",
-     "margin": "+48.0 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+     "margin": "+50.0 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
     },
     {
      "label": "P/E forward",
      "ok": true,
-     "val": "9.96x",
+     "val": "9.27x",
      "barre": "<= 20x",
-     "margin": "-50 % vs la barre de 20x."
+     "margin": "-54 % vs la barre de 20x."
     },
     {
      "label": "FCF TTM",
@@ -1503,40 +1503,39 @@
     {
      "label": "Ancre prix (décote ou DCF)",
      "ok": true,
-     "val": "-34.8 %",
+     "val": "-37.1 %",
      "barre": ">= 25 % ou >= 20 % sous le DCF",
-     "margin": "Décote -34.8 % (barre 25 % — passe) · marge sous le DCF +15.1 % (prix 158.71 vs valeur 186.85 USD — barre 20 % — échoue)."
+     "margin": "Décote -37.1 % (barre 25 % — passe) · marge sous le DCF +18.1 % (prix 152.96 vs valeur 186.85 USD — barre 20 % — échoue)."
     },
     {
      "label": "Capitalisation",
      "ok": true,
-     "val": "3 828.87 Md$",
+     "val": "3 693.60 Md$",
      "barre": ">= 2 Md$",
-     "margin": "1914.4x le plancher."
+     "margin": "1846.8x le plancher."
     }
    ],
    "flags": [
-    "Print dans 5 jours (2026-11-17) — binaire, pas d'achat avant.",
     "Bêta 2.25."
    ],
    "dcf": {
     "value": 186.85363085261523,
-    "mos": 0.17732739495063465,
-    "implied": 0.20630917442656893,
+    "mos": 0.22155857550546587,
+    "implied": 0.1966012078696856,
     "implied_note": null,
     "note": "Hypothèses : FCF 127.01 Md$ en base, croissance prudente (min. des mesures) 25.0 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
    },
    "rdca": {
-    "anchor": 228.3800048828125,
+    "anchor": 243.37,
     "buy": [
-     91.35200195312501,
-     111.90620239257812
+     97.34800000000001,
+     119.2513
     ],
     "sm": [
-     77.64920166015625,
-     91.35200195312501
+     82.7458,
+     97.34800000000001
     ],
-    "add_hi": 169.00120361328123,
+    "add_hi": 180.0938,
     "zone": "Add Zone",
     "mult": "1X DCA"
    },
@@ -1574,7 +1573,37 @@
      "ok": true
     }
    ],
-   "date": "2026-11-12T14:38:24+00:00"
+   "date": "2026-11-18T15:56:29+00:00",
+   "compounders": {
+    "verdict": "PASSE",
+    "rows": [
+     {
+      "label": "Rendement espéré >= 12 %/an",
+      "ok": true,
+      "det": "Croissance +25.0 % (plafonnée à 25 %) + dividende 0.6 % + rachats nets 0.0 % - contraction 0.0 % = +25.6 %/an (barre 12 % ; croissance brute +86.2 %/an, plancher +7 %)."
+     },
+     {
+      "label": "ROIC soutenu >= 15 %",
+      "ok": true,
+      "det": "ROIC 60.4 % (moyenne sur 4 exercice(s)) — barre 15 %."
+     },
+     {
+      "label": "Intouchables (FCF, levier, cap)",
+      "ok": true,
+      "det": "FCF > 0, levier <= 2x, cap >= 2 Md$ : respectés."
+     },
+     {
+      "label": "Discipline du capital",
+      "ok": true,
+      "det": "Retour 0.6 %/an (dividende + rachats nets) ; croissance FCF +193.9 %/an — branche réinvestissement OK."
+     },
+     {
+      "label": "Ancre prix (comme le filtre principal)",
+      "ok": true,
+      "det": "Reprend le check 6 principal : décote >= 25 % ou >= 20 % sous le DCF."
+     }
+    ]
+   }
   },
   "TTMI": {
    "ticker": "TTMI",
