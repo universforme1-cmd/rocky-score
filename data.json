@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T15:19:49+00:00",
+ "updated": "2026-11-18T15:22:57+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -3715,6 +3715,159 @@
     }
    ],
    "date": "2026-11-17T14:17:30+00:00"
+  },
+  "TPL": {
+   "ticker": "TPL",
+   "name": "Texas Pacific Land Corporation",
+   "price": 292.4,
+   "currency": "USD",
+   "sector": "Energy",
+   "industry": "Oil & Gas E&P",
+   "score": 6,
+   "verdict": "PAS ENCORE",
+   "fails": [
+    "Croissance revenus forward"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": true,
+     "val": "0y +33 % · +1y +10 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +10 % (plancher +10 %) ; parcours composé : +21.0 %/an (barre +20 %/an). Moyenne du parcours : +21.6 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward",
+     "ok": false,
+     "val": "+11.4 %",
+     "barre": ">= +20 %/an",
+     "margin": "-8.6 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+    },
+    {
+     "label": "P/E forward",
+     "ok": true,
+     "val": "4.00x",
+     "barre": "<= 20x",
+     "margin": "-80 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": true,
+     "val": "118 M$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": true,
+     "val": "Cash net 352 M$",
+     "barre": "<= 2x",
+     "margin": "Aucune dette nette."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": true,
+     "val": "-46.6 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote -46.6 % (barre 25 % — passe) · marge sous le DCF -615.2 % (prix 292.40 vs valeur 40.88 USD — barre 20 % — échoue)."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "20.17 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "10.1x le plancher."
+    }
+   ],
+   "flags": [
+    "Bêta 0.58."
+   ],
+   "dcf": {
+    "value": 40.88353352232831,
+    "mos": -0.8601794339181659,
+    "implied": null,
+    "implied_note": "> +60 %",
+    "note": "Hypothèses : FCF 118 M$ en base, croissance prudente (min. des mesures) 11.4 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+   },
+   "rdca": {
+    "anchor": 547.2,
+    "buy": [
+     218.88000000000002,
+     268.12800000000004
+    ],
+    "sm": [
+     186.04800000000003,
+     218.88000000000002
+    ],
+    "add_hi": 404.92800000000005,
+    "zone": "Add Zone",
+    "mult": "1X DCA"
+   },
+   "qualite": [
+    {
+     "label": "ROE",
+     "val": 0.37068,
+     "seuil": 0.15,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIC",
+     "val": 0.36240229712247035,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIIC",
+     "val": 0.038154676370320696,
+     "seuil": 0.1,
+     "lo": -0.1,
+     "hi": 0.4,
+     "ok": false
+    },
+    {
+     "label": "ROCE",
+     "val": 0.4593185007889358,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    }
+   ],
+   "date": "2026-11-18T15:22:57+00:00",
+   "compounders": {
+    "verdict": "PAS ENCORE",
+    "rows": [
+     {
+      "label": "Rendement espéré >= 12 %/an",
+      "ok": true,
+      "det": "Croissance +21.0 % (plafonnée à 25 %) + dividende 0.8 % + rachats nets 0.0 % - contraction 0.0 % = +21.9 %/an (barre 12 % ; croissance brute +21.0 %/an, plancher +7 %)."
+     },
+     {
+      "label": "ROIC soutenu >= 15 %",
+      "ok": true,
+      "det": "ROIC 94.6 % (moyenne sur 4 exercice(s)) — barre 15 %."
+     },
+     {
+      "label": "Intouchables (FCF, levier, cap)",
+      "ok": true,
+      "det": "FCF > 0, levier <= 2x, cap >= 2 Md$ : respectés."
+     },
+     {
+      "label": "Discipline du capital",
+      "ok": false,
+      "det": "Retour 0.8 %/an (dividende + rachats nets) ; croissance FCF -57.8 %/an."
+     },
+     {
+      "label": "Ancre prix (comme le filtre principal)",
+      "ok": true,
+      "det": "Reprend le check 6 principal : décote >= 25 % ou >= 20 % sous le DCF."
+     }
+    ]
+   }
   }
  }
 }
