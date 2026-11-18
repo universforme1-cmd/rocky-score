@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T16:11:08+00:00",
+ "updated": "2026-11-18T20:07:20+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -1977,7 +1977,7 @@
   "POWI": {
    "ticker": "POWI",
    "name": "Power Integrations, Inc.",
-   "price": 45.325,
+   "price": 42.64,
    "currency": "USD",
    "sector": "Technology",
    "industry": "Semiconductors",
@@ -1992,23 +1992,23 @@
     {
      "label": "Croissance BPA forward (parcours)",
      "ok": false,
-     "val": "0y +19 % · +1y +20 %",
+     "val": "0y +19 % · +1y +21 %",
      "barre": "plancher +10 % · parcours >= +20 %/an",
-     "margin": "Année la plus faible : +19 % (plancher +10 %) ; parcours composé : +19.5 %/an (barre +20 %/an). Moyenne du parcours : +19.5 % — à titre de référence seulement."
+     "margin": "Année la plus faible : +19 % (plancher +10 %) ; parcours composé : +19.8 %/an (barre +20 %/an). Moyenne du parcours : +19.8 % — à titre de référence seulement."
     },
     {
      "label": "Croissance revenus forward",
      "ok": false,
-     "val": "+9.5 %",
+     "val": "+9.1 %",
      "barre": ">= +20 %/an",
-     "margin": "-10.5 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+     "margin": "-10.9 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
     },
     {
      "label": "P/E forward",
      "ok": false,
-     "val": "25.39x",
+     "val": "23.77x",
      "barre": "<= 20x",
-     "margin": "+27 % vs la barre de 20x."
+     "margin": "+19 % vs la barre de 20x."
     },
     {
      "label": "FCF TTM",
@@ -2027,41 +2027,41 @@
     {
      "label": "Ancre prix (décote ou DCF)",
      "ok": true,
-     "val": "-50.3 %",
+     "val": "-53.2 %",
      "barre": ">= 25 % ou >= 20 % sous le DCF",
-     "margin": "Décote -50.3 % (barre 25 % — passe) · marge sous le DCF -23.3 % (prix 45.33 vs valeur 36.76 USD — barre 20 % — échoue)."
+     "margin": "Décote -53.2 % (barre 25 % — passe) · marge sous le DCF -17.8 % (prix 42.64 vs valeur 36.19 USD — barre 20 % — échoue)."
     },
     {
      "label": "Capitalisation",
      "ok": true,
-     "val": "2.53 Md$",
+     "val": "2.38 Md$",
      "barre": ">= 2 Md$",
-     "margin": "1.3x le plancher."
+     "margin": "1.2x le plancher."
     }
    ],
    "flags": [
     "Bêta 1.57."
    ],
    "dcf": {
-    "value": 36.75500330533124,
-    "mos": -0.1890788018680366,
-    "implied": 0.15482870997947196,
+    "value": 36.194635268512805,
+    "mos": -0.15115770946264528,
+    "implied": 0.1373728200422747,
     "implied_note": null,
-    "note": "Hypothèses : FCF 91 M$ en base, croissance prudente (min. des mesures) 9.5 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+    "note": "Hypothèses : FCF 91 M$ en base, croissance prudente (min. des mesures) 9.1 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
    },
    "rdca": {
-    "anchor": 83.6493911743164,
+    "anchor": 91.18,
     "buy": [
-     33.459756469726564,
-     40.98820167541504
+     36.472,
+     44.678200000000004
     ],
     "sm": [
-     28.44079299926758,
-     33.459756469726564
+     31.001200000000004,
+     36.472
     ],
-    "add_hi": 61.90054946899414,
-    "zone": "Add Zone",
-    "mult": "1X DCA"
+    "add_hi": 67.4732,
+    "zone": "Buy Zone",
+    "mult": "2X DCA"
    },
    "qualite": [
     {
@@ -2097,7 +2097,37 @@
      "ok": null
     }
    ],
-   "date": "2026-11-12T15:38:09+00:00"
+   "date": "2026-11-18T20:07:20+00:00",
+   "compounders": {
+    "verdict": "PAS ENCORE",
+    "rows": [
+     {
+      "label": "Rendement espéré >= 12 %/an",
+      "ok": true,
+      "det": "Croissance +19.8 % (plafonnée à 25 %) + dividende 2.0 % + rachats nets 0.0 % - contraction 8.8 % = +13.0 %/an (barre 12 % ; croissance brute +19.8 %/an, plancher +7 %)."
+     },
+     {
+      "label": "ROIC soutenu >= 15 %",
+      "ok": false,
+      "det": "ROIC n/d."
+     },
+     {
+      "label": "Intouchables (FCF, levier, cap)",
+      "ok": true,
+      "det": "FCF > 0, levier <= 2x, cap >= 2 Md$ : respectés."
+     },
+     {
+      "label": "Discipline du capital",
+      "ok": true,
+      "det": "Retour 2.0 %/an (dividende + rachats nets) — branche retour OK ; croissance FCF -20.9 %/an."
+     },
+     {
+      "label": "Ancre prix (comme le filtre principal)",
+      "ok": true,
+      "det": "Reprend le check 6 principal : décote >= 25 % ou >= 20 % sous le DCF."
+     }
+    ]
+   }
   },
   "ROAD": {
    "ticker": "ROAD",
