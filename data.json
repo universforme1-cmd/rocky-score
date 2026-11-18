@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T15:24:53+00:00",
+ "updated": "2026-11-18T15:30:29+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -622,7 +622,7 @@
   "FLEX": {
    "ticker": "FLEX",
    "name": "Flex Ltd.",
-   "price": 78.97,
+   "price": 75.72,
    "currency": "USD",
    "sector": "Technology",
    "industry": "Electronic Components",
@@ -633,23 +633,23 @@
     {
      "label": "Croissance BPA forward (parcours)",
      "ok": true,
-     "val": "0y +53 % · +1y +52 %",
+     "val": "0y +53 % · +1y +55 %",
      "barre": "plancher +10 % · parcours >= +20 %/an",
-     "margin": "Année la plus faible : +52 % (plancher +10 %) ; parcours composé : +52.6 %/an (barre +20 %/an). Moyenne du parcours : +52.6 % — à titre de référence seulement."
+     "margin": "Année la plus faible : +53 % (plancher +10 %) ; parcours composé : +54.2 %/an (barre +20 %/an). Moyenne du parcours : +54.2 % — à titre de référence seulement."
     },
     {
-     "label": "Croissance revenus forward (3 ans)",
+     "label": "Croissance revenus forward",
      "ok": true,
-     "val": "+30.1 %",
+     "val": "+31.0 %",
      "barre": ">= +20 %/an",
-     "margin": "+10.1 pts vs la barre."
+     "margin": "+11.0 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
     },
     {
      "label": "P/E forward",
      "ok": true,
-     "val": "10.15x",
+     "val": "9.65x",
      "barre": "<= 20x",
-     "margin": "-49 % vs la barre de 20x."
+     "margin": "-52 % vs la barre de 20x."
     },
     {
      "label": "FCF TTM",
@@ -668,16 +668,16 @@
     {
      "label": "Ancre prix (décote ou DCF)",
      "ok": true,
-     "val": "-52.7 %",
+     "val": "-54.6 %",
      "barre": ">= 25 % ou >= 20 % sous le DCF",
-     "margin": "Décote -52.7 % (barre 25 % — passe) · marge sous le DCF +14.4 % (prix 78.97 vs valeur 92.20 USD — barre 20 % — échoue)."
+     "margin": "Décote -54.6 % (barre 25 % — passe) · marge sous le DCF +17.9 % (prix 75.72 vs valeur 92.20 USD — barre 20 % — échoue)."
     },
     {
      "label": "Capitalisation",
      "ok": true,
-     "val": "29.18 Md$",
+     "val": "27.98 Md$",
      "barre": ">= 2 Md$",
-     "margin": "14.6x le plancher."
+     "margin": "14.0x le plancher."
     }
    ],
    "flags": [
@@ -685,26 +685,90 @@
    ],
    "dcf": {
     "value": 92.202629775605,
-    "mos": 0.16756527511213126,
-    "implied": 0.212176964554862,
+    "mos": 0.21767868166409143,
+    "implied": 0.2021601817350941,
     "implied_note": null,
-    "note": "Hypothèses : FCF 1.05 Md$ en base, croissance 25.0 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+    "note": "Hypothèses : FCF 1.05 Md$ en base, croissance prudente (min. des mesures) 25.0 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
    },
    "rdca": {
-    "anchor": 162.07000732421875,
+    "anchor": 166.86,
     "buy": [
-     64.8280029296875,
-     79.41430358886718
+     66.74400000000001,
+     81.76140000000001
     ],
     "sm": [
-     55.10380249023438,
-     64.8280029296875
+     56.732400000000005,
+     66.74400000000001
     ],
-    "add_hi": 119.93180541992187,
+    "add_hi": 123.47640000000001,
     "zone": "Buy Zone",
     "mult": "2X DCA"
    },
-   "date": "2026-11-12T13:27:39+00:00"
+   "qualite": [
+    {
+     "label": "ROE",
+     "val": 0.19128999,
+     "seuil": 0.15,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIC",
+     "val": 0.1478800735398105,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIIC",
+     "val": 0.24489981341107872,
+     "seuil": 0.1,
+     "lo": -0.1,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROCE",
+     "val": 0.19205204355819544,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    }
+   ],
+   "date": "2026-11-18T15:30:29+00:00",
+   "compounders": {
+    "verdict": "NON",
+    "rows": [
+     {
+      "label": "Rendement espéré >= 12 %/an",
+      "ok": true,
+      "det": "Croissance +25.0 % (plafonnée à 25 %) + dividende 0.0 % + rachats nets 0.0 % - contraction 0.0 % = +25.0 %/an (barre 12 % ; croissance brute +54.2 %/an, plancher +7 %)."
+     },
+     {
+      "label": "ROIC soutenu >= 15 %",
+      "ok": false,
+      "det": "ROIC 13.2 % (moyenne sur 4 exercice(s)) — barre 15 %."
+     },
+     {
+      "label": "Intouchables (FCF, levier, cap)",
+      "ok": true,
+      "det": "FCF > 0, levier <= 2x, cap >= 2 Md$ : respectés."
+     },
+     {
+      "label": "Discipline du capital",
+      "ok": false,
+      "det": "Retour 0.0 %/an (dividende + rachats nets) ; croissance FCF +49.5 %/an."
+     },
+     {
+      "label": "Ancre prix (comme le filtre principal)",
+      "ok": true,
+      "det": "Reprend le check 6 principal : décote >= 25 % ou >= 20 % sous le DCF."
+     }
+    ]
+   }
   },
   "BWXT": {
    "ticker": "BWXT",
