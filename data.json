@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T15:22:57+00:00",
+ "updated": "2026-11-18T15:24:53+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -2136,7 +2136,7 @@
   "NXT": {
    "ticker": "NXT",
    "name": "Nextpower Inc.",
-   "price": 81.13,
+   "price": 81.63,
    "currency": "USD",
    "sector": "Technology",
    "industry": "Solar",
@@ -2149,23 +2149,23 @@
     {
      "label": "Croissance BPA forward (parcours)",
      "ok": false,
-     "val": "0y +nan % · +1y +21 %",
+     "val": "0y +nan % · +1y +17 %",
      "barre": "plancher +10 % · parcours >= +20 %/an",
      "margin": "Année la plus faible : +nan % (plancher +10 %) ; parcours composé : +nan %/an (barre +20 %/an). Moyenne du parcours : +nan % — à titre de référence seulement."
     },
     {
      "label": "Croissance revenus forward",
      "ok": true,
-     "val": "+20.8 %",
+     "val": "+21.3 %",
      "barre": ">= +20 %/an",
-     "margin": "+0.8 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+     "margin": "+1.3 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
     },
     {
      "label": "P/E forward",
      "ok": true,
-     "val": "14.14x",
+     "val": "14.62x",
      "barre": "<= 20x",
-     "margin": "-29 % vs la barre de 20x."
+     "margin": "-27 % vs la barre de 20x."
     },
     {
      "label": "FCF TTM",
@@ -2184,14 +2184,14 @@
     {
      "label": "Ancre prix (décote ou DCF)",
      "ok": true,
-     "val": "-50.3 %",
+     "val": "-50.0 %",
      "barre": ">= 25 % ou >= 20 % sous le DCF",
-     "margin": "Décote -50.3 % (barre 25 % — passe) · marge sous le DCF -60.6 % (prix 81.13 vs valeur 50.53 USD — barre 20 % — échoue)."
+     "margin": "Décote -50.0 % (barre 25 % — passe) · marge sous le DCF -61.6 % (prix 81.63 vs valeur 50.53 USD — barre 20 % — échoue)."
     },
     {
      "label": "Capitalisation",
      "ok": true,
-     "val": "12.37 Md$",
+     "val": "12.45 Md$",
      "barre": ">= 2 Md$",
      "margin": "6.2x le plancher."
     }
@@ -2201,22 +2201,22 @@
    ],
    "dcf": {
     "value": 50.525903756731445,
-    "mos": -0.3772229291663818,
-    "implied": 0.12621677913513196,
+    "mos": -0.38103756270082756,
+    "implied": 0.12788179082526752,
     "implied_note": null,
     "note": "Hypothèses : FCF 512 M$ en base, croissance prudente (min. des mesures) 0.0 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
    },
    "rdca": {
-    "anchor": 156.39999389648438,
+    "anchor": 163.13,
     "buy": [
-     62.55999755859375,
-     76.63599700927735
+     65.252,
+     79.9337
     ],
     "sm": [
-     53.17599792480469,
-     62.55999755859375
+     55.464200000000005,
+     65.252
     ],
-    "add_hi": 115.73599548339844,
+    "add_hi": 120.7162,
     "zone": "Add Zone",
     "mult": "1X DCA"
    },
@@ -2254,7 +2254,37 @@
      "ok": true
     }
    ],
-   "date": "2026-11-17T19:27:08+00:00"
+   "date": "2026-11-18T15:24:53+00:00",
+   "compounders": {
+    "verdict": "PAS ENCORE",
+    "rows": [
+     {
+      "label": "Rendement espéré >= 12 %/an",
+      "ok": false,
+      "det": "Croissance +nan % (plafonnée à 25 %) + dividende 0.0 % + rachats nets 0.0 % - contraction 0.0 % = +nan %/an (barre 12 % ; croissance brute +nan %/an, plancher +7 %)."
+     },
+     {
+      "label": "ROIC soutenu >= 15 %",
+      "ok": true,
+      "det": "ROIC 80.0 % (moyenne sur 1 exercice(s)) — barre 15 %."
+     },
+     {
+      "label": "Intouchables (FCF, levier, cap)",
+      "ok": true,
+      "det": "FCF > 0, levier <= 2x, cap >= 2 Md$ : respectés."
+     },
+     {
+      "label": "Discipline du capital",
+      "ok": true,
+      "det": "Retour 0.0 %/an (dividende + rachats nets) ; croissance FCF +70.0 %/an — branche réinvestissement OK."
+     },
+     {
+      "label": "Ancre prix (comme le filtre principal)",
+      "ok": true,
+      "det": "Reprend le check 6 principal : décote >= 25 % ou >= 20 % sous le DCF."
+     }
+    ]
+   }
   },
   "OTIS": {
    "ticker": "OTIS",
