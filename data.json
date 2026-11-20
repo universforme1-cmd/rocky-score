@@ -1,10 +1,10 @@
 {
- "updated": "2026-11-19T13:13:38+00:00",
+ "updated": "2026-11-20T03:39:40+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
    "name": "Robinhood Markets, Inc.",
-   "price": 69.17,
+   "price": 68.65,
    "currency": "USD",
    "sector": "Financial Services",
    "industry": "Capital Markets",
@@ -32,7 +32,7 @@
     {
      "label": "P/E forward",
      "ok": false,
-     "val": "20.28x",
+     "val": "20.13x",
      "barre": "<= 20x",
      "margin": "+1 % vs la barre de 20x."
     },
@@ -53,16 +53,16 @@
     {
      "label": "Ancre prix (décote ou DCF)",
      "ok": true,
-     "val": "-50.5 %",
+     "val": "-50.9 %",
      "barre": ">= 25 % ou >= 20 % sous le DCF",
      "margin": "Décote passe (sommet 52 sem. : 139.75 USD). Branche DCF non appliquée — secteur financier (Capital Markets) : seule la décote compte."
     },
     {
      "label": "Capitalisation",
      "ok": true,
-     "val": "62.29 Md$",
+     "val": "61.82 Md$",
      "barre": ">= 2 Md$",
-     "margin": "31.1x le plancher."
+     "margin": "30.9x le plancher."
     }
    ],
    "flags": [
@@ -71,8 +71,8 @@
    ],
    "dcf": {
     "value": 110.30389407763647,
-    "mos": 0.5946782431348341,
-    "implied": 0.07399750308534647,
+    "mos": 0.6067573791352725,
+    "implied": 0.07210324564089332,
     "implied_note": null,
     "note": "Hypothèses : FCF 2.97 Md$ en base, croissance prudente (min. des mesures) 19.5 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
    },
@@ -124,14 +124,14 @@
      "ok": true
     }
    ],
-   "date": "2026-11-19T03:45:35+00:00",
+   "date": "2026-11-20T03:39:35+00:00",
    "compounders": {
     "verdict": "NON",
     "rows": [
      {
       "label": "Rendement espéré >= 12 %/an",
       "ok": true,
-      "det": "Croissance +19.5 % (plafonnée à 25 %) + dividende 0.0 % + rachats nets 0.0 % - contraction 5.9 % = +13.6 %/an (barre 12 % ; croissance brute +19.5 %/an, plancher +7 %)."
+      "det": "Croissance +19.5 % (plafonnée à 25 %) + dividende 0.0 % + rachats nets 0.0 % - contraction 5.7 % = +13.8 %/an (barre 12 % ; croissance brute +19.5 %/an, plancher +7 %)."
      },
      {
       "label": "ROIC soutenu >= 15 %",
@@ -159,7 +159,7 @@
   "IESC": {
    "ticker": "IESC",
    "name": "IES Holdings, Inc.",
-   "price": 166.05,
+   "price": 166.9,
    "currency": "USD",
    "sector": "Industrials",
    "industry": "Engineering & Construction",
@@ -184,9 +184,9 @@
     {
      "label": "P/E forward",
      "ok": true,
-     "val": "12.29x",
+     "val": "12.35x",
      "barre": "<= 20x",
-     "margin": "-39 % vs la barre de 20x. Source : prix / BPA estimé +1y (Yahoo)."
+     "margin": "-38 % vs la barre de 20x. Source : prix / BPA estimé +1y (Yahoo)."
     },
     {
      "label": "FCF TTM",
@@ -205,27 +205,27 @@
     {
      "label": "Ancre prix (décote ou DCF)",
      "ok": true,
-     "val": "-59.3 %",
+     "val": "-59.1 %",
      "barre": ">= 25 % ou >= 20 % sous le DCF",
-     "margin": "Décote -59.3 % (barre 25 % — passe) · marge sous le DCF +16.0 % (prix 166.05 vs valeur 197.68 USD — barre 20 % — échoue)."
+     "margin": "Décote -59.1 % (barre 25 % — passe) · marge sous le DCF +15.6 % (prix 166.90 vs valeur 197.68 USD — barre 20 % — échoue)."
     },
     {
      "label": "Capitalisation",
      "ok": true,
-     "val": "7.04 Md$",
+     "val": "7.08 Md$",
      "barre": ">= 2 Md$",
      "margin": "3.5x le plancher."
     }
    ],
    "flags": [
-    "Print dans 1 jours (2026-11-20) — binaire, pas d'achat avant.",
+    "Print dans 0 jours (2026-11-20) — binaire, pas d'achat avant.",
     "Actions +0.0 %/an (dilution sous contrôle).",
     "Bêta 1.85."
    ],
    "dcf": {
     "value": 197.67531797710234,
-    "mos": 0.1904565972725223,
-    "implied": 0.20171868936785076,
+    "mos": 0.18439375660336932,
+    "implied": 0.20311666806577156,
     "implied_note": null,
     "note": "Hypothèses : FCF 228 M$ en base, croissance prudente (min. des mesures) 25.0 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
    },
@@ -277,7 +277,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-19T03:45:37+00:00",
+   "date": "2026-11-20T03:39:36+00:00",
    "compounders": {
     "verdict": "PAS ENCORE",
     "rows": [
@@ -312,7 +312,7 @@
   "AXON": {
    "ticker": "AXON",
    "name": "Axon Enterprise, Inc.",
-   "price": 300.69,
+   "price": 306.98,
    "currency": "USD",
    "sector": "Industrials",
    "industry": "Aerospace & Defense",
@@ -341,9 +341,9 @@
     {
      "label": "P/E forward",
      "ok": false,
-     "val": "31.84x",
+     "val": "32.50x",
      "barre": "<= 20x",
-     "margin": "+59 % vs la barre de 20x."
+     "margin": "+63 % vs la barre de 20x."
     },
     {
      "label": "FCF TTM",
@@ -362,16 +362,16 @@
     {
      "label": "Ancre prix (décote ou DCF)",
      "ok": true,
-     "val": "-54.8 %",
+     "val": "-53.8 %",
      "barre": ">= 25 % ou >= 20 % sous le DCF",
-     "margin": "Décote -54.8 % (barre 25 % — passe) · marge sous le DCF -2916.9 % (prix 300.69 vs valeur 9.97 USD — barre 20 % — échoue)."
+     "margin": "Décote -53.8 % (barre 25 % — passe) · marge sous le DCF -2980.0 % (prix 306.98 vs valeur 9.97 USD — barre 20 % — échoue)."
     },
     {
      "label": "Capitalisation",
      "ok": true,
-     "val": "24.49 Md$",
+     "val": "25.00 Md$",
      "barre": ">= 2 Md$",
-     "margin": "12.2x le plancher."
+     "margin": "12.5x le plancher."
     }
    ],
    "flags": [
@@ -380,7 +380,7 @@
    ],
    "dcf": {
     "value": 9.966998635080564,
-    "mos": -0.9668529095244918,
+    "mos": -0.9675320912271791,
     "implied": null,
     "implied_note": "> +60 %",
     "note": "Hypothèses : FCF 81 M$ en base, croissance prudente (min. des mesures) 17.4 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
@@ -433,14 +433,14 @@
      "ok": false
     }
    ],
-   "date": "2026-11-19T03:45:39+00:00",
+   "date": "2026-11-20T03:39:38+00:00",
    "compounders": {
     "verdict": "NON",
     "rows": [
      {
       "label": "Rendement espéré >= 12 %/an",
       "ok": false,
-      "det": "Croissance +17.4 % (plafonnée à 25 %) + dividende 0.0 % + rachats nets 0.0 % - contraction 14.0 % = +3.5 %/an (barre 12 % ; croissance brute +17.4 %/an, plancher +7 %)."
+      "det": "Croissance +17.4 % (plafonnée à 25 %) + dividende 0.0 % + rachats nets 0.0 % - contraction 14.3 % = +3.1 %/an (barre 12 % ; croissance brute +17.4 %/an, plancher +7 %)."
      },
      {
       "label": "ROIC soutenu >= 15 %",
@@ -468,7 +468,7 @@
   "CSU.TO": {
    "ticker": "CSU.TO",
    "name": "Constellation Software Inc.",
-   "price": 3323.15,
+   "price": 3180.0,
    "currency": "CAD",
    "sector": "Technology",
    "industry": "Software - Application",
@@ -496,9 +496,9 @@
     {
      "label": "P/E forward",
      "ok": true,
-     "val": "17.28x",
+     "val": "16.53x",
      "barre": "<= 20x",
-     "margin": "-14 % vs la barre de 20x."
+     "margin": "-17 % vs la barre de 20x."
     },
     {
      "label": "FCF TTM",
@@ -517,16 +517,16 @@
     {
      "label": "Ancre prix (décote ou DCF)",
      "ok": false,
-     "val": "-6.8 %",
+     "val": "-10.8 %",
      "barre": ">= 25 % ou >= 20 % sous le DCF",
-     "margin": "Décote -6.8 % (barre 25 % — échoue) · marge sous le DCF -3.8 % (prix 3,323.15 vs valeur 3,199.96 CAD — barre 20 % — échoue)."
+     "margin": "Décote -10.8 % (barre 25 % — échoue) · marge sous le DCF +0.6 % (prix 3,180.00 vs valeur 3,199.96 CAD — barre 20 % — échoue)."
     },
     {
      "label": "Capitalisation",
      "ok": true,
-     "val": "70.42 Md$",
+     "val": "67.39 Md$",
      "barre": ">= 2 Md$",
-     "margin": "35.2x le plancher."
+     "margin": "33.7x le plancher."
     }
    ],
    "flags": [
@@ -534,8 +534,8 @@
    ],
    "dcf": {
     "value": 3199.9644273162935,
-    "mos": -0.037068917347608976,
-    "implied": 0.17169163895761497,
+    "mos": 0.006278121797576475,
+    "implied": 0.1609086892031043,
     "implied_note": null,
     "note": "Hypothèses : FCF 2.80 Md$ en base, croissance prudente (min. des mesures) 16.2 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
    },
@@ -587,14 +587,14 @@
      "ok": true
     }
    ],
-   "date": "2026-11-19T03:45:40+00:00",
+   "date": "2026-11-20T03:39:40+00:00",
    "compounders": {
     "verdict": "NON",
     "rows": [
      {
       "label": "Rendement espéré >= 12 %/an",
       "ok": true,
-      "det": "Croissance +25.0 % (plafonnée à 25 %) + dividende 8.0 % (plafonné à 8 % — donnée Yahoo brute 17.0 %) + rachats nets 0.0 % - contraction 2.8 % = +30.2 %/an (barre 12 % ; croissance brute +30.4 %/an, plancher +7 %)."
+      "det": "Croissance +25.0 % (plafonnée à 25 %) + dividende 8.0 % (plafonné à 8 % — donnée Yahoo brute 17.0 %) + rachats nets 0.0 % - contraction 1.9 % = +31.1 %/an (barre 12 % ; croissance brute +30.4 %/an, plancher +7 %)."
      },
      {
       "label": "ROIC soutenu >= 15 %",
