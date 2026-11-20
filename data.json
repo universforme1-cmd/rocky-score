@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T18:02:33+00:00",
+ "updated": "2026-11-20T20:43:54+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -4470,6 +4470,159 @@
       "label": "Discipline du capital",
       "ok": false,
       "det": "Retour 0.0 %/an (dividende + rachats nets) ; croissance FCF n/d."
+     },
+     {
+      "label": "Ancre prix (comme le filtre principal)",
+      "ok": true,
+      "det": "Reprend le check 6 principal : décote >= 25 % ou >= 20 % sous le DCF."
+     }
+    ]
+   }
+  },
+  "STX": {
+   "ticker": "STX",
+   "name": "Seagate Technology Holdings plc",
+   "price": 457.36,
+   "currency": "USD",
+   "sector": "Technology",
+   "industry": "Computer Hardware",
+   "score": 6,
+   "verdict": "PAS ENCORE",
+   "fails": [
+    "Croissance BPA forward (parcours)"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": false,
+     "val": "0y +2 % · +1y +63 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +2 % (plancher +10 %) ; parcours composé : +28.8 %/an (barre +20 %/an). Moyenne du parcours : +32.5 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward",
+     "ok": true,
+     "val": "+39.8 %",
+     "barre": ">= +20 %/an",
+     "margin": "+19.8 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+    },
+    {
+     "label": "P/E forward",
+     "ok": true,
+     "val": "7.00x",
+     "barre": "<= 20x",
+     "margin": "-65 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": true,
+     "val": "4.16 Md$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": true,
+     "val": "0.24x",
+     "barre": "<= 2x",
+     "margin": "Dette nette 1.41 Md$ / EBITDA 5.87 Md$."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": true,
+     "val": "-60.1 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote -60.1 % (barre 25 % — passe) · marge sous le DCF +27.8 % (prix 457.36 vs valeur 633.79 USD — barre 20 % — passe)."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "104.99 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "52.5x le plancher."
+    }
+   ],
+   "flags": [
+    "Bêta 2.20."
+   ],
+   "dcf": {
+    "value": 633.7870618088192,
+    "mos": 0.385750965997943,
+    "implied": 0.16530693762102178,
+    "implied_note": null,
+    "note": "Hypothèses : FCF 4.16 Md$ en base, croissance prudente (min. des mesures) 25.0 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+   },
+   "rdca": {
+    "anchor": 1145.0,
+    "buy": [
+     458.0,
+     561.05
+    ],
+    "sm": [
+     389.3,
+     458.0
+    ],
+    "add_hi": 847.3,
+    "zone": "Smart Money Zone ★ (zone gold)",
+    "mult": "3X DCA"
+   },
+   "qualite": [
+    {
+     "label": "ROE",
+     "val": 2.5935102,
+     "seuil": 0.15,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIC",
+     "val": 0.7934204582272623,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIIC",
+     "val": 4.168667485380117,
+     "seuil": 0.1,
+     "lo": -0.1,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROCE",
+     "val": 0.9196945151585281,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    }
+   ],
+   "date": "2026-11-20T20:43:54+00:00",
+   "compounders": {
+    "verdict": "PASSE",
+    "rows": [
+     {
+      "label": "Rendement espéré >= 12 %/an",
+      "ok": true,
+      "det": "Croissance +25.0 % (plafonnée à 25 %) + dividende 0.6 % + rachats nets 0.0 % - contraction 0.0 % = +25.6 %/an (barre 12 % ; croissance brute +28.8 %/an, plancher +7 %)."
+     },
+     {
+      "label": "ROIC soutenu >= 15 %",
+      "ok": true,
+      "det": "ROIC 35.3 % (moyenne sur 4 exercice(s)) — barre 15 %."
+     },
+     {
+      "label": "Intouchables (FCF, levier, cap)",
+      "ok": true,
+      "det": "FCF > 0, levier <= 2x, cap >= 2 Md$ : respectés."
+     },
+     {
+      "label": "Discipline du capital",
+      "ok": true,
+      "det": "Retour 0.6 %/an (dividende + rachats nets) ; croissance FCF +70.5 %/an — branche réinvestissement OK."
      },
      {
       "label": "Ancre prix (comme le filtre principal)",
