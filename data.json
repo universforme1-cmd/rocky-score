@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20T03:39:40+00:00",
+ "updated": "2026-11-20T18:02:33+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -4025,7 +4025,7 @@
   "DELL": {
    "ticker": "DELL",
    "name": "Dell Technologies Inc.",
-   "price": 315.3156,
+   "price": 280.08,
    "currency": "USD",
    "sector": "Technology",
    "industry": "Computer Hardware",
@@ -4053,9 +4053,9 @@
     {
      "label": "P/E forward",
      "ok": true,
-     "val": "10.29x",
+     "val": "9.14x",
      "barre": "<= 20x",
-     "margin": "-49 % vs la barre de 20x."
+     "margin": "-54 % vs la barre de 20x."
     },
     {
      "label": "FCF TTM",
@@ -4074,27 +4074,27 @@
     {
      "label": "Ancre prix (décote ou DCF)",
      "ok": true,
-     "val": "-47.1 %",
+     "val": "-53.0 %",
      "barre": ">= 25 % ou >= 20 % sous le DCF",
-     "margin": "Décote -47.1 % (barre 25 % — passe) · marge sous le DCF +29.4 % (prix 315.32 vs valeur 446.88 USD — barre 20 % — passe)."
+     "margin": "Décote -53.0 % (barre 25 % — passe) · marge sous le DCF +37.3 % (prix 280.08 vs valeur 446.72 USD — barre 20 % — passe)."
     },
     {
      "label": "Capitalisation",
      "ok": true,
-     "val": "200.48 Md$",
+     "val": "178.08 Md$",
      "barre": ">= 2 Md$",
-     "margin": "100.2x le plancher."
+     "margin": "89.0x le plancher."
     }
    ],
    "flags": [
-    "Print dans 6 jours (2026-11-24) — binaire, pas d'achat avant.",
+    "Print dans 4 jours (2026-11-24) — binaire, pas d'achat avant.",
     "Qualité du reporting : prospectus 424B2 déposé le 2026-09-11 — émission récente ; vérifier les titres annoncés non encore livrés (forward sale, ATM).",
     "Bêta 1.44."
    ],
    "dcf": {
-    "value": 446.8780695627736,
-    "mos": 0.41724059819042747,
-    "implied": 0.024788928517654907,
+    "value": 446.7154645951201,
+    "mos": 0.5949566716478154,
+    "implied": 0.002895236401561641,
     "implied_note": null,
     "note": "Hypothèses : FCF 8.56 Md$ en base, croissance prudente (min. des mesures) 9.4 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
    },
@@ -4109,8 +4109,8 @@
      238.204
     ],
     "add_hi": 440.6774,
-    "zone": "Add Zone",
-    "mult": "1X DCA"
+    "zone": "Buy Zone",
+    "mult": "2X DCA"
    },
    "qualite": [
     {
@@ -4146,7 +4146,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-18T16:11:08+00:00",
+   "date": "2026-11-20T18:02:33+00:00",
    "compounders": {
     "verdict": "PAS ENCORE",
     "rows": [
