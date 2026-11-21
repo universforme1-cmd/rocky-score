@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T03:22:37+00:00",
+ "updated": "2026-11-21T16:47:46+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -4632,6 +4632,11 @@
      }
     ]
    }
+  },
+  "FGT": {
+   "ticker": "FGT",
+   "erreur": "aucune donnée Yahoo pour ce symbole (ticker inconnu ou source indisponible)",
+   "date": "2026-11-21T16:47:46+00:00"
   }
  }
 }
