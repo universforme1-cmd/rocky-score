@@ -77,12 +77,12 @@ label{display:block;font-size:13px;color:var(--mut);margin:14px 0 5px}
   <div id="status"></div>
 </header>
 <main><div id="list"></div><div class="foot" id="foot"></div></main>
- 
+
 <section id="sheet" aria-hidden="true">
   <div class="shtop"><span class="sub" id="shDate"></span><button class="close" id="shClose">Fermer</button></div>
   <div id="shBody"></div>
 </section>
- 
+
 <section id="settings" aria-hidden="true">
   <div class="shtop"><h2 style="margin:0">Réglages</h2><button class="close" id="stClose">Fermer</button></div>
   <p class="note">Le jeton autorise ce téléphone à lancer une analyse sur GitHub. Il reste enregistré sur cet appareil uniquement.</p>
@@ -93,7 +93,7 @@ label{display:block;font-size:13px;color:var(--mut);margin:14px 0 5px}
   <button class="ghost" id="stReset">Réafficher les fiches retirées</button>
   <p class="note">Rocky Score est un filtre personnel, pas un conseil financier. Données : Yahoo Finance.</p>
 </section>
- 
+
 <script>
 "use strict";
 const $ = id => document.getElementById(id);
@@ -105,13 +105,13 @@ let fiches = LS.get("fiches", {});
 let hidden = LS.get("hidden", []);
 let updated = LS.get("updated", null);
 let busy = false;
- 
+
 const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const nf = (x, d = 2) => x == null ? "n/d" : Number(x).toLocaleString("fr-CA", {minimumFractionDigits: d, maximumFractionDigits: d});
 const pc = (x, d = 1) => x == null ? "n/d" : (x >= 0 ? "+" : "") + nf(x * 100, d) + " %";
 const dt = iso => { if(!iso) return ""; const d = new Date(iso); return isNaN(d) ? "" : d.toLocaleString("fr-CA", {day:"numeric", month:"short", hour:"2-digit", minute:"2-digit"}); };
 const vclass = f => f.erreur ? "v-ERR" : f.verdict === "PASSE" ? "v-PASSE" : f.verdict === "PAS ENCORE" ? "v-PAS" : "v-NON";
- 
+
 function cfg(){
   const s = LS.get("cfg", {});
   let owner = s.owner || "", repo = s.repo || "";
@@ -120,7 +120,7 @@ function cfg(){
   return {owner, repo, token: s.token || ""};
 }
 function setStatus(msg, err){ const el = $("status"); el.textContent = msg || ""; el.className = err ? "err" : ""; }
- 
+
 function merge(obj){
   if(!obj || typeof obj.fiches !== "object" || !obj.fiches) return;
   for(const [t, f] of Object.entries(obj.fiches)){
@@ -130,7 +130,7 @@ function merge(obj){
   if(obj.updated && (!updated || obj.updated > updated)) updated = obj.updated;
   LS.set("fiches", fiches); LS.set("updated", updated);
 }
- 
+
 function render(){
   const arr = Object.values(fiches).filter(f => !hidden.includes(f.ticker))
     .sort((a, b) => (b.score ?? -1) - (a.score ?? -1) || String(a.ticker).localeCompare(String(b.ticker)));
@@ -148,7 +148,7 @@ function render(){
   }
   $("foot").textContent = updated ? "Dernière mise à jour : " + dt(updated) : "";
 }
- 
+
 function zoneBar(f){
   const z = f.rdca; if(!z || !z.anchor) return '<div class="box"><p class="mut">n/d — historique mensuel indisponible.</p></div>';
   const a = z.anchor, lo = 0.25 * a, hi = 1.08 * a, w = x => Math.max(0, (x - lo) / (hi - lo) * 100);
@@ -164,15 +164,15 @@ function zoneBar(f){
     <div class="zleg"><span><i style="background:#7a5cf0"></i>Sous SM (4X)</span><span><i style="background:#e9c46a"></i>Smart Money</span><span><i style="background:#3ccf8e"></i>Buy</span><span><i style="background:#2a9d8f"></i>Add</span><span><i style="background:#3a4250"></i>Hors zone</span><span><i style="background:#f0616d"></i>Au-dessus de l’ancre</span></div>
     <p class="mut" style="margin-top:8px">Ancre = vrai sommet : plus haute clôture mensuelle sur 24 mois ou sommet 52 semaines.</p></div>`;
 }
- 
+
 function compounders(f){
   const c = f.compounders; if(!c || !c.rows) return "";
   const cls = c.verdict === "PASSE" ? "v-PASSE" : c.verdict === "PAS ENCORE" ? "v-PAS" : "v-NON";
-  return `<h3>Mode compounders <span style="text-transform:none;letter-spacing:0">(brouillon, non adopté)</span></h3>
-    <div class="verdict ${cls}" style="margin:0 0 8px;padding:10px 14px"><div class="lab">${esc(c.verdict)}</div><div class="why">Information seulement : aucun achat par cette porte tant que l’amendement n’est pas adopté.</div></div>
+  return `<h3>Mode compounders <span style="text-transform:none;letter-spacing:0">(poche adoptée le 18 nov. 2026)</span></h3>
+    <div class="verdict ${cls}" style="margin:0 0 8px;padding:10px 14px"><div class="lab">${esc(c.verdict)}</div><div class="why">Deuxième porte d’entrée : plafond 20–25 % du livre, hors thème IA, une seule porte par titre.</div></div>
     ${c.rows.map(r => `<div class="chk"><div class="m ${r.ok ? "ok" : "ko"}">${r.ok ? "✓" : "✗"}</div><div><div class="l">${esc(r.label)}</div><div class="mg">${esc(r.det)}</div></div></div>`).join("")}`;
 }
- 
+
 function qualite(f){
   const q = f.qualite; if(!q || !q.length) return "";
   const noms = {ROE:"ROE — rendement des fonds propres", ROIC:"ROIC — rendement du capital investi", ROIIC:"ROIIC — rendement du capital ajouté (3 ans)", ROCE:"ROCE — rendement avant impôt"};
@@ -185,7 +185,7 @@ function qualite(f){
       <div class="mg" style="font-size:12.5px;color:var(--mut);margin-top:4px">Seuil repère ${nf(x.seuil * 100, 0)} % — ${x.ok ? "au-dessus" : "en dessous"}</div></div>`;
   }).join("")}<p class="mut" style="margin-top:8px">Information seulement : ces mesures ne changent pas la note sur 7. Le trait blanc marque le seuil.</p></div>`;
 }
- 
+
 function openSheet(t){
   const f = fiches[t]; if(!f) return;
   $("shDate").textContent = "Fiche du " + dt(f.date);
@@ -218,7 +218,7 @@ function openSheet(t){
   $("sheet").classList.add("open"); $("sheet").setAttribute("aria-hidden", "false"); $("sheet").scrollTop = 0;
 }
 function closeAll(){ for(const id of ["sheet", "settings"]){ $(id).classList.remove("open"); $(id).setAttribute("aria-hidden", "true"); } }
- 
+
 async function load(quiet){
   try{
     const r = await fetch("data.json?t=" + Date.now(), {cache: "no-store"});
@@ -228,10 +228,10 @@ async function load(quiet){
     render(); if(!busy) setStatus(Object.keys(fiches).length ? "Hors ligne — fiches enregistrées affichées." : "Données indisponibles : " + e.message, !Object.keys(fiches).length);
   }
 }
- 
+
 const gh = (path, opt = {}) => { const c = cfg(); return fetch(`https://api.github.com/repos/${encodeURIComponent(c.owner)}/${encodeURIComponent(c.repo)}/${path}`, Object.assign({}, opt, {headers: Object.assign({"Authorization": "Bearer " + c.token, "X-GitHub-Api-Version": "2022-11-28", "Accept": "application/vnd.github+json"}, opt.headers || {})})); };
 const sleep = ms => new Promise(r => setTimeout(r, ms));
- 
+
 async function analyser(raw){
   const t = String(raw || "").trim().toUpperCase();
   if(!/^[A-Z0-9][A-Z0-9.\-=^]{0,14}$/.test(t)){ setStatus("Ticker invalide.", true); return; }
@@ -264,12 +264,12 @@ async function analyser(raw){
   }catch(e){ setStatus("Échec : " + e.message, true); }
   finally{ busy = false; $("btnGo").disabled = false; }
 }
- 
+
 function openSettings(){
   const c = cfg(); $("stToken").value = c.token; $("stOwner").value = c.owner; $("stRepo").value = c.repo;
   $("settings").classList.add("open"); $("settings").setAttribute("aria-hidden", "false");
 }
- 
+
 $("form").addEventListener("submit", e => { e.preventDefault(); $("ticker").blur(); analyser($("ticker").value); });
 $("list").addEventListener("click", e => { const b = e.target.closest("[data-t]"); if(b) openSheet(b.dataset.t); });
 $("shBody").addEventListener("click", e => {
@@ -287,4 +287,3 @@ render(); load();
 </script>
 </body>
 </html>
- 
