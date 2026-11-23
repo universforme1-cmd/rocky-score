@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T14:09:13+00:00",
+ "updated": "2026-11-23T14:35:45+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -4088,7 +4088,7 @@
   "DELL": {
    "ticker": "DELL",
    "name": "Dell Technologies Inc.",
-   "price": 280.08,
+   "price": 360.05,
    "currency": "USD",
    "sector": "Technology",
    "industry": "Computer Hardware",
@@ -4116,9 +4116,9 @@
     {
      "label": "P/E forward",
      "ok": true,
-     "val": "9.14x",
+     "val": "11.79x",
      "barre": "<= 20x",
-     "margin": "-54 % vs la barre de 20x."
+     "margin": "-41 % vs la barre de 20x."
     },
     {
      "label": "FCF TTM",
@@ -4137,27 +4137,27 @@
     {
      "label": "Ancre prix (décote ou DCF)",
      "ok": true,
-     "val": "-53.0 %",
+     "val": "-39.5 %",
      "barre": ">= 25 % ou >= 20 % sous le DCF",
-     "margin": "Décote -53.0 % (barre 25 % — passe) · marge sous le DCF +37.3 % (prix 280.08 vs valeur 446.72 USD — barre 20 % — passe)."
+     "margin": "Décote -39.5 % (barre 25 % — passe) · marge sous le DCF +19.4 % (prix 360.05 vs valeur 446.72 USD — barre 20 % — échoue)."
     },
     {
      "label": "Capitalisation",
      "ok": true,
-     "val": "178.08 Md$",
+     "val": "228.92 Md$",
      "barre": ">= 2 Md$",
-     "margin": "89.0x le plancher."
+     "margin": "114.5x le plancher."
     }
    ],
    "flags": [
-    "Print dans 4 jours (2026-11-24) — binaire, pas d'achat avant.",
+    "Print dans 1 jours (2026-11-24) — binaire, pas d'achat avant.",
     "Qualité du reporting : prospectus 424B2 déposé le 2026-09-11 — émission récente ; vérifier les titres annoncés non encore livrés (forward sale, ATM).",
     "Bêta 1.44."
    ],
    "dcf": {
     "value": 446.7154645951201,
-    "mos": 0.5949566716478154,
-    "implied": 0.002895236401561641,
+    "mos": 0.24070397054609116,
+    "implied": 0.05028530178880841,
     "implied_note": null,
     "note": "Hypothèses : FCF 8.56 Md$ en base, croissance prudente (min. des mesures) 9.4 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
    },
@@ -4172,8 +4172,8 @@
      238.204
     ],
     "add_hi": 440.6774,
-    "zone": "Buy Zone",
-    "mult": "2X DCA"
+    "zone": "Add Zone",
+    "mult": "1X DCA"
    },
    "qualite": [
     {
@@ -4209,14 +4209,14 @@
      "ok": true
     }
    ],
-   "date": "2026-11-20T18:02:33+00:00",
+   "date": "2026-11-23T14:35:45+00:00",
    "compounders": {
     "verdict": "PAS ENCORE",
     "rows": [
      {
       "label": "Rendement espéré >= 12 %/an",
       "ok": false,
-      "det": "Croissance +9.4 % (plafonnée à 25 %) + dividende 0.8 % + rachats nets 0.0 % - contraction 0.0 % = +10.2 %/an (barre 12 % ; croissance brute +9.4 %/an, plancher +7 %)."
+      "det": "Croissance +9.4 % (plafonnée à 25 %) + dividende 0.9 % + rachats nets 0.0 % - contraction 0.0 % = +10.3 %/an (barre 12 % ; croissance brute +9.4 %/an, plancher +7 %)."
      },
      {
       "label": "ROIC soutenu >= 15 %",
@@ -4231,7 +4231,7 @@
      {
       "label": "Discipline du capital",
       "ok": true,
-      "det": "Retour 0.8 %/an (dividende + rachats nets) ; croissance FCF +147.8 %/an — branche réinvestissement OK."
+      "det": "Retour 0.9 %/an (dividende + rachats nets n/d — historique d'actions indisponible) ; croissance FCF +147.8 %/an — branche réinvestissement OK."
      },
      {
       "label": "Ancre prix (comme le filtre principal)",
