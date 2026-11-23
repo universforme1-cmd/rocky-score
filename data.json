@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T16:47:46+00:00",
+ "updated": "2026-11-23T13:43:09+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -4637,6 +4637,157 @@
    "ticker": "FGT",
    "erreur": "aucune donnée Yahoo pour ce symbole (ticker inconnu ou source indisponible)",
    "date": "2026-11-21T16:47:46+00:00"
+  },
+  "PAREX": {
+   "ticker": "PAREX",
+   "name": "T. Rowe Price Real Estate Advisor",
+   "price": 12.27,
+   "currency": "USD",
+   "sector": null,
+   "industry": null,
+   "score": 0,
+   "verdict": "NON",
+   "fails": [
+    "Croissance BPA forward (parcours)",
+    "Croissance revenus forward",
+    "P/E forward",
+    "FCF TTM",
+    "Dette nette / EBITDA",
+    "Ancre prix (décote ou DCF)",
+    "Capitalisation"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": false,
+     "val": "n/d",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Estimations annuelles indisponibles (Yahoo)."
+    },
+    {
+     "label": "Croissance revenus forward",
+     "ok": false,
+     "val": "n/d",
+     "barre": ">= +20 %/an",
+     "margin": "Estimations de revenus indisponibles."
+    },
+    {
+     "label": "P/E forward",
+     "ok": false,
+     "val": "n/d",
+     "barre": "<= 20x",
+     "margin": "P/E forward indisponible."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": false,
+     "val": "n/d",
+     "barre": "> 0",
+     "margin": "FCF indisponible."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": false,
+     "val": "n/d",
+     "barre": "<= 2x",
+     "margin": "Dette ou cash indisponible."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": false,
+     "val": "-6.5 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote échoue (sommet 52 sem. : 13.12 USD). DCF indisponible — seule la décote compte."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": false,
+     "val": "n/d",
+     "barre": ">= 2 Md$",
+     "margin": "Capitalisation indisponible."
+    }
+   ],
+   "flags": [],
+   "dcf": null,
+   "rdca": {
+    "anchor": 13.12,
+    "buy": [
+     5.248,
+     6.4288
+    ],
+    "sm": [
+     4.4608,
+     5.248
+    ],
+    "add_hi": 9.7088,
+    "zone": "Au-dessus des zones d'achat",
+    "mult": "—"
+   },
+   "qualite": [
+    {
+     "label": "ROE",
+     "val": null,
+     "seuil": 0.15,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": null
+    },
+    {
+     "label": "ROIC",
+     "val": null,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": null
+    },
+    {
+     "label": "ROIIC",
+     "val": null,
+     "seuil": 0.1,
+     "lo": -0.1,
+     "hi": 0.4,
+     "ok": null
+    },
+    {
+     "label": "ROCE",
+     "val": null,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": null
+    }
+   ],
+   "date": "2026-11-23T13:43:09+00:00",
+   "compounders": {
+    "verdict": "NON",
+    "rows": [
+     {
+      "label": "Rendement espéré >= 12 %/an",
+      "ok": false,
+      "det": "Parcours BPA indisponible — rendement espéré n/d."
+     },
+     {
+      "label": "ROIC soutenu >= 15 %",
+      "ok": false,
+      "det": "ROIC n/d."
+     },
+     {
+      "label": "Intouchables (FCF, levier, cap)",
+      "ok": false,
+      "det": "FCF > 0, levier <= 2x, cap >= 2 Md$ : au moins un intouchable échoue."
+     },
+     {
+      "label": "Discipline du capital",
+      "ok": true,
+      "det": "Retour 2.1 %/an (dividende + rachats nets) — branche retour OK ; croissance FCF n/d."
+     },
+     {
+      "label": "Ancre prix (comme le filtre principal)",
+      "ok": false,
+      "det": "Reprend le check 6 principal : décote >= 25 % ou >= 20 % sous le DCF."
+     }
+    ]
+   }
   }
  }
 }
