@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T14:07:39+00:00",
+ "updated": "2026-11-23T14:09:13+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -958,36 +958,34 @@
   "LITE": {
    "ticker": "LITE",
    "name": "Lumentum Holdings Inc.",
-   "price": 648.06,
+   "price": 460.54,
    "currency": "USD",
    "sector": "Technology",
    "industry": "Communication Equipment",
-   "score": 6,
-   "verdict": "PAS ENCORE",
-   "fails": [
-    "Croissance BPA forward (parcours)"
-   ],
+   "score": 7,
+   "verdict": "PASSE",
+   "fails": [],
    "checks": [
     {
      "label": "Croissance BPA forward (parcours)",
-     "ok": false,
-     "val": "0y +2 % · +1y +61 %",
+     "ok": true,
+     "val": "+1y +61 % · 0y n/d",
      "barre": "plancher +10 % · parcours >= +20 %/an",
-     "margin": "Année la plus faible : +2 % (plancher +10 %) ; parcours composé : +28.0 %/an (barre +20 %/an). Moyenne du parcours : +31.4 % — à titre de référence seulement."
+     "margin": "Année la plus faible : +61 % (plancher +10 %) ; parcours composé : +60.9 %/an (barre +20 %/an). Moyenne du parcours : +60.9 % — à titre de référence seulement. Année(s) 0y exclue(s) : n/d — base BPA <= 0, croissance non significative (correctif du 18 nov. 2026)."
     },
     {
-     "label": "Croissance revenus forward (3 ans)",
+     "label": "Croissance revenus forward",
      "ok": true,
-     "val": "+109.9 %",
+     "val": "+58.5 %",
      "barre": ">= +20 %/an",
-     "margin": "+90.0 pts vs la barre."
+     "margin": "+38.5 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
     },
     {
      "label": "P/E forward",
      "ok": true,
-     "val": "16.15x",
+     "val": "11.47x",
      "barre": "<= 20x",
-     "margin": "-19 % vs la barre de 20x."
+     "margin": "-43 % vs la barre de 20x."
     },
     {
      "label": "FCF TTM",
@@ -1006,16 +1004,16 @@
     {
      "label": "Ancre prix (décote ou DCF)",
      "ok": true,
-     "val": "-43.3 %",
+     "val": "-59.7 %",
      "barre": ">= 25 % ou >= 20 % sous le DCF",
-     "margin": "Décote -43.3 % (barre 25 % — passe) · marge sous le DCF -347.2 % (prix 648.06 vs valeur 144.91 USD — barre 20 % — échoue)."
+     "margin": "Décote -59.7 % (barre 25 % — passe) · marge sous le DCF -217.8 % (prix 460.54 vs valeur 144.91 USD — barre 20 % — échoue)."
     },
     {
      "label": "Capitalisation",
      "ok": true,
-     "val": "58.77 Md$",
+     "val": "41.76 Md$",
      "barre": ">= 2 Md$",
-     "margin": "29.4x le plancher."
+     "margin": "20.9x le plancher."
     }
    ],
    "flags": [
@@ -1023,26 +1021,90 @@
    ],
    "dcf": {
     "value": 144.907362676122,
-    "mos": -0.7763982306019165,
+    "mos": -0.6853533619748078,
     "implied": null,
     "implied_note": "> +60 %",
-    "note": "Hypothèses : FCF 356 M$ en base, croissance 25.0 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+    "note": "Hypothèses : FCF 356 M$ en base, croissance prudente (min. des mesures) 25.0 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
    },
    "rdca": {
-    "anchor": 971.260009765625,
+    "anchor": 1143.0,
     "buy": [
-     388.50400390625003,
-     475.91740478515624
+     457.20000000000005,
+     560.0699999999999
     ],
     "sm": [
-     330.2284033203125,
-     388.50400390625003
+     388.62,
+     457.20000000000005
     ],
-    "add_hi": 718.7324072265625,
-    "zone": "Add Zone",
-    "mult": "1X DCA"
+    "add_hi": 845.8199999999999,
+    "zone": "Buy Zone",
+    "mult": "2X DCA"
    },
-   "date": "2026-11-12T13:46:11+00:00"
+   "qualite": [
+    {
+     "label": "ROE",
+     "val": -2.45788,
+     "seuil": 0.15,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": false
+    },
+    {
+     "label": "ROIC",
+     "val": -1.6205094109935387,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": false
+    },
+    {
+     "label": "ROIIC",
+     "val": -7.626798501831096,
+     "seuil": 0.1,
+     "lo": -0.1,
+     "hi": 0.4,
+     "ok": false
+    },
+    {
+     "label": "ROCE",
+     "val": -1.6740799700346474,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": false
+    }
+   ],
+   "date": "2026-11-23T14:09:13+00:00",
+   "compounders": {
+    "verdict": "NON",
+    "rows": [
+     {
+      "label": "Rendement espéré >= 12 %/an",
+      "ok": true,
+      "det": "Croissance +25.0 % (plafonnée à 25 %) + dividende 0.0 % + rachats nets 0.0 % - contraction 0.0 % = +25.0 %/an (barre 12 % ; croissance brute +60.9 %/an, plancher +7 %)."
+     },
+     {
+      "label": "ROIC soutenu >= 15 %",
+      "ok": false,
+      "det": "ROIC -44.0 % (moyenne sur 4 exercice(s)) — barre 15 %."
+     },
+     {
+      "label": "Intouchables (FCF, levier, cap)",
+      "ok": true,
+      "det": "FCF > 0, levier <= 2x, cap >= 2 Md$ : respectés."
+     },
+     {
+      "label": "Discipline du capital",
+      "ok": false,
+      "det": "Retour 0.0 %/an (dividende + rachats nets n/d — historique d'actions indisponible) ; croissance FCF +80.2 %/an."
+     },
+     {
+      "label": "Ancre prix (comme le filtre principal)",
+      "ok": true,
+      "det": "Reprend le check 6 principal : décote >= 25 % ou >= 20 % sous le DCF."
+     }
+    ]
+   }
   },
   "FORTINET": {
    "ticker": "FORTINET",
