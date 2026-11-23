@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T13:43:09+00:00",
+ "updated": "2026-11-23T13:44:52+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -3873,7 +3873,7 @@
   "TPL": {
    "ticker": "TPL",
    "name": "Texas Pacific Land Corporation",
-   "price": 292.4,
+   "price": 267.44,
    "currency": "USD",
    "sector": "Energy",
    "industry": "Oil & Gas E&P",
@@ -3900,9 +3900,9 @@
     {
      "label": "P/E forward",
      "ok": true,
-     "val": "4.00x",
+     "val": "3.66x",
      "barre": "<= 20x",
-     "margin": "-80 % vs la barre de 20x."
+     "margin": "-82 % vs la barre de 20x."
     },
     {
      "label": "FCF TTM",
@@ -3921,16 +3921,16 @@
     {
      "label": "Ancre prix (décote ou DCF)",
      "ok": true,
-     "val": "-46.6 %",
+     "val": "-51.1 %",
      "barre": ">= 25 % ou >= 20 % sous le DCF",
-     "margin": "Décote -46.6 % (barre 25 % — passe) · marge sous le DCF -615.2 % (prix 292.40 vs valeur 40.88 USD — barre 20 % — échoue)."
+     "margin": "Décote -51.1 % (barre 25 % — passe) · marge sous le DCF -554.2 % (prix 267.44 vs valeur 40.88 USD — barre 20 % — échoue)."
     },
     {
      "label": "Capitalisation",
      "ok": true,
-     "val": "20.17 Md$",
+     "val": "18.45 Md$",
      "barre": ">= 2 Md$",
-     "margin": "10.1x le plancher."
+     "margin": "9.2x le plancher."
     }
    ],
    "flags": [
@@ -3938,7 +3938,7 @@
    ],
    "dcf": {
     "value": 40.88353352232831,
-    "mos": -0.8601794339181659,
+    "mos": -0.8471300720822303,
     "implied": null,
     "implied_note": "> +60 %",
     "note": "Hypothèses : FCF 118 M$ en base, croissance prudente (min. des mesures) 11.4 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
@@ -3954,8 +3954,8 @@
      218.88000000000002
     ],
     "add_hi": 404.92800000000005,
-    "zone": "Add Zone",
-    "mult": "1X DCA"
+    "zone": "Buy Zone",
+    "mult": "2X DCA"
    },
    "qualite": [
     {
@@ -3991,14 +3991,14 @@
      "ok": true
     }
    ],
-   "date": "2026-11-18T15:22:57+00:00",
+   "date": "2026-11-23T13:44:52+00:00",
    "compounders": {
     "verdict": "PAS ENCORE",
     "rows": [
      {
       "label": "Rendement espéré >= 12 %/an",
       "ok": true,
-      "det": "Croissance +21.0 % (plafonnée à 25 %) + dividende 0.8 % + rachats nets 0.0 % - contraction 0.0 % = +21.9 %/an (barre 12 % ; croissance brute +21.0 %/an, plancher +7 %)."
+      "det": "Croissance +21.0 % (plafonnée à 25 %) + dividende 0.9 % + rachats nets 0.0 % - contraction 0.0 % = +21.9 %/an (barre 12 % ; croissance brute +21.0 %/an, plancher +7 %)."
      },
      {
       "label": "ROIC soutenu >= 15 %",
@@ -4013,7 +4013,7 @@
      {
       "label": "Discipline du capital",
       "ok": false,
-      "det": "Retour 0.8 %/an (dividende + rachats nets) ; croissance FCF -57.8 %/an."
+      "det": "Retour 0.9 %/an (dividende + rachats nets) ; croissance FCF -57.8 %/an."
      },
      {
       "label": "Ancre prix (comme le filtre principal)",
