@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T13:44:52+00:00",
+ "updated": "2026-11-23T14:05:06+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -123,7 +123,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-21T03:22:31+00:00",
+   "date": "2026-11-23T14:04:57+00:00",
    "compounders": {
     "verdict": "NON",
     "rows": [
@@ -145,7 +145,7 @@
      {
       "label": "Discipline du capital",
       "ok": false,
-      "det": "Retour 0.0 %/an (dividende + rachats nets) ; croissance FCF n/d."
+      "det": "Retour 0.0 %/an (dividende + rachats nets n/d — historique d'actions indisponible) ; croissance FCF n/d."
      },
      {
       "label": "Ancre prix (comme le filtre principal)",
@@ -200,7 +200,7 @@
     {
      "label": "Dette nette / EBITDA",
      "ok": true,
-     "val": "Cash net 311 M$",
+     "val": "Cash net 328 M$",
      "barre": "<= 2x",
      "margin": "Aucune dette nette."
     },
@@ -209,7 +209,7 @@
      "ok": true,
      "val": "-61.8 %",
      "barre": ">= 25 % ou >= 20 % sous le DCF",
-     "margin": "Décote -61.8 % (barre 25 % — passe) · marge sous le DCF -41.0 % (prix 156.06 vs valeur 110.70 USD — barre 20 % — échoue)."
+     "margin": "Décote -61.8 % (barre 25 % — passe) · marge sous le DCF -40.5 % (prix 156.06 vs valeur 111.10 USD — barre 20 % — échoue)."
     },
     {
      "label": "Capitalisation",
@@ -224,9 +224,9 @@
     "Bêta 1.85."
    ],
    "dcf": {
-    "value": 110.70067875040436,
-    "mos": -0.2906530901550406,
-    "implied": 0.18480387514603802,
+    "value": 111.10068076904348,
+    "mos": -0.2880899604700533,
+    "implied": 0.1841071496018435,
     "implied_note": null,
     "note": "Hypothèses : FCF 228 M$ en base, croissance prudente (min. des mesures) 9.3 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
    },
@@ -247,7 +247,7 @@
    "qualite": [
     {
      "label": "ROE",
-     "val": 0.44522998,
+     "val": 0.46750998,
      "seuil": 0.15,
      "lo": 0.0,
      "hi": 0.4,
@@ -278,7 +278,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-21T03:22:33+00:00",
+   "date": "2026-11-23T14:05:00+00:00",
    "compounders": {
     "verdict": "NON",
     "rows": [
@@ -434,7 +434,7 @@
      "ok": false
     }
    ],
-   "date": "2026-11-21T03:22:35+00:00",
+   "date": "2026-11-23T14:05:03+00:00",
    "compounders": {
     "verdict": "NON",
     "rows": [
@@ -456,7 +456,7 @@
      {
       "label": "Discipline du capital",
       "ok": false,
-      "det": "Retour 0.0 %/an (dividende + rachats nets) ; croissance FCF -25.2 %/an."
+      "det": "Retour 0.0 %/an (dividende + rachats nets n/d — historique d'actions indisponible) ; croissance FCF -25.2 %/an."
      },
      {
       "label": "Ancre prix (comme le filtre principal)",
@@ -541,16 +541,16 @@
     "note": "Hypothèses : FCF 2.80 Md$ en base, croissance prudente (min. des mesures) 16.2 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
    },
    "rdca": {
-    "anchor": 4981.6083984375,
+    "anchor": 4981.60888671875,
     "buy": [
-     1992.643359375,
-     2440.988115234375
+     1992.6435546875,
+     2440.9883544921877
     ],
     "sm": [
-     1693.74685546875,
-     1992.643359375
+     1693.7470214843752,
+     1992.6435546875
     ],
-    "add_hi": 3686.39021484375,
+    "add_hi": 3686.390576171875,
     "zone": "Add Zone",
     "mult": "1X DCA"
    },
@@ -588,14 +588,14 @@
      "ok": true
     }
    ],
-   "date": "2026-11-21T03:22:37+00:00",
+   "date": "2026-11-23T14:05:06+00:00",
    "compounders": {
     "verdict": "NON",
     "rows": [
      {
       "label": "Rendement espéré >= 12 %/an",
       "ok": true,
-      "det": "Croissance +25.0 % (plafonnée à 25 %) + dividende 8.0 % (plafonné à 8 % — donnée Yahoo brute 18.0 %) + rachats nets 0.0 % - contraction 1.4 % = +31.6 %/an (barre 12 % ; croissance brute +30.4 %/an, plancher +7 %)."
+      "det": "Croissance +25.0 % (plafonnée à 25 %) + dividende 8.0 % (plafonné à 8 % — donnée Yahoo brute 19.0 %) + rachats nets 0.0 % - contraction 1.4 % = +31.6 %/an (barre 12 % ; croissance brute +30.4 %/an, plancher +7 %)."
      },
      {
       "label": "ROIC soutenu >= 15 %",
@@ -609,8 +609,8 @@
      },
      {
       "label": "Discipline du capital",
-      "ok": true,
-      "det": "Retour 8.0 %/an (dividende + rachats nets) — branche retour OK ; croissance FCF +28.5 %/an."
+      "ok": false,
+      "det": "Retour 8.0 %/an (dividende + rachats nets n/d — historique d'actions indisponible) ; croissance FCF +28.5 %/an."
      },
      {
       "label": "Ancre prix (comme le filtre principal)",
