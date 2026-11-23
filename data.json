@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T14:36:13+00:00",
+ "updated": "2026-11-23T14:52:52+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -4088,7 +4088,7 @@
   "DELL": {
    "ticker": "DELL",
    "name": "Dell Technologies Inc.",
-   "price": 360.05,
+   "price": 329.845,
    "currency": "USD",
    "sector": "Technology",
    "industry": "Computer Hardware",
@@ -4116,9 +4116,9 @@
     {
      "label": "P/E forward",
      "ok": true,
-     "val": "11.75x",
+     "val": "10.80x",
      "barre": "<= 20x",
-     "margin": "-41 % vs la barre de 20x."
+     "margin": "-46 % vs la barre de 20x."
     },
     {
      "label": "FCF TTM",
@@ -4137,16 +4137,16 @@
     {
      "label": "Ancre prix (décote ou DCF)",
      "ok": true,
-     "val": "-39.5 %",
+     "val": "-44.6 %",
      "barre": ">= 25 % ou >= 20 % sous le DCF",
-     "margin": "Décote -39.5 % (barre 25 % — passe) · marge sous le DCF +19.4 % (prix 360.05 vs valeur 446.72 USD — barre 20 % — échoue)."
+     "margin": "Décote -44.6 % (barre 25 % — passe) · marge sous le DCF +26.2 % (prix 329.85 vs valeur 446.72 USD — barre 20 % — passe)."
     },
     {
      "label": "Capitalisation",
      "ok": true,
-     "val": "228.92 Md$",
+     "val": "209.72 Md$",
      "barre": ">= 2 Md$",
-     "margin": "114.5x le plancher."
+     "margin": "104.9x le plancher."
     }
    ],
    "flags": [
@@ -4156,8 +4156,8 @@
    ],
    "dcf": {
     "value": 446.7154645951201,
-    "mos": 0.24070397054609116,
-    "implied": 0.05028530178880841,
+    "mos": 0.35431934573851387,
+    "implied": 0.03333002595912171,
     "implied_note": null,
     "note": "Hypothèses : FCF 8.56 Md$ en base, croissance prudente (min. des mesures) 9.4 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
    },
@@ -4209,7 +4209,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-23T14:36:13+00:00",
+   "date": "2026-11-23T14:52:52+00:00",
    "compounders": {
     "verdict": "PAS ENCORE",
     "rows": [
