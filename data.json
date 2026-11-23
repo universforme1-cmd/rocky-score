@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T14:52:52+00:00",
+ "updated": "2026-11-23T16:24:40+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -4990,6 +4990,159 @@
       "label": "Discipline du capital",
       "ok": false,
       "det": "Retour 1.3 %/an (dividende + rachats nets n/d — historique d'actions indisponible) ; croissance FCF n/d."
+     },
+     {
+      "label": "Ancre prix (comme le filtre principal)",
+      "ok": true,
+      "det": "Reprend le check 6 principal : décote >= 25 % ou >= 20 % sous le DCF."
+     }
+    ]
+   }
+  },
+  "MLI": {
+   "ticker": "MLI",
+   "name": "Mueller Industries, Inc.",
+   "price": 51.7526,
+   "currency": "USD",
+   "sector": "Industrials",
+   "industry": "Metal Fabrication",
+   "score": 6,
+   "verdict": "PAS ENCORE",
+   "fails": [
+    "Croissance revenus forward"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": true,
+     "val": "0y +31 % · +1y +12 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +12 % (plancher +10 %) ; parcours composé : +21.1 %/an (barre +20 %/an). Moyenne du parcours : +21.5 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward",
+     "ok": false,
+     "val": "+10.9 %",
+     "barre": ">= +20 %/an",
+     "margin": "-9.1 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+    },
+    {
+     "label": "P/E forward",
+     "ok": true,
+     "val": "11.13x",
+     "barre": "<= 20x",
+     "margin": "-44 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": true,
+     "val": "690 M$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": true,
+     "val": "Cash net 1.45 Md$",
+     "barre": "<= 2x",
+     "margin": "Aucune dette nette."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": true,
+     "val": "-27.2 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote -27.2 % (barre 25 % — passe) · marge sous le DCF +27.4 % (prix 51.75 vs valeur 71.29 USD — barre 20 % — passe)."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "11.28 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "5.6x le plancher."
+    }
+   ],
+   "flags": [
+    "Bêta 1.02."
+   ],
+   "dcf": {
+    "value": 71.2902982096351,
+    "mos": 0.377521094778525,
+    "implied": 0.022510928048112278,
+    "implied_note": null,
+    "note": "Hypothèses : FCF 690 M$ en base, croissance prudente (min. des mesures) 10.9 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+   },
+   "rdca": {
+    "anchor": 71.12,
+    "buy": [
+     28.448000000000004,
+     34.848800000000004
+    ],
+    "sm": [
+     24.180800000000005,
+     28.448000000000004
+    ],
+    "add_hi": 52.628800000000005,
+    "zone": "Add Zone",
+    "mult": "1X DCA"
+   },
+   "qualite": [
+    {
+     "label": "ROE",
+     "val": 0.2626,
+     "seuil": 0.15,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIC",
+     "val": 0.4090579014816197,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIIC",
+     "val": 0.2165197114026158,
+     "seuil": 0.1,
+     "lo": -0.1,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROCE",
+     "val": 0.541296680536747,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    }
+   ],
+   "date": "2026-11-23T16:24:40+00:00",
+   "compounders": {
+    "verdict": "PAS ENCORE",
+    "rows": [
+     {
+      "label": "Rendement espéré >= 12 %/an",
+      "ok": true,
+      "det": "Croissance +21.1 % (plafonnée à 25 %) + dividende 1.4 % + rachats nets 0.0 % - contraction 0.0 % = +22.5 %/an (barre 12 % ; croissance brute +21.1 %/an, plancher +7 %)."
+     },
+     {
+      "label": "ROIC soutenu >= 15 %",
+      "ok": true,
+      "det": "ROIC 44.0 % (moyenne sur 4 exercice(s)) — barre 15 %."
+     },
+     {
+      "label": "Intouchables (FCF, levier, cap)",
+      "ok": true,
+      "det": "FCF > 0, levier <= 2x, cap >= 2 Md$ : respectés."
+     },
+     {
+      "label": "Discipline du capital",
+      "ok": false,
+      "det": "Retour 1.4 %/an (dividende + rachats nets n/d — historique d'actions indisponible) ; croissance FCF +0.0 %/an."
      },
      {
       "label": "Ancre prix (comme le filtre principal)",
