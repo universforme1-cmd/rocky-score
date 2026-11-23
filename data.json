@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T14:35:45+00:00",
+ "updated": "2026-11-23T14:36:13+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -4116,7 +4116,7 @@
     {
      "label": "P/E forward",
      "ok": true,
-     "val": "11.79x",
+     "val": "11.75x",
      "barre": "<= 20x",
      "margin": "-41 % vs la barre de 20x."
     },
@@ -4209,7 +4209,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-23T14:35:45+00:00",
+   "date": "2026-11-23T14:36:13+00:00",
    "compounders": {
     "verdict": "PAS ENCORE",
     "rows": [
