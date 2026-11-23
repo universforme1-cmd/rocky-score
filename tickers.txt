@@ -1,5 +1,39 @@
-# Un ticker par ligne. Analysés automatiquement chaque soir de semaine.
-HOOD
-IESC
-AXON
+# Tickers suivis — un par ligne. Chargés comme boutons rapides dans l'appli.
+# Portefeuille (Questrade, plan 1 M$)
+MA
+SPGI
+BKNG
+MSFT
+HLNE
+TSM
+FIX
+FLEX
+NFLX
+SE
+VRT
+SYK
+VEEV
+STRL
+RDDT
+# Juges et gates à venir
+DELL
+CRDO
+TTMI
+NVDA
+MLI
+INTU
+ADBE
+JD
+NOW
+CAT
+DASH
+NU
+DLO
+AXTI
+COHR
+LRCX
+AMAT
+CLS
+# Hors plan (Wealthsimple)
 CSU.TO
+TOI.TO
