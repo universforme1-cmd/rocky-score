@@ -205,9 +205,14 @@ def donnees(ticker):
         bs = t.balance_sheet
     dette = dernier(ligne(bs, ["Total Debt"]))
     if dette is None:
-        lt = dernier(ligne(bs, ["Long Term Debt"])) or 0.0
-        ct = dernier(ligne(bs, ["Current Debt"])) or 0.0
-        dette = lt + ct if (lt or ct) else None
+        lt = dernier(ligne(bs, ["Long Term Debt"]))
+        ct = dernier(ligne(bs, ["Current Debt"]))
+        if lt is None and ct is None:
+            # Aucune ligne de dette au bilan : entreprise sans dette
+            # déclarée (ex. NXT, ANET, ISRG) — dette = 0, pas une erreur.
+            dette = 0.0
+        else:
+            dette = (lt or 0.0) + (ct or 0.0)
     cash = dernier(ligne(bs, ["Cash Cash Equivalents And Short Term Investments",
                               "Cash And Cash Equivalents"]))
     fonds = dernier(ligne(bs, ["Stockholders Equity",
