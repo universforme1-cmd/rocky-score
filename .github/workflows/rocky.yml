@@ -34,7 +34,7 @@ jobs:
           TICKERS: ${{ inputs.tickers }}
         run: |
           set -f
-          python rocky-score.py --json data.json $TICKERS
+          python rocky-score.py --json data.json "$TICKERS"
       - name: Publier data.json
         run: |
           git config user.name "rocky-bot"
@@ -72,9 +72,3 @@ jobs:
             sleep $((essai * 3))
           done
           echo "Impossible de publier après 5 essais."; exit 1
-
-          git add data.json
-          if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Fiches Rocky Score"
-          git pull --rebase
-          git push

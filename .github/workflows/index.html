@@ -1,0 +1,1099 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0e1116" />
+    <meta name="color-scheme" content="dark" />
+    <title>Rocky — Score · DCF · Valeur</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="icon-192.png" />
+    <link rel="apple-touch-icon" href="icon-192.png" />
+    <style>
+      :root{
+        --bg:#0e1116; --card:#171b22; --border:#262c36; --txt:#e8ebf0; --sec:#8b94a3;
+        --vert:#3ccf8e; --rouge:#f0616d; --jaune:#e9c46a; --bleu:#38bdf8;
+        --violet:#7a5cf0; --turq:#2a9d8f; --grisseg:#3a4250;
+      }
+      *{ box-sizing:border-box; }
+      html{ -webkit-text-size-adjust:100%; }
+      body{
+        margin:0; background:var(--bg); color:var(--txt);
+        font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+        font-size:16px; line-height:1.45;
+      }
+      button, input{ font:inherit; color:inherit; }
+      button{ cursor:pointer; }
+
+      /* ---------- En-tête + onglets ---------- */
+      header{
+        position:sticky; top:0; z-index:40; background:var(--bg);
+        border-bottom:1px solid var(--border);
+      }
+      .htop{
+        display:flex; align-items:center; justify-content:space-between;
+        padding:10px 14px 6px;
+      }
+      .htitle{ font-size:22px; font-weight:800; letter-spacing:.2px; }
+      .hbtns{ display:flex; gap:8px; }
+      .hbtn{
+        width:44px; height:44px; border-radius:10px; border:1px solid var(--border);
+        background:var(--card); color:var(--txt); font-size:20px; line-height:1;
+        display:flex; align-items:center; justify-content:center;
+      }
+      .tabs{ display:flex; padding:0 10px; gap:6px; }
+      .tab{
+        flex:1; min-height:46px; border:0; background:transparent; color:var(--sec);
+        font-size:17px; font-weight:700; border-bottom:3px solid transparent; border-radius:8px 8px 0 0;
+      }
+      .tab-score.on{ color:var(--jaune); border-bottom-color:var(--jaune); background:rgba(233,196,106,.08); }
+      .tab-dcf.on{ color:var(--bleu); border-bottom-color:var(--bleu); background:rgba(56,189,248,.08); }
+      .tab-valeur.on{ color:var(--vert); border-bottom-color:var(--vert); background:rgba(60,207,142,.08); }
+
+      main{ max-width:760px; margin:0 auto; padding:14px 12px 40px; }
+
+      /* ---------- Barre d'analyse ---------- */
+      .bar{ display:flex; gap:8px; }
+      .bar input{
+        flex:1; min-width:0; min-height:48px; padding:10px 12px;
+        background:var(--card); border:1px solid var(--border); border-radius:10px;
+        color:var(--txt); font-size:16px; text-transform:uppercase;
+      }
+      .bar input::placeholder{ text-transform:none; color:var(--sec); }
+      .btn{
+        min-height:48px; padding:10px 18px; border:0; border-radius:10px;
+        font-weight:800; font-size:16px; color:#12100a;
+      }
+      .btn-score{ background:var(--jaune); }
+      .btn-dcf{ background:var(--bleu); }
+      .btn-valeur{ background:var(--vert); }
+      .btn-ghost{
+        min-height:44px; padding:9px 14px; border-radius:10px;
+        background:transparent; border:1px solid var(--border); color:var(--txt); font-weight:600;
+      }
+      .status{ min-height:22px; margin:10px 2px 4px; color:var(--sec); font-size:14px; }
+      .legend{ margin:12px 2px 8px; color:var(--sec); font-size:14px; }
+      .foot{ margin:14px 2px 0; color:var(--sec); font-size:13px; }
+      .empty{
+        margin-top:14px; padding:18px 14px; border:1px dashed var(--border); border-radius:12px;
+        color:var(--sec); text-align:center;
+      }
+
+      /* ---------- Lignes de liste ---------- */
+      .row{
+        display:flex; align-items:center; gap:11px; width:100%; text-align:left;
+        background:var(--card); border:1px solid var(--border); border-radius:12px;
+        padding:10px 12px; margin-bottom:8px; min-height:64px;
+      }
+      .badge52{
+        flex:0 0 52px; width:52px; height:52px; border-radius:10px;
+        display:flex; flex-direction:column; align-items:center; justify-content:center;
+        font-weight:800; line-height:1.05;
+      }
+      .badge52 .big{ font-size:21px; }
+      .badge52 .small{ font-size:11px; font-weight:600; opacity:.85; }
+      .b-passe{ background:rgba(60,207,142,.15); color:var(--vert); }
+      .b-encore{ background:rgba(233,196,106,.15); color:var(--jaune); }
+      .b-non{ background:rgba(240,97,109,.15); color:var(--rouge); }
+      .b-err{ background:rgba(139,148,163,.15); color:var(--sec); }
+      .grow{ flex:1; min-width:0; }
+      .tk{ font-weight:800; font-size:17px; }
+      .nm{ color:var(--sec); font-size:13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+      .dots{ display:flex; gap:4px; margin-top:5px; }
+      .dot{ width:8px; height:8px; border-radius:50%; background:var(--grisseg); }
+      .dot.ok{ background:var(--vert); }
+      .dot.ko{ background:var(--rouge); }
+      .right{ text-align:right; flex:0 0 auto; }
+      .prix{ font-weight:800; font-size:16px; }
+      .mult{ color:var(--sec); font-size:13px; margin-top:2px; }
+      .rbadge{
+        display:inline-block; padding:5px 10px; border-radius:8px; font-weight:800; font-size:16px;
+      }
+      .r-vert{ background:rgba(60,207,142,.15); color:var(--vert); }
+      .r-jaune{ background:rgba(233,196,106,.15); color:var(--jaune); }
+      .r-rouge{ background:rgba(240,97,109,.15); color:var(--rouge); }
+      .r-nd{ background:rgba(139,148,163,.15); color:var(--sec); }
+      .devise-badge{
+        display:inline-block; padding:3px 8px; border-radius:7px; font-size:12px; font-weight:700;
+        background:rgba(233,196,106,.15); color:var(--jaune); margin-left:6px; vertical-align:2px;
+      }
+
+      /* ---------- Panneaux plein écran ---------- */
+      .overlay{
+        position:fixed; inset:0; z-index:60; background:var(--bg);
+        overflow-y:auto; -webkit-overflow-scrolling:touch;
+      }
+      .sheet-in{ max-width:760px; margin:0 auto; padding:16px 14px 48px; }
+      .sheet-head{ display:flex; align-items:flex-start; justify-content:space-between; gap:10px; }
+      .sheet-title{ font-size:24px; font-weight:800; }
+      .sheet-sub{ color:var(--sec); font-size:14px; margin-top:2px; }
+      .btn-close{ flex:0 0 auto; }
+      h3.sec{
+        font-size:15px; font-weight:800; margin:22px 0 8px;
+        text-transform:uppercase; letter-spacing:.4px; color:var(--sec);
+      }
+      .alert{
+        margin-top:12px; padding:11px 13px; border-radius:10px; font-size:14px;
+        background:rgba(240,97,109,.12); border:1px solid rgba(240,97,109,.45); color:#ffb3ba;
+      }
+      .alert-jaune{
+        background:rgba(233,196,106,.10); border-color:rgba(233,196,106,.45); color:#f3ddab;
+      }
+      .box{
+        background:var(--card); border:1px solid var(--border); border-radius:12px;
+        padding:12px 14px; margin-top:10px;
+      }
+      .verdict-bloc{ border-radius:12px; padding:14px; margin-top:14px; border:1px solid var(--border); }
+      .verdict-bloc .gros{ font-size:30px; font-weight:800; line-height:1.1; }
+      .verdict-bloc .lib{ font-size:17px; font-weight:800; }
+      .v-passe{ background:rgba(60,207,142,.10); } .v-passe .gros,.v-passe .lib{ color:var(--vert); }
+      .v-encore{ background:rgba(233,196,106,.10); } .v-encore .gros,.v-encore .lib{ color:var(--jaune); }
+      .v-non{ background:rgba(240,97,109,.10); } .v-non .gros,.v-non .lib{ color:var(--rouge); }
+      .pourquoi{ margin-top:6px; font-size:14px; }
+      .check{ display:flex; gap:10px; padding:9px 0; border-bottom:1px solid var(--border); }
+      .check:last-child{ border-bottom:0; }
+      .pastille{
+        flex:0 0 24px; width:24px; height:24px; border-radius:50%;
+        display:flex; align-items:center; justify-content:center;
+        font-size:14px; font-weight:800; margin-top:1px;
+      }
+      .pastille.ok{ background:rgba(60,207,142,.18); color:var(--vert); }
+      .pastille.ko{ background:rgba(240,97,109,.18); color:var(--rouge); }
+      .check .cl{ font-weight:700; }
+      .check .cv{ font-size:14px; }
+      .check .cm{ color:var(--sec); font-size:13px; margin-top:1px; }
+      .kv{ display:flex; justify-content:space-between; gap:14px; padding:7px 0; border-bottom:1px solid var(--border); }
+      .kv:last-child{ border-bottom:0; }
+      .kv .k{ color:var(--sec); }
+      .kv .v{ font-weight:700; text-align:right; }
+      .note-sec{ color:var(--sec); font-size:13px; margin-top:8px; }
+      ul.flags{ margin:6px 0 2px; padding-left:20px; }
+      ul.flags li{ margin:3px 0; }
+
+      /* Jauges qualité */
+      .gauge{ padding:10px 0; border-bottom:1px solid var(--border); }
+      .gauge:last-child{ border-bottom:0; }
+      .gauge .gl{ display:flex; justify-content:space-between; gap:10px; }
+      .gauge .gname{ font-weight:700; font-size:14px; }
+      .gauge .gval{ font-weight:800; }
+      .gtrack{ position:relative; height:8px; background:#232833; border-radius:4px; margin:8px 0 6px; }
+      .gfill{ position:absolute; left:0; top:0; bottom:0; border-radius:4px; background:var(--sec); }
+      .gseuil{ position:absolute; top:-3px; bottom:-3px; width:2px; background:#fff; }
+      .gseuil-txt{ color:var(--sec); font-size:12px; }
+
+      /* Barre R-DCA */
+      .rdca-wrap{ margin-top:26px; }
+      .rdca-marker{ position:relative; height:22px; }
+      .rdca-marker .mtag{
+        position:absolute; top:0; transform:translateX(-50%);
+        font-size:12px; font-weight:800; white-space:nowrap;
+      }
+      .rdca-marker .mline{
+        position:absolute; top:16px; width:2px; height:12px; background:var(--txt);
+        transform:translateX(-50%);
+      }
+      .rdca-bar{ display:flex; height:16px; border-radius:5px; overflow:hidden; }
+      .rdca-bar div{ height:100%; }
+      .rdca-zone{ font-weight:800; margin-top:10px; }
+      .legend-rdca{ display:flex; flex-wrap:wrap; gap:6px 14px; margin-top:10px; font-size:13px; color:var(--sec); }
+      .legend-rdca span{ display:inline-flex; align-items:center; gap:6px; }
+      .swatch{ width:11px; height:11px; border-radius:3px; display:inline-block; }
+
+      /* Scénarios DCF */
+      .scen-card{ background:var(--card); border:1px solid var(--border); border-radius:12px; padding:12px 14px; margin-top:10px; }
+      .scen-head{ display:flex; justify-content:space-between; align-items:baseline; gap:10px; }
+      .scen-name{ font-weight:800; font-size:16px; }
+      .scen-rend{ font-weight:800; font-size:21px; }
+      .scen-grid{ display:grid; grid-template-columns:repeat(5,1fr); gap:7px; margin-top:10px; }
+      .scen-grid label{ display:block; font-size:11px; color:var(--sec); margin-bottom:3px; text-align:center; }
+      .scen-grid input{
+        width:100%; min-height:42px; padding:6px 4px; text-align:center;
+        background:var(--bg); border:1px solid var(--border); border-radius:8px; color:var(--txt);
+        font-size:15px;
+      }
+      .sheet-actions{ display:flex; flex-direction:column; gap:9px; margin-top:24px; }
+      .sheet-actions .btn, .sheet-actions .btn-ghost{ width:100%; }
+
+      /* Réglages */
+      .field{ margin-top:14px; }
+      .field label{ display:block; font-weight:700; margin-bottom:5px; font-size:14px; }
+      .field input{
+        width:100%; min-height:48px; padding:10px 12px;
+        background:var(--card); border:1px solid var(--border); border-radius:10px; color:var(--txt);
+      }
+      .settings-note{ color:var(--sec); font-size:14px; margin-top:12px; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="htop">
+        <div class="htitle">Rocky</div>
+        <div class="hbtns">
+          <button class="hbtn" id="btnRefresh" aria-label="Actualiser l'onglet actif">↻</button>
+          <button class="hbtn" id="btnSettings" aria-label="Réglages">⚙</button>
+        </div>
+      </div>
+      <nav class="tabs" role="tablist">
+        <button class="tab tab-score on" id="tabBtnScore" role="tab">Score</button>
+        <button class="tab tab-dcf" id="tabBtnDcf" role="tab">DCF</button>
+        <button class="tab tab-valeur" id="tabBtnValeur" role="tab">Valeur</button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ======== ONGLET SCORE ======== -->
+      <section id="viewScore">
+        <div class="bar">
+          <input id="inScore" type="text" placeholder="Ticker ou nom (ex. AXON, Mueller)" autocomplete="off" autocapitalize="characters" spellcheck="false" />
+          <button class="btn btn-score" id="btnAnalyseScore">Analyser</button>
+        </div>
+        <div class="status" id="statusScore"></div>
+        <div id="listScore"></div>
+        <div class="foot" id="footScore"></div>
+      </section>
+
+      <!-- ======== ONGLET DCF ======== -->
+      <section id="viewDcf" hidden>
+        <div class="bar">
+          <input id="inDcf" type="text" placeholder="Ticker ou nom (ex. NVDA, Booking)" autocomplete="off" autocapitalize="characters" spellcheck="false" />
+          <button class="btn btn-dcf" id="btnAnalyseDcf">Analyser</button>
+        </div>
+        <div class="status" id="statusDcf"></div>
+        <div class="legend" id="legendDcf"></div>
+        <div id="listDcf"></div>
+        <div class="foot" id="footDcf"></div>
+      </section>
+
+      <!-- ======== ONGLET VALEUR ======== -->
+      <section id="viewValeur" hidden>
+        <div class="bar">
+          <input id="inValeur" type="text" placeholder="Ticker ou nom (ex. MLI, Mueller)" autocomplete="off" autocapitalize="characters" spellcheck="false" />
+          <button class="btn btn-valeur" id="btnAnalyseValeur">Analyser</button>
+        </div>
+        <div class="status" id="statusValeur"></div>
+        <div class="legend" id="legendValeur"></div>
+        <div id="listValeur"></div>
+        <div class="foot" id="footValeur"></div>
+      </section>
+    </main>
+
+    <!-- ======== FICHE SCORE ======== -->
+    <div class="overlay" id="sheetScore" hidden>
+      <div class="sheet-in" id="sheetScoreIn"></div>
+    </div>
+
+    <!-- ======== FICHE DCF ======== -->
+    <div class="overlay" id="sheetDcf" hidden>
+      <div class="sheet-in" id="sheetDcfIn"></div>
+    </div>
+
+    <!-- ======== FICHE VALEUR ======== -->
+    <div class="overlay" id="sheetValeur" hidden>
+      <div class="sheet-in" id="sheetValeurIn"></div>
+    </div>
+
+    <!-- ======== RÉGLAGES ======== -->
+    <div class="overlay" id="panelSettings" hidden>
+      <div class="sheet-in">
+        <div class="sheet-head">
+          <div class="sheet-title">Réglages</div>
+          <button class="btn-ghost btn-close" id="btnCloseSettings">Fermer</button>
+        </div>
+        <p class="settings-note">Le jeton autorise ce téléphone à lancer les analyses sur GitHub. Il reste enregistré sur cet appareil uniquement. Une seule appli, un seul dépôt : les trois robots (rocky.yml, rdcf.yml et valeur.yml) vivent dans ce dépôt.</p>
+        <div class="field">
+          <label for="stToken">Jeton GitHub (fine-grained)</label>
+          <input id="stToken" type="password" autocomplete="off" spellcheck="false" />
+        </div>
+        <div class="field">
+          <label for="stOwner">Compte GitHub</label>
+          <input id="stOwner" type="text" autocomplete="off" spellcheck="false" />
+        </div>
+        <div class="field">
+          <label for="stRepo">Dépôt</label>
+          <input id="stRepo" type="text" autocomplete="off" spellcheck="false" />
+        </div>
+        <div class="sheet-actions">
+          <button class="btn btn-score" id="btnSaveSettings">Enregistrer</button>
+          <div class="status" id="statusSettings"></div>
+          <button class="btn-ghost" id="btnResetScore">Score : réafficher les fiches retirées</button>
+          <button class="btn-ghost" id="btnResetDcf">DCF : rétablir les scénarios du script et les fiches retirées</button>
+          <button class="btn-ghost" id="btnResetValeur">Valeur : réafficher les fiches retirées</button>
+        </div>
+        <p class="settings-note">Filtre personnel, pas un conseil financier. Données : Yahoo Finance.</p>
+      </div>
+    </div>
+
+<script>
+      "use strict";
+      /* ================= Utilitaires ================= */
+      const $ = (id) => document.getElementById(id);
+      const LS = {
+        get(k, def){ try{ const v = localStorage.getItem(k); return v === null ? def : JSON.parse(v); }catch(e){ return def; } },
+        set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} },
+        del(k){ try{ localStorage.removeItem(k); }catch(e){} }
+      };
+      const esc = (s) => String(s === null || s === undefined ? "" : s).replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+      const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+      const fmtNum = (v, dec) => (v === null || v === undefined || isNaN(v)) ? "n/d" : Number(v).toLocaleString("fr-CA", {minimumFractionDigits: dec, maximumFractionDigits: dec});
+      const fmtPctSigne = (v, dec) => (v === null || v === undefined || isNaN(v)) ? "n/d" : (v > 0 ? "+" : "") + Number(v).toLocaleString("fr-CA", {minimumFractionDigits: dec, maximumFractionDigits: dec}) + " %";
+      function fmtDateFr(iso){
+        if(!iso) return "";
+        const d = new Date(iso);
+        if(isNaN(d.getTime())) return String(iso);
+        return d.toLocaleString("fr-CA", {day: "numeric", month: "long", hour: "2-digit", minute: "2-digit"});
+      }
+      const RE_TICKER = /^[A-Z0-9][A-Z0-9.\-=^]{0,14}$/;
+      const RE_SAISIE = /^[A-Z0-9][A-Z0-9 .&'\-=^]{0,39}$/;  // ticker OU nom de compagnie
+
+      /* ================= Réglages partagés ================= */
+      function cfg(){
+        const s = LS.get("cfg", {}) || {};
+        let owner = String(s.owner || "").trim();
+        let repo = String(s.repo || "").trim();
+        if(!owner){
+          const m = location.hostname.match(/^([^.]+)\.github\.io$/);
+          if(m) owner = m[1];
+        }
+        if(!repo){
+          const seg = location.pathname.split("/").filter(Boolean);
+          if(seg.length) repo = seg[0];
+        }
+        return { token: String(s.token || "").trim(), owner, repo };
+      }
+      async function gh(path, opt){
+        const c = cfg();
+        const o = Object.assign({}, opt || {});
+        o.headers = Object.assign(
+          { "Authorization": "Bearer " + c.token, "X-GitHub-Api-Version": "2022-11-28", "Accept": "application/vnd.github+json" },
+          (opt && opt.headers) || {}
+        );
+        return fetch("https://api.github.com/repos/" + c.owner + "/" + c.repo + "/" + path, o);
+      }
+
+      /* ================= État des onglets ================= */
+      const etat = {
+        score: {
+          workflow: "rocky.yml", file: "data.json",
+          fiches: LS.get("score-fiches", {}),
+          hidden: LS.get("score-hidden", []),
+          updated: LS.get("score-updated", "")
+        },
+        dcf: {
+          workflow: "rdcf.yml", file: "data-dcf.json",
+          fiches: LS.get("dcf-fiches", {}),
+          hidden: LS.get("dcf-hidden", []),
+          updated: LS.get("dcf-updated", "")
+        },
+        valeur: {
+          workflow: "valeur.yml", file: "data-valeur.json",
+          fiches: LS.get("valeur-fiches", {}),
+          hidden: LS.get("valeur-hidden", []),
+          updated: LS.get("valeur-updated", "")
+        }
+      };
+      function persiste(tab){
+        const st = etat[tab];
+        LS.set(tab + "-fiches", st.fiches);
+        LS.set(tab + "-hidden", st.hidden);
+        LS.set(tab + "-updated", st.updated);
+      }
+      const cleDate = (f) => String((f && (f.date_tentative || f.date)) || "");
+      function fusionneFiches(local, entrantes){
+        const out = Object.assign({}, local || {});
+        for(const t in (entrantes || {})){
+          if(!out[t] || cleDate(entrantes[t]) >= cleDate(out[t])) out[t] = entrantes[t];
+        }
+        return out;
+      }
+      function setStatus(tab, msg){ $({score: "statusScore", dcf: "statusDcf", valeur: "statusValeur"}[tab]).textContent = msg || ""; }
+
+      /* ================= Mécanique commune ================= */
+      function appliqueData(tab, obj){
+        if(!obj || typeof obj !== "object") return;
+        const st = etat[tab];
+        if(obj.fiches && typeof obj.fiches === "object") st.fiches = fusionneFiches(st.fiches, obj.fiches);
+        if(obj.updated && String(obj.updated) > String(st.updated || "")) st.updated = obj.updated;
+        if(tab === "dcf" && obj.scenarios && typeof obj.scenarios === "object"){
+          scScript = obj.scenarios;
+          LS.set("dcf-scScript", scScript);
+        }
+        persiste(tab);
+      }
+      async function chargeOnglet(tab, silencieux){
+        const st = etat[tab];
+        try{
+          const r = await fetch(st.file + "?t=" + Date.now(), {cache: "no-store"});
+          if(r.status === 404){
+            if(!silencieux) setStatus(tab, "pas encore de fiches (lance le robot une première fois)");
+            renderOnglet(tab);
+            return;
+          }
+          if(!r.ok) throw new Error("HTTP " + r.status);
+          appliqueData(tab, await r.json());
+        }catch(e){
+          if(Object.keys(st.fiches).length){
+            if(!silencieux) setStatus(tab, "Hors ligne — fiches enregistrées affichées.");
+          } else if(!silencieux){
+            setStatus(tab, "Données indisponibles : " + (e && e.message ? e.message : e));
+          }
+        }
+        renderOnglet(tab);
+      }
+      async function analyser(tab, brut){
+        const t = String(brut || "").trim().toUpperCase();
+        const st = etat[tab];
+        if(!t) return;
+        if(!RE_SAISIE.test(t) || !/[A-Z]/.test(t)){ setStatus(tab, "Saisie invalide : " + t); return; }
+        const c = cfg();
+        if(!c.token || !c.owner || !c.repo){
+          setStatus(tab, "Ajoute d'abord ton jeton GitHub dans les réglages.");
+          openSettings();
+          return;
+        }
+        const avant = st.fiches[t] ? cleDate(st.fiches[t]) : "";
+        setStatus(tab, "Lancement de l'analyse de " + t + "…");
+        let r;
+        try{
+          r = await gh("actions/workflows/" + st.workflow + "/dispatches", {
+            method: "POST",
+            body: JSON.stringify({ref: "main", inputs: {tickers: t}})
+          });
+        }catch(e){
+          setStatus(tab, "Données indisponibles : " + (e && e.message ? e.message : e));
+          return;
+        }
+        if(r.status === 401 || r.status === 403){ setStatus(tab, "jeton refusé — vérifie ses permissions (Actions : lecture et écriture)."); return; }
+        if(r.status === 404){ setStatus(tab, "dépôt ou robot introuvable — vérifie le compte, le dépôt et le fichier " + st.workflow + "."); return; }
+        if(r.status !== 204){ setStatus(tab, "GitHub a répondu " + r.status); return; }
+        const debut = Date.now();
+        while(Date.now() - debut < 300000){
+          const sec = Math.round((Date.now() - debut) / 1000);
+          setStatus(tab, "Analyse de " + t + " en cours… " + sec + "s (1 à 3 minutes)");
+          await sleep(8000);
+          try{
+            const g = await gh("contents/" + st.file + "?ref=main&t=" + Date.now(), {
+              headers: {"Accept": "application/vnd.github.raw+json"}, cache: "no-store"
+            });
+            if(g.ok){
+              const obj = await g.json();
+              const cle = (obj && obj.aliases && obj.aliases[t]) || t;
+              const f = obj && obj.fiches ? obj.fiches[cle] : null;
+              const fraiche = f && cleDate(f) && (cle === t
+                ? cleDate(f) !== avant
+                : Date.parse(cleDate(f)) > debut - 90000);
+              if(fraiche){
+                appliqueData(tab, obj);
+                st.hidden = st.hidden.filter((x) => x !== cle);
+                persiste(tab);
+                renderOnglet(tab);
+                setStatus(tab, cle === t ? "Analyse de " + t + " terminée." : "« " + t + " » → " + cle + " : analyse terminée.");
+                openSheet(tab, cle);
+                return;
+              }
+            }
+          }catch(e){ /* on continue le sondage */ }
+        }
+        setStatus(tab, "délai dépassé. Regarde l'onglet Actions du dépôt, puis touche ↻.");
+      }
+      function retireFiche(tab, t){
+        const st = etat[tab];
+        if(!st.hidden.includes(t)) st.hidden.push(t);
+        persiste(tab);
+        closeSheet(tab);
+        renderOnglet(tab);
+      }
+      function renderOnglet(tab){ tab === "score" ? renderScore() : (tab === "dcf" ? renderDcf() : renderValeur()); }
+      function openSheet(tab, t){ tab === "score" ? openSheetScore(t) : (tab === "dcf" ? openSheetDcf(t) : openSheetValeur(t)); }
+      function closeSheet(tab){ $({score: "sheetScore", dcf: "sheetDcf", valeur: "sheetValeur"}[tab]).hidden = true; }
+
+      /* ================= ONGLET SCORE ================= */
+      function fichesVisiblesScore(){
+        const st = etat.score;
+        return Object.keys(st.fiches)
+          .filter((t) => !st.hidden.includes(t))
+          .map((t) => st.fiches[t])
+          .sort((a, b) => {
+            const sa = (a.score === null || a.score === undefined) ? -1 : a.score;
+            const sb = (b.score === null || b.score === undefined) ? -1 : b.score;
+            if(sb !== sa) return sb - sa;
+            return String(a.ticker).localeCompare(String(b.ticker));
+          });
+      }
+      function renderScore(){
+        const st = etat.score;
+        const liste = fichesVisiblesScore();
+        const el = $("listScore");
+        if(!liste.length){
+          el.innerHTML = '<div class="empty">Aucune fiche pour l\'instant. Tape un ticker puis « Analyser », ou attends la mise à jour du soir.</div>';
+        } else {
+          el.innerHTML = liste.map((f) => {
+            const err = !!f.erreur;
+            const cls = err ? "b-err" : (f.verdict === "PASSE" ? "b-passe" : (f.verdict === "PAS ENCORE" ? "b-encore" : "b-non"));
+            const badge = err
+              ? '<div class="badge52 ' + cls + '"><span class="big">?</span></div>'
+              : '<div class="badge52 ' + cls + '"><span class="big">' + esc(f.score) + '</span><span class="small">/7</span></div>';
+            let dots = "";
+            if(Array.isArray(f.checks) && f.checks.length){
+              dots = '<div class="dots">' + f.checks.map((c) => '<span class="dot ' + (c.ok ? "ok" : "ko") + '"></span>').join("") + "</div>";
+            }
+            const nom = err ? "Analyse impossible" : (f.name || "");
+            const prix = (f.price === null || f.price === undefined) ? "—" : fmtNum(f.price, 2);
+            const mult = (f.rdca && f.rdca.mult && f.rdca.mult !== "—") ? '<div class="mult">' + esc(f.rdca.mult) + "</div>" : "";
+            return '<button class="row" data-ticker="' + esc(f.ticker) + '">' + badge +
+              '<span class="grow"><span class="tk">' + esc(f.ticker) + '</span>' +
+              '<div class="nm">' + esc(nom) + "</div>" + dots + "</span>" +
+              '<span class="right"><span class="prix">' + esc(prix) + " " + esc(f.currency || "") + "</span>" + mult + "</span></button>";
+          }).join("");
+          el.querySelectorAll(".row").forEach((b) => b.addEventListener("click", () => openSheetScore(b.getAttribute("data-ticker"))));
+        }
+        $("footScore").textContent = st.updated ? "Dernière mise à jour : " + fmtDateFr(st.updated) : "";
+      }
+
+      const QUALITE_LABELS = {
+        "ROE": "ROE — rendement des fonds propres",
+        "ROIC": "ROIC — rendement du capital investi",
+        "ROIIC": "ROIIC — rendement du capital ajouté (3 ans)",
+        "ROCE": "ROCE — rendement avant impôt"
+      };
+      function blocVerdict(verdict, gros, pourquoi){
+        const cls = verdict === "PASSE" ? "v-passe" : (verdict === "PAS ENCORE" ? "v-encore" : "v-non");
+        return '<div class="verdict-bloc ' + cls + '"><span class="gros">' + esc(gros) + '</span> ' +
+          '<span class="lib">' + esc(verdict || "") + '</span><div class="pourquoi">' + esc(pourquoi) + "</div></div>";
+      }
+      function ligneCheck(num, label, val, barre, margin, ok){
+        return '<div class="check"><span class="pastille ' + (ok ? "ok" : "ko") + '">' + (ok ? "✓" : "✗") + "</span>" +
+          '<div><div class="cl">' + (num ? num + ". " : "") + esc(label) + "</div>" +
+          '<div class="cv">' + esc(val) + " · barre " + esc(barre) + "</div>" +
+          (margin ? '<div class="cm">' + esc(margin) + "</div>" : "") + "</div></div>";
+      }
+      function rdcaHtml(f){
+        const r = f.rdca;
+        if(!r || r.anchor === null || r.anchor === undefined){
+          return '<h3 class="sec">Zones R-DCA</h3><div class="box">n/d — historique mensuel indisponible.</div>';
+        }
+        const a = r.anchor, lo = 0.25 * a, hi = 1.08 * a, span = hi - lo;
+        const bornes = [lo, r.sm[0], r.sm[1], r.buy[1], r.add_hi, a, hi];
+        const couleurs = ["#7a5cf0", "#e9c46a", "#3ccf8e", "#2a9d8f", "#3a4250", "#f0616d"];
+        let segs = "";
+        for(let i = 0; i < 6; i++){
+          const w = Math.max(0, (bornes[i + 1] - bornes[i]) / span * 100);
+          segs += '<div style="width:' + w + '%;background:' + couleurs[i] + '"></div>';
+        }
+        const cur = f.currency || "";
+        const posPrix = (f.price === null || f.price === undefined) ? null : Math.min(100, Math.max(0, (f.price - lo) / span * 100));
+        const marker = posPrix === null ? "" :
+          '<div class="rdca-marker"><span class="mtag" style="left:' + posPrix + '%">' + esc(fmtNum(f.price, 2)) + '</span>' +
+          '<span class="mline" style="left:' + posPrix + '%"></span></div>';
+        const zoneTxt = esc(r.zone || "") + (r.mult && r.mult !== "—" ? " → " + esc(r.mult) : "");
+        return '<h3 class="sec">Zones R-DCA</h3><div class="box">' +
+          '<div class="rdca-wrap">' + marker + '<div class="rdca-bar">' + segs + "</div></div>" +
+          '<div class="rdca-zone">' + zoneTxt + "</div>" +
+          '<div class="kv"><span class="k">Smart Money Zone ★ (3X)</span><span class="v">' + esc(fmtNum(r.sm[0], 2)) + " – " + esc(fmtNum(r.sm[1], 2)) + " " + esc(cur) + "</span></div>" +
+          '<div class="kv"><span class="k">Buy Zone (2X)</span><span class="v">' + esc(fmtNum(r.buy[0], 2)) + " – " + esc(fmtNum(r.buy[1], 2)) + " " + esc(cur) + "</span></div>" +
+          '<div class="kv"><span class="k">Add Zone (1X)</span><span class="v">' + esc(fmtNum(r.buy[1], 2)) + " – " + esc(fmtNum(r.add_hi, 2)) + " " + esc(cur) + "</span></div>" +
+          '<div class="kv"><span class="k">Ancre / Strong Trim</span><span class="v">' + esc(fmtNum(a, 2)) + " " + esc(cur) + "</span></div>" +
+          '<div class="legend-rdca">' +
+          '<span><i class="swatch" style="background:#7a5cf0"></i>Sous SM (4X)</span>' +
+          '<span><i class="swatch" style="background:#e9c46a"></i>Smart Money</span>' +
+          '<span><i class="swatch" style="background:#3ccf8e"></i>Buy</span>' +
+          '<span><i class="swatch" style="background:#2a9d8f"></i>Add</span>' +
+          '<span><i class="swatch" style="background:#3a4250"></i>Hors zone</span>' +
+          '<span><i class="swatch" style="background:#f0616d"></i>Au-dessus de l\'ancre</span></div>' +
+          '<div class="note-sec">Ancre = vrai sommet : plus haute clôture mensuelle sur 24 mois ou sommet 52 semaines.</div>' +
+          "</div>";
+      }
+      function openSheetScore(t){
+        const f = etat.score.fiches[t];
+        if(!f) return;
+        let h = "";
+        if(f.erreur){
+          h += '<div class="sheet-head"><div><div class="sheet-title">' + esc(f.ticker) + "</div>" +
+            '<div class="sheet-sub">Fiche du ' + esc(f.date || "") + '</div></div>' +
+            '<button class="btn-ghost btn-close" data-close="score">Fermer</button></div>';
+          h += '<div class="alert">Analyse impossible : ' + esc(f.erreur) + "</div>";
+          h += '<p class="note-sec">Vérifie le symbole tel qu\'il apparaît sur Yahoo Finance (ex. CSU.TO pour Toronto).</p>';
+        } else {
+          h += '<div class="sheet-head"><div><div class="sheet-title">' + esc(f.ticker) + " · " + esc(fmtNum(f.price, 2)) + " " + esc(f.currency || "") + "</div>" +
+            '<div class="sheet-sub">' + esc(f.name || "") + (f.industry ? " · " + esc(f.industry) : "") + "</div>" +
+            '<div class="sheet-sub">Fiche du ' + esc(f.date || "") + '</div></div>' +
+            '<button class="btn-ghost btn-close" data-close="score">Fermer</button></div>';
+          if(f.erreur_maj){
+            h += '<div class="alert alert-jaune">La dernière mise à jour a échoué (' + esc(f.erreur_maj) + "). Cette fiche date du " + esc(f.date || "") + ".</div>";
+          }
+          const pourquoi = f.verdict === "PASSE" ? "Les 7 checks passent." : "Échec : " + (f.fails || []).join(", ");
+          h += blocVerdict(f.verdict, (f.score === null || f.score === undefined ? "?" : f.score) + "/7", pourquoi);
+          if(Array.isArray(f.checks) && f.checks.length){
+            h += '<h3 class="sec">Les 7 checks</h3><div class="box">' +
+              f.checks.map((c, i) => ligneCheck(i + 1, c.label, c.val, c.barre, c.margin, c.ok)).join("") + "</div>";
+          }
+          if(Array.isArray(f.flags) && f.flags.length){
+            h += '<h3 class="sec">Drapeaux</h3><div class="box"><ul class="flags">' +
+              f.flags.map((x) => "<li>" + esc(x) + "</li>").join("") + "</ul></div>";
+          }
+          /* Valorisation DCF */
+          h += '<h3 class="sec">Valorisation (DCF)</h3>';
+          if(f.dcf && typeof f.dcf === "object" && f.dcf.value !== null && f.dcf.value !== undefined){
+            const mos = (f.dcf.mos === null || f.dcf.mos === undefined) ? null : f.dcf.mos * 100;
+            const mosCol = mos === null ? "" : (mos >= 0 ? ' style="color:var(--vert)"' : ' style="color:var(--rouge)"');
+            const impl = (f.dcf.implied === null || f.dcf.implied === undefined)
+              ? esc(f.dcf.implied_note || "n/d")
+              : esc(fmtPctSigne(f.dcf.implied * 100, 1)) + "/an";
+            h += '<div class="box">' +
+              '<div class="kv"><span class="k">Valeur DCF</span><span class="v">' + esc(fmtNum(f.dcf.value, 2)) + " " + esc(f.currency || "") + "</span></div>" +
+              '<div class="kv"><span class="k">Marge de sécurité</span><span class="v"' + mosCol + ">" + esc(fmtPctSigne(mos, 1)) + "</span></div>" +
+              '<div class="kv"><span class="k">Croissance impliquée par le prix</span><span class="v">' + impl + "</span></div>" +
+              (f.dcf.note ? '<div class="note-sec">' + esc(f.dcf.note) + "</div>" : "") + "</div>";
+          } else if(f.dcf_nd){
+            h += '<div class="box"><div style="font-weight:800">Non significatif</div><div class="note-sec">' + esc(f.dcf_nd) + "</div></div>";
+          } else {
+            h += '<div class="box">n/d — FCF ou données insuffisantes pour un DCF.</div>';
+          }
+          /* Qualité du capital */
+          if(Array.isArray(f.qualite) && f.qualite.length){
+            h += '<h3 class="sec">Qualité du capital (hors note)</h3><div class="box">';
+            h += f.qualite.map((q) => {
+              const nom = QUALITE_LABELS[q.label] || q.label;
+              const seuilPct = (q.seuil === null || q.seuil === undefined) ? null : q.seuil * 100;
+              const posSeuil = (seuilPct === null || q.hi === q.lo) ? null : (q.seuil - q.lo) / (q.hi - q.lo) * 100;
+              const marker = posSeuil === null ? "" : '<span class="gseuil" style="left:' + Math.min(100, Math.max(0, posSeuil)) + '%"></span>';
+              if(q.val === null || q.val === undefined){
+                return '<div class="gauge"><div class="gl"><span class="gname">' + esc(nom) + '</span><span class="gval">n/d</span></div>' +
+                  '<div class="gtrack">' + marker + "</div>" +
+                  (seuilPct === null ? "" : '<div class="gseuil-txt">Seuil repère ' + esc(fmtNum(seuilPct, 0)) + " %</div>") + "</div>";
+              }
+              const valPct = q.val * 100;
+              const ok = (q.ok === null || q.ok === undefined) ? (seuilPct !== null && valPct >= seuilPct) : q.ok;
+              const pos = (q.hi === q.lo) ? 0 : Math.min(100, Math.max(0, (q.val - q.lo) / (q.hi - q.lo) * 100));
+              return '<div class="gauge"><div class="gl"><span class="gname">' + esc(nom) + '</span>' +
+                '<span class="gval" style="color:' + (ok ? "var(--vert)" : "var(--rouge)") + '">' + esc(fmtPctSigne(valPct, 1)) + "</span></div>" +
+                '<div class="gtrack"><span class="gfill" style="width:' + pos + '%;background:' + (ok ? "var(--vert)" : "var(--rouge)") + '"></span>' + marker + "</div>" +
+                (seuilPct === null ? "" : '<div class="gseuil-txt">Seuil repère ' + esc(fmtNum(seuilPct, 0)) + " % — " + (ok ? "au-dessus" : "en dessous") + "</div>") + "</div>";
+            }).join("");
+            h += '<div class="note-sec">Information seulement : ces mesures ne changent pas la note sur 7. Le trait blanc marque le seuil.</div></div>';
+          }
+          /* Mode compounders */
+          if(f.compounders && Array.isArray(f.compounders.rows) && f.compounders.rows.length){
+            h += '<h3 class="sec">Mode compounders</h3>';
+            h += blocVerdict(f.compounders.verdict, "", "");
+            h = h.replace(/<div class="pourquoi"><\/div>/, "");
+            h += '<div class="box">' + f.compounders.rows.map((r) =>
+              '<div class="check"><span class="pastille ' + (r.ok ? "ok" : "ko") + '">' + (r.ok ? "✓" : "✗") + "</span>" +
+              '<div><div class="cl">' + esc(r.label) + "</div>" +
+              (r.det ? '<div class="cm">' + esc(r.det) + "</div>" : "") + "</div></div>"
+            ).join("") + "</div>";
+          }
+          h += rdcaHtml(f);
+        }
+        h += '<div class="sheet-actions">' +
+          '<button class="btn btn-score" data-relancer="score" data-ticker="' + esc(f.ticker) + '">Relancer l\'analyse</button>' +
+          '<button class="btn-ghost" data-retirer="score" data-ticker="' + esc(f.ticker) + '">Retirer de ma liste</button></div>';
+        $("sheetScoreIn").innerHTML = h;
+        $("sheetScore").hidden = false;
+        $("sheetScore").scrollTop = 0;
+        brancherActionsSheet("sheetScoreIn");
+      }
+
+      /* ================= ONGLET DCF ================= */
+      const DEFAULT_SC = {
+        "Négatif": [-5, -5, -7, -10, -10],
+        "Zéro": [0, 0, 0, 0, 0],
+        "Baissier": [15, 12, 8, 6, 1],
+        "Central": [20, 15, 12, 9, 2],
+        "Haussier": [30, 20, 15, 10, 3]
+      };
+      const SC_ORDRE = ["Négatif", "Zéro", "Baissier", "Central", "Haussier"];
+      const SC_LBL = ["1–5 ans", "6–10", "11–20", "21–30", "Term."];
+      let scScript = LS.get("dcf-scScript", DEFAULT_SC);
+      let scPerso = LS.get("dcf-scPerso", null);
+      const sc = () => scPerso || scScript;
+
+      /* Moteur de rendement implicite (reverse DCF) */
+      function va(fcf0, capi, taux, r){
+        let fcf = fcf0, somme = 0;
+        for(let an = 1; an <= 30; an++){
+          const g = an <= 5 ? taux[0] : (an <= 10 ? taux[1] : (an <= 20 ? taux[2] : taux[3]));
+          fcf *= (1 + g / 100);
+          somme += fcf / Math.pow(1 + r, an);
+        }
+        const gT = taux[4] / 100;
+        if(r <= gT) return Infinity;
+        somme += (fcf * (1 + gT) / (r - gT)) / Math.pow(1 + r, 30);
+        return somme - capi;
+      }
+      function rendement(fcf0, capi, taux){
+        if(!fcf0 || fcf0 <= 0 || !capi) return null;
+        let lo = -0.90, hi = 5.0;
+        if(va(fcf0, capi, taux, lo) < 0) return null;
+        if(va(fcf0, capi, taux, hi) > 0) return null;
+        for(let i = 0; i < 200; i++){
+          const mid = (lo + hi) / 2;
+          if(va(fcf0, capi, taux, mid) > 0) lo = mid; else hi = mid;
+        }
+        return (lo + hi) / 2 * 100;
+      }
+      const rendementCentral = (f) => rendement(f.fcf_apres_sbc, f.capi, (sc() || {})["Central"] || DEFAULT_SC["Central"]);
+
+      function fmtMontant(v){
+        if(v === null || v === undefined || isNaN(v)) return "n/d";
+        if(Math.abs(v) >= 1e9) return (v / 1e9).toLocaleString("fr-CA", {minimumFractionDigits: 2, maximumFractionDigits: 2}) + " Md$";
+        return Math.round(v / 1e6).toLocaleString("fr-CA") + " M$";
+      }
+      function fichesVisiblesDcf(){
+        const st = etat.dcf;
+        return Object.keys(st.fiches)
+          .filter((t) => !st.hidden.includes(t))
+          .map((t) => st.fiches[t])
+          .sort((a, b) => {
+            const ra = a.erreur ? null : rendementCentral(a);
+            const rb = b.erreur ? null : rendementCentral(b);
+            if(ra === null && rb !== null) return 1;
+            if(rb === null && ra !== null) return -1;
+            if(ra !== null && rb !== null && rb !== ra) return rb - ra;
+            return String(a.ticker).localeCompare(String(b.ticker));
+          });
+      }
+      function renderDcf(){
+        const st = etat.dcf;
+        $("legendDcf").textContent = "Rendement implicite, scénario central" + (scPerso ? " (modifié)" : "") + " :";
+        const liste = fichesVisiblesDcf();
+        const el = $("listDcf");
+        if(!liste.length){
+          el.innerHTML = '<div class="empty">Aucune fiche pour l\'instant. Tape un ticker puis « Analyser », ou attends la mise à jour du soir.</div>';
+        } else {
+          el.innerHTML = liste.map((f) => {
+            const prix = (f.prix === null || f.prix === undefined) ? "—" : fmtNum(f.prix, 2);
+            if(f.erreur){
+              return '<button class="row" data-ticker="' + esc(f.ticker) + '"><span class="grow"><span class="tk">' + esc(f.ticker) + '</span>' +
+                '<div class="nm">Analyse impossible</div></span>' +
+                '<span class="right"><span class="prix">' + esc(prix) + " " + esc(f.devise || "") + "</span></span></button>";
+            }
+            const devMix = f.devise && f.devise_fin && f.devise !== f.devise_fin;
+            const rc = rendementCentral(f);
+            const bcls = rc === null ? "r-nd" : (rc >= 15 ? "r-vert" : (rc >= 10 ? "r-jaune" : "r-rouge"));
+            const badge = '<span class="rbadge ' + bcls + '">' + (rc === null ? "n/d" : esc(fmtPctSigne(rc, 1))) + "</span>";
+            const sous = (f.fcf_apres_sbc !== null && f.fcf_apres_sbc !== undefined && f.fcf_apres_sbc <= 0)
+              ? "FCF ≤ 0"
+              : ((f.p_fcf_sbc === null || f.p_fcf_sbc === undefined) ? "" : fmtNum(f.p_fcf_sbc, 1) + "x FCF");
+            const lignesDev = devMix
+              ? '<div class="nm">FCF en ' + esc(f.devise_fin) + ", cours en " + esc(f.devise) + '</div><div class="nm">non comparable</div>'
+              : "";
+            return '<button class="row" data-ticker="' + esc(f.ticker) + '"><span class="grow"><span class="tk">' + esc(f.ticker) + "</span>" +
+              (devMix ? '<span class="devise-badge">⚠ devise</span>' : "") +
+              '<div class="nm">' + esc(f.nom || "") + "</div>" + lignesDev + "</span>" +
+              '<span class="right"><span class="prix">' + esc(prix) + " " + esc(f.devise || "") + "</span><br/>" + badge +
+              (sous ? '<div class="mult">' + esc(sous) + "</div>" : "") + "</span></button>";
+          }).join("");
+          el.querySelectorAll(".row").forEach((b) => b.addEventListener("click", () => openSheetDcf(b.getAttribute("data-ticker"))));
+        }
+        $("footDcf").textContent = st.updated ? "Dernière mise à jour : " + fmtDateFr(st.updated) : "";
+      }
+      function majRendementsSheetDcf(f){
+        document.querySelectorAll("[data-rend-scen]").forEach((el) => {
+          const nom = el.getAttribute("data-rend-scen");
+          const r = rendement(f.fcf_apres_sbc, f.capi, (sc() || {})[nom]);
+          el.textContent = r === null ? "n/d" : fmtPctSigne(r, 2);
+        });
+      }
+      function openSheetDcf(t){
+        const f = etat.dcf.fiches[t];
+        if(!f) return;
+        let h = "";
+        h += '<div class="sheet-head"><div><div class="sheet-title">' + esc(f.ticker) + " · " + esc(fmtNum(f.prix, 2)) + " " + esc(f.devise || "") + "</div>" +
+          '<div class="sheet-sub">' + esc(f.nom || "") + "</div>" +
+          '<div class="sheet-sub">Données du ' + esc(f.date || "") + '</div></div>' +
+          '<button class="btn-ghost btn-close" data-close="dcf">Fermer</button></div>';
+        if(f.erreur) h += '<div class="alert">Analyse impossible : ' + esc(f.erreur) + "</div>";
+        if(f.erreur_maj) h += '<div class="alert alert-jaune">La dernière mise à jour a échoué (' + esc(f.erreur_maj) + ").</div>";
+        const devMix = f.devise && f.devise_fin && f.devise !== f.devise_fin;
+        if(devMix) h += '<div class="alert alert-jaune">Devises différentes : cours et capitalisation en ' + esc(f.devise) + ", états financiers en " + esc(f.devise_fin) + ". Le FCF n'est pas converti, donc les rendements de cette fiche sont faux tant que ce n'est pas corrigé.</div>";
+        if(f.fcf_apres_sbc !== null && f.fcf_apres_sbc !== undefined && f.fcf_apres_sbc <= 0)
+          h += '<div class="alert alert-jaune">FCF après SBC négatif ou nul : aucun rendement implicite calculable.</div>';
+        if(!f.erreur){
+          const rFcf = (f.capi && f.fcf_apres_sbc !== null && f.fcf_apres_sbc !== undefined) ? (f.fcf_apres_sbc / f.capi * 100) : null;
+          h += '<h3 class="sec">Les données</h3><div class="box">' +
+            '<div class="kv"><span class="k">Capitalisation</span><span class="v">' + esc(fmtMontant(f.capi)) + "</span></div>" +
+            '<div class="kv"><span class="k">Actions en circulation</span><span class="v">' + (f.actions ? esc((f.actions / 1e6).toLocaleString("fr-CA", {maximumFractionDigits: 0})) + " M" : "n/d") + "</span></div>" +
+            '<div class="kv"><span class="k">FCF 12 mois avant SBC</span><span class="v">' + esc(fmtMontant(f.fcf)) + "</span></div>" +
+            '<div class="kv"><span class="k">SBC 12 mois</span><span class="v">' + (f.sbc === null || f.sbc === undefined ? "n/d" : esc(fmtMontant(f.sbc))) + "</span></div>" +
+            '<div class="kv"><span class="k">FCF après SBC</span><span class="v">' + esc(fmtMontant(f.fcf_apres_sbc)) + "</span></div>" +
+            '<div class="kv"><span class="k">P/FCF avant / après SBC</span><span class="v">' + ((f.p_fcf === null || f.p_fcf === undefined || f.p_fcf_sbc === null || f.p_fcf_sbc === undefined) ? "n/d" : esc(fmtNum(f.p_fcf, 2)) + "x / " + esc(fmtNum(f.p_fcf_sbc, 2)) + "x") + "</span></div>" +
+            '<div class="kv"><span class="k">Rendement FCF après SBC</span><span class="v">' + esc(fmtPctSigne(rFcf, 2)) + "</span></div></div>";
+          const scn = sc() || {};
+          h += '<h3 class="sec">Scénarios : croissance %/an → rendement implicite</h3>';
+          h += SC_ORDRE.map((nom) => {
+            const taux = scn[nom] || DEFAULT_SC[nom];
+            const r = rendement(f.fcf_apres_sbc, f.capi, taux);
+            const champs = taux.map((v, i) =>
+              '<div><label>' + SC_LBL[i] + '</label><input type="number" inputmode="decimal" step="any" data-scen="' + esc(nom) + '" data-idx="' + i + '" value="' + esc(v) + '" /></div>'
+            ).join("");
+            return '<div class="scen-card"><div class="scen-head"><span class="scen-name">' + esc(nom) + '</span>' +
+              '<span class="scen-rend" data-rend-scen="' + esc(nom) + '">' + (r === null ? "n/d" : esc(fmtPctSigne(r, 2))) + "</span></div>" +
+              '<div class="scen-grid">' + champs + "</div></div>";
+          }).join("");
+          h += '<p class="note-sec">Modifie un taux : le rendement se recalcule tout de suite, et la modification s\'applique à toutes les fiches de cet appareil. Contrôle : le scénario Zéro doit donner le rendement FCF après SBC.</p>';
+          h += '<div class="sheet-actions"><button class="btn-ghost" id="btnResetScen">Revenir aux scénarios du script</button></div>';
+          h += '<h3 class="sec">Comment lire</h3><div class="box">Le rendement implicite est ce que tu gagnerais chaque année en achetant à la capitalisation actuelle, si le FCF après SBC suivait le scénario pendant 30 ans puis la croissance terminale. Si même le scénario central donne moins que ton objectif, le prix paie déjà une croissance très forte.</div>';
+        }
+        h += '<div class="sheet-actions">' +
+          '<button class="btn btn-dcf" data-relancer="dcf" data-ticker="' + esc(f.ticker) + '">Relancer l\'analyse</button>' +
+          '<button class="btn-ghost" data-retirer="dcf" data-ticker="' + esc(f.ticker) + '">Retirer de ma liste</button></div>';
+        $("sheetDcfIn").innerHTML = h;
+        $("sheetDcf").hidden = false;
+        $("sheetDcf").scrollTop = 0;
+        brancherActionsSheet("sheetDcfIn");
+        const btnR = $("btnResetScen");
+        if(btnR) btnR.addEventListener("click", () => {
+          scPerso = null;
+          LS.del("dcf-scPerso");
+          renderDcf();
+          openSheetDcf(t);
+        });
+        $("sheetDcfIn").querySelectorAll("input[data-scen]").forEach((inp) => {
+          inp.addEventListener("input", () => {
+            const nom = inp.getAttribute("data-scen");
+            const idx = Number(inp.getAttribute("data-idx"));
+            const v = parseFloat(String(inp.value).replace(",", "."));
+            if(isNaN(v)) return;
+            if(!scPerso) scPerso = JSON.parse(JSON.stringify(sc()));
+            if(!Array.isArray(scPerso[nom])) scPerso[nom] = (DEFAULT_SC[nom] || [0, 0, 0, 0, 0]).slice();
+            scPerso[nom][idx] = v;
+            LS.set("dcf-scPerso", scPerso);
+            majRendementsSheetDcf(f);
+            renderDcf();
+          });
+        });
+      }
+
+      /* ================= ONGLET VALEUR (Damodaran) ================= */
+      function fichesVisiblesValeur(){
+        const st = etat.valeur;
+        return Object.keys(st.fiches)
+          .filter((t) => !st.hidden.includes(t))
+          .map((t) => st.fiches[t])
+          .sort((a, b) => {
+            const ea = (a.erreur || a.nd || a.ecart === null || a.ecart === undefined) ? null : a.ecart;
+            const eb = (b.erreur || b.nd || b.ecart === null || b.ecart === undefined) ? null : b.ecart;
+            if(ea === null && eb !== null) return 1;
+            if(eb === null && ea !== null) return -1;
+            if(ea !== null && eb !== null && eb !== ea) return eb - ea;
+            return String(a.ticker).localeCompare(String(b.ticker));
+          });
+      }
+      function renderValeur(){
+        const st = etat.valeur;
+        $("legendValeur").textContent = "Écart entre la valeur intrinsèque (méthode Damodaran, scénario central) et le cours :";
+        const liste = fichesVisiblesValeur();
+        const el = $("listValeur");
+        if(!liste.length){
+          el.innerHTML = '<div class="empty">Aucune fiche pour l\'instant. Tape un ticker puis « Analyser », ou attends la mise à jour du soir.</div>';
+        } else {
+          el.innerHTML = liste.map((f) => {
+            const prix = (f.prix === null || f.prix === undefined) ? "—" : fmtNum(f.prix, 2);
+            if(f.erreur){
+              return '<button class="row" data-ticker="' + esc(f.ticker) + '"><span class="grow"><span class="tk">' + esc(f.ticker) + '</span>' +
+                '<div class="nm">Analyse impossible</div></span>' +
+                '<span class="right"><span class="prix">' + esc(prix) + " " + esc(f.devise || "") + "</span></span></button>";
+            }
+            if(f.nd){
+              return '<button class="row" data-ticker="' + esc(f.ticker) + '"><span class="grow"><span class="tk">' + esc(f.ticker) + '</span>' +
+                '<div class="nm">' + esc(f.nom || "") + '</div><div class="nm">Non significatif — touche pour le motif</div></span>' +
+                '<span class="right"><span class="prix">' + esc(prix) + " " + esc(f.devise || "") + '</span><br/><span class="rbadge r-nd">n/d</span></span></button>';
+            }
+            const e = f.ecart;
+            const bcls = (e === null || e === undefined) ? "r-nd" : (e >= 20 ? "r-vert" : (e >= 0 ? "r-jaune" : "r-rouge"));
+            const badge = '<span class="rbadge ' + bcls + '">' + (e === null || e === undefined ? "n/d" : esc(fmtPctSigne(e, 1))) + "</span>";
+            const sous = (f.valeur === null || f.valeur === undefined) ? "" : "Valeur " + fmtNum(f.valeur, 2) + " " + (f.devise || "");
+            return '<button class="row" data-ticker="' + esc(f.ticker) + '"><span class="grow"><span class="tk">' + esc(f.ticker) + "</span>" +
+              '<div class="nm">' + esc(f.nom || "") + "</div></span>" +
+              '<span class="right"><span class="prix">' + esc(prix) + " " + esc(f.devise || "") + "</span><br/>" + badge +
+              (sous ? '<div class="mult">' + esc(sous) + "</div>" : "") + "</span></button>";
+          }).join("");
+          el.querySelectorAll(".row").forEach((b) => b.addEventListener("click", () => openSheetValeur(b.getAttribute("data-ticker"))));
+        }
+        $("footValeur").textContent = st.updated ? "Dernière mise à jour : " + fmtDateFr(st.updated) : "";
+      }
+      function openSheetValeur(t){
+        const f = etat.valeur.fiches[t];
+        if(!f) return;
+        const cur = f.devise || "";
+        let h = "";
+        h += '<div class="sheet-head"><div><div class="sheet-title">' + esc(f.ticker) + " · " + esc(fmtNum(f.prix, 2)) + " " + esc(cur) + "</div>" +
+          '<div class="sheet-sub">' + esc(f.nom || "") + (f.secteur ? " · " + esc(f.secteur) : "") + "</div>" +
+          '<div class="sheet-sub">Données du ' + esc(f.date || "") + '</div></div>' +
+          '<button class="btn-ghost btn-close" data-close="valeur">Fermer</button></div>';
+        if(f.erreur) h += '<div class="alert">Analyse impossible : ' + esc(f.erreur) + "</div>";
+        if(f.erreur_maj) h += '<div class="alert alert-jaune">La dernière mise à jour a échoué (' + esc(f.erreur_maj) + ").</div>";
+        if(f.nd){
+          h += '<h3 class="sec">Valeur intrinsèque (Damodaran)</h3><div class="box"><div style="font-weight:800">Non significatif</div><div class="note-sec">' + esc(f.nd) + "</div></div>";
+        } else if(!f.erreur && f.hypotheses){
+          const e = f.ecart, ep = f.ecart_pondere;
+          const vcls = (e !== null && e !== undefined && e >= 20) ? "v-passe" : ((e !== null && e !== undefined && e >= 0) ? "v-encore" : "v-non");
+          const lib = (e === null || e === undefined) ? "n/d" : ((e >= 20 ? "Sous-évalué (au-delà de l'ancre de 20 %)" : (e >= 0 ? "Sous-évalué (central)" : "Surévalué (central)")));
+          h += '<div class="verdict-bloc ' + vcls + '"><span class="gros">' + esc(fmtNum(f.valeur, 2)) + " " + esc(cur) + '</span> ' +
+            '<span class="lib">' + esc(lib) + '</span><div class="pourquoi">Écart central ' + esc(fmtPctSigne(e, 1)) +
+            " · valeur pondérée (25/50/25) " + esc(fmtNum(f.valeur_ponderee, 2)) + " " + esc(cur) + " (" + esc(fmtPctSigne(ep, 1)) + ")</div></div>";
+          /* Scénarios */
+          const scn = f.scenarios || {};
+          const ordreSc = ["Pessimiste", "Centrale", "Optimiste"];
+          h += '<h3 class="sec">Trois histoires chiffrées</h3><div class="box">' +
+            ordreSc.map((nom) => {
+              const s = scn[nom];
+              if(!s) return "";
+              const ec = (f.prix && s.valeur !== null && s.valeur !== undefined) ? (s.valeur / f.prix - 1) * 100 : null;
+              return '<div class="kv"><span class="k">' + esc(nom) + " (" + esc(s.proba) + ' %)</span><span class="v">' +
+                esc(fmtNum(s.valeur, 2)) + " " + esc(cur) + " · " + esc(fmtPctSigne(ec, 1)) + "</span></div>";
+            }).join("") +
+            '<div class="kv"><span class="k">Pondérée</span><span class="v">' + esc(fmtNum(f.valeur_ponderee, 2)) + " " + esc(cur) + "</span></div></div>";
+          /* Hypothèses */
+          const hy = f.hypotheses;
+          h += '<h3 class="sec">Hypothèses — l\'histoire en chiffres</h3><div class="box">' +
+            '<div class="kv"><span class="k">Revenus (12 mois)</span><span class="v">' + esc(fmtMontant(hy.revenus)) + "</span></div>" +
+            '<div class="kv"><span class="k">Marge d\'exploitation</span><span class="v">' + esc(fmtNum(hy.marge_actuelle, 1)) + " %</span></div>" +
+            '<div class="kv"><span class="k">Croissance des revenus, ans 1–5</span><span class="v">' + esc(fmtPctSigne(hy.croissance_1_5, 1)) + "/an</span></div>" +
+            '<div class="kv"><span class="k">Croissance terminale</span><span class="v">' + esc(fmtNum(hy.croissance_terminale, 1)) + " %</span></div>" +
+            '<div class="kv"><span class="k">Rendement du capital : actuel → stable</span><span class="v">' + esc(fmtNum(hy.roc_actuel, 1)) + " % → " + esc(fmtNum(hy.roc_stable, 1)) + " %</span></div>" +
+            '<div class="kv"><span class="k">Réinvestissement (ventes/capital)</span><span class="v">' + esc(fmtNum(hy.ventes_sur_capital, 2)) + "x</span></div>" +
+            '<div class="kv"><span class="k">Taux d\'impôt effectif</span><span class="v">' + esc(fmtNum(hy.taux_impot, 1)) + " %</span></div>" +
+            '<div class="kv"><span class="k">Dette nette</span><span class="v">' + (hy.dette_nette !== null && hy.dette_nette !== undefined && hy.dette_nette < 0 ? "cash net de " + esc(fmtMontant(-hy.dette_nette)) : esc(fmtMontant(hy.dette_nette))) + "</span></div></div>";
+          h += '<h3 class="sec">Coût du capital, bâti par le bas</h3><div class="box">' +
+            '<div class="kv"><span class="k">Taux sans risque (10 ans US)</span><span class="v">' + esc(fmtNum(hy.taux_sans_risque, 2)) + " %</span></div>" +
+            '<div class="kv"><span class="k">Prime de risque actions</span><span class="v">' + esc(fmtNum(hy.prime_risque, 2)) + " %</span></div>" +
+            '<div class="kv"><span class="k">Bêta sectoriel → réendetté</span><span class="v">' + esc(fmtNum(hy.beta_sectoriel, 2)) + " → " + esc(fmtNum(hy.beta, 2)) + "</span></div>" +
+            '<div class="kv"><span class="k">Coût des fonds propres</span><span class="v">' + esc(fmtNum(hy.cout_fonds_propres, 2)) + " %</span></div>" +
+            '<div class="kv"><span class="k">Coût de la dette après impôt</span><span class="v">' + esc(fmtNum(hy.cout_dette_apres_impot, 2)) + " %</span></div>" +
+            '<div class="kv"><span class="k">Coût du capital (WACC)</span><span class="v">' + esc(fmtNum(hy.wacc, 2)) + " %</span></div></div>";
+          /* Contrôles histoire contre chiffres */
+          const ct = f.controles || {};
+          h += '<h3 class="sec">Contrôles — l\'histoire contre les chiffres</h3><div class="box">' +
+            '<div class="kv"><span class="k">Revenu implicite à l\'an 10</span><span class="v">' + esc(fmtMontant(ct.revenu_an10)) + (ct.multiple_revenu_10ans ? " (×" + esc(fmtNum(ct.multiple_revenu_10ans, 1)) + ")" : "") + "</span></div>" +
+            '<div class="kv"><span class="k">ROC implicite à l\'an 10 (vs WACC)</span><span class="v">' + esc(fmtNum(ct.roc_an10, 1)) + " % (vs " + esc(fmtNum(hy.wacc, 1)) + " %)</span></div>" +
+            '<div class="kv"><span class="k">Part de la valeur terminale</span><span class="v">' + esc(fmtNum(ct.part_valeur_terminale, 0)) + " %</span></div></div>";
+          if(ct.part_valeur_terminale !== null && ct.part_valeur_terminale !== undefined && ct.part_valeur_terminale > 75)
+            h += '<div class="alert alert-jaune">Plus de 75 % de la valeur vient de la valeur terminale : presque tout repose sur l\'horizon lointain — Damodaran s\'en méfierait.</div>';
+          if(ct.multiple_revenu_10ans !== null && ct.multiple_revenu_10ans !== undefined && ct.multiple_revenu_10ans > 4)
+            h += '<div class="alert alert-jaune">Histoire exigeante : les revenus doivent être multipliés par ' + esc(fmtNum(ct.multiple_revenu_10ans, 1)) + ' en 10 ans pour justifier cette valeur. À confronter à la taille du marché.</div>';
+          if(hy.roc_actuel !== null && hy.roc_actuel !== undefined && hy.roc_actuel > 50)
+            h += '<div class="alert alert-jaune">ROC actuel très élevé (' + esc(fmtNum(hy.roc_actuel, 0)) + ' %) : vérifie qu\'il tient à l\'économie du modèle et non à un capital investi comptable érodé (rachats massifs, fonds de roulement négatif) — dans ce cas la valeur est gonflée.</div>';
+          /* Sensibilité */
+          const sn = f.sensibilite;
+          if(sn && Array.isArray(sn.valeurs)){
+            let tab = '<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;font-size:13px;text-align:right">' +
+              '<tr><th style="text-align:left;padding:5px 6px;color:var(--sec)">WACC \\ g</th>' +
+              sn.g.map((g) => '<th style="padding:5px 6px;color:var(--sec)">' + esc(fmtNum(g, 1)) + " %</th>").join("") + "</tr>";
+            sn.valeurs.forEach((rang, i) => {
+              tab += '<tr><th style="text-align:left;padding:5px 6px;color:var(--sec)">' + esc(fmtNum(sn.wacc[i], 1)) + " %</th>" +
+                rang.map((v) => '<td style="padding:5px 6px">' + esc(fmtNum(v, 0)) + "</td>").join("") + "</tr>";
+            });
+            tab += "</table></div>";
+            h += '<h3 class="sec">Sensibilité de la valeur centrale (' + esc(cur) + ')</h3><div class="box">' + tab + "</div>";
+          }
+          h += '<p class="note-sec">Méthode Damodaran (DCF sur flux à l\'entreprise) : histoire centrale = croissance des estimations d\'analystes (année suivante) tenue 5 ans, puis décroissance vers la croissance terminale (plafond 2,5 %) ; le ROC stable conserve la moitié de l\'avantage actuel sur le coût du capital. Bêtas sectoriels : table approximative intégrée au script.</p>';
+        }
+        h += '<div class="sheet-actions">' +
+          '<button class="btn btn-valeur" data-relancer="valeur" data-ticker="' + esc(f.ticker) + '">Relancer l\'analyse</button>' +
+          '<button class="btn-ghost" data-retirer="valeur" data-ticker="' + esc(f.ticker) + '">Retirer de ma liste</button></div>';
+        $("sheetValeurIn").innerHTML = h;
+        $("sheetValeur").hidden = false;
+        $("sheetValeur").scrollTop = 0;
+        brancherActionsSheet("sheetValeurIn");
+      }
+
+      /* ================= Actions communes des fiches ================= */
+      function brancherActionsSheet(conteneurId){
+        const c = $(conteneurId);
+        c.querySelectorAll("[data-close]").forEach((b) => b.addEventListener("click", () => closeSheet(b.getAttribute("data-close"))));
+        c.querySelectorAll("[data-retirer]").forEach((b) => b.addEventListener("click", () => retireFiche(b.getAttribute("data-retirer"), b.getAttribute("data-ticker"))));
+        c.querySelectorAll("[data-relancer]").forEach((b) => b.addEventListener("click", () => {
+          const tab = b.getAttribute("data-relancer"), t = b.getAttribute("data-ticker");
+          closeSheet(tab);
+          setOnglet(tab);
+          analyser(tab, t);
+        }));
+      }
+
+      /* ================= Réglages ================= */
+      function openSettings(){
+        const c = cfg();
+        $("stToken").value = LS.get("cfg", {}).token || "";
+        $("stOwner").value = c.owner || "";
+        $("stRepo").value = c.repo || "";
+        $("statusSettings").textContent = "";
+        $("panelSettings").hidden = false;
+      }
+      function closeSettings(){ $("panelSettings").hidden = true; }
+      $("btnSettings").addEventListener("click", openSettings);
+      $("btnCloseSettings").addEventListener("click", closeSettings);
+      $("btnSaveSettings").addEventListener("click", () => {
+        LS.set("cfg", {
+          token: $("stToken").value.trim(),
+          owner: $("stOwner").value.trim(),
+          repo: $("stRepo").value.trim()
+        });
+        $("statusSettings").textContent = "Enregistré ✓";
+      });
+      $("btnResetScore").addEventListener("click", () => {
+        etat.score.hidden = [];
+        persiste("score");
+        renderScore();
+        $("statusSettings").textContent = "Fiches Score réaffichées ✓";
+      });
+      $("btnResetDcf").addEventListener("click", () => {
+        scPerso = null;
+        LS.del("dcf-scPerso");
+        etat.dcf.hidden = [];
+        persiste("dcf");
+        renderDcf();
+        $("statusSettings").textContent = "Scénarios du script rétablis, fiches DCF réaffichées ✓";
+      });
+      $("btnResetValeur").addEventListener("click", () => {
+        etat.valeur.hidden = [];
+        persiste("valeur");
+        renderValeur();
+        $("statusSettings").textContent = "Fiches Valeur réaffichées ✓";
+      });
+
+      /* ================= Onglets et navigation ================= */
+      let ongletActif = LS.get("onglet", "score");
+      if(["score", "dcf", "valeur"].indexOf(ongletActif) < 0) ongletActif = "score";
+      function setOnglet(nom){
+        ongletActif = nom;
+        LS.set("onglet", nom);
+        $("tabBtnScore").classList.toggle("on", nom === "score");
+        $("tabBtnDcf").classList.toggle("on", nom === "dcf");
+        $("tabBtnValeur").classList.toggle("on", nom === "valeur");
+        $("viewScore").hidden = nom !== "score";
+        $("viewDcf").hidden = nom !== "dcf";
+        $("viewValeur").hidden = nom !== "valeur";
+      }
+      $("tabBtnScore").addEventListener("click", () => setOnglet("score"));
+      $("tabBtnDcf").addEventListener("click", () => setOnglet("dcf"));
+      $("tabBtnValeur").addEventListener("click", () => setOnglet("valeur"));
+      $("btnRefresh").addEventListener("click", () => chargeOnglet(ongletActif, false));
+      $("btnAnalyseScore").addEventListener("click", () => analyser("score", $("inScore").value));
+      $("btnAnalyseDcf").addEventListener("click", () => analyser("dcf", $("inDcf").value));
+      $("btnAnalyseValeur").addEventListener("click", () => analyser("valeur", $("inValeur").value));
+      $("inScore").addEventListener("keydown", (e) => { if(e.key === "Enter") analyser("score", $("inScore").value); });
+      $("inDcf").addEventListener("keydown", (e) => { if(e.key === "Enter") analyser("dcf", $("inDcf").value); });
+      $("inValeur").addEventListener("keydown", (e) => { if(e.key === "Enter") analyser("valeur", $("inValeur").value); });
+      document.addEventListener("visibilitychange", () => {
+        if(document.visibilityState === "visible") chargeOnglet(ongletActif, true);
+      });
+
+      /* ================= Démarrage ================= */
+      setOnglet(ongletActif);
+      renderScore();
+      renderDcf();
+      renderValeur();
+      chargeOnglet("score", false);
+      chargeOnglet("dcf", false);
+      chargeOnglet("valeur", false);
+
+      /* Accès pour vérification (lecture des fonctions du moteur et des rendus) */
+      window.Rocky = { va, rendement, rendementCentral, etat, cfg, analyser, chargeOnglet, openSheetScore, openSheetDcf, openSheetValeur, getSc: () => sc() };
+
+      if("serviceWorker" in navigator){
+        navigator.serviceWorker.register("sw.js").catch(function(){});
+      }
+    </script>
+  </body>
+</html>

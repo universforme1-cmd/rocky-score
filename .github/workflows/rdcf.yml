@@ -34,7 +34,7 @@ jobs:
           TICKERS: ${{ inputs.tickers }}
         run: |
           set -f
-          python reverse-dcf.py --json data-dcf.json $TICKERS
+          python reverse-dcf.py --json data-dcf.json "$TICKERS"
       - name: Publier data-dcf.json
         run: |
           git config user.name "rdcf-bot"
