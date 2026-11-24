@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T12:52:38+00:00",
+ "updated": "2026-11-24T12:54:20+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -1637,14 +1637,14 @@
      "ok": true
     }
    ],
-   "date": "2026-11-24T06:17:43+00:00",
+   "date": "2026-11-24T12:54:20+00:00",
    "compounders": {
     "verdict": "PASSE",
     "rows": [
      {
       "label": "Rendement espéré >= 12 %/an",
       "ok": true,
-      "det": "Croissance +25.0 % (plafonnée à 25 %) + dividende 0.8 % + rachats nets 0.0 % - contraction 0.0 % = +25.8 %/an (barre 12 % ; croissance brute +86.6 %/an, plancher +7 %)."
+      "det": "Croissance +25.0 % (plafonnée à 25 %) + dividende 0.6 % + rachats nets 0.0 % - contraction 0.0 % = +25.6 %/an (barre 12 % ; croissance brute +86.6 %/an, plancher +7 %)."
      },
      {
       "label": "ROIC soutenu >= 15 %",
@@ -1659,7 +1659,7 @@
      {
       "label": "Discipline du capital",
       "ok": true,
-      "det": "Retour 0.8 %/an (dividende + rachats nets n/d — historique d'actions indisponible) ; croissance FCF +193.9 %/an — branche réinvestissement OK."
+      "det": "Retour 0.6 %/an (dividende + rachats nets n/d — historique d'actions indisponible) ; croissance FCF +193.9 %/an — branche réinvestissement OK."
      },
      {
       "label": "Ancre prix (comme le filtre principal)",
