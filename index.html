@@ -244,7 +244,7 @@
       <!-- ======== ONGLET SCORE ======== -->
       <section id="viewScore">
         <div class="bar">
-          <input id="inScore" type="text" placeholder="Ticker (ex. AXON, CSU.TO)" autocomplete="off" autocapitalize="characters" spellcheck="false" />
+          <input id="inScore" type="text" placeholder="Ticker ou nom (ex. AXON, Mueller)" autocomplete="off" autocapitalize="characters" spellcheck="false" />
           <button class="btn btn-score" id="btnAnalyseScore">Analyser</button>
         </div>
         <div class="status" id="statusScore"></div>
@@ -255,7 +255,7 @@
       <!-- ======== ONGLET DCF ======== -->
       <section id="viewDcf" hidden>
         <div class="bar">
-          <input id="inDcf" type="text" placeholder="Ticker (ex. NVDA, CSU.TO)" autocomplete="off" autocapitalize="characters" spellcheck="false" />
+          <input id="inDcf" type="text" placeholder="Ticker ou nom (ex. NVDA, Booking)" autocomplete="off" autocapitalize="characters" spellcheck="false" />
           <button class="btn btn-dcf" id="btnAnalyseDcf">Analyser</button>
         </div>
         <div class="status" id="statusDcf"></div>
@@ -267,7 +267,7 @@
       <!-- ======== ONGLET VALEUR ======== -->
       <section id="viewValeur" hidden>
         <div class="bar">
-          <input id="inValeur" type="text" placeholder="Ticker (ex. MLI, NVDA)" autocomplete="off" autocapitalize="characters" spellcheck="false" />
+          <input id="inValeur" type="text" placeholder="Ticker ou nom (ex. MLI, Mueller)" autocomplete="off" autocapitalize="characters" spellcheck="false" />
           <button class="btn btn-valeur" id="btnAnalyseValeur">Analyser</button>
         </div>
         <div class="status" id="statusValeur"></div>
@@ -343,6 +343,7 @@
         return d.toLocaleString("fr-CA", {day: "numeric", month: "long", hour: "2-digit", minute: "2-digit"});
       }
       const RE_TICKER = /^[A-Z0-9][A-Z0-9.\-=^]{0,14}$/;
+      const RE_SAISIE = /^[A-Z0-9][A-Z0-9 .&'\-=^]{0,39}$/;  // ticker OU nom de compagnie
 
       /* ================= Réglages partagés ================= */
       function cfg(){
@@ -442,7 +443,7 @@
         const t = String(brut || "").trim().toUpperCase();
         const st = etat[tab];
         if(!t) return;
-        if(!RE_TICKER.test(t)){ setStatus(tab, "Ticker invalide : " + t); return; }
+        if(!RE_SAISIE.test(t) || !/[A-Z]/.test(t)){ setStatus(tab, "Saisie invalide : " + t); return; }
         const c = cfg();
         if(!c.token || !c.owner || !c.repo){
           setStatus(tab, "Ajoute d'abord ton jeton GitHub dans les réglages.");
@@ -475,14 +476,18 @@
             });
             if(g.ok){
               const obj = await g.json();
-              const f = obj && obj.fiches ? obj.fiches[t] : null;
-              if(f && cleDate(f) && cleDate(f) !== avant){
+              const cle = (obj && obj.aliases && obj.aliases[t]) || t;
+              const f = obj && obj.fiches ? obj.fiches[cle] : null;
+              const fraiche = f && cleDate(f) && (cle === t
+                ? cleDate(f) !== avant
+                : Date.parse(cleDate(f)) > debut - 90000);
+              if(fraiche){
                 appliqueData(tab, obj);
-                st.hidden = st.hidden.filter((x) => x !== t);
+                st.hidden = st.hidden.filter((x) => x !== cle);
                 persiste(tab);
                 renderOnglet(tab);
-                setStatus(tab, "Analyse de " + t + " terminée.");
-                openSheet(tab, t);
+                setStatus(tab, cle === t ? "Analyse de " + t + " terminée." : "« " + t + " » → " + cle + " : analyse terminée.");
+                openSheet(tab, cle);
                 return;
               }
             }

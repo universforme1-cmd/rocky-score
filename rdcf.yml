@@ -1,0 +1,77 @@
+name: Reverse DCF
+
+on:
+  schedule:
+    - cron: "30 22 * * 1-5"   # soirs de semaine, après la clôture de New York
+  workflow_dispatch:
+    inputs:
+      tickers:
+        description: "Tickers séparés par des espaces (vide = liste de tickers.txt)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: reverse-dcf
+  cancel-in-progress: false
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main          # toujours la dernière version, même si le lancement a attendu son tour
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Installer yfinance
+        run: pip install --quiet yfinance
+      - name: Calculer les fiches
+        env:
+          TICKERS: ${{ inputs.tickers }}
+        run: |
+          set -f
+          python reverse-dcf.py --json data-dcf.json "$TICKERS"
+      - name: Publier data-dcf.json
+        run: |
+          git config user.name "rdcf-bot"
+          git config user.email "rdcf-bot@users.noreply.github.com"
+          cp data-dcf.json /tmp/nouveau.json
+          for essai in 1 2 3 4 5; do
+            # On repart de la version en ligne et on y fusionne nos fiches :
+            # pour chaque ticker, la fiche la plus récente gagne. Aucun conflit possible.
+            git fetch --quiet origin main
+            git reset --quiet --hard origin/main
+            python - <<'PY'
+          import json, os
+          def lire(p):
+              try:
+                  with open(p, encoding="utf-8") as f:
+                      d = json.load(f)
+                  return d if isinstance(d.get("fiches"), dict) else {"fiches": {}}
+              except Exception:
+                  return {"fiches": {}}
+          cle = lambda f: str(f.get("date_tentative") or f.get("date") or "")
+          en_ligne, nouveau = lire("data-dcf.json"), lire("/tmp/nouveau.json")
+          fiches = en_ligne["fiches"]
+          for t, f in nouveau["fiches"].items():
+              if t not in fiches or cle(f) >= cle(fiches[t]):
+                  fiches[t] = f
+          out = dict(en_ligne)
+          out.update({k: v for k, v in nouveau.items() if k != "fiches"})  # scénarios du script à jour
+          out["fiches"] = fiches
+          out["updated"] = max(str(en_ligne.get("updated") or ""), str(nouveau.get("updated") or ""))
+          with open("data-dcf.json", "w", encoding="utf-8") as f:
+              json.dump(out, f, ensure_ascii=False, indent=1)
+          PY
+            git add data-dcf.json
+            if git diff --cached --quiet; then echo "Rien à publier."; exit 0; fi
+            git commit --quiet -m "Fiches Reverse DCF"
+            if git push --quiet origin HEAD:main; then echo "Publié (essai $essai)."; exit 0; fi
+            echo "Le dépôt a changé entre-temps, nouvel essai…"
+            sleep $((essai * 3))
+          done
+          echo "Impossible de publier après 5 essais."; exit 1

@@ -2,7 +2,7 @@
 // Met en cache uniquement l'enveloppe de l'appli. Les fichiers de données
 // (data.json, data-dcf.json, data-valeur.json) passent toujours par le réseau.
 
-const CACHE = "rocky-fusion-v2";
+const CACHE = "rocky-fusion-v3";
 const SHELL = [
   "./",
   "./index.html",

@@ -180,6 +180,63 @@ from datetime import datetime, timezone
 TICKER_RE = re.compile(r"^[A-Z0-9][A-Z0-9.\-=^]{0,14}$")
 
 
+def _recherche(q):
+    """Résultats Yahoo Search pour une requête (nom de compagnie ou ticker)."""
+    try:
+        r = yf.Search(q, max_results=8, news_count=0)
+        return [x for x in (r.quotes or []) if x.get("symbol")]
+    except Exception:  # noqa: BLE001
+        return []
+
+
+def resoudre(requete):
+    """Nom de compagnie ou ticker -> symbole Yahoo.
+
+    Priorité : symbole exact, puis action ordinaire dont le nom correspond,
+    puis première action ordinaire. Repli : la requête en majuscules
+    (comportement historique si Yahoo Search ne répond pas).
+    """
+    q = " ".join(str(requete).split()).strip()
+    if not q:
+        return q
+    quotes = _recherche(q)
+    if not quotes:
+        return q.upper()
+    qu = q.upper()
+    for x in quotes:
+        if str(x["symbol"]).upper() == qu:
+            return qu
+    actions = [x for x in quotes if x.get("quoteType") == "EQUITY"]
+    ql = q.lower()
+    for x in actions:
+        nom = (x.get("shortname") or x.get("longname") or "").lower()
+        if nom and ql in nom:
+            return str(x["symbol"]).upper()
+    if actions:
+        return str(actions[0]["symbol"]).upper()
+    return str(quotes[0]["symbol"]).upper()
+
+
+def entrees_brutes(liste):
+    """Regroupe les arguments en requêtes.
+
+    « NVDA MSFT » = deux tickers si chaque mot est un symbole exact chez
+    Yahoo ; sinon, la chaîne entière est un seul nom de compagnie
+    (« Mueller Industries »). Virgules acceptées comme séparateurs.
+    """
+    s = " ".join(liste).strip()
+    if not s:
+        return []
+    if "," in s:
+        return [x.strip() for x in s.split(",") if x.strip()]
+    mots = s.split()
+    if len(mots) > 1 and all(
+            any(str(x["symbol"]).upper() == m.upper() for x in _recherche(m))
+            for m in mots):
+        return mots
+    return [s]
+
+
 def _num(x):
     """float JSON valide (None si absent, NaN ou infini)."""
     if x is None:
@@ -247,11 +304,20 @@ def export_json(path, tickers):
     fiches = data.get("fiches") if isinstance(data, dict) else None
     if not isinstance(fiches, dict):
         fiches = {}
-    for t in tickers:
-        t = t.strip().upper()
-        if not TICKER_RE.match(t):
-            print(f"Ignoré (ticker invalide) : {t!r}")
+    aliases = data.get("aliases") if isinstance(data, dict) else None
+    if not isinstance(aliases, dict):
+        aliases = {}
+    for brut in tickers:
+        q = " ".join(str(brut).split()).strip()
+        if not q:
             continue
+        t = resoudre(q)
+        if not TICKER_RE.match(t):
+            print(f"Ignoré (aucun symbole trouvé) : {brut!r}")
+            continue
+        if t != q.upper():
+            aliases[q.upper()] = t
+            print(f"« {q} » → {t}")
         try:
             fiches[t] = fiche_dict(t)
             c = fiches[t]["rendements"].get("Central")
@@ -267,6 +333,7 @@ def export_json(path, tickers):
     out = {"updated": _now(),
            "scenarios": SCENARIOS,
            "periodes": ["Années 1–5", "Années 6–10", "Années 11–20", "Années 21–30", "Terminale"],
+           "aliases": aliases,
            "fiches": fiches}
     with open(path, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=1, allow_nan=False)
@@ -279,7 +346,8 @@ def main():
         if k + 1 >= len(args):
             sys.exit("Usage : reverse-dcf.py --json data.json [TICKERS...]")
         chemin = args[k + 1]
-        tickers = [t for t in args[:k] + args[k + 2:] if not t.startswith("-")]
+        tickers = entrees_brutes([t for t in args[:k] + args[k + 2:]
+                                   if not t.startswith("-")])
         export_json(chemin, tickers or lire_tickers() or ["NVDA"])
         return
     if len(sys.argv) < 2:

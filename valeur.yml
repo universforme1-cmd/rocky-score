@@ -34,7 +34,7 @@ jobs:
           TICKERS: ${{ inputs.tickers }}
         run: |
           set -f
-          python damodaran.py --json data-valeur.json $TICKERS
+          python damodaran.py --json data-valeur.json "$TICKERS"
       - name: Publier data-valeur.json
         run: |
           git config user.name "valeur-bot"
