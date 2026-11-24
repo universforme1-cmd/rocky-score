@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T16:12:20+00:00",
+ "updated": "2026-11-24T16:13:41+00:00",
  "parametres": {
   "prime_risque": 4.5,
   "croissance_terminale_max": 2.5,
@@ -939,7 +939,7 @@
   "NXT": {
    "ticker": "NXT",
    "erreur": "données introuvables ou incomplètes (ticker inconnu ou source indisponible)",
-   "date": "2026-11-24T16:11:56+00:00"
+   "date": "2026-11-24T16:13:41+00:00"
   },
   "CAT": {
    "ticker": "CAT",
