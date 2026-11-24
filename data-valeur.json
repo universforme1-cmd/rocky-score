@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T17:02:20+00:00",
+ "updated": "2026-11-24T17:03:05+00:00",
  "parametres": {
   "prime_risque": 4.5,
   "croissance_terminale_max": 2.5,
@@ -1178,6 +1178,88 @@
       307.07,
       319.57,
       333.82
+     ]
+    ]
+   }
+  },
+  "BWXT": {
+   "ticker": "BWXT",
+   "nom": "BWX Technologies, Inc.",
+   "secteur": "Industrials",
+   "prix": 113.42,
+   "capi": 10392129536.0,
+   "actions": 91625197.0,
+   "devise": "USD",
+   "devise_fin": "USD",
+   "date": "2026-11-24T17:03:05+00:00",
+   "valeur": 28.55832302311361,
+   "valeur_ponderee": 29.200317914726572,
+   "ecart": -74.82073441799189,
+   "ecart_pondere": -74.25470118609894,
+   "scenarios": {
+    "Pessimiste": {
+     "valeur": 11.03082066791917,
+     "proba": 25
+    },
+    "Centrale": {
+     "valeur": 28.55832302311361,
+     "proba": 50
+    },
+    "Optimiste": {
+     "valeur": 48.653804944759905,
+     "proba": 25
+    }
+   },
+   "hypotheses": {
+    "revenus": 3600656000.0,
+    "marge_actuelle": 9.831264080767504,
+    "croissance_1_5": 8.66,
+    "croissance_terminale": 2.5,
+    "taux_sans_risque": 4.8919997215271,
+    "prime_risque": 4.5,
+    "beta_sectoriel": 0.87,
+    "beta": 1.0102324632578497,
+    "cout_fonds_propres": 9.438045806187423,
+    "cout_dette_apres_impot": 4.549968053902923,
+    "wacc": 8.641919551170224,
+    "taux_impot": 17.1527988963961,
+    "roc_actuel": 10.212396052902465,
+    "roc_stable": 9.427157802036344,
+    "ventes_sur_capital": 1.2538351660367293,
+    "dette_nette": 1453357000.0
+   },
+   "controles": {
+    "revenu_an10": 6944368745.880999,
+    "multiple_revenu_10ans": 1.9286398772559774,
+    "roc_an10": 10.212396052902463,
+    "part_valeur_terminale": 74.39492068503641
+   },
+   "sensibilite": {
+    "wacc": [
+     7.64,
+     8.64,
+     9.64
+    ],
+    "g": [
+     2.0,
+     2.5,
+     3.0
+    ],
+    "valeurs": [
+     [
+      38.09,
+      39.54,
+      41.25
+     ],
+     [
+      27.98,
+      28.56,
+      29.21
+     ],
+     [
+      20.63,
+      20.77,
+      20.91
      ]
     ]
    }
