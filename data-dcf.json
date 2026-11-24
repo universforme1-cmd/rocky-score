@@ -762,6 +762,28 @@
    "ticker": "TOI.TO",
    "erreur": "données introuvables ou incomplètes (ticker inconnu ou source indisponible)",
    "date": "2026-11-24T06:13:35+00:00"
+  },
+  "IESC": {
+   "ticker": "IESC",
+   "nom": "IES Holdings, Inc.",
+   "prix": 164.345,
+   "capi": 6559326720.0,
+   "actions": 39911931.0,
+   "fcf": 201435000.0,
+   "sbc": 14969000.0,
+   "fcf_apres_sbc": 186466000.0,
+   "p_fcf": 32.56299411720902,
+   "p_fcf_sbc": 35.1770656312679,
+   "devise": "USD",
+   "devise_fin": "USD",
+   "rendements": {
+    "Négatif": -5.205335054218136,
+    "Zéro": 2.8427612765719994,
+    "Baissier": 11.13057896986115,
+    "Central": 14.795801557781385,
+    "Haussier": 19.832831289271258
+   },
+   "date": "2026-11-24T16:59:44+00:00"
   }
  },
  "periodes": [
@@ -808,5 +830,6 @@
    3
   ]
  },
- "updated": "2026-11-24T12:30:38+00:00"
+ "updated": "2026-11-24T16:59:44+00:00",
+ "aliases": {}
 }
