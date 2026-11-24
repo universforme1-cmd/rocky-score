@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T17:03:05+00:00",
+ "updated": "2026-11-24T18:33:03+00:00",
  "parametres": {
   "prime_risque": 4.5,
   "croissance_terminale_max": 2.5,
@@ -366,27 +366,27 @@
    "ticker": "TPL",
    "nom": "Texas Pacific Land Corporation",
    "secteur": "Energy",
-   "prix": 258.07,
-   "capi": 17800296448.0,
+   "prix": 253.49,
+   "capi": 17484392448.0,
    "actions": 68974683.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-24T03:12:12+00:00",
-   "valeur": 199.59887486619328,
-   "valeur_ponderee": 192.97039594644446,
-   "ecart": -22.65707952641016,
-   "ecart_pondere": -25.22556052759156,
+   "date": "2026-11-24T18:33:02+00:00",
+   "valeur": 200.0097034865355,
+   "valeur_ponderee": 193.35490488526997,
+   "ecart": -21.097596162951003,
+   "ecart_pondere": -23.722866825014812,
    "scenarios": {
     "Pessimiste": {
-     "valeur": 128.85507118667294,
+     "valeur": 129.04668652913404,
      "proba": 25
     },
     "Centrale": {
-     "valeur": 199.59887486619328,
+     "valeur": 200.0097034865355,
      "proba": 50
     },
     "Optimiste": {
-     "valeur": 243.82876286671836,
+     "valeur": 244.3535260388749,
      "proba": 25
     }
    },
@@ -395,16 +395,16 @@
     "marge_actuelle": 75.5465228972378,
     "croissance_1_5": 11.37,
     "croissance_terminale": 2.5,
-    "taux_sans_risque": 4.918000221252441,
+    "taux_sans_risque": 4.906000137329102,
     "prime_risque": 4.5,
     "beta_sectoriel": 0.86,
-    "beta": 0.8605846088051313,
-    "cout_fonds_propres": 8.790630960875532,
-    "cout_dette_apres_impot": 4.38463030838535,
-    "wacc": 8.786864887183347,
+    "beta": 0.8605951713831862,
+    "cout_fonds_propres": 8.77867840855344,
+    "cout_dette_apres_impot": 4.375094982259267,
+    "wacc": 8.774846452962468,
     "taux_impot": 20.53950466514926,
     "roc_actuel": 40.12972053007938,
-    "roc_stable": 24.458292708631365,
+    "roc_stable": 24.452283491520923,
     "ventes_sur_capital": 0.6684984227695848,
     "dette_nette": -354330000.0
    },
@@ -412,13 +412,13 @@
     "revenu_an10": 2221016711.1719637,
     "multiple_revenu_10ans": 2.294803833638785,
     "roc_an10": 40.129720530079375,
-    "part_valeur_terminale": 62.674543703891885
+    "part_valeur_terminale": 62.729717634548486
    },
    "sensibilite": {
     "wacc": [
-     7.79,
-     8.79,
-     9.79
+     7.77,
+     8.77,
+     9.77
     ],
     "g": [
      2.0,
@@ -427,19 +427,19 @@
     ],
     "valeurs": [
      [
-      227.42,
-      240.63,
-      256.51
+      227.93,
+      241.22,
+      257.19
      ],
      [
-      191.03,
-      199.6,
-      209.57
+      191.4,
+      200.01,
+      210.04
      ],
      [
-      164.18,
-      170.01,
-      176.64
+      164.46,
+      170.31,
+      176.97
      ]
     ]
    }
