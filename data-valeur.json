@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T16:57:21+00:00",
+ "updated": "2026-11-24T17:02:20+00:00",
  "parametres": {
   "prime_risque": 4.5,
   "croissance_terminale_max": 2.5,
@@ -448,27 +448,27 @@
    "ticker": "CLS",
    "nom": "Celestica Inc.",
    "secteur": "Technology",
-   "prix": 213.31,
-   "capi": 26900910080.0,
+   "prix": 197.255,
+   "capi": 24876185600.0,
    "actions": 126111808.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-24T03:12:13+00:00",
-   "valeur": 490.8006937749935,
-   "valeur_ponderee": 481.97687116044096,
-   "ecart": 130.08799108105268,
-   "ecart_pondere": 125.95137178774598,
+   "date": "2026-11-24T17:02:20+00:00",
+   "valeur": 493.6435773145374,
+   "valeur_ponderee": 484.711471112807,
+   "ecart": 150.25655994247927,
+   "ecart_pondere": 145.7283572597942,
    "scenarios": {
     "Pessimiste": {
-     "valeur": 144.2144965352877,
+     "valeur": 144.75542455125753,
      "proba": 25
     },
     "Centrale": {
-     "valeur": 490.8006937749935,
+     "valeur": 493.6435773145374,
      "proba": 50
     },
     "Optimiste": {
-     "valeur": 802.0916005564891,
+     "valeur": 806.8033052708954,
      "proba": 25
     }
    },
@@ -477,16 +477,16 @@
     "marge_actuelle": 8.286250287983675,
     "croissance_1_5": 30.0,
     "croissance_terminale": 2.5,
-    "taux_sans_risque": 4.918000221252441,
+    "taux_sans_risque": 4.890000343322754,
     "prime_risque": 4.5,
     "beta_sectoriel": 1.02,
-    "beta": 1.046582533274636,
-    "cout_fonds_propres": 9.627621620988302,
-    "cout_dette_apres_impot": 4.724621770196764,
-    "wacc": 9.482794122207041,
+    "beta": 1.0487461409404981,
+    "cout_fonds_propres": 9.609357977554996,
+    "cout_dette_apres_impot": 4.700647716640197,
+    "wacc": 9.452936330771234,
     "taux_impot": 14.378006872852234,
     "roc_actuel": 42.10990812888472,
-    "roc_stable": 25.79635112554588,
+    "roc_stable": 25.781422229827978,
     "ventes_sur_capital": 3.5,
     "dette_nette": -3142500000.0
    },
@@ -494,13 +494,13 @@
     "revenu_an10": 125999258699.2474,
     "multiple_revenu_10ans": 6.911567547215467,
     "roc_an10": 26.399171965610613,
-    "part_valeur_terminale": 81.51638393117395
+    "part_valeur_terminale": 81.58707846076105
    },
    "sensibilite": {
     "wacc": [
-     8.48,
-     9.48,
-     10.48
+     8.45,
+     9.45,
+     10.45
     ],
     "g": [
      2.0,
@@ -509,19 +509,19 @@
     ],
     "valeurs": [
      [
-      568.27,
-      603.66,
-      645.38
+      571.79,
+      607.63,
+      649.91
      ],
      [
-      467.19,
-      490.8,
-      517.95
+      469.77,
+      493.64,
+      521.12
      ],
      [
-      391.79,
-      408.14,
-      426.6
+      393.74,
+      410.26,
+      428.92
      ]
     ]
    }
