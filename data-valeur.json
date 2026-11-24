@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T12:37:45+00:00",
+ "updated": "2026-11-24T13:17:16+00:00",
  "parametres": {
   "prime_risque": 4.5,
   "croissance_terminale_max": 2.5,
@@ -535,7 +535,7 @@
    "actions": 217974381.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-24T12:36:31+00:00",
+   "date": "2026-11-24T13:17:16+00:00",
    "valeur": 85.887106124853,
    "valeur_ponderee": 83.62600841295847,
    "ecart": 64.91379824280531,
@@ -690,5 +690,6 @@
     ]
    }
   }
- }
+ },
+ "aliases": {}
 }
