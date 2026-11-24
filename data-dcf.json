@@ -806,6 +806,28 @@
     "Haussier": 27.824495555563512
    },
    "date": "2026-11-24T18:34:41+00:00"
+  },
+  "PNG.V": {
+   "ticker": "PNG.V",
+   "nom": "Kraken Robotics Inc.",
+   "prix": 2.37,
+   "capi": 880246720.0,
+   "actions": 371412137.0,
+   "fcf": -53487000.0,
+   "sbc": 4025000.0,
+   "fcf_apres_sbc": -57512000.0,
+   "p_fcf": null,
+   "p_fcf_sbc": null,
+   "devise": "CAD",
+   "devise_fin": "CAD",
+   "rendements": {
+    "Négatif": null,
+    "Zéro": null,
+    "Baissier": null,
+    "Central": null,
+    "Haussier": null
+   },
+   "date": "2026-11-24T19:59:32+00:00"
   }
  },
  "periodes": [
@@ -852,6 +874,8 @@
    3
   ]
  },
- "updated": "2026-11-24T18:34:41+00:00",
- "aliases": {}
+ "updated": "2026-11-24T19:59:32+00:00",
+ "aliases": {
+  "PNG": "PNG.V"
+ }
 }
