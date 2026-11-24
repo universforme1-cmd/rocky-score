@@ -475,13 +475,13 @@
   "TTMI": {
    "ticker": "TTMI",
    "nom": "TTM Technologies, Inc.",
-   "prix": 68.57,
-   "capi": 7225599488.0,
+   "prix": 59.315,
+   "capi": 6250349056.0,
    "actions": 105375520.0,
    "fcf": 14788000.0,
    "sbc": 73820000.0,
    "fcf_apres_sbc": -59032000.0,
-   "p_fcf": 488.6123538003787,
+   "p_fcf": 422.663582364079,
    "p_fcf_sbc": null,
    "devise": "USD",
    "devise_fin": "USD",
@@ -492,7 +492,7 @@
     "Central": null,
     "Haussier": null
    },
-   "date": "2026-11-24T06:13:29+00:00"
+   "date": "2026-11-24T20:59:21+00:00"
   },
   "INTU": {
    "ticker": "INTU",
@@ -874,7 +874,7 @@
    3
   ]
  },
- "updated": "2026-11-24T19:59:32+00:00",
+ "updated": "2026-11-24T20:59:21+00:00",
  "aliases": {
   "PNG": "PNG.V"
  }
