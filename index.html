@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#0e1116" />
     <meta name="color-scheme" content="dark" />
-    <title>Rocky — Score + DCF</title>
+    <title>Rocky — Score · DCF · Valeur</title>
     <link rel="manifest" href="manifest.json" />
     <link rel="icon" href="icon-192.png" />
     <link rel="apple-touch-icon" href="icon-192.png" />
@@ -48,6 +48,7 @@
       }
       .tab-score.on{ color:var(--jaune); border-bottom-color:var(--jaune); background:rgba(233,196,106,.08); }
       .tab-dcf.on{ color:var(--bleu); border-bottom-color:var(--bleu); background:rgba(56,189,248,.08); }
+      .tab-valeur.on{ color:var(--vert); border-bottom-color:var(--vert); background:rgba(60,207,142,.08); }
 
       main{ max-width:760px; margin:0 auto; padding:14px 12px 40px; }
 
@@ -65,6 +66,7 @@
       }
       .btn-score{ background:var(--jaune); }
       .btn-dcf{ background:var(--bleu); }
+      .btn-valeur{ background:var(--vert); }
       .btn-ghost{
         min-height:44px; padding:9px 14px; border-radius:10px;
         background:transparent; border:1px solid var(--border); color:var(--txt); font-weight:600;
@@ -234,6 +236,7 @@
       <nav class="tabs" role="tablist">
         <button class="tab tab-score on" id="tabBtnScore" role="tab">Score</button>
         <button class="tab tab-dcf" id="tabBtnDcf" role="tab">DCF</button>
+        <button class="tab tab-valeur" id="tabBtnValeur" role="tab">Valeur</button>
       </nav>
     </header>
 
@@ -260,6 +263,18 @@
         <div id="listDcf"></div>
         <div class="foot" id="footDcf"></div>
       </section>
+
+      <!-- ======== ONGLET VALEUR ======== -->
+      <section id="viewValeur" hidden>
+        <div class="bar">
+          <input id="inValeur" type="text" placeholder="Ticker (ex. MLI, NVDA)" autocomplete="off" autocapitalize="characters" spellcheck="false" />
+          <button class="btn btn-valeur" id="btnAnalyseValeur">Analyser</button>
+        </div>
+        <div class="status" id="statusValeur"></div>
+        <div class="legend" id="legendValeur"></div>
+        <div id="listValeur"></div>
+        <div class="foot" id="footValeur"></div>
+      </section>
     </main>
 
     <!-- ======== FICHE SCORE ======== -->
@@ -272,6 +287,11 @@
       <div class="sheet-in" id="sheetDcfIn"></div>
     </div>
 
+    <!-- ======== FICHE VALEUR ======== -->
+    <div class="overlay" id="sheetValeur" hidden>
+      <div class="sheet-in" id="sheetValeurIn"></div>
+    </div>
+
     <!-- ======== RÉGLAGES ======== -->
     <div class="overlay" id="panelSettings" hidden>
       <div class="sheet-in">
@@ -279,7 +299,7 @@
           <div class="sheet-title">Réglages</div>
           <button class="btn-ghost btn-close" id="btnCloseSettings">Fermer</button>
         </div>
-        <p class="settings-note">Le jeton autorise ce téléphone à lancer les analyses sur GitHub. Il reste enregistré sur cet appareil uniquement. Une seule appli, un seul dépôt : les deux robots (rocky.yml et rdcf.yml) vivent dans ce dépôt.</p>
+        <p class="settings-note">Le jeton autorise ce téléphone à lancer les analyses sur GitHub. Il reste enregistré sur cet appareil uniquement. Une seule appli, un seul dépôt : les trois robots (rocky.yml, rdcf.yml et valeur.yml) vivent dans ce dépôt.</p>
         <div class="field">
           <label for="stToken">Jeton GitHub (fine-grained)</label>
           <input id="stToken" type="password" autocomplete="off" spellcheck="false" />
@@ -297,6 +317,7 @@
           <div class="status" id="statusSettings"></div>
           <button class="btn-ghost" id="btnResetScore">Score : réafficher les fiches retirées</button>
           <button class="btn-ghost" id="btnResetDcf">DCF : rétablir les scénarios du script et les fiches retirées</button>
+          <button class="btn-ghost" id="btnResetValeur">Valeur : réafficher les fiches retirées</button>
         </div>
         <p class="settings-note">Filtre personnel, pas un conseil financier. Données : Yahoo Finance.</p>
       </div>
@@ -361,6 +382,12 @@
           fiches: LS.get("dcf-fiches", {}),
           hidden: LS.get("dcf-hidden", []),
           updated: LS.get("dcf-updated", "")
+        },
+        valeur: {
+          workflow: "valeur.yml", file: "data-valeur.json",
+          fiches: LS.get("valeur-fiches", {}),
+          hidden: LS.get("valeur-hidden", []),
+          updated: LS.get("valeur-updated", "")
         }
       };
       function persiste(tab){
@@ -377,7 +404,7 @@
         }
         return out;
       }
-      function setStatus(tab, msg){ $(tab === "score" ? "statusScore" : "statusDcf").textContent = msg || ""; }
+      function setStatus(tab, msg){ $({score: "statusScore", dcf: "statusDcf", valeur: "statusValeur"}[tab]).textContent = msg || ""; }
 
       /* ================= Mécanique commune ================= */
       function appliqueData(tab, obj){
@@ -470,9 +497,9 @@
         closeSheet(tab);
         renderOnglet(tab);
       }
-      function renderOnglet(tab){ tab === "score" ? renderScore() : renderDcf(); }
-      function openSheet(tab, t){ tab === "score" ? openSheetScore(t) : openSheetDcf(t); }
-      function closeSheet(tab){ $(tab === "score" ? "sheetScore" : "sheetDcf").hidden = true; }
+      function renderOnglet(tab){ tab === "score" ? renderScore() : (tab === "dcf" ? renderDcf() : renderValeur()); }
+      function openSheet(tab, t){ tab === "score" ? openSheetScore(t) : (tab === "dcf" ? openSheetDcf(t) : openSheetValeur(t)); }
+      function closeSheet(tab){ $({score: "sheetScore", dcf: "sheetDcf", valeur: "sheetValeur"}[tab]).hidden = true; }
 
       /* ================= ONGLET SCORE ================= */
       function fichesVisiblesScore(){
@@ -832,6 +859,140 @@
         });
       }
 
+      /* ================= ONGLET VALEUR (Damodaran) ================= */
+      function fichesVisiblesValeur(){
+        const st = etat.valeur;
+        return Object.keys(st.fiches)
+          .filter((t) => !st.hidden.includes(t))
+          .map((t) => st.fiches[t])
+          .sort((a, b) => {
+            const ea = (a.erreur || a.nd || a.ecart === null || a.ecart === undefined) ? null : a.ecart;
+            const eb = (b.erreur || b.nd || b.ecart === null || b.ecart === undefined) ? null : b.ecart;
+            if(ea === null && eb !== null) return 1;
+            if(eb === null && ea !== null) return -1;
+            if(ea !== null && eb !== null && eb !== ea) return eb - ea;
+            return String(a.ticker).localeCompare(String(b.ticker));
+          });
+      }
+      function renderValeur(){
+        const st = etat.valeur;
+        $("legendValeur").textContent = "Écart entre la valeur intrinsèque (méthode Damodaran, scénario central) et le cours :";
+        const liste = fichesVisiblesValeur();
+        const el = $("listValeur");
+        if(!liste.length){
+          el.innerHTML = '<div class="empty">Aucune fiche pour l\'instant. Tape un ticker puis « Analyser », ou attends la mise à jour du soir.</div>';
+        } else {
+          el.innerHTML = liste.map((f) => {
+            const prix = (f.prix === null || f.prix === undefined) ? "—" : fmtNum(f.prix, 2);
+            if(f.erreur){
+              return '<button class="row" data-ticker="' + esc(f.ticker) + '"><span class="grow"><span class="tk">' + esc(f.ticker) + '</span>' +
+                '<div class="nm">Analyse impossible</div></span>' +
+                '<span class="right"><span class="prix">' + esc(prix) + " " + esc(f.devise || "") + "</span></span></button>";
+            }
+            if(f.nd){
+              return '<button class="row" data-ticker="' + esc(f.ticker) + '"><span class="grow"><span class="tk">' + esc(f.ticker) + '</span>' +
+                '<div class="nm">' + esc(f.nom || "") + '</div><div class="nm">Non significatif — touche pour le motif</div></span>' +
+                '<span class="right"><span class="prix">' + esc(prix) + " " + esc(f.devise || "") + '</span><br/><span class="rbadge r-nd">n/d</span></span></button>';
+            }
+            const e = f.ecart;
+            const bcls = (e === null || e === undefined) ? "r-nd" : (e >= 20 ? "r-vert" : (e >= 0 ? "r-jaune" : "r-rouge"));
+            const badge = '<span class="rbadge ' + bcls + '">' + (e === null || e === undefined ? "n/d" : esc(fmtPctSigne(e, 1))) + "</span>";
+            const sous = (f.valeur === null || f.valeur === undefined) ? "" : "Valeur " + fmtNum(f.valeur, 2) + " " + (f.devise || "");
+            return '<button class="row" data-ticker="' + esc(f.ticker) + '"><span class="grow"><span class="tk">' + esc(f.ticker) + "</span>" +
+              '<div class="nm">' + esc(f.nom || "") + "</div></span>" +
+              '<span class="right"><span class="prix">' + esc(prix) + " " + esc(f.devise || "") + "</span><br/>" + badge +
+              (sous ? '<div class="mult">' + esc(sous) + "</div>" : "") + "</span></button>";
+          }).join("");
+          el.querySelectorAll(".row").forEach((b) => b.addEventListener("click", () => openSheetValeur(b.getAttribute("data-ticker"))));
+        }
+        $("footValeur").textContent = st.updated ? "Dernière mise à jour : " + fmtDateFr(st.updated) : "";
+      }
+      function openSheetValeur(t){
+        const f = etat.valeur.fiches[t];
+        if(!f) return;
+        const cur = f.devise || "";
+        let h = "";
+        h += '<div class="sheet-head"><div><div class="sheet-title">' + esc(f.ticker) + " · " + esc(fmtNum(f.prix, 2)) + " " + esc(cur) + "</div>" +
+          '<div class="sheet-sub">' + esc(f.nom || "") + (f.secteur ? " · " + esc(f.secteur) : "") + "</div>" +
+          '<div class="sheet-sub">Données du ' + esc(f.date || "") + '</div></div>' +
+          '<button class="btn-ghost btn-close" data-close="valeur">Fermer</button></div>';
+        if(f.erreur) h += '<div class="alert">Analyse impossible : ' + esc(f.erreur) + "</div>";
+        if(f.erreur_maj) h += '<div class="alert alert-jaune">La dernière mise à jour a échoué (' + esc(f.erreur_maj) + ").</div>";
+        if(f.nd){
+          h += '<h3 class="sec">Valeur intrinsèque (Damodaran)</h3><div class="box"><div style="font-weight:800">Non significatif</div><div class="note-sec">' + esc(f.nd) + "</div></div>";
+        } else if(!f.erreur && f.hypotheses){
+          const e = f.ecart, ep = f.ecart_pondere;
+          const vcls = (e !== null && e !== undefined && e >= 20) ? "v-passe" : ((e !== null && e !== undefined && e >= 0) ? "v-encore" : "v-non");
+          const lib = (e === null || e === undefined) ? "n/d" : ((e >= 20 ? "Sous-évalué (au-delà de l'ancre de 20 %)" : (e >= 0 ? "Sous-évalué (central)" : "Surévalué (central)")));
+          h += '<div class="verdict-bloc ' + vcls + '"><span class="gros">' + esc(fmtNum(f.valeur, 2)) + " " + esc(cur) + '</span> ' +
+            '<span class="lib">' + esc(lib) + '</span><div class="pourquoi">Écart central ' + esc(fmtPctSigne(e, 1)) +
+            " · valeur pondérée (25/50/25) " + esc(fmtNum(f.valeur_ponderee, 2)) + " " + esc(cur) + " (" + esc(fmtPctSigne(ep, 1)) + ")</div></div>";
+          /* Scénarios */
+          const scn = f.scenarios || {};
+          const ordreSc = ["Pessimiste", "Centrale", "Optimiste"];
+          h += '<h3 class="sec">Trois histoires chiffrées</h3><div class="box">' +
+            ordreSc.map((nom) => {
+              const s = scn[nom];
+              if(!s) return "";
+              const ec = (f.prix && s.valeur !== null && s.valeur !== undefined) ? (s.valeur / f.prix - 1) * 100 : null;
+              return '<div class="kv"><span class="k">' + esc(nom) + " (" + esc(s.proba) + ' %)</span><span class="v">' +
+                esc(fmtNum(s.valeur, 2)) + " " + esc(cur) + " · " + esc(fmtPctSigne(ec, 1)) + "</span></div>";
+            }).join("") +
+            '<div class="kv"><span class="k">Pondérée</span><span class="v">' + esc(fmtNum(f.valeur_ponderee, 2)) + " " + esc(cur) + "</span></div></div>";
+          /* Hypothèses */
+          const hy = f.hypotheses;
+          h += '<h3 class="sec">Hypothèses — l\'histoire en chiffres</h3><div class="box">' +
+            '<div class="kv"><span class="k">Revenus (12 mois)</span><span class="v">' + esc(fmtMontant(hy.revenus)) + "</span></div>" +
+            '<div class="kv"><span class="k">Marge d\'exploitation</span><span class="v">' + esc(fmtNum(hy.marge_actuelle, 1)) + " %</span></div>" +
+            '<div class="kv"><span class="k">Croissance des revenus, ans 1–5</span><span class="v">' + esc(fmtPctSigne(hy.croissance_1_5, 1)) + "/an</span></div>" +
+            '<div class="kv"><span class="k">Croissance terminale</span><span class="v">' + esc(fmtNum(hy.croissance_terminale, 1)) + " %</span></div>" +
+            '<div class="kv"><span class="k">Rendement du capital : actuel → stable</span><span class="v">' + esc(fmtNum(hy.roc_actuel, 1)) + " % → " + esc(fmtNum(hy.roc_stable, 1)) + " %</span></div>" +
+            '<div class="kv"><span class="k">Réinvestissement (ventes/capital)</span><span class="v">' + esc(fmtNum(hy.ventes_sur_capital, 2)) + "x</span></div>" +
+            '<div class="kv"><span class="k">Taux d\'impôt effectif</span><span class="v">' + esc(fmtNum(hy.taux_impot, 1)) + " %</span></div>" +
+            '<div class="kv"><span class="k">Dette nette</span><span class="v">' + (hy.dette_nette !== null && hy.dette_nette !== undefined && hy.dette_nette < 0 ? "cash net de " + esc(fmtMontant(-hy.dette_nette)) : esc(fmtMontant(hy.dette_nette))) + "</span></div></div>";
+          h += '<h3 class="sec">Coût du capital, bâti par le bas</h3><div class="box">' +
+            '<div class="kv"><span class="k">Taux sans risque (10 ans US)</span><span class="v">' + esc(fmtNum(hy.taux_sans_risque, 2)) + " %</span></div>" +
+            '<div class="kv"><span class="k">Prime de risque actions</span><span class="v">' + esc(fmtNum(hy.prime_risque, 2)) + " %</span></div>" +
+            '<div class="kv"><span class="k">Bêta sectoriel → réendetté</span><span class="v">' + esc(fmtNum(hy.beta_sectoriel, 2)) + " → " + esc(fmtNum(hy.beta, 2)) + "</span></div>" +
+            '<div class="kv"><span class="k">Coût des fonds propres</span><span class="v">' + esc(fmtNum(hy.cout_fonds_propres, 2)) + " %</span></div>" +
+            '<div class="kv"><span class="k">Coût de la dette après impôt</span><span class="v">' + esc(fmtNum(hy.cout_dette_apres_impot, 2)) + " %</span></div>" +
+            '<div class="kv"><span class="k">Coût du capital (WACC)</span><span class="v">' + esc(fmtNum(hy.wacc, 2)) + " %</span></div></div>";
+          /* Contrôles histoire contre chiffres */
+          const ct = f.controles || {};
+          h += '<h3 class="sec">Contrôles — l\'histoire contre les chiffres</h3><div class="box">' +
+            '<div class="kv"><span class="k">Revenu implicite à l\'an 10</span><span class="v">' + esc(fmtMontant(ct.revenu_an10)) + (ct.multiple_revenu_10ans ? " (×" + esc(fmtNum(ct.multiple_revenu_10ans, 1)) + ")" : "") + "</span></div>" +
+            '<div class="kv"><span class="k">ROC implicite à l\'an 10 (vs WACC)</span><span class="v">' + esc(fmtNum(ct.roc_an10, 1)) + " % (vs " + esc(fmtNum(hy.wacc, 1)) + " %)</span></div>" +
+            '<div class="kv"><span class="k">Part de la valeur terminale</span><span class="v">' + esc(fmtNum(ct.part_valeur_terminale, 0)) + " %</span></div></div>";
+          if(ct.part_valeur_terminale !== null && ct.part_valeur_terminale !== undefined && ct.part_valeur_terminale > 75)
+            h += '<div class="alert alert-jaune">Plus de 75 % de la valeur vient de la valeur terminale : presque tout repose sur l\'horizon lointain — Damodaran s\'en méfierait.</div>';
+          if(ct.multiple_revenu_10ans !== null && ct.multiple_revenu_10ans !== undefined && ct.multiple_revenu_10ans > 4)
+            h += '<div class="alert alert-jaune">Histoire exigeante : les revenus doivent être multipliés par ' + esc(fmtNum(ct.multiple_revenu_10ans, 1)) + ' en 10 ans pour justifier cette valeur. À confronter à la taille du marché.</div>';
+          if(hy.roc_actuel !== null && hy.roc_actuel !== undefined && hy.roc_actuel > 50)
+            h += '<div class="alert alert-jaune">ROC actuel très élevé (' + esc(fmtNum(hy.roc_actuel, 0)) + ' %) : vérifie qu\'il tient à l\'économie du modèle et non à un capital investi comptable érodé (rachats massifs, fonds de roulement négatif) — dans ce cas la valeur est gonflée.</div>';
+          /* Sensibilité */
+          const sn = f.sensibilite;
+          if(sn && Array.isArray(sn.valeurs)){
+            let tab = '<div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;font-size:13px;text-align:right">' +
+              '<tr><th style="text-align:left;padding:5px 6px;color:var(--sec)">WACC \\ g</th>' +
+              sn.g.map((g) => '<th style="padding:5px 6px;color:var(--sec)">' + esc(fmtNum(g, 1)) + " %</th>").join("") + "</tr>";
+            sn.valeurs.forEach((rang, i) => {
+              tab += '<tr><th style="text-align:left;padding:5px 6px;color:var(--sec)">' + esc(fmtNum(sn.wacc[i], 1)) + " %</th>" +
+                rang.map((v) => '<td style="padding:5px 6px">' + esc(fmtNum(v, 0)) + "</td>").join("") + "</tr>";
+            });
+            tab += "</table></div>";
+            h += '<h3 class="sec">Sensibilité de la valeur centrale (' + esc(cur) + ')</h3><div class="box">' + tab + "</div>";
+          }
+          h += '<p class="note-sec">Méthode Damodaran (DCF sur flux à l\'entreprise) : histoire centrale = croissance des estimations d\'analystes (année suivante) tenue 5 ans, puis décroissance vers la croissance terminale (plafond 2,5 %) ; le ROC stable conserve la moitié de l\'avantage actuel sur le coût du capital. Bêtas sectoriels : table approximative intégrée au script.</p>';
+        }
+        h += '<div class="sheet-actions">' +
+          '<button class="btn btn-valeur" data-relancer="valeur" data-ticker="' + esc(f.ticker) + '">Relancer l\'analyse</button>' +
+          '<button class="btn-ghost" data-retirer="valeur" data-ticker="' + esc(f.ticker) + '">Retirer de ma liste</button></div>';
+        $("sheetValeurIn").innerHTML = h;
+        $("sheetValeur").hidden = false;
+        $("sheetValeur").scrollTop = 0;
+        brancherActionsSheet("sheetValeurIn");
+      }
+
       /* ================= Actions communes des fiches ================= */
       function brancherActionsSheet(conteneurId){
         const c = $(conteneurId);
@@ -879,25 +1040,36 @@
         renderDcf();
         $("statusSettings").textContent = "Scénarios du script rétablis, fiches DCF réaffichées ✓";
       });
+      $("btnResetValeur").addEventListener("click", () => {
+        etat.valeur.hidden = [];
+        persiste("valeur");
+        renderValeur();
+        $("statusSettings").textContent = "Fiches Valeur réaffichées ✓";
+      });
 
       /* ================= Onglets et navigation ================= */
       let ongletActif = LS.get("onglet", "score");
-      if(ongletActif !== "dcf") ongletActif = "score";
+      if(["score", "dcf", "valeur"].indexOf(ongletActif) < 0) ongletActif = "score";
       function setOnglet(nom){
         ongletActif = nom;
         LS.set("onglet", nom);
         $("tabBtnScore").classList.toggle("on", nom === "score");
         $("tabBtnDcf").classList.toggle("on", nom === "dcf");
+        $("tabBtnValeur").classList.toggle("on", nom === "valeur");
         $("viewScore").hidden = nom !== "score";
         $("viewDcf").hidden = nom !== "dcf";
+        $("viewValeur").hidden = nom !== "valeur";
       }
       $("tabBtnScore").addEventListener("click", () => setOnglet("score"));
       $("tabBtnDcf").addEventListener("click", () => setOnglet("dcf"));
+      $("tabBtnValeur").addEventListener("click", () => setOnglet("valeur"));
       $("btnRefresh").addEventListener("click", () => chargeOnglet(ongletActif, false));
       $("btnAnalyseScore").addEventListener("click", () => analyser("score", $("inScore").value));
       $("btnAnalyseDcf").addEventListener("click", () => analyser("dcf", $("inDcf").value));
+      $("btnAnalyseValeur").addEventListener("click", () => analyser("valeur", $("inValeur").value));
       $("inScore").addEventListener("keydown", (e) => { if(e.key === "Enter") analyser("score", $("inScore").value); });
       $("inDcf").addEventListener("keydown", (e) => { if(e.key === "Enter") analyser("dcf", $("inDcf").value); });
+      $("inValeur").addEventListener("keydown", (e) => { if(e.key === "Enter") analyser("valeur", $("inValeur").value); });
       document.addEventListener("visibilitychange", () => {
         if(document.visibilityState === "visible") chargeOnglet(ongletActif, true);
       });
@@ -906,11 +1078,13 @@
       setOnglet(ongletActif);
       renderScore();
       renderDcf();
+      renderValeur();
       chargeOnglet("score", false);
       chargeOnglet("dcf", false);
+      chargeOnglet("valeur", false);
 
       /* Accès pour vérification (lecture des fonctions du moteur et des rendus) */
-      window.Rocky = { va, rendement, rendementCentral, etat, cfg, analyser, chargeOnglet, openSheetScore, openSheetDcf, getSc: () => sc() };
+      window.Rocky = { va, rendement, rendementCentral, etat, cfg, analyser, chargeOnglet, openSheetScore, openSheetDcf, openSheetValeur, getSc: () => sc() };
 
       if("serviceWorker" in navigator){
         navigator.serviceWorker.register("sw.js").catch(function(){});

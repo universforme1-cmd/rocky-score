@@ -1,8 +1,8 @@
-// Service worker — Rocky Score + DCF (appli fusionnée)
+// Service worker — Rocky Score · DCF · Valeur (appli fusionnée)
 // Met en cache uniquement l'enveloppe de l'appli. Les fichiers de données
-// (data.json, data-dcf.json) passent toujours par le réseau.
+// (data.json, data-dcf.json, data-valeur.json) passent toujours par le réseau.
 
-const CACHE = "rocky-fusion-v1";
+const CACHE = "rocky-fusion-v2";
 const SHELL = [
   "./",
   "./index.html",
