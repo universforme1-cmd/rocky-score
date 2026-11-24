@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T12:36:31+00:00",
+ "updated": "2026-11-24T12:37:45+00:00",
  "parametres": {
   "prime_risque": 4.5,
   "croissance_terminale_max": 2.5,
@@ -604,6 +604,88 @@
       71.63,
       73.93,
       76.54
+     ]
+    ]
+   }
+  },
+  "TTMI": {
+   "ticker": "TTMI",
+   "nom": "TTM Technologies, Inc.",
+   "secteur": "Technology",
+   "prix": 68.57,
+   "capi": 7225599488.0,
+   "actions": 105375520.0,
+   "devise": "USD",
+   "devise_fin": "USD",
+   "date": "2026-11-24T12:37:45+00:00",
+   "valeur": 67.78233271035454,
+   "valeur_ponderee": 71.86368136782676,
+   "ecart": -1.1487053954286952,
+   "ecart_pondere": 4.803385398609827,
+   "scenarios": {
+    "Pessimiste": {
+     "valeur": 18.513652917377666,
+     "proba": 25
+    },
+    "Centrale": {
+     "valeur": 67.78233271035454,
+     "proba": 50
+    },
+    "Optimiste": {
+     "valeur": 133.37640713322028,
+     "proba": 25
+    }
+   },
+   "hypotheses": {
+    "revenus": 3828205000.0,
+    "marge_actuelle": 11.121086775655954,
+    "croissance_1_5": 30.0,
+    "croissance_terminale": 2.5,
+    "taux_sans_risque": 4.918000221252441,
+    "prime_risque": 4.5,
+    "beta_sectoriel": 1.02,
+    "beta": 1.2154745923038621,
+    "cout_fonds_propres": 10.38763588661982,
+    "cout_dette_apres_impot": 4.3138047618685444,
+    "wacc": 9.191841657664792,
+    "taux_impot": 21.823041158026207,
+    "roc_actuel": 11.330862675131925,
+    "roc_stable": 10.261352166398357,
+    "ventes_sur_capital": 1.3032777313832422,
+    "dette_nette": 894925000.0
+   },
+   "controles": {
+    "revenu_an10": 26458897442.08799,
+    "multiple_revenu_10ans": 6.911567547215467,
+    "roc_an10": 11.330862675131925,
+    "part_valeur_terminale": 137.62095971099288
+   },
+   "sensibilite": {
+    "wacc": [
+     8.19,
+     9.19,
+     10.19
+    ],
+    "g": [
+     2.0,
+     2.5,
+     3.0
+    ],
+    "valeurs": [
+     [
+      93.19,
+      97.55,
+      102.61
+     ],
+     [
+      65.78,
+      67.78,
+      70.0
+     ],
+     [
+      46.03,
+      46.76,
+      47.51
      ]
     ]
    }
