@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T14:13:03+00:00",
+ "updated": "2026-11-24T15:01:01+00:00",
  "parametres": {
   "prime_risque": 4.5,
   "croissance_terminale_max": 2.5,
@@ -850,6 +850,88 @@
       260.35,
       272.17,
       285.63
+     ]
+    ]
+   }
+  },
+  "WDC": {
+   "ticker": "WDC",
+   "nom": "Western Digital Corporation",
+   "secteur": "Technology",
+   "prix": 282.355,
+   "capi": 105692045312.0,
+   "actions": 374323269.0,
+   "devise": "USD",
+   "devise_fin": "USD",
+   "date": "2026-11-24T15:01:01+00:00",
+   "valeur": 815.0575821725615,
+   "valeur_ponderee": 760.5031235317712,
+   "ecart": 188.6641221768913,
+   "ecart_pondere": 169.34289229224598,
+   "scenarios": {
+    "Pessimiste": {
+     "valeur": 312.1519465596696,
+     "proba": 25
+    },
+    "Centrale": {
+     "valeur": 815.0575821725615,
+     "proba": 50
+    },
+    "Optimiste": {
+     "valeur": 1099.745383222292,
+     "proba": 25
+    }
+   },
+   "hypotheses": {
+    "revenus": 14482000000.0,
+    "marge_actuelle": 40.69189338489159,
+    "croissance_1_5": 30.0,
+    "croissance_terminale": 2.5,
+    "taux_sans_risque": 4.9079999923706055,
+    "prime_risque": 4.5,
+    "beta_sectoriel": 1.02,
+    "beta": 1.02719439555429,
+    "cout_fonds_propres": 9.53037477236491,
+    "cout_dette_apres_impot": 5.204192713892686,
+    "wacc": 9.498318760573019,
+    "taux_impot": 5.515745804261739,
+    "roc_actuel": 63.10730023523582,
+    "roc_stable": 30.0,
+    "ventes_sur_capital": 1.6413918168423438,
+    "dette_nette": -525000000.0
+   },
+   "controles": {
+    "revenu_an10": 100093321218.77441,
+    "multiple_revenu_10ans": 6.911567547215468,
+    "roc_an10": 63.10730023523583,
+    "part_valeur_terminale": 68.46243811793144
+   },
+   "sensibilite": {
+    "wacc": [
+     8.5,
+     9.5,
+     10.5
+    ],
+    "g": [
+     2.0,
+     2.5,
+     3.0
+    ],
+    "valeurs": [
+     [
+      931.02,
+      986.59,
+      1051.88
+     ],
+     [
+      777.27,
+      815.06,
+      858.36
+     ],
+     [
+      661.35,
+      688.08,
+      718.15
      ]
     ]
    }
