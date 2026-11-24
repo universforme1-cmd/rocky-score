@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T16:11:56+00:00",
+ "updated": "2026-11-24T16:12:20+00:00",
  "parametres": {
   "prime_risque": 4.5,
   "croissance_terminale_max": 2.5,
@@ -940,6 +940,88 @@
    "ticker": "NXT",
    "erreur": "données introuvables ou incomplètes (ticker inconnu ou source indisponible)",
    "date": "2026-11-24T16:11:56+00:00"
+  },
+  "CAT": {
+   "ticker": "CAT",
+   "nom": "Caterpillar Inc.",
+   "secteur": "Industrials",
+   "prix": 530.225,
+   "capi": 242627854336.0,
+   "actions": 457594174.0,
+   "devise": "USD",
+   "devise_fin": "USD",
+   "date": "2026-11-24T16:12:19+00:00",
+   "valeur": 409.6213678730661,
+   "valeur_ponderee": 403.4643229356173,
+   "ecart": -22.745746075144314,
+   "ecart_pondere": -23.906959699067887,
+   "scenarios": {
+    "Pessimiste": {
+     "valeur": 213.73168177678272,
+     "proba": 25
+    },
+    "Centrale": {
+     "valeur": 409.6213678730661,
+     "proba": 50
+    },
+    "Optimiste": {
+     "valeur": 580.8828742195542,
+     "proba": 25
+    }
+   },
+   "hypotheses": {
+    "revenus": 77773000000.0,
+    "marge_actuelle": 18.327697272832474,
+    "croissance_1_5": 11.61,
+    "croissance_terminale": 2.5,
+    "taux_sans_risque": 4.8919997215271,
+    "prime_risque": 4.5,
+    "beta_sectoriel": 0.87,
+    "beta": 0.9953237902996642,
+    "cout_fonds_propres": 9.37095677787559,
+    "cout_dette_apres_impot": 4.246561223238737,
+    "wacc": 8.566215349155772,
+    "taux_impot": 22.677322677322678,
+    "roc_actuel": 18.75853021117254,
+    "roc_stable": 13.662372780164155,
+    "ventes_sur_capital": 1.3236830908007828,
+    "dette_nette": 37272000000.0
+   },
+   "controles": {
+    "revenu_an10": 181209723352.17957,
+    "multiple_revenu_10ans": 2.329982427734298,
+    "roc_an10": 18.75853021117254,
+    "part_valeur_terminale": 69.35196765617718
+   },
+   "sensibilite": {
+    "wacc": [
+     7.57,
+     8.57,
+     9.57
+    ],
+    "g": [
+     2.0,
+     2.5,
+     3.0
+    ],
+    "valeurs": [
+     [
+      496.61,
+      525.32,
+      559.89
+     ],
+     [
+      392.76,
+      409.62,
+      429.19
+     ],
+     [
+      317.26,
+      327.55,
+      339.15
+     ]
+    ]
+   }
   }
  },
  "aliases": {}
