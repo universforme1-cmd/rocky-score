@@ -828,6 +828,28 @@
     "Haussier": null
    },
    "date": "2026-11-24T19:59:32+00:00"
+  },
+  "VICR": {
+   "ticker": "VICR",
+   "nom": "Vicor Corporation",
+   "prix": 125.32,
+   "capi": 5783342592.0,
+   "actions": 34430882.0,
+   "fcf": 50829000.0,
+   "sbc": 17740000.0,
+   "fcf_apres_sbc": 33089000.0,
+   "p_fcf": 113.78037325149029,
+   "p_fcf_sbc": 174.78142560971924,
+   "devise": "USD",
+   "devise_fin": "USD",
+   "rendements": {
+    "Négatif": -8.85318613685952,
+    "Zéro": 0.5721431762623143,
+    "Baissier": 4.6315321628082735,
+    "Central": 7.330258923217691,
+    "Haussier": 10.654150976156885
+   },
+   "date": "2026-11-25T20:45:59+00:00"
   }
  },
  "periodes": [
@@ -874,8 +896,9 @@
    3
   ]
  },
- "updated": "2026-11-25T04:58:12+00:00",
+ "updated": "2026-11-25T20:45:59+00:00",
  "aliases": {
-  "PNG": "PNG.V"
+  "PNG": "PNG.V",
+  "VICOR": "VICR"
  }
 }
