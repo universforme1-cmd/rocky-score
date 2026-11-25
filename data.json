@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T05:00:53+00:00",
+ "updated": "2026-11-25T20:53:23+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -4542,7 +4542,7 @@
   "VICR": {
    "ticker": "VICR",
    "name": "Vicor Corporation",
-   "price": 145.59,
+   "price": 124.927,
    "currency": "USD",
    "sector": "Technology",
    "industry": "Electronic Components",
@@ -4569,9 +4569,9 @@
     {
      "label": "P/E forward",
      "ok": false,
-     "val": "23.99x",
+     "val": "20.58x",
      "barre": "<= 20x",
-     "margin": "+20 % vs la barre de 20x."
+     "margin": "+3 % vs la barre de 20x."
     },
     {
      "label": "FCF TTM",
@@ -4590,16 +4590,16 @@
     {
      "label": "Ancre prix (décote ou DCF)",
      "ok": true,
-     "val": "-62.0 %",
+     "val": "-67.4 %",
      "barre": ">= 25 % ou >= 20 % sous le DCF",
-     "margin": "Décote -62.0 % (barre 25 % — passe) · marge sous le DCF -117.7 % (prix 145.59 vs valeur 66.87 USD — barre 20 % — échoue)."
+     "margin": "Décote -67.4 % (barre 25 % — passe) · marge sous le DCF -86.8 % (prix 124.93 vs valeur 66.87 USD — barre 20 % — échoue)."
     },
     {
      "label": "Capitalisation",
      "ok": true,
-     "val": "6.72 Md$",
+     "val": "5.77 Md$",
      "barre": ">= 2 Md$",
-     "margin": "3.4x le plancher."
+     "margin": "2.9x le plancher."
     }
    ],
    "flags": [
@@ -4608,8 +4608,8 @@
    ],
    "dcf": {
     "value": 66.86599768148773,
-    "mos": -0.54072396674574,
-    "implied": 0.5197225115046205,
+    "mos": -0.46475943805992526,
+    "implied": 0.4658723159255632,
     "implied_note": null,
     "note": "Hypothèses : FCF 51 M$ en base, croissance prudente (min. des mesures) 25.0 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
    },
@@ -4624,8 +4624,8 @@
      153.06
     ],
     "add_hi": 283.161,
-    "zone": "Smart Money Zone ★ (zone gold)",
-    "mult": "3X DCA"
+    "zone": "Sous Smart Money",
+    "mult": "4X DCA"
    },
    "qualite": [
     {
@@ -4661,14 +4661,14 @@
      "ok": true
     }
    ],
-   "date": "2026-11-19T13:13:38+00:00",
+   "date": "2026-11-25T20:53:23+00:00",
    "compounders": {
     "verdict": "NON",
     "rows": [
      {
       "label": "Rendement espéré >= 12 %/an",
       "ok": true,
-      "det": "Croissance +25.0 % (plafonnée à 25 %) + dividende 0.0 % + rachats nets 0.0 % - contraction 9.0 % = +16.0 %/an (barre 12 % ; croissance brute +42.3 %/an, plancher +7 %)."
+      "det": "Croissance +25.0 % (plafonnée à 25 %) + dividende 0.0 % + rachats nets 0.0 % - contraction 6.1 % = +18.9 %/an (barre 12 % ; croissance brute +42.3 %/an, plancher +7 %)."
      },
      {
       "label": "ROIC soutenu >= 15 %",
@@ -4683,7 +4683,7 @@
      {
       "label": "Discipline du capital",
       "ok": false,
-      "det": "Retour 0.0 %/an (dividende + rachats nets) ; croissance FCF n/d."
+      "det": "Retour 0.0 %/an (dividende + rachats nets n/d — historique d'actions indisponible) ; croissance FCF n/d."
      },
      {
       "label": "Ancre prix (comme le filtre principal)",
