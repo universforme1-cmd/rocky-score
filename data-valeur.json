@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T05:00:03+00:00",
+ "updated": "2026-11-25T20:44:04+00:00",
  "parametres": {
   "prime_risque": 4.5,
   "croissance_terminale_max": 2.5,
@@ -2992,9 +2992,92 @@
    "ticker": "TOI.TO",
    "erreur": "données introuvables ou incomplètes (ticker inconnu ou source indisponible)",
    "date": "2026-11-25T05:00:03+00:00"
+  },
+  "VICR": {
+   "ticker": "VICR",
+   "nom": "Vicor Corporation",
+   "secteur": "Technology",
+   "prix": 124.99,
+   "capi": 5768113664.0,
+   "actions": 34430882.0,
+   "devise": "USD",
+   "devise_fin": "USD",
+   "date": "2026-11-25T20:44:04+00:00",
+   "valeur": 214.9210264321502,
+   "valeur_ponderee": 203.798678929899,
+   "ecart": 71.95057719189552,
+   "ecart_pondere": 63.05198730290344,
+   "scenarios": {
+    "Pessimiste": {
+     "valeur": 89.63785991280268,
+     "proba": 25
+    },
+    "Centrale": {
+     "valeur": 214.9210264321502,
+     "proba": 50
+    },
+    "Optimiste": {
+     "valeur": 295.714802942493,
+     "proba": 25
+    }
+   },
+   "hypotheses": {
+    "revenus": 560699000.0,
+    "marge_actuelle": 24.896602276800923,
+    "croissance_1_5": 30.0,
+    "croissance_terminale": 2.5,
+    "taux_sans_risque": 4.8480000495910645,
+    "prime_risque": 4.5,
+    "beta_sectoriel": 1.02,
+    "beta": 1.0212661331633566,
+    "cout_fonds_propres": 9.443697648826168,
+    "cout_dette_apres_impot": 6.5980000495910645,
+    "wacc": 9.440169643748671,
+    "taux_impot": 0.0,
+    "roc_actuel": 34.87233420683832,
+    "roc_stable": 22.156251925293493,
+    "ventes_sur_capital": 1.4006864799914065,
+    "dette_nette": -505977000.0
+   },
+   "controles": {
+    "revenu_an10": 3875309012.1561656,
+    "multiple_revenu_10ans": 6.911567547215467,
+    "roc_an10": 34.87233420683832,
+    "part_valeur_terminale": 74.39938032471987
+   },
+   "sensibilite": {
+    "wacc": [
+     8.44,
+     9.44,
+     10.44
+    ],
+    "g": [
+     2.0,
+     2.5,
+     3.0
+    ],
+    "valeurs": [
+     [
+      246.73,
+      260.25,
+      276.15
+     ],
+     [
+      205.95,
+      214.92,
+      225.2
+     ],
+     [
+      175.41,
+      181.6,
+      188.55
+     ]
+    ]
+   }
   }
  },
  "aliases": {
-  "PNG": "PNG.V"
+  "PNG": "PNG.V",
+  "VICOR": "VICR"
  }
 }
