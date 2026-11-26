@@ -60,7 +60,9 @@ jobs:
           for t, f in nouveau["fiches"].items():
               if t not in fiches or cle(f) >= cle(fiches[t]):
                   fiches[t] = f
-          out = {"updated": max(str(en_ligne.get("updated") or ""), str(nouveau.get("updated") or "")), "fiches": fiches}
+          aliases = dict(en_ligne.get("aliases") or {})
+          aliases.update(nouveau.get("aliases") or {})
+          out = {"updated": max(str(en_ligne.get("updated") or ""), str(nouveau.get("updated") or "")), "aliases": aliases, "fiches": fiches}
           with open("data.json", "w", encoding="utf-8") as f:
               json.dump(out, f, ensure_ascii=False, indent=1)
           PY
