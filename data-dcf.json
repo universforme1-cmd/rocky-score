@@ -877,6 +877,28 @@
    "ticker": "ADYEN.AS",
    "erreur": "données introuvables ou incomplètes (ticker inconnu ou source indisponible)",
    "date": "2026-11-26T21:06:52+00:00"
+  },
+  "VIST": {
+   "ticker": "VIST",
+   "nom": "Vista Energy, S.A.B. de C.V.",
+   "prix": 50.16,
+   "capi": 5529006592.0,
+   "actions": 110227402.0,
+   "fcf": 661889000.0,
+   "sbc": 76978000.0,
+   "fcf_apres_sbc": 584911000.0,
+   "p_fcf": 8.3533743452452,
+   "p_fcf_sbc": 9.452731427516323,
+   "devise": "USD",
+   "devise_fin": "USD",
+   "rendements": {
+    "Négatif": 3.9821369010410446,
+    "Zéro": 10.578952842022582,
+    "Baissier": 23.64245779193882,
+    "Central": 28.206051893344963,
+    "Haussier": 35.872746824229594
+   },
+   "date": "2026-11-26T21:16:07+00:00"
   }
  },
  "periodes": [
@@ -923,11 +945,12 @@
    3
   ]
  },
- "updated": "2026-11-26T21:06:52+00:00",
+ "updated": "2026-11-26T21:16:07+00:00",
  "aliases": {
   "PNG": "PNG.V",
   "VICOR": "VICR",
   "EMCOR": "EME",
-  "ADYEN": "ADYEN.AS"
+  "ADYEN": "ADYEN.AS",
+  "VISTA": "VIST"
  }
 }
