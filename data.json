@@ -1,5 +1,8 @@
 {
- "updated": "2026-11-26T21:13:00+00:00",
+ "updated": "2026-11-26T21:20:09+00:00",
+ "aliases": {
+  "VISTA": "VIST"
+ },
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -9251,7 +9254,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T21:13:00+00:00",
+   "date": "2026-11-26T21:20:09+00:00",
    "compounders": {
     "verdict": "NON",
     "rows": [
