@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T19:36:03+00:00",
+ "updated": "2026-11-26T21:06:17+00:00",
  "parametres": {
   "prime_risque": 4.5,
   "croissance_terminale_max": 2.5,
@@ -3156,11 +3156,24 @@
      ]
     ]
    }
+  },
+  "ADYEN.AS": {
+   "ticker": "ADYEN.AS",
+   "nom": "Adyen N.V.",
+   "secteur": "Technology",
+   "prix": 868.4,
+   "capi": 27412502528.0,
+   "actions": 31566677.0,
+   "devise": "EUR",
+   "devise_fin": "EUR",
+   "date": "2026-11-26T21:06:17+00:00",
+   "nd": "Capital investi comptable négatif ou nul (capitaux propres comptables négatifs, effet des rachats massifs) : la méthode exige un capital investi reconstruit — valeur non calculée."
   }
  },
  "aliases": {
   "PNG": "PNG.V",
   "VICOR": "VICR",
-  "EMCOR": "EME"
+  "EMCOR": "EME",
+  "ADYEN": "ADYEN.AS"
  }
 }
