@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T21:08:01+00:00",
+ "updated": "2026-11-26T21:11:38+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -9119,6 +9119,161 @@
       "label": "Discipline du capital",
       "ok": false,
       "det": "Retour 0.0 %/an (dividende + rachats nets n/d — historique d'actions indisponible) ; croissance FCF -22.2 %/an."
+     },
+     {
+      "label": "Ancre prix (comme le filtre principal)",
+      "ok": true,
+      "det": "Reprend le check 6 principal : décote >= 25 % ou >= 20 % sous le DCF."
+     }
+    ]
+   }
+  },
+  "VIST": {
+   "ticker": "VIST",
+   "name": "Vista Energy, S.A.B. de C.V.",
+   "price": 50.16,
+   "currency": "USD",
+   "sector": "Energy",
+   "industry": "Oil & Gas E&P",
+   "score": 5,
+   "verdict": "NON",
+   "fails": [
+    "Croissance BPA forward (parcours)",
+    "Croissance revenus forward"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": false,
+     "val": "0y +2 % · +1y +14 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +2 % (plancher +10 %) ; parcours composé : +7.8 %/an (barre +20 %/an). Moyenne du parcours : +8.0 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward",
+     "ok": false,
+     "val": "+3.0 %",
+     "barre": ">= +20 %/an",
+     "margin": "-17.0 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+    },
+    {
+     "label": "P/E forward",
+     "ok": true,
+     "val": "4.36x",
+     "barre": "<= 20x",
+     "margin": "-78 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": true,
+     "val": "662 M$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": true,
+     "val": "1.16x",
+     "barre": "<= 2x",
+     "margin": "Dette nette 2.94 Md$ / EBITDA 2.54 Md$."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": true,
+     "val": "-38.4 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote -38.4 % (barre 25 % — passe) · marge sous le DCF +18.5 % (prix 50.16 vs valeur 61.55 USD — barre 20 % — échoue)."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "5.53 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "2.8x le plancher."
+    }
+   ],
+   "flags": [
+    "Qualité du reporting : résultats publiés le 2026-10-28 sans 10-Q/10-K déposé depuis (29 jours) — dépôt périodique en retard.",
+    "Bêta -0.57."
+   ],
+   "dcf": {
+    "value": 61.55115702378989,
+    "mos": 0.22709643189373785,
+    "implied": -0.0023449753336987618,
+    "implied_note": null,
+    "note": "Hypothèses : FCF 662 M$ en base, croissance prudente (min. des mesures) 3.0 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+   },
+   "rdca": {
+    "anchor": 81.44,
+    "buy": [
+     32.576,
+     39.9056
+    ],
+    "sm": [
+     27.689600000000002,
+     32.576
+    ],
+    "add_hi": 60.2656,
+    "zone": "Add Zone",
+    "mult": "1X DCA"
+   },
+   "qualite": [
+    {
+     "label": "ROE",
+     "val": 0.26751,
+     "seuil": 0.15,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIC",
+     "val": 0.16227599308472526,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIIC",
+     "val": 0.14697980527213053,
+     "seuil": 0.1,
+     "lo": -0.1,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROCE",
+     "val": 0.22538332372878508,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    }
+   ],
+   "date": "2026-11-26T21:11:38+00:00",
+   "compounders": {
+    "verdict": "NON",
+    "rows": [
+     {
+      "label": "Rendement espéré >= 12 %/an",
+      "ok": false,
+      "det": "Croissance +7.8 % (plafonnée à 25 %) + dividende 0.0 % + rachats nets 0.0 % - contraction 0.0 % = +7.8 %/an (barre 12 % ; croissance brute +7.8 %/an, plancher +7 %)."
+     },
+     {
+      "label": "ROIC soutenu >= 15 %",
+      "ok": true,
+      "det": "ROIC 19.7 % (moyenne sur 4 exercice(s)) — barre 15 %."
+     },
+     {
+      "label": "Intouchables (FCF, levier, cap)",
+      "ok": true,
+      "det": "FCF > 0, levier <= 2x, cap >= 2 Md$ : respectés."
+     },
+     {
+      "label": "Discipline du capital",
+      "ok": false,
+      "det": "Retour 0.0 %/an (dividende + rachats nets n/d — historique d'actions indisponible) ; croissance FCF n/d."
      },
      {
       "label": "Ancre prix (comme le filtre principal)",
