@@ -1,7 +1,8 @@
 {
- "updated": "2026-11-26T21:20:09+00:00",
+ "updated": "2026-11-26T21:20:51+00:00",
  "aliases": {
-  "VISTA": "VIST"
+  "VISTA": "VIST",
+  "ADYEN": "ADYEN.AS"
  },
  "fiches": {
   "HOOD": {
@@ -9099,7 +9100,7 @@
      "ok": null
     }
    ],
-   "date": "2026-11-26T21:08:01+00:00",
+   "date": "2026-11-26T21:20:51+00:00",
    "compounders": {
     "verdict": "NON",
     "rows": [
