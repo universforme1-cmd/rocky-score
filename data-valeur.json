@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T21:06:17+00:00",
+ "updated": "2026-11-26T21:14:06+00:00",
  "parametres": {
   "prime_risque": 4.5,
   "croissance_terminale_max": 2.5,
@@ -3168,12 +3168,95 @@
    "devise_fin": "EUR",
    "date": "2026-11-26T21:06:17+00:00",
    "nd": "Capital investi comptable négatif ou nul (capitaux propres comptables négatifs, effet des rachats massifs) : la méthode exige un capital investi reconstruit — valeur non calculée."
+  },
+  "VIST": {
+   "ticker": "VIST",
+   "nom": "Vista Energy, S.A.B. de C.V.",
+   "secteur": "Energy",
+   "prix": 50.16,
+   "capi": 5529006592.0,
+   "actions": 110227402.0,
+   "devise": "USD",
+   "devise_fin": "USD",
+   "date": "2026-11-26T21:14:06+00:00",
+   "valeur": 118.93746731605245,
+   "valeur_ponderee": 116.38406586495358,
+   "ecart": 137.1161629107904,
+   "ecart_pondere": 132.0256496510239,
+   "scenarios": {
+    "Pessimiste": {
+     "valeur": 90.65125563607162,
+     "proba": 25
+    },
+    "Centrale": {
+     "valeur": 118.93746731605245,
+     "proba": 50
+    },
+    "Optimiste": {
+     "valeur": 137.01007319163784,
+     "proba": 25
+    }
+   },
+   "hypotheses": {
+    "revenus": 4113948000.0,
+    "marge_actuelle": 37.539779306884775,
+    "croissance_1_5": 2.97,
+    "croissance_terminale": 2.5,
+    "taux_sans_risque": 4.8480000495910645,
+    "prime_risque": 4.5,
+    "beta_sectoriel": 0.86,
+    "beta": 1.2415494569703431,
+    "cout_fonds_propres": 10.434972605957608,
+    "cout_dette_apres_impot": 4.015314853264702,
+    "wacc": 7.850732476232794,
+    "taux_impot": 34.153577884375856,
+    "roc_actuel": 15.646756717572105,
+    "roc_stable": 11.74874459690245,
+    "ventes_sur_capital": 0.6329952238568053,
+    "dette_nette": 2935811000.0
+   },
+   "controles": {
+    "revenu_an10": 5437622064.166263,
+    "multiple_revenu_10ans": 1.3217527455782774,
+    "roc_an10": 15.646756717572105,
+    "part_valeur_terminale": 59.32498776104157
+   },
+   "sensibilite": {
+    "wacc": [
+     6.85,
+     7.85,
+     8.85
+    ],
+    "g": [
+     2.0,
+     2.5,
+     3.0
+    ],
+    "valeurs": [
+     [
+      144.0,
+      152.08,
+      162.13
+     ],
+     [
+      114.6,
+      118.94,
+      124.07
+     ],
+     [
+      93.78,
+      96.2,
+      98.96
+     ]
+    ]
+   }
   }
  },
  "aliases": {
   "PNG": "PNG.V",
   "VICOR": "VICR",
   "EMCOR": "EME",
-  "ADYEN": "ADYEN.AS"
+  "ADYEN": "ADYEN.AS",
+  "VISTA": "VIST"
  }
 }
