@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T04:18:07+00:00",
+ "updated": "2026-11-26T19:38:14+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -8826,6 +8826,159 @@
    "ticker": "TOI.TO",
    "erreur": "'currentTradingPeriod'",
    "date": "2026-11-26T04:18:07+00:00"
+  },
+  "EME": {
+   "ticker": "EME",
+   "name": "EMCOR Group, Inc.",
+   "price": 628.72,
+   "currency": "USD",
+   "sector": "Industrials",
+   "industry": "Engineering & Construction",
+   "score": 6,
+   "verdict": "PAS ENCORE",
+   "fails": [
+    "Croissance revenus forward"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": true,
+     "val": "0y +35 % · +1y +18 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +18 % (plancher +10 %) ; parcours composé : +26.0 %/an (barre +20 %/an). Moyenne du parcours : +26.3 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward",
+     "ok": false,
+     "val": "+14.0 %",
+     "barre": ">= +20 %/an",
+     "margin": "-6.0 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+    },
+    {
+     "label": "P/E forward",
+     "ok": true,
+     "val": "15.31x",
+     "barre": "<= 20x",
+     "margin": "-23 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": true,
+     "val": "1.48 Md$",
+     "barre": "> 0",
+     "margin": "Source : 4 derniers trimestres, OCF - capex (Yahoo)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": true,
+     "val": "Cash net 208 M$",
+     "barre": "<= 2x",
+     "margin": "Aucune dette nette."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": true,
+     "val": "-34.0 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote -34.0 % (barre 25 % — passe) · marge sous le DCF +20.3 % (prix 628.72 vs valeur 788.57 USD — barre 20 % — passe)."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "27.53 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "13.8x le plancher."
+    }
+   ],
+   "flags": [
+    "Bêta 1.16."
+   ],
+   "dcf": {
+    "value": 788.572459372866,
+    "mos": 0.2542506352157812,
+    "implied": 0.08362369688340754,
+    "implied_note": null,
+    "note": "Hypothèses : FCF 1.48 Md$ en base, croissance prudente (min. des mesures) 14.0 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
+   },
+   "rdca": {
+    "anchor": 951.96,
+    "buy": [
+     380.78400000000005,
+     466.4604
+    ],
+    "sm": [
+     323.6664,
+     380.78400000000005
+    ],
+    "add_hi": 704.4504000000001,
+    "zone": "Add Zone",
+    "mult": "1X DCA"
+   },
+   "qualite": [
+    {
+     "label": "ROE",
+     "val": 0.40552,
+     "seuil": 0.15,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIC",
+     "val": 0.42297873328790153,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIIC",
+     "val": 0.885500996489276,
+     "seuil": 0.1,
+     "lo": -0.1,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROCE",
+     "val": 0.572124804261126,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    }
+   ],
+   "date": "2026-11-26T19:38:14+00:00",
+   "compounders": {
+    "verdict": "PASSE",
+    "rows": [
+     {
+      "label": "Rendement espéré >= 12 %/an",
+      "ok": true,
+      "det": "Croissance +25.0 % (plafonnée à 25 %) + dividende 8.0 % (plafonné à 8 % — donnée Yahoo brute 25.0 %) + rachats nets 0.0 % - contraction 0.4 % = +32.6 %/an (barre 12 % ; croissance brute +26.0 %/an, plancher +7 %)."
+     },
+     {
+      "label": "ROIC soutenu >= 15 %",
+      "ok": true,
+      "det": "ROIC 36.6 % (moyenne sur 4 exercice(s)) — barre 15 %."
+     },
+     {
+      "label": "Intouchables (FCF, levier, cap)",
+      "ok": true,
+      "det": "FCF > 0, levier <= 2x, cap >= 2 Md$ : respectés."
+     },
+     {
+      "label": "Discipline du capital",
+      "ok": true,
+      "det": "Retour 8.0 %/an (dividende + rachats nets n/d — historique d'actions indisponible) ; croissance FCF +38.4 %/an — branche réinvestissement OK."
+     },
+     {
+      "label": "Ancre prix (comme le filtre principal)",
+      "ok": true,
+      "det": "Reprend le check 6 principal : décote >= 25 % ou >= 20 % sous le DCF."
+     }
+    ]
+   }
   }
  }
 }
