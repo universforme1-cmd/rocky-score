@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T19:39:30+00:00",
+ "updated": "2026-11-26T20:50:19+00:00",
  "fiches": {
   "HOOD": {
    "ticker": "HOOD",
@@ -8971,6 +8971,154 @@
       "label": "Discipline du capital",
       "ok": true,
       "det": "Retour 8.0 %/an (dividende + rachats nets n/d — historique d'actions indisponible) ; croissance FCF +38.4 %/an — branche réinvestissement OK."
+     },
+     {
+      "label": "Ancre prix (comme le filtre principal)",
+      "ok": true,
+      "det": "Reprend le check 6 principal : décote >= 25 % ou >= 20 % sous le DCF."
+     }
+    ]
+   }
+  },
+  "ADYEN.AS": {
+   "ticker": "ADYEN.AS",
+   "name": "Adyen N.V.",
+   "price": 868.4,
+   "currency": "EUR",
+   "sector": "Technology",
+   "industry": "Software - Infrastructure",
+   "score": 5,
+   "verdict": "NON",
+   "fails": [
+    "Croissance BPA forward (parcours)",
+    "FCF TTM"
+   ],
+   "checks": [
+    {
+     "label": "Croissance BPA forward (parcours)",
+     "ok": false,
+     "val": "0y +12 % · +1y +19 %",
+     "barre": "plancher +10 % · parcours >= +20 %/an",
+     "margin": "Année la plus faible : +12 % (plancher +10 %) ; parcours composé : +15.7 %/an (barre +20 %/an). Moyenne du parcours : +15.7 % — à titre de référence seulement."
+    },
+    {
+     "label": "Croissance revenus forward",
+     "ok": true,
+     "val": "+21.9 %",
+     "barre": ">= +20 %/an",
+     "margin": "+1.9 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+    },
+    {
+     "label": "P/E forward",
+     "ok": true,
+     "val": "19.31x",
+     "barre": "<= 20x",
+     "margin": "-3 % vs la barre de 20x."
+    },
+    {
+     "label": "FCF TTM",
+     "ok": false,
+     "val": "-536 M$",
+     "barre": "> 0",
+     "margin": "Source : Yahoo (info)."
+    },
+    {
+     "label": "Dette nette / EBITDA",
+     "ok": true,
+     "val": "Cash net 11.99 Md$",
+     "barre": "<= 2x",
+     "margin": "Aucune dette nette."
+    },
+    {
+     "label": "Ancre prix (décote ou DCF)",
+     "ok": true,
+     "val": "-41.5 %",
+     "barre": ">= 25 % ou >= 20 % sous le DCF",
+     "margin": "Décote passe (sommet 52 sem. : 1,485.00 EUR). DCF indisponible — seule la décote compte."
+    },
+    {
+     "label": "Capitalisation",
+     "ok": true,
+     "val": "27.41 Md$",
+     "barre": ">= 2 Md$",
+     "margin": "13.7x le plancher."
+    }
+   ],
+   "flags": [
+    "Bêta 1.91."
+   ],
+   "dcf": null,
+   "rdca": {
+    "anchor": 1741.199951171875,
+    "buy": [
+     696.47998046875,
+     853.1879760742187
+    ],
+    "sm": [
+     592.0079833984375,
+     696.47998046875
+    ],
+    "add_hi": 1288.4879638671875,
+    "zone": "Add Zone",
+    "mult": "1X DCA"
+   },
+   "qualite": [
+    {
+     "label": "ROE",
+     "val": 0.21271,
+     "seuil": 0.15,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": true
+    },
+    {
+     "label": "ROIC",
+     "val": null,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": null
+    },
+    {
+     "label": "ROIIC",
+     "val": null,
+     "seuil": 0.1,
+     "lo": -0.1,
+     "hi": 0.4,
+     "ok": null
+    },
+    {
+     "label": "ROCE",
+     "val": null,
+     "seuil": 0.1,
+     "lo": 0.0,
+     "hi": 0.4,
+     "ok": null
+    }
+   ],
+   "date": "2026-11-26T20:50:19+00:00",
+   "compounders": {
+    "verdict": "NON",
+    "rows": [
+     {
+      "label": "Rendement espéré >= 12 %/an",
+      "ok": false,
+      "det": "Croissance +15.7 % (plafonnée à 25 %) + dividende 0.0 % + rachats nets 0.0 % - contraction 4.9 % = +10.7 %/an (barre 12 % ; croissance brute +15.7 %/an, plancher +7 %)."
+     },
+     {
+      "label": "ROIC soutenu >= 15 %",
+      "ok": false,
+      "det": "ROIC n/d."
+     },
+     {
+      "label": "Intouchables (FCF, levier, cap)",
+      "ok": false,
+      "det": "FCF > 0, levier <= 2x, cap >= 2 Md$ : au moins un intouchable échoue."
+     },
+     {
+      "label": "Discipline du capital",
+      "ok": false,
+      "det": "Retour 0.0 %/an (dividende + rachats nets n/d — historique d'actions indisponible) ; croissance FCF -22.2 %/an."
      },
      {
       "label": "Ancre prix (comme le filtre principal)",
