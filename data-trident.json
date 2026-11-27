@@ -1,8 +1,9 @@
 {
- "updated": "2026-11-27T15:18:05+00:00",
+ "updated": "2026-11-27T15:19:17+00:00",
  "aliases": {
   "NETFLIX": "NFLX",
-  "ADYEN": "ADYEN.AS"
+  "ADYEN": "ADYEN.AS",
+  "XPENG": "XPEV"
  },
  "fiches": {
   "NFLX": {
@@ -816,13 +817,13 @@
   "XPEV": {
    "ticker": "XPEV",
    "name": "XPeng Inc.",
-   "price": 9.295,
+   "price": 9.305,
    "currency": "USD",
    "devise_fin": "CNY",
    "devise_mix": true,
    "sector": "Consumer Cyclical",
    "industry": "Auto Manufacturers",
-   "cap": 8904393728.0,
+   "cap": 8918763520.0,
    "eps_ttm": -3.76,
    "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
    "eps_hist": [
@@ -862,7 +863,7 @@
     },
     {
      "annee": 2026,
-     "prix": 9.295000076293945
+     "prix": 9.3100004196167
     }
    ],
    "regularite": null,
@@ -874,7 +875,7 @@
    "prix_5ans": null,
    "rendement_estime": null,
    "prix_a_payer": null,
-   "date": "2026-11-27T15:18:05+00:00",
+   "date": "2026-11-27T15:19:17+00:00",
    "nd": "BPA 12 mois négatif ou nul : pas de bénéfices à projeter.",
    "devise_note": "Devises différentes : cours en USD, états financiers en CNY. Le BPA n'est pas converti : la projection mélange les devises et n'est pas comparable au cours."
   }
