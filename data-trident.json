@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T13:30:44+00:00",
+ "updated": "2026-11-27T13:31:58+00:00",
  "aliases": {
   "NETFLIX": "NFLX",
   "ADYEN": "ADYEN.AS"
@@ -256,6 +256,69 @@
    "rendement_estime": 0.009544005258877108,
    "prix_a_payer": 39.883981366546,
    "date": "2026-11-27T13:30:44+00:00"
+  },
+  "MLI": {
+   "ticker": "MLI",
+   "name": "Mueller Industries, Inc.",
+   "price": 53.82,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Industrials",
+   "industry": "Metal Fabrication",
+   "cap": 11731381248.0,
+   "eps_ttm": 3.9,
+   "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": 2.91
+    },
+    {
+     "annee": 2023,
+     "eps": 2.65
+    },
+    {
+     "annee": 2024,
+     "eps": 2.655
+    },
+    {
+     "annee": 2025,
+     "eps": 3.43
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 14.050047874450684
+    },
+    {
+     "annee": 2023,
+     "prix": 22.814563751220703
+    },
+    {
+     "annee": 2024,
+     "prix": 38.90129089355469
+    },
+    {
+     "annee": 2025,
+     "prix": 56.90907669067383
+    },
+    {
+     "annee": 2026,
+     "prix": 53.81999969482422
+    }
+   ],
+   "regularite": 0.2779840980206504,
+   "cagr_hist": 0.05633185583122402,
+   "g_defaut": 0.21104188614597463,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 10.159221480928453,
+   "prix_5ans": 172.70676517578372,
+   "rendement_estime": 0.26262135764600547,
+   "prix_a_payer": 85.86578567402454,
+   "date": "2026-11-27T13:31:58+00:00"
   }
  }
 }
