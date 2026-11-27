@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T14:04:49+00:00",
+ "updated": "2026-11-27T14:07:59+00:00",
  "aliases": {
   "NETFLIX": "NFLX",
   "ADYEN": "ADYEN.AS"
@@ -626,6 +626,70 @@
    "rendement_estime": 0.2344810333475078,
    "prix_a_payer": 273.60310622041123,
    "date": "2026-11-27T14:04:49+00:00"
+  },
+  "NOK": {
+   "ticker": "NOK",
+   "name": "Nokia Oyj",
+   "price": 7.3,
+   "currency": "USD",
+   "devise_fin": "EUR",
+   "devise_mix": true,
+   "sector": "Technology",
+   "industry": "Communication Equipment",
+   "cap": 41310232576.0,
+   "eps_ttm": 0.15,
+   "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": 0.75
+    },
+    {
+     "annee": 2023,
+     "eps": 0.12
+    },
+    {
+     "annee": 2024,
+     "eps": 0.23
+    },
+    {
+     "annee": 2025,
+     "eps": 0.12
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 4.221761703491211
+    },
+    {
+     "annee": 2023,
+     "prix": 3.2106451988220215
+    },
+    {
+     "annee": 2024,
+     "prix": 4.3121657371521
+    },
+    {
+     "annee": 2025,
+     "prix": 6.46999979019165
+    },
+    {
+     "annee": 2026,
+     "prix": 7.300000190734863
+    }
+   ],
+   "regularite": 0.5244200424168928,
+   "cagr_hist": -0.4571164766810186,
+   "g_defaut": 0.18090088421636796,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 0.3444756259682919,
+   "prix_5ans": 5.856085641460962,
+   "rendement_estime": -0.04312124601602296,
+   "prix_a_payer": 2.9115095408487526,
+   "date": "2026-11-27T14:07:59+00:00",
+   "devise_note": "Devises différentes : cours en USD, états financiers en EUR. Le BPA n'est pas converti : la projection mélange les devises et n'est pas comparable au cours."
   }
  }
 }
