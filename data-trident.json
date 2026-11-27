@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T17:50:03+00:00",
+ "updated": "2026-11-27T17:51:08+00:00",
  "aliases": {
   "NETFLIX": "NFLX",
   "ADYEN": "ADYEN.AS",
@@ -7,7 +7,8 @@
   "LENNOX": "LII",
   "GOOGLE": "GOOG",
   "VULCAN": "VMC",
-  "ATD": "ATD.TO"
+  "ATD": "ATD.TO",
+  "ZYL": "2190.HK"
  },
  "fiches": {
   "NFLX": {
@@ -1379,6 +1380,70 @@
    "prix_a_payer": 30.003556976090454,
    "date": "2026-11-27T17:50:03+00:00",
    "devise_note": "Devises différentes : cours en CAD, états financiers en USD. Le BPA n'est pas converti : la projection mélange les devises et n'est pas comparable au cours."
+  },
+  "2190.HK": {
+   "ticker": "2190.HK",
+   "name": "Zylox-Tonbridge Medical Technology Co., Ltd.",
+   "price": 18.27,
+   "currency": "HKD",
+   "devise_fin": "CNY",
+   "devise_mix": true,
+   "sector": "Healthcare",
+   "industry": "Medical Devices",
+   "cap": 6026256896.0,
+   "eps_ttm": 0.7552,
+   "eps_base_note": "dernier BPA annuel (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": -0.34
+    },
+    {
+     "annee": 2023,
+     "eps": -0.24
+    },
+    {
+     "annee": 2024,
+     "eps": 0.3057
+    },
+    {
+     "annee": 2025,
+     "eps": 0.7552
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 12.613636016845703
+    },
+    {
+     "annee": 2023,
+     "prix": 12.220687866210938
+    },
+    {
+     "annee": 2024,
+     "prix": 11.297259330749512
+    },
+    {
+     "annee": 2025,
+     "prix": 22.744224548339844
+    },
+    {
+     "annee": 2026,
+     "prix": 18.270000457763672
+    }
+   ],
+   "regularite": null,
+   "cagr_hist": null,
+   "g_defaut": 0.25,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 2.3046875,
+   "prix_5ans": 39.1796875,
+   "rendement_estime": 0.1648351946806692,
+   "prix_a_payer": 19.479229121257216,
+   "date": "2026-11-27T17:51:08+00:00",
+   "devise_note": "Devises différentes : cours en HKD, états financiers en CNY. Le BPA n'est pas converti : la projection mélange les devises et n'est pas comparable au cours."
   }
  }
 }
