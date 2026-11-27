@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T17:53:16+00:00",
+ "updated": "2026-11-27T17:54:30+00:00",
  "aliases": {
   "NETFLIX": "NFLX",
   "ADYEN": "ADYEN.AS",
@@ -1571,6 +1571,69 @@
    "rendement_estime": -0.01729795884378027,
    "prix_a_payer": 24.795828635670272,
    "date": "2026-11-27T17:53:16+00:00"
+  },
+  "VICR": {
+   "ticker": "VICR",
+   "name": "Vicor Corporation",
+   "price": 129.0,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Technology",
+   "industry": "Electronic Components",
+   "cap": 5953169408.0,
+   "eps_ttm": 3.8200000000000003,
+   "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": 0.57
+    },
+    {
+     "annee": 2023,
+     "eps": 1.19
+    },
+    {
+     "annee": 2024,
+     "eps": 0.14
+    },
+    {
+     "annee": 2025,
+     "eps": 2.61
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 53.75
+    },
+    {
+     "annee": 2023,
+     "prix": 44.939998626708984
+    },
+    {
+     "annee": 2024,
+     "prix": 48.31999969482422
+    },
+    {
+     "annee": 2025,
+     "prix": 109.5999984741211
+    },
+    {
+     "annee": 2026,
+     "prix": 129.0
+    }
+   ],
+   "regularite": 0.0632562122976722,
+   "cagr_hist": 0.6605624658551401,
+   "g_defaut": 0.25,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 11.65771484375,
+   "prix_5ans": 198.18115234375,
+   "rendement_estime": 0.08966882933335318,
+   "prix_a_payer": 98.53105831991866,
+   "date": "2026-11-27T17:54:30+00:00"
   }
  }
 }
