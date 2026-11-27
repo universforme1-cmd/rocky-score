@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T21:20:51+00:00",
+ "updated": "2026-11-27T04:28:16+00:00",
  "aliases": {
   "VISTA": "VIST",
   "ADYEN": "ADYEN.AS"
@@ -472,7 +472,7 @@
   "CSU.TO": {
    "ticker": "CSU.TO",
    "name": "Constellation Software Inc.",
-   "price": 3071.86,
+   "price": 3044.0,
    "currency": "CAD",
    "sector": "Technology",
    "industry": "Software - Application",
@@ -500,9 +500,9 @@
     {
      "label": "P/E forward",
      "ok": true,
-     "val": "15.97x",
+     "val": "15.82x",
      "barre": "<= 20x",
-     "margin": "-20 % vs la barre de 20x."
+     "margin": "-21 % vs la barre de 20x."
     },
     {
      "label": "FCF TTM",
@@ -521,16 +521,16 @@
     {
      "label": "Ancre prix (décote ou DCF)",
      "ok": false,
-     "val": "-13.8 %",
+     "val": "-14.6 %",
      "barre": ">= 25 % ou >= 20 % sous le DCF",
-     "margin": "Décote -13.8 % (barre 25 % — échoue) · marge sous le DCF +4.0 % (prix 3,071.86 vs valeur 3,199.96 CAD — barre 20 % — échoue)."
+     "margin": "Décote -14.6 % (barre 25 % — échoue) · marge sous le DCF +4.9 % (prix 3,044.00 vs valeur 3,199.96 CAD — barre 20 % — échoue)."
     },
     {
      "label": "Capitalisation",
      "ok": true,
-     "val": "65.10 Md$",
+     "val": "64.51 Md$",
      "barre": ">= 2 Md$",
-     "margin": "32.5x le plancher."
+     "margin": "32.3x le plancher."
     }
    ],
    "flags": [
@@ -538,22 +538,22 @@
    ],
    "dcf": {
     "value": 3199.9644273162935,
-    "mos": 0.04170256044100107,
-    "implied": 0.15250301834994018,
+    "mos": 0.05123667126028031,
+    "implied": 0.15029929218721627,
     "implied_note": null,
     "note": "Hypothèses : FCF 2.80 Md$ en base, croissance prudente (min. des mesures) 16.2 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
    },
    "rdca": {
-    "anchor": 4981.6083984375,
+    "anchor": 4981.60888671875,
     "buy": [
-     1992.643359375,
-     2440.988115234375
+     1992.6435546875,
+     2440.9883544921877
     ],
     "sm": [
-     1693.74685546875,
-     1992.643359375
+     1693.7470214843752,
+     1992.6435546875
     ],
-    "add_hi": 3686.39021484375,
+    "add_hi": 3686.390576171875,
     "zone": "Add Zone",
     "mult": "1X DCA"
    },
@@ -591,14 +591,14 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T04:17:46+00:00",
+   "date": "2026-11-27T04:27:54+00:00",
    "compounders": {
     "verdict": "NON",
     "rows": [
      {
       "label": "Rendement espéré >= 12 %/an",
       "ok": true,
-      "det": "Croissance +25.0 % (plafonnée à 25 %) + dividende 8.0 % (plafonné à 8 % — donnée Yahoo brute 18.0 %) + rachats nets 0.0 % - contraction 1.2 % = +31.8 %/an (barre 12 % ; croissance brute +30.4 %/an, plancher +7 %)."
+      "det": "Croissance +25.0 % (plafonnée à 25 %) + dividende 8.0 % (plafonné à 8 % — donnée Yahoo brute 19.0 %) + rachats nets 0.0 % - contraction 1.1 % = +31.9 %/an (barre 12 % ; croissance brute +30.4 %/an, plancher +7 %)."
      },
      {
       "label": "ROIC soutenu >= 15 %",
@@ -651,7 +651,7 @@
     {
      "label": "P/E forward",
      "ok": true,
-     "val": "8.57x",
+     "val": "8.50x",
      "barre": "<= 20x",
      "margin": "-57 % vs la barre de 20x."
     },
@@ -743,7 +743,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T04:16:54+00:00",
+   "date": "2026-11-27T04:26:37+00:00",
    "compounders": {
     "verdict": "NON",
     "rows": [
@@ -1640,14 +1640,14 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T04:17:16+00:00",
+   "date": "2026-11-27T04:27:10+00:00",
    "compounders": {
     "verdict": "PASSE",
     "rows": [
      {
       "label": "Rendement espéré >= 12 %/an",
       "ok": true,
-      "det": "Croissance +25.0 % (plafonnée à 25 %) + dividende 0.6 % + rachats nets 0.0 % - contraction 0.0 % = +25.6 %/an (barre 12 % ; croissance brute +86.6 %/an, plancher +7 %)."
+      "det": "Croissance +25.0 % (plafonnée à 25 %) + dividende 0.7 % + rachats nets 0.0 % - contraction 0.0 % = +25.7 %/an (barre 12 % ; croissance brute +86.6 %/an, plancher +7 %)."
      },
      {
       "label": "ROIC soutenu >= 15 %",
@@ -1662,7 +1662,7 @@
      {
       "label": "Discipline du capital",
       "ok": true,
-      "det": "Retour 0.6 %/an (dividende + rachats nets n/d — historique d'actions indisponible) ; croissance FCF +193.9 %/an — branche réinvestissement OK."
+      "det": "Retour 0.7 %/an (dividende + rachats nets n/d — historique d'actions indisponible) ; croissance FCF +193.9 %/an — branche réinvestissement OK."
      },
      {
       "label": "Ancre prix (comme le filtre principal)",
@@ -1785,7 +1785,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T04:17:14+00:00",
+   "date": "2026-11-27T04:27:07+00:00",
    "compounders": {
     "verdict": "NON",
     "rows": [
@@ -1854,7 +1854,7 @@
     {
      "label": "P/E forward",
      "ok": true,
-     "val": "16.90x",
+     "val": "16.89x",
      "barre": "<= 20x",
      "margin": "-16 % vs la barre de 20x."
     },
@@ -1945,14 +1945,14 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T04:17:28+00:00",
+   "date": "2026-11-27T04:27:29+00:00",
    "compounders": {
     "verdict": "PAS ENCORE",
     "rows": [
      {
       "label": "Rendement espéré >= 12 %/an",
       "ok": true,
-      "det": "Croissance +25.0 % (plafonnée à 25 %) + dividende 1.2 % + rachats nets 0.0 % - contraction 2.4 % = +23.9 %/an (barre 12 % ; croissance brute +29.9 %/an, plancher +7 %)."
+      "det": "Croissance +25.0 % (plafonnée à 25 %) + dividende 1.2 % + rachats nets 0.0 % - contraction 2.3 % = +23.9 %/an (barre 12 % ; croissance brute +29.9 %/an, plancher +7 %)."
      },
      {
       "label": "ROIC soutenu >= 15 %",
@@ -2905,14 +2905,14 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T04:16:48+00:00",
+   "date": "2026-11-27T04:26:28+00:00",
    "compounders": {
     "verdict": "PASSE",
     "rows": [
      {
       "label": "Rendement espéré >= 12 %/an",
       "ok": true,
-      "det": "Croissance +13.2 % (plafonnée à 25 %) + dividende 2.9 % + rachats nets 0.0 % - contraction 0.0 % = +16.0 %/an (barre 12 % ; croissance brute +13.2 %/an, plancher +7 %)."
+      "det": "Croissance +13.2 % (plafonnée à 25 %) + dividende 2.8 % + rachats nets 0.0 % - contraction 0.0 % = +16.0 %/an (barre 12 % ; croissance brute +13.2 %/an, plancher +7 %)."
      },
      {
       "label": "ROIC soutenu >= 15 %",
@@ -2927,7 +2927,7 @@
      {
       "label": "Discipline du capital",
       "ok": true,
-      "det": "Retour 2.9 %/an (dividende + rachats nets n/d — historique d'actions indisponible) ; croissance FCF +23.6 %/an — branche réinvestissement OK."
+      "det": "Retour 2.8 %/an (dividende + rachats nets n/d — historique d'actions indisponible) ; croissance FCF +23.6 %/an — branche réinvestissement OK."
      },
      {
       "label": "Ancre prix (comme le filtre principal)",
@@ -3300,7 +3300,7 @@
      "ok": false
     }
    ],
-   "date": "2026-11-26T04:17:36+00:00",
+   "date": "2026-11-27T04:27:41+00:00",
    "compounders": {
     "verdict": "NON",
     "rows": [
@@ -3937,7 +3937,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T04:16:58+00:00",
+   "date": "2026-11-27T04:26:44+00:00",
    "compounders": {
     "verdict": "NON",
     "rows": [
@@ -4247,11 +4247,10 @@
    "currency": "USD",
    "sector": "Technology",
    "industry": "Computer Hardware",
-   "score": 5,
-   "verdict": "NON",
+   "score": 6,
+   "verdict": "PAS ENCORE",
    "fails": [
-    "Croissance BPA forward (parcours)",
-    "Croissance revenus forward"
+    "Croissance BPA forward (parcours)"
    ],
    "checks": [
     {
@@ -4263,10 +4262,10 @@
     },
     {
      "label": "Croissance revenus forward",
-     "ok": false,
-     "val": "+19.6 %",
+     "ok": true,
+     "val": "+21.0 %",
      "barre": ">= +20 %/an",
-     "margin": "-0.4 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+     "margin": "+1.0 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
     },
     {
      "label": "P/E forward",
@@ -4285,16 +4284,16 @@
     {
      "label": "Dette nette / EBITDA",
      "ok": true,
-     "val": "1.34x",
+     "val": "1.06x",
      "barre": "<= 2x",
-     "margin": "Dette nette 23.71 Md$ / EBITDA 17.73 Md$."
+     "margin": "Dette nette 24.14 Md$ / EBITDA 22.81 Md$."
     },
     {
      "label": "Ancre prix (décote ou DCF)",
      "ok": true,
      "val": "-50.1 %",
      "barre": ">= 25 % ou >= 20 % sous le DCF",
-     "margin": "Décote -50.1 % (barre 25 % — passe) · marge sous le DCF +16.1 % (prix 297.06 vs valeur 353.94 USD — barre 20 % — échoue)."
+     "margin": "Décote -50.1 % (barre 25 % — passe) · marge sous le DCF +15.8 % (prix 297.06 vs valeur 352.63 USD — barre 20 % — échoue)."
     },
     {
      "label": "Capitalisation",
@@ -4309,9 +4308,9 @@
     "Bêta 1.44."
    ],
    "dcf": {
-    "value": 353.94040818551974,
-    "mos": 0.19147784348454766,
-    "implied": 0.01366595981277452,
+    "value": 352.6275446831837,
+    "mos": 0.18705832048469562,
+    "implied": 0.014512393453699812,
     "implied_note": null,
     "note": "Hypothèses : FCF 8.56 Md$ en base, croissance prudente (min. des mesures) 4.7 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
    },
@@ -4363,7 +4362,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T04:17:10+00:00",
+   "date": "2026-11-27T04:27:01+00:00",
    "compounders": {
     "verdict": "PAS ENCORE",
     "rows": [
@@ -4418,9 +4417,9 @@
     {
      "label": "Croissance revenus forward",
      "ok": true,
-     "val": "+20.6 %",
+     "val": "+22.2 %",
      "barre": ">= +20 %/an",
-     "margin": "+0.6 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+     "margin": "+2.2 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
     },
     {
      "label": "P/E forward",
@@ -4510,7 +4509,7 @@
      "ok": null
     }
    ],
-   "date": "2026-11-26T04:17:32+00:00",
+   "date": "2026-11-27T04:27:35+00:00",
    "compounders": {
     "verdict": "NON",
     "rows": [
@@ -5274,7 +5273,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T04:17:18+00:00",
+   "date": "2026-11-27T04:27:13+00:00",
    "compounders": {
     "verdict": "PAS ENCORE",
     "rows": [
@@ -5376,8 +5375,8 @@
     "Bêta 0.77."
    ],
    "dcf": {
-    "value": 375.57390959712745,
-    "mos": -0.4309227546750194,
+    "value": 375.5679268899319,
+    "mos": -0.43093181979494233,
     "implied": 0.2686770409606417,
     "implied_note": null,
     "note": "Hypothèses : FCF 15.43 Md$ en base, croissance prudente (min. des mesures) 12.6 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
@@ -5430,7 +5429,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T04:16:40+00:00",
+   "date": "2026-11-27T04:26:17+00:00",
    "compounders": {
     "verdict": "NON",
     "rows": [
@@ -5587,14 +5586,14 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T04:16:42+00:00",
+   "date": "2026-11-27T04:26:19+00:00",
    "compounders": {
     "verdict": "NON",
     "rows": [
      {
       "label": "Rendement espéré >= 12 %/an",
       "ok": false,
-      "det": "Croissance +6.3 % (plafonnée à 25 %) + dividende 0.9 % + rachats nets 0.0 % - contraction 8.1 % = -0.9 %/an (barre 12 % ; croissance brute +6.3 %/an, plancher +7 %)."
+      "det": "Croissance +6.3 % (plafonnée à 25 %) + dividende 0.8 % + rachats nets 0.0 % - contraction 8.1 % = -0.9 %/an (barre 12 % ; croissance brute +6.3 %/an, plancher +7 %)."
      },
      {
       "label": "ROIC soutenu >= 15 %",
@@ -5609,7 +5608,7 @@
      {
       "label": "Discipline du capital",
       "ok": false,
-      "det": "Retour 0.9 %/an (dividende + rachats nets n/d — historique d'actions indisponible) ; croissance FCF +29.5 %/an."
+      "det": "Retour 0.8 %/an (dividende + rachats nets n/d — historique d'actions indisponible) ; croissance FCF +29.5 %/an."
      },
      {
       "label": "Ancre prix (comme le filtre principal)",
@@ -5742,14 +5741,14 @@
      "ok": null
     }
    ],
-   "date": "2026-11-26T04:16:44+00:00",
+   "date": "2026-11-27T04:26:22+00:00",
    "compounders": {
     "verdict": "PASSE",
     "rows": [
      {
       "label": "Rendement espéré >= 12 %/an",
       "ok": true,
-      "det": "Croissance +15.8 % (plafonnée à 25 %) + dividende 1.1 % + rachats nets 0.0 % - contraction 0.0 % = +17.0 %/an (barre 12 % ; croissance brute +15.8 %/an, plancher +7 %)."
+      "det": "Croissance +15.8 % (plafonnée à 25 %) + dividende 1.1 % + rachats nets 0.0 % - contraction 0.0 % = +16.9 %/an (barre 12 % ; croissance brute +15.8 %/an, plancher +7 %)."
      },
      {
       "label": "ROIC soutenu >= 15 %",
@@ -5898,7 +5897,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T04:16:46+00:00",
+   "date": "2026-11-27T04:26:26+00:00",
    "compounders": {
     "verdict": "NON",
     "rows": [
@@ -5944,21 +5943,21 @@
     {
      "label": "Croissance BPA forward (parcours)",
      "ok": true,
-     "val": "0y +64 % · +1y +34 %",
+     "val": "0y +64 % · +1y +33 %",
      "barre": "plancher +10 % · parcours >= +20 %/an",
-     "margin": "Année la plus faible : +34 % (plancher +10 %) ; parcours composé : +48.2 %/an (barre +20 %/an). Moyenne du parcours : +49.0 % — à titre de référence seulement."
+     "margin": "Année la plus faible : +33 % (plancher +10 %) ; parcours composé : +48.1 %/an (barre +20 %/an). Moyenne du parcours : +48.9 % — à titre de référence seulement."
     },
     {
      "label": "Croissance revenus forward",
      "ok": true,
-     "val": "+37.9 %",
+     "val": "+38.1 %",
      "barre": ">= +20 %/an",
-     "margin": "+17.9 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
+     "margin": "+18.1 pts vs la barre. Base : CAGR sur 2 années d'estimations de revenus (Yahoo)."
     },
     {
      "label": "P/E forward",
      "ok": true,
-     "val": "14.64x",
+     "val": "14.66x",
      "barre": "<= 20x",
      "margin": "-27 % vs la barre de 20x."
     },
@@ -5992,7 +5991,7 @@
     }
    ],
    "flags": [
-    "Qualité du reporting : résultats publiés le 2026-10-15 sans 10-Q/10-K déposé depuis (42 jours) — dépôt périodique en retard.",
+    "Qualité du reporting : résultats publiés le 2026-10-15 sans 10-Q/10-K déposé depuis (43 jours) — dépôt périodique en retard.",
     "Bêta 1.23."
    ],
    "dcf": {
@@ -6050,14 +6049,14 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T04:16:50+00:00",
+   "date": "2026-11-27T04:26:32+00:00",
    "compounders": {
     "verdict": "PASSE",
     "rows": [
      {
       "label": "Rendement espéré >= 12 %/an",
       "ok": true,
-      "det": "Croissance +25.0 % (plafonnée à 25 %) + dividende 1.1 % + rachats nets 0.0 % - contraction 0.0 % = +26.1 %/an (barre 12 % ; croissance brute +48.2 %/an, plancher +7 %)."
+      "det": "Croissance +25.0 % (plafonnée à 25 %) + dividende 1.1 % + rachats nets 0.0 % - contraction 0.0 % = +26.1 %/an (barre 12 % ; croissance brute +48.1 %/an, plancher +7 %)."
      },
      {
       "label": "ROIC soutenu >= 15 %",
@@ -6201,7 +6200,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T04:16:52+00:00",
+   "date": "2026-11-27T04:26:35+00:00",
    "compounders": {
     "verdict": "PASSE",
     "rows": [
@@ -6355,7 +6354,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T04:16:56+00:00",
+   "date": "2026-11-27T04:26:40+00:00",
    "compounders": {
     "verdict": "PASSE",
     "rows": [
@@ -6506,7 +6505,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T04:17:00+00:00",
+   "date": "2026-11-27T04:26:47+00:00",
    "compounders": {
     "verdict": "NON",
     "rows": [
@@ -6615,16 +6614,16 @@
     "note": "Hypothèses : FCF 4.57 Md$ en base, croissance prudente (min. des mesures) 7.1 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
    },
    "rdca": {
-    "anchor": 390.4062194824219,
+    "anchor": 390.40625,
     "buy": [
-     156.16248779296876,
-     191.2990475463867
+     156.16250000000002,
+     191.2990625
     ],
     "sm": [
-     132.73811462402344,
-     156.16248779296876
+     132.738125,
+     156.16250000000002
     ],
-    "add_hi": 288.9006024169922,
+    "add_hi": 288.900625,
     "zone": "Au-dessus des zones d'achat",
     "mult": "—"
    },
@@ -6662,7 +6661,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T04:17:02+00:00",
+   "date": "2026-11-27T04:26:50+00:00",
    "compounders": {
     "verdict": "NON",
     "rows": [
@@ -6761,7 +6760,7 @@
     }
    ],
    "flags": [
-    "Print dans 7 jours (2026-12-03) — binaire, pas d'achat avant.",
+    "Print dans 6 jours (2026-12-03) — binaire, pas d'achat avant.",
     "Bêta 0.88."
    ],
    "dcf": {
@@ -6819,7 +6818,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T04:17:04+00:00",
+   "date": "2026-11-27T04:26:53+00:00",
    "compounders": {
     "verdict": "NON",
     "rows": [
@@ -6970,7 +6969,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T04:17:05+00:00",
+   "date": "2026-11-27T04:26:56+00:00",
    "compounders": {
     "verdict": "PASSE",
     "rows": [
@@ -7121,7 +7120,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T04:17:08+00:00",
+   "date": "2026-11-27T04:26:58+00:00",
    "compounders": {
     "verdict": "NON",
     "rows": [
@@ -7215,7 +7214,7 @@
     }
    ],
    "flags": [
-    "Print dans 5 jours (2026-12-01) — binaire, pas d'achat avant.",
+    "Print dans 4 jours (2026-12-01) — binaire, pas d'achat avant.",
     "Bêta 3.29."
    ],
    "dcf": {
@@ -7273,7 +7272,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T04:17:12+00:00",
+   "date": "2026-11-27T04:27:04+00:00",
    "compounders": {
     "verdict": "NON",
     "rows": [
@@ -7359,37 +7358,37 @@
      "ok": true,
      "val": "-60.1 %",
      "barre": ">= 25 % ou >= 20 % sous le DCF",
-     "margin": "Décote -60.1 % (barre 25 % — passe) · marge sous le DCF +45.6 % (prix 271.72 vs valeur 499.41 USD — barre 20 % — passe)."
+     "margin": "Décote -60.1 % (barre 25 % — passe) · marge sous le DCF +45.7 % (prix 271.72 vs valeur 500.45 USD — barre 20 % — passe)."
     },
     {
      "label": "Capitalisation",
      "ok": true,
-     "val": "71.74 Md$",
+     "val": "71.59 Md$",
      "barre": ">= 2 Md$",
-     "margin": "35.9x le plancher."
+     "margin": "35.8x le plancher."
     }
    ],
    "flags": [
     "Bêta 0.92."
    ],
    "dcf": {
-    "value": 499.41300933936697,
-    "mos": 0.8379692674052956,
-    "implied": -0.10034446239193778,
+    "value": 500.44728791851753,
+    "mos": 0.841775680548055,
+    "implied": -0.10077618569828956,
     "implied_note": null,
     "note": "Hypothèses : FCF 9.01 Md$ en base, croissance prudente (min. des mesures) 3.3 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
    },
    "rdca": {
-    "anchor": 774.2161254882812,
+    "anchor": 774.2162475585938,
     "buy": [
-     309.68645019531255,
-     379.3659014892578
+     309.68649902343753,
+     379.36596130371095
     ],
     "sm": [
-     263.2334826660156,
-     309.68645019531255
+     263.2335241699219,
+     309.68649902343753
     ],
-    "add_hi": 572.9199328613281,
+    "add_hi": 572.9200231933594,
     "zone": "Smart Money Zone ★ (zone gold)",
     "mult": "3X DCA"
    },
@@ -7427,7 +7426,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T04:17:20+00:00",
+   "date": "2026-11-27T04:27:16+00:00",
    "compounders": {
     "verdict": "PAS ENCORE",
     "rows": [
@@ -7524,12 +7523,12 @@
     }
    ],
    "flags": [
-    "Print dans 13 jours (2026-12-09) — binaire, pas d'achat avant.",
+    "Print dans 12 jours (2026-12-09) — binaire, pas d'achat avant.",
     "Bêta 1.38."
    ],
    "dcf": {
-    "value": 514.8125785290445,
-    "mos": 1.2111093009021365,
+    "value": 514.8120259208487,
+    "mos": 1.2111069274614468,
     "implied": -0.08929027261705841,
     "implied_note": null,
     "note": "Hypothèses : FCF 10.59 Md$ en base, croissance prudente (min. des mesures) 9.1 %/an (plafonnée à 25 %), actualisation 10 %, croissance terminale 3 %, 5 ans."
@@ -7582,7 +7581,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T04:17:22+00:00",
+   "date": "2026-11-27T04:27:20+00:00",
    "compounders": {
     "verdict": "PASSE",
     "rows": [
@@ -7730,14 +7729,14 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T04:17:24+00:00",
+   "date": "2026-11-27T04:27:23+00:00",
    "compounders": {
     "verdict": "NON",
     "rows": [
      {
       "label": "Rendement espéré >= 12 %/an",
       "ok": true,
-      "det": "Croissance +25.0 % (plafonnée à 25 %) + dividende 3.9 % + rachats nets 0.0 % - contraction 0.0 % = +28.9 %/an (barre 12 % ; croissance brute +26.0 %/an, plancher +7 %)."
+      "det": "Croissance +25.0 % (plafonnée à 25 %) + dividende 3.8 % + rachats nets 0.0 % - contraction 0.0 % = +28.8 %/an (barre 12 % ; croissance brute +26.0 %/an, plancher +7 %)."
      },
      {
       "label": "ROIC soutenu >= 15 %",
@@ -7752,7 +7751,7 @@
      {
       "label": "Discipline du capital",
       "ok": false,
-      "det": "Retour 3.9 %/an (dividende + rachats nets n/d — historique d'actions indisponible) ; croissance FCF -48.4 %/an."
+      "det": "Retour 3.8 %/an (dividende + rachats nets n/d — historique d'actions indisponible) ; croissance FCF -48.4 %/an."
      },
      {
       "label": "Ancre prix (comme le filtre principal)",
@@ -7794,7 +7793,7 @@
     {
      "label": "P/E forward",
      "ok": true,
-     "val": "19.19x",
+     "val": "19.18x",
      "barre": "<= 20x",
      "margin": "-4 % vs la barre de 20x."
     },
@@ -7885,7 +7884,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T04:17:26+00:00",
+   "date": "2026-11-27T04:27:26+00:00",
    "compounders": {
     "verdict": "NON",
     "rows": [
@@ -8038,7 +8037,7 @@
      "ok": false
     }
    ],
-   "date": "2026-11-26T04:17:30+00:00",
+   "date": "2026-11-27T04:27:32+00:00",
    "compounders": {
     "verdict": "NON",
     "rows": [
@@ -8192,14 +8191,14 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T04:17:34+00:00",
+   "date": "2026-11-27T04:27:38+00:00",
    "compounders": {
     "verdict": "PASSE",
     "rows": [
      {
       "label": "Rendement espéré >= 12 %/an",
       "ok": true,
-      "det": "Croissance +17.5 % (plafonnée à 25 %) + dividende 1.6 % + rachats nets 0.0 % - contraction 0.0 % = +19.1 %/an (barre 12 % ; croissance brute +17.5 %/an, plancher +7 %)."
+      "det": "Croissance +17.5 % (plafonnée à 25 %) + dividende 1.5 % + rachats nets 0.0 % - contraction 0.0 % = +19.0 %/an (barre 12 % ; croissance brute +17.5 %/an, plancher +7 %)."
      },
      {
       "label": "ROIC soutenu >= 15 %",
@@ -8214,7 +8213,7 @@
      {
       "label": "Discipline du capital",
       "ok": true,
-      "det": "Retour 1.6 %/an (dividende + rachats nets n/d — historique d'actions indisponible) ; croissance FCF +38.6 %/an — branche réinvestissement OK."
+      "det": "Retour 1.5 %/an (dividende + rachats nets n/d — historique d'actions indisponible) ; croissance FCF +38.6 %/an — branche réinvestissement OK."
      },
      {
       "label": "Ancre prix (comme le filtre principal)",
@@ -8339,7 +8338,7 @@
      "ok": false
     }
    ],
-   "date": "2026-11-26T04:17:38+00:00",
+   "date": "2026-11-27T04:27:43+00:00",
    "compounders": {
     "verdict": "NON",
     "rows": [
@@ -8490,7 +8489,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T04:17:40+00:00",
+   "date": "2026-11-27T04:27:46+00:00",
    "compounders": {
     "verdict": "PAS ENCORE",
     "rows": [
@@ -8642,7 +8641,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T04:17:42+00:00",
+   "date": "2026-11-27T04:27:49+00:00",
    "compounders": {
     "verdict": "PAS ENCORE",
     "rows": [
@@ -8794,7 +8793,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-26T04:17:44+00:00",
+   "date": "2026-11-27T04:27:52+00:00",
    "compounders": {
     "verdict": "PASSE",
     "rows": [
@@ -8829,7 +8828,7 @@
   "TOI.TO": {
    "ticker": "TOI.TO",
    "erreur": "'currentTradingPeriod'",
-   "date": "2026-11-26T04:18:07+00:00"
+   "date": "2026-11-27T04:28:16+00:00"
   },
   "EME": {
    "ticker": "EME",
