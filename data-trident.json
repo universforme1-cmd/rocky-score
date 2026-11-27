@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T14:03:40+00:00",
+ "updated": "2026-11-27T14:04:49+00:00",
  "aliases": {
   "NETFLIX": "NFLX",
   "ADYEN": "ADYEN.AS"
@@ -563,6 +563,69 @@
    "rendement_estime": 0.2072690531951722,
    "prix_a_payer": 176.6852747359798,
    "date": "2026-11-27T14:03:40+00:00"
+  },
+  "CLS": {
+   "ticker": "CLS",
+   "name": "Celestica Inc.",
+   "price": 191.95,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Technology",
+   "industry": "Electronic Components",
+   "cap": 24207161344.0,
+   "eps_ttm": 10.607455999999999,
+   "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": 1.4571197411003236
+    },
+    {
+     "annee": 2023,
+     "eps": 2.031587697423109
+    },
+    {
+     "annee": 2024,
+     "eps": 3.6057287278854253
+    },
+    {
+     "annee": 2025,
+     "eps": 7.164371772805508
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 11.270000457763672
+    },
+    {
+     "annee": 2023,
+     "prix": 29.280000686645508
+    },
+    {
+     "annee": 2024,
+     "prix": 92.30000305175781
+    },
+    {
+     "annee": 2025,
+     "prix": 295.6099853515625
+    },
+    {
+     "annee": 2026,
+     "prix": 191.9499969482422
+    }
+   ],
+   "regularite": 0.978011051464755,
+   "cagr_hist": 0.7004386095909196,
+   "g_defaut": 0.25,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 32.371386718749996,
+   "prix_5ans": 550.31357421875,
+   "rendement_estime": 0.2344810333475078,
+   "prix_a_payer": 273.60310622041123,
+   "date": "2026-11-27T14:04:49+00:00"
   }
  }
 }
