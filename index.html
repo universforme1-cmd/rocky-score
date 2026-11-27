@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#0e1116" />
     <meta name="color-scheme" content="dark" />
-    <title>Rocky — Score · DCF · Valeur</title>
+    <title>Rocky — Score · DCF · Valeur · Valorisation</title>
     <link rel="manifest" href="manifest.json" />
     <link rel="icon" href="icon-192.png" />
     <link rel="apple-touch-icon" href="icon-192.png" />
@@ -13,7 +13,7 @@
       :root{
         --bg:#0e1116; --card:#171b22; --border:#262c36; --txt:#e8ebf0; --sec:#8b94a3;
         --vert:#3ccf8e; --rouge:#f0616d; --jaune:#e9c46a; --bleu:#38bdf8;
-        --violet:#7a5cf0; --turq:#2a9d8f; --grisseg:#3a4250;
+        --violet:#7a5cf0; --turq:#2a9d8f; --grisseg:#3a4250; --trident:#a78bfa;
       }
       *{ box-sizing:border-box; }
       html{ -webkit-text-size-adjust:100%; }
@@ -49,6 +49,8 @@
       .tab-score.on{ color:var(--jaune); border-bottom-color:var(--jaune); background:rgba(233,196,106,.08); }
       .tab-dcf.on{ color:var(--bleu); border-bottom-color:var(--bleu); background:rgba(56,189,248,.08); }
       .tab-valeur.on{ color:var(--vert); border-bottom-color:var(--vert); background:rgba(60,207,142,.08); }
+      .tab-trident.on{ color:var(--trident); border-bottom-color:var(--trident); background:rgba(167,139,250,.08); }
+      .tab-trident{ font-size:14px; }
 
       main{ max-width:760px; margin:0 auto; padding:14px 12px 40px; }
 
@@ -67,6 +69,7 @@
       .btn-score{ background:var(--jaune); }
       .btn-dcf{ background:var(--bleu); }
       .btn-valeur{ background:var(--vert); }
+      .btn-trident{ background:var(--trident); }
       .btn-ghost{
         min-height:44px; padding:9px 14px; border-radius:10px;
         background:transparent; border:1px solid var(--border); color:var(--txt); font-weight:600;
@@ -222,6 +225,17 @@
         background:var(--card); border:1px solid var(--border); border-radius:10px; color:var(--txt);
       }
       .settings-note{ color:var(--sec); font-size:14px; margin-top:12px; }
+
+      /* ---------- Onglet Valorisation (Trident) ---------- */
+      .stepper{ display:flex; align-items:center; gap:8px; min-width:190px; }
+      .stepper button{
+        width:44px; height:44px; border-radius:10px; border:1px solid var(--border);
+        background:var(--card); color:var(--txt); font-size:22px; font-weight:800; line-height:1;
+      }
+      .stepper .sval{ flex:1; text-align:center; font-weight:800; font-size:18px; }
+      .chart-wrap{ margin-top:10px; }
+      .chart-wrap svg{ width:100%; height:auto; display:block; }
+      .chart-legende{ display:flex; flex-wrap:wrap; gap:6px 14px; margin-top:8px; font-size:13px; color:var(--sec); }
     </style>
   </head>
   <body>
@@ -237,6 +251,7 @@
         <button class="tab tab-score on" id="tabBtnScore" role="tab">Score</button>
         <button class="tab tab-dcf" id="tabBtnDcf" role="tab">DCF</button>
         <button class="tab tab-valeur" id="tabBtnValeur" role="tab">Valeur</button>
+        <button class="tab tab-trident" id="tabBtnTrident" role="tab">Valorisation</button>
       </nav>
     </header>
 
@@ -275,6 +290,18 @@
         <div id="listValeur"></div>
         <div class="foot" id="footValeur"></div>
       </section>
+
+      <!-- ======== ONGLET VALORISATION (Trident) ======== -->
+      <section id="viewTrident" hidden>
+        <div class="bar">
+          <input id="inTrident" type="text" placeholder="Ticker ou nom (ex. NFLX, Netflix)" autocomplete="off" autocapitalize="characters" spellcheck="false" />
+          <button class="btn btn-trident" id="btnAnalyseTrident">Analyser</button>
+        </div>
+        <div class="status" id="statusTrident"></div>
+        <div class="legend" id="legendTrident"></div>
+        <div id="listTrident"></div>
+        <div class="foot" id="footTrident"></div>
+      </section>
     </main>
 
     <!-- ======== FICHE SCORE ======== -->
@@ -292,6 +319,11 @@
       <div class="sheet-in" id="sheetValeurIn"></div>
     </div>
 
+    <!-- ======== FICHE VALORISATION ======== -->
+    <div class="overlay" id="sheetTrident" hidden>
+      <div class="sheet-in" id="sheetTridentIn"></div>
+    </div>
+
     <!-- ======== RÉGLAGES ======== -->
     <div class="overlay" id="panelSettings" hidden>
       <div class="sheet-in">
@@ -299,7 +331,7 @@
           <div class="sheet-title">Réglages</div>
           <button class="btn-ghost btn-close" id="btnCloseSettings">Fermer</button>
         </div>
-        <p class="settings-note">Le jeton autorise ce téléphone à lancer les analyses sur GitHub. Il reste enregistré sur cet appareil uniquement. Une seule appli, un seul dépôt : les trois robots (rocky.yml, rdcf.yml et valeur.yml) vivent dans ce dépôt.</p>
+        <p class="settings-note">Le jeton autorise ce téléphone à lancer les analyses sur GitHub. Il reste enregistré sur cet appareil uniquement. Une seule appli, un seul dépôt : les quatre robots (rocky.yml, rdcf.yml, valeur.yml et trident.yml) vivent dans ce dépôt.</p>
         <div class="field">
           <label for="stToken">Jeton GitHub (fine-grained)</label>
           <input id="stToken" type="password" autocomplete="off" spellcheck="false" />
@@ -318,6 +350,7 @@
           <button class="btn-ghost" id="btnResetScore">Score : réafficher les fiches retirées</button>
           <button class="btn-ghost" id="btnResetDcf">DCF : rétablir les scénarios du script et les fiches retirées</button>
           <button class="btn-ghost" id="btnResetValeur">Valeur : réafficher les fiches retirées</button>
+          <button class="btn-ghost" id="btnResetTrident">Valorisation : réafficher les fiches retirées</button>
         </div>
         <p class="settings-note">Filtre personnel, pas un conseil financier. Données : Yahoo Finance.</p>
       </div>
@@ -389,6 +422,12 @@
           fiches: LS.get("valeur-fiches", {}),
           hidden: LS.get("valeur-hidden", []),
           updated: LS.get("valeur-updated", "")
+        },
+        trident: {
+          workflow: "trident.yml", file: "data-trident.json",
+          fiches: LS.get("trident-fiches", {}),
+          hidden: LS.get("trident-hidden", []),
+          updated: LS.get("trident-updated", "")
         }
       };
       function persiste(tab){
@@ -405,7 +444,7 @@
         }
         return out;
       }
-      function setStatus(tab, msg){ $({score: "statusScore", dcf: "statusDcf", valeur: "statusValeur"}[tab]).textContent = msg || ""; }
+      function setStatus(tab, msg){ $({score: "statusScore", dcf: "statusDcf", valeur: "statusValeur", trident: "statusTrident"}[tab]).textContent = msg || ""; }
 
       /* ================= Mécanique commune ================= */
       function appliqueData(tab, obj){
@@ -502,9 +541,9 @@
         closeSheet(tab);
         renderOnglet(tab);
       }
-      function renderOnglet(tab){ tab === "score" ? renderScore() : (tab === "dcf" ? renderDcf() : renderValeur()); }
-      function openSheet(tab, t){ tab === "score" ? openSheetScore(t) : (tab === "dcf" ? openSheetDcf(t) : openSheetValeur(t)); }
-      function closeSheet(tab){ $({score: "sheetScore", dcf: "sheetDcf", valeur: "sheetValeur"}[tab]).hidden = true; }
+      function renderOnglet(tab){ if(tab === "score") renderScore(); else if(tab === "dcf") renderDcf(); else if(tab === "valeur") renderValeur(); else renderTrident(); }
+      function openSheet(tab, t){ if(tab === "score") openSheetScore(t); else if(tab === "dcf") openSheetDcf(t); else if(tab === "valeur") openSheetValeur(t); else openSheetTrident(t); }
+      function closeSheet(tab){ $({score: "sheetScore", dcf: "sheetDcf", valeur: "sheetValeur", trident: "sheetTrident"}[tab]).hidden = true; }
 
       /* ================= ONGLET SCORE ================= */
       function fichesVisiblesScore(){
@@ -998,6 +1037,249 @@
         brancherActionsSheet("sheetValeurIn");
       }
 
+
+      /* ================= ONGLET VALORISATION (Trident) ================= */
+      const TRIDENT_PER_DEFAUT = 17;
+      const TRIDENT_CIBLE = 0.15;
+      let tridentOverrides = LS.get("trident-overrides", {}) || {};
+      function tridentParams(f){
+        const o = tridentOverrides[f.ticker] || {};
+        const g = (o.g === null || o.g === undefined)
+          ? (f.g_defaut === null || f.g_defaut === undefined ? null : f.g_defaut) : o.g;
+        const per = (o.per === null || o.per === undefined)
+          ? (f.per_final === null || f.per_final === undefined ? TRIDENT_PER_DEFAUT : f.per_final) : o.per;
+        return {g: g, per: per};
+      }
+      function tridentCalc(f, g, per){
+        // Même formule que le robot : BPA 5 ans, prix 5 ans, rendement estimé, prix à payer (15 %/an).
+        if(f.eps_ttm === null || f.eps_ttm === undefined || f.eps_ttm <= 0
+          || g === null || g === undefined || !f.price) return null;
+        const eps5 = f.eps_ttm * Math.pow(1 + g, 5);
+        const prix5 = eps5 * per;
+        const rend = Math.pow(prix5 / f.price, 1 / 5) - 1;
+        const payer = prix5 / Math.pow(1 + TRIDENT_CIBLE, 5);
+        return {eps5: eps5, prix5: prix5, rend: rend, payer: payer};
+      }
+      function tridentRend(f){
+        if(f.erreur || f.nd) return null;
+        const p = tridentParams(f);
+        const c = tridentCalc(f, p.g, p.per);
+        return c ? c.rend : null;
+      }
+      function fichesVisiblesTrident(){
+        const st = etat.trident;
+        return Object.keys(st.fiches)
+          .filter((t) => !st.hidden.includes(t))
+          .map((t) => st.fiches[t])
+          .sort((a, b) => {
+            const ra = tridentRend(a), rb = tridentRend(b);
+            if(ra === null && rb !== null) return 1;
+            if(rb === null && ra !== null) return -1;
+            if(ra !== null && rb !== null && rb !== ra) return rb - ra;
+            return String(a.ticker).localeCompare(String(b.ticker));
+          });
+      }
+      function renderTrident(){
+        const st = etat.trident;
+        $("legendTrident").textContent = "Rendement estimé (Trident, 5 ans) :";
+        const liste = fichesVisiblesTrident();
+        const el = $("listTrident");
+        if(!liste.length){
+          el.innerHTML = '<div class="empty">Aucune fiche pour l\'instant. Tape un ticker puis « Analyser », ou attends la mise à jour du soir.</div>';
+        } else {
+          el.innerHTML = liste.map((f) => {
+            const prix = (f.price === null || f.price === undefined) ? "—" : fmtNum(f.price, 2);
+            if(f.erreur){
+              return '<button class="row" data-ticker="' + esc(f.ticker) + '"><span class="grow"><span class="tk">' + esc(f.ticker) + '</span>' +
+                '<div class="nm">Analyse impossible</div></span>' +
+                '<span class="right"><span class="prix">' + esc(prix) + " " + esc(f.currency || "") + "</span></span></button>";
+            }
+            if(f.nd){
+              return '<button class="row" data-ticker="' + esc(f.ticker) + '"><span class="grow"><span class="tk">' + esc(f.ticker) + '</span>' +
+                '<div class="nm">' + esc(f.name || "") + '</div><div class="nm">Non significatif — touche pour le motif</div></span>' +
+                '<span class="right"><span class="prix">' + esc(prix) + " " + esc(f.currency || "") + '</span><br/><span class="rbadge r-nd">n/d</span></span></button>';
+            }
+            const r = tridentRend(f);
+            const bcls = r === null ? "r-nd" : (r >= 0.15 ? "r-vert" : (r >= 0.10 ? "r-jaune" : "r-rouge"));
+            const badge = '<span class="rbadge ' + bcls + '">' + (r === null ? "n/d" : esc(fmtPctSigne(r * 100, 1))) + "</span>";
+            const p = tridentParams(f);
+            const c = tridentCalc(f, p.g, p.per);
+            let sous = "";
+            if(c) sous = "Prix à payer " + fmtNum(c.payer, 2) + " " + esc(f.currency || "");
+            if(f.regularite !== null && f.regularite !== undefined) sous += (sous ? " · " : "") + "Régularité " + fmtNum(f.regularite * 100, 0) + " %";
+            return '<button class="row" data-ticker="' + esc(f.ticker) + '"><span class="grow"><span class="tk">' + esc(f.ticker) + "</span>" +
+              '<div class="nm">' + esc(f.name || "") + "</div>" + (sous ? '<div class="nm">' + sous + "</div>" : "") + "</span>" +
+              '<span class="right"><span class="prix">' + esc(prix) + " " + esc(f.currency || "") + "</span><br/>" + badge + "</span></button>";
+          }).join("");
+          el.querySelectorAll(".row").forEach((b) => b.addEventListener("click", () => openSheetTrident(b.getAttribute("data-ticker"))));
+        }
+        $("footTrident").textContent = st.updated ? "Dernière mise à jour : " + fmtDateFr(st.updated) : "";
+      }
+      function niceCeil(v){
+        if(!v || v <= 0) return 1;
+        const p = Math.pow(10, Math.floor(Math.log10(v)));
+        const n = v / p;
+        const m = n <= 1 ? 1 : (n <= 2 ? 2 : (n <= 5 ? 5 : 10));
+        return m * p;
+      }
+      function tridentSvg(f, g, per){
+        // Graphique SVG : courbe du prix + aire du BPA + projection du BPA en pointillés.
+        // Même échelle en dollars pour les deux séries (comme Trident) ; le BPA est
+        // une fine bande en bas pour les PER élevés — c'est le rendu d'origine.
+        const W = 700, H = 300, PL = 46, PR = 12, PT = 12, PB = 26;
+        const anneeCourante = new Date().getFullYear();
+        const prixPts = Array.isArray(f.prix_hist) ? f.prix_hist.filter((p) => p.prix !== null && p.prix !== undefined) : [];
+        const epsPts = Array.isArray(f.eps_hist) ? f.eps_hist.filter((p) => p.eps !== null && p.eps !== undefined) : [];
+        if(!prixPts.length && !epsPts.length) return '<div class="box">Historique indisponible pour le graphique.</div>';
+        const calc = tridentCalc(f, g, per);
+        const xMin = prixPts.length ? prixPts[0].annee : epsPts[0].annee;
+        const xMax = anneeCourante + 5;
+        let yMax = 0;
+        prixPts.forEach((p) => { if(p.prix > yMax) yMax = p.prix; });
+        if(f.price && f.price > yMax) yMax = f.price;
+        if(calc && calc.eps5 > yMax) yMax = calc.eps5;
+        yMax = niceCeil(yMax);
+        const X = (an) => PL + (an - xMin) / Math.max(1, xMax - xMin) * (W - PL - PR);
+        const Y = (v) => (PT + (H - PT - PB)) - (v / yMax) * (H - PT - PB);
+        let s = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Graphique prix et bénéfices">';
+        [0, 0.25, 0.5, 0.75, 1].forEach((fr) => {
+          const y = Y(yMax * fr);
+          s += '<line x1="' + PL + '" y1="' + y.toFixed(1) + '" x2="' + (W - PR) + '" y2="' + y.toFixed(1) + '" stroke="#262c36" stroke-width="1"/>';
+          s += '<text x="' + (PL - 6) + '" y="' + (y + 4).toFixed(1) + '" fill="#8b94a3" font-size="11" text-anchor="end">' + esc(fmtNum(yMax * fr, 0)) + '</text>';
+        });
+        const anneesX = [];
+        for(let a = xMin; a <= xMax; a++){ if((a - xMin) % 2 === 0 || a === xMax) anneesX.push(a); }
+        anneesX.forEach((a, i) => {
+          const anc = i === 0 ? "start" : (i === anneesX.length - 1 ? "end" : "middle");
+          const xx = i === 0 ? PL : (i === anneesX.length - 1 ? (W - PR) : X(a));
+          s += '<text x="' + xx.toFixed(1) + '" y="' + (H - 8) + '" fill="#8b94a3" font-size="11" text-anchor="' + anc + '">' + a + '</text>';
+        });
+        s += '<line x1="' + X(anneeCourante).toFixed(1) + '" y1="' + PT + '" x2="' + X(anneeCourante).toFixed(1) + '" y2="' + (H - PB) + '" stroke="#8b94a3" stroke-width="1" stroke-dasharray="3 4" opacity="0.6"/>';
+        if(epsPts.length){
+          let d = "";
+          epsPts.forEach((p, i) => { d += (i ? "L" : "M") + X(p.annee).toFixed(1) + "," + Y(Math.max(0, p.eps)).toFixed(1) + " "; });
+          const last = epsPts[epsPts.length - 1], first = epsPts[0];
+          d += "L" + X(last.annee).toFixed(1) + "," + Y(0).toFixed(1) + " L" + X(first.annee).toFixed(1) + "," + Y(0).toFixed(1) + " Z";
+          s += '<path d="' + d + '" fill="rgba(60,207,142,.28)" stroke="#3ccf8e" stroke-width="1.5"/>';
+        }
+        if(prixPts.length > 1){
+          const d = prixPts.map((p, i) => (i ? "L" : "M") + X(p.annee).toFixed(1) + "," + Y(p.prix).toFixed(1)).join(" ");
+          s += '<path d="' + d + '" fill="none" stroke="#e8ebf0" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>';
+        }
+        if(calc){
+          const x0 = X(anneeCourante), y0 = Y(Math.max(0, f.eps_ttm));
+          const x1 = X(anneeCourante + 5), y1 = Y(Math.max(0, calc.eps5));
+          s += '<line x1="' + x0.toFixed(1) + '" y1="' + y0.toFixed(1) + '" x2="' + x1.toFixed(1) + '" y2="' + y1.toFixed(1) + '" stroke="#3ccf8e" stroke-width="2" stroke-dasharray="6 4"/>';
+          s += '<circle cx="' + x0.toFixed(1) + '" cy="' + y0.toFixed(1) + '" r="3.5" fill="#3ccf8e"/>';
+          s += '<circle cx="' + x1.toFixed(1) + '" cy="' + y1.toFixed(1) + '" r="4" fill="#3ccf8e"/>';
+          s += '<text x="' + (x1 - 4).toFixed(1) + '" y="' + Math.max(14, y1 - 8).toFixed(1) + '" fill="#3ccf8e" font-size="12" font-weight="700" text-anchor="end">' + esc(fmtNum(calc.eps5, 2)) + ' $</text>';
+        }
+        if(prixPts.length){
+          const last = prixPts[prixPts.length - 1];
+          s += '<circle cx="' + X(last.annee).toFixed(1) + '" cy="' + Y(last.prix).toFixed(1) + '" r="3.5" fill="#e8ebf0"/>';
+        }
+        s += '</svg>';
+        return s;
+      }
+      function openSheetTrident(t){
+        const f = etat.trident.fiches[t];
+        if(!f) return;
+        const cur = f.currency || "";
+        let h = "";
+        h += '<div class="sheet-head"><div><div class="sheet-title">' + esc(f.ticker) + " · " + esc(fmtNum(f.price, 2)) + " " + esc(cur) + "</div>" +
+          '<div class="sheet-sub">' + esc(f.name || "") + (f.industry ? " · " + esc(f.industry) : "") + "</div>" +
+          '<div class="sheet-sub">Données du ' + esc(f.date || "") + '</div></div>' +
+          '<button class="btn-ghost btn-close" data-close="trident">Fermer</button></div>';
+        if(f.erreur){
+          h += '<div class="alert">Analyse impossible : ' + esc(f.erreur) + "</div>";
+        } else {
+          if(f.erreur_maj) h += '<div class="alert alert-jaune">La dernière mise à jour a échoué (' + esc(f.erreur_maj) + "). Cette fiche date du " + esc(f.date || "") + ".</div>";
+          if(f.devise_mix) h += '<div class="alert alert-jaune">' + esc(f.devise_note || "Devises différentes : cours et états financiers dans deux devises — la projection n'est pas comparable au cours.") + "</div>";
+          if(f.nd){
+            h += '<h3 class="sec">Valorisation (Trident)</h3><div class="box"><div style="font-weight:800">Non significatif</div><div class="note-sec">' + esc(f.nd) + "</div></div>";
+          } else {
+            const p = tridentParams(f);
+            const c = tridentCalc(f, p.g, p.per);
+            h += '<h3 class="sec">Prix et bénéfices (EPS)</h3><div class="box"><div class="chart-wrap" id="tridSvg">' + tridentSvg(f, p.g, p.per) + '</div>' +
+              '<div class="chart-legende">' +
+              '<span><i class="swatch" style="background:#e8ebf0"></i>Prix (clôture annuelle)</span>' +
+              '<span><i class="swatch" style="background:#3ccf8e"></i>BPA annuel</span>' +
+              '<span><i class="swatch" style="background:transparent;border:1px dashed #3ccf8e"></i>BPA projeté (5 ans)</span></div></div>';
+            const gPct = (p.g === null || p.g === undefined) ? null : p.g * 100;
+            h += '<h3 class="sec">Hypothèses — modifie, la projection se recalcule</h3><div class="box">' +
+              '<div class="kv"><span class="k">Croissance EPS</span><span class="stepper"><button data-trid-g="-1" aria-label="Moins de croissance">−</button><span class="sval" id="tridGVal">' + (gPct === null ? "n/d" : esc(fmtNum(gPct, 0)) + " %/an") + '</span><button data-trid-g="1" aria-label="Plus de croissance">+</button></span></div>' +
+              '<div class="kv"><span class="k">PER final</span><span class="stepper"><button data-trid-per="-1" aria-label="PER final plus bas">−</button><span class="sval" id="tridPerVal">' + esc(fmtNum(p.per, 0)) + '</span><button data-trid-per="1" aria-label="PER final plus haut">+</button></span></div>' +
+              '<div class="note-sec">Défaut du robot : ' + esc(f.g_source || "n/d") + (f.g_defaut !== null && f.g_defaut !== undefined ? " (" + esc(fmtNum(f.g_defaut * 100, 1)) + " %/an)" : "") + " · PER final " + esc(fmtNum(f.per_final === null || f.per_final === undefined ? TRIDENT_PER_DEFAUT : f.per_final, 0)) + "x. Tes réglages sont enregistrés sur cet appareil.</div></div>";
+            h += '<h3 class="sec">Valorisation (Trident)</h3><div class="box">' +
+              '<div class="kv"><span class="k">BPA aujourd\'hui (12 mois)</span><span class="v" id="tridEpsBase">' + esc(fmtNum(f.eps_ttm, 2)) + " " + esc(cur) + "</span></div>" +
+              '<div class="kv"><span class="k">BPA dans 5 ans</span><span class="v" id="tridEps5">' + (c ? esc(fmtNum(c.eps5, 2)) + " " + esc(cur) : "n/d") + "</span></div>" +
+              '<div class="kv"><span class="k">Prix dans 5 ans</span><span class="v" id="tridPrix5">' + (c ? esc(fmtNum(c.prix5, 2)) + " " + esc(cur) : "n/d") + "</span></div>" +
+              '<div class="kv"><span class="k">Rendement estimé</span><span class="v" id="tridRend">' + (c ? esc(fmtPctSigne(c.rend * 100, 1)) + "/an" : "n/d") + "</span></div>" +
+              '<div class="kv"><span class="k">Prix à payer (15 %/an)</span><span class="v" id="tridPayer">' + (c ? esc(fmtNum(c.payer, 2)) + " " + esc(cur) : "n/d") + "</span></div>" +
+              '<div class="kv"><span class="k">Régularité du BPA (R²)</span><span class="v">' + (f.regularite === null || f.regularite === undefined ? "n/d" : esc(fmtNum(f.regularite * 100, 0)) + " %") + "</span></div>" +
+              '<div class="kv"><span class="k">CAGR historique du BPA</span><span class="v">' + (f.cagr_hist === null || f.cagr_hist === undefined ? "n/d" : esc(fmtPctSigne(f.cagr_hist * 100, 1)) + "/an") + "</span></div></div>";
+            if(Array.isArray(f.eps_hist) && f.eps_hist.length){
+              h += '<h3 class="sec">Historique du BPA</h3><div class="box">' +
+                f.eps_hist.map((e) => '<div class="kv"><span class="k">' + esc(e.annee) + '</span><span class="v">' + esc(fmtNum(e.eps, 2)) + " " + esc(cur) + "</span></div>").join("") + "</div>";
+            }
+            h += '<p class="note-sec">Méthode Trident : BPA dans 5 ans = BPA aujourd\'hui × (1 + croissance)^5 ; prix dans 5 ans = BPA 5 ans × PER final ; rendement estimé = (prix 5 ans / prix actuel)^(1/5) − 1 ; prix à payer = prix 5 ans / 1,15^5. La régularité mesure à quel point les bénéfices ont grimpé régulièrement (R² du log-BPA) — 85 % et plus = régulier.</p>';
+            h += '<div class="sheet-actions"><button class="btn-ghost" id="btnResetTridentSheet">Revenir aux valeurs du robot</button></div>';
+          }
+        }
+        h += '<div class="sheet-actions">' +
+          '<button class="btn btn-trident" data-relancer="trident" data-ticker="' + esc(f.ticker) + '">Relancer l\'analyse</button>' +
+          '<button class="btn-ghost" data-retirer="trident" data-ticker="' + esc(f.ticker) + '">Retirer de ma liste</button></div>';
+        $("sheetTridentIn").innerHTML = h;
+        $("sheetTrident").hidden = false;
+        $("sheetTrident").scrollTop = 0;
+        brancherActionsSheet("sheetTridentIn");
+        $("sheetTridentIn").querySelectorAll("[data-trid-g]").forEach((b) => {
+          b.addEventListener("click", () => {
+            const p = tridentParams(f);
+            let g = (p.g === null || p.g === undefined) ? 0.15 : p.g;
+            g = Math.min(0.50, Math.max(0, g + Number(b.getAttribute("data-trid-g")) * 0.01));
+            if(!tridentOverrides[f.ticker]) tridentOverrides[f.ticker] = {};
+            tridentOverrides[f.ticker].g = Math.round(g * 1000) / 1000;
+            LS.set("trident-overrides", tridentOverrides);
+            majTridentSheet(t);
+          });
+        });
+        $("sheetTridentIn").querySelectorAll("[data-trid-per]").forEach((b) => {
+          b.addEventListener("click", () => {
+            const p = tridentParams(f);
+            const per = Math.min(40, Math.max(5, p.per + Number(b.getAttribute("data-trid-per"))));
+            if(!tridentOverrides[f.ticker]) tridentOverrides[f.ticker] = {};
+            tridentOverrides[f.ticker].per = per;
+            LS.set("trident-overrides", tridentOverrides);
+            majTridentSheet(t);
+          });
+        });
+        const btnR = $("btnResetTridentSheet");
+        if(btnR) btnR.addEventListener("click", () => {
+          delete tridentOverrides[f.ticker];
+          LS.set("trident-overrides", tridentOverrides);
+          openSheetTrident(t);
+        });
+      }
+      function majTridentSheet(t){
+        const f = etat.trident.fiches[t];
+        if(!f || f.nd || f.erreur) return;
+        const p = tridentParams(f);
+        const c = tridentCalc(f, p.g, p.per);
+        const svgEl = $("tridSvg");
+        if(svgEl) svgEl.innerHTML = tridentSvg(f, p.g, p.per);
+        const gEl = $("tridGVal");
+        if(gEl) gEl.textContent = (p.g === null || p.g === undefined) ? "n/d" : fmtNum(p.g * 100, 0) + " %/an";
+        const perEl = $("tridPerVal");
+        if(perEl) perEl.textContent = fmtNum(p.per, 0);
+        const setTxt = (id, txt) => { const e = $(id); if(e) e.textContent = txt; };
+        setTxt("tridEps5", c ? fmtNum(c.eps5, 2) + " " + (f.currency || "") : "n/d");
+        setTxt("tridPrix5", c ? fmtNum(c.prix5, 2) + " " + (f.currency || "") : "n/d");
+        setTxt("tridRend", c ? fmtPctSigne(c.rend * 100, 1) + "/an" : "n/d");
+        setTxt("tridPayer", c ? fmtNum(c.payer, 2) + " " + (f.currency || "") : "n/d");
+        renderTrident();
+      }
+
       /* ================= Actions communes des fiches ================= */
       function brancherActionsSheet(conteneurId){
         const c = $(conteneurId);
@@ -1051,30 +1333,41 @@
         renderValeur();
         $("statusSettings").textContent = "Fiches Valeur réaffichées ✓";
       });
+      $("btnResetTrident").addEventListener("click", () => {
+        etat.trident.hidden = [];
+        persiste("trident");
+        renderTrident();
+        $("statusSettings").textContent = "Fiches Valorisation réaffichées ✓";
+      });
 
       /* ================= Onglets et navigation ================= */
       let ongletActif = LS.get("onglet", "score");
-      if(["score", "dcf", "valeur"].indexOf(ongletActif) < 0) ongletActif = "score";
+      if(["score", "dcf", "valeur", "trident"].indexOf(ongletActif) < 0) ongletActif = "score";
       function setOnglet(nom){
         ongletActif = nom;
         LS.set("onglet", nom);
         $("tabBtnScore").classList.toggle("on", nom === "score");
         $("tabBtnDcf").classList.toggle("on", nom === "dcf");
         $("tabBtnValeur").classList.toggle("on", nom === "valeur");
+        $("tabBtnTrident").classList.toggle("on", nom === "trident");
         $("viewScore").hidden = nom !== "score";
         $("viewDcf").hidden = nom !== "dcf";
         $("viewValeur").hidden = nom !== "valeur";
+        $("viewTrident").hidden = nom !== "trident";
       }
       $("tabBtnScore").addEventListener("click", () => setOnglet("score"));
       $("tabBtnDcf").addEventListener("click", () => setOnglet("dcf"));
       $("tabBtnValeur").addEventListener("click", () => setOnglet("valeur"));
+      $("tabBtnTrident").addEventListener("click", () => setOnglet("trident"));
       $("btnRefresh").addEventListener("click", () => chargeOnglet(ongletActif, false));
       $("btnAnalyseScore").addEventListener("click", () => analyser("score", $("inScore").value));
       $("btnAnalyseDcf").addEventListener("click", () => analyser("dcf", $("inDcf").value));
       $("btnAnalyseValeur").addEventListener("click", () => analyser("valeur", $("inValeur").value));
+      $("btnAnalyseTrident").addEventListener("click", () => analyser("trident", $("inTrident").value));
       $("inScore").addEventListener("keydown", (e) => { if(e.key === "Enter") analyser("score", $("inScore").value); });
       $("inDcf").addEventListener("keydown", (e) => { if(e.key === "Enter") analyser("dcf", $("inDcf").value); });
       $("inValeur").addEventListener("keydown", (e) => { if(e.key === "Enter") analyser("valeur", $("inValeur").value); });
+      $("inTrident").addEventListener("keydown", (e) => { if(e.key === "Enter") analyser("trident", $("inTrident").value); });
       document.addEventListener("visibilitychange", () => {
         if(document.visibilityState === "visible") chargeOnglet(ongletActif, true);
       });
@@ -1084,12 +1377,14 @@
       renderScore();
       renderDcf();
       renderValeur();
+      renderTrident();
       chargeOnglet("score", false);
       chargeOnglet("dcf", false);
       chargeOnglet("valeur", false);
+      chargeOnglet("trident", false);
 
       /* Accès pour vérification (lecture des fonctions du moteur et des rendus) */
-      window.Rocky = { va, rendement, rendementCentral, etat, cfg, analyser, chargeOnglet, openSheetScore, openSheetDcf, openSheetValeur, getSc: () => sc() };
+      window.Rocky = { va, rendement, rendementCentral, etat, cfg, analyser, chargeOnglet, openSheetScore, openSheetDcf, openSheetValeur, openSheetTrident, tridentCalc, getSc: () => sc() };
 
       if("serviceWorker" in navigator){
         navigator.serviceWorker.register("sw.js").catch(function(){});
