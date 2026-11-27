@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T12:48:13+00:00",
+ "updated": "2026-11-27T13:30:44+00:00",
  "aliases": {
   "NETFLIX": "NFLX",
   "ADYEN": "ADYEN.AS"
@@ -193,6 +193,69 @@
    "rendement_estime": 0.06077613348493194,
    "prix_a_payer": 588.0417739023849,
    "date": "2026-11-27T12:48:13+00:00"
+  },
+  "LMAT": {
+   "ticker": "LMAT",
+   "name": "LeMaitre Vascular, Inc.",
+   "price": 76.5,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Healthcare",
+   "industry": "Medical Instruments & Supplies",
+   "cap": 1750386688.0,
+   "eps_ttm": 2.75,
+   "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": 0.93
+    },
+    {
+     "annee": 2023,
+     "eps": 1.34
+    },
+    {
+     "annee": 2024,
+     "eps": 1.93
+    },
+    {
+     "annee": 2025,
+     "eps": 2.52
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 44.28246307373047
+    },
+    {
+     "annee": 2023,
+     "prix": 55.1765251159668
+    },
+    {
+     "annee": 2024,
+     "prix": 90.28638458251953
+    },
+    {
+     "annee": 2025,
+     "prix": 80.20664978027344
+    },
+    {
+     "annee": 2026,
+     "prix": 76.5
+    }
+   ],
+   "regularite": 0.9948691870094118,
+   "cagr_hist": 0.39413831830725665,
+   "g_defaut": 0.11404111234729575,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 4.718878387512844,
+   "prix_5ans": 80.22093258771835,
+   "rendement_estime": 0.009544005258877108,
+   "prix_a_payer": 39.883981366546,
+   "date": "2026-11-27T13:30:44+00:00"
   }
  }
 }
