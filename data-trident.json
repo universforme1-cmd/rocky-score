@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T15:56:23+00:00",
+ "updated": "2026-11-27T16:12:27+00:00",
  "aliases": {
   "NETFLIX": "NFLX",
   "ADYEN": "ADYEN.AS",
@@ -942,6 +942,69 @@
    "rendement_estime": 0.014162054673081848,
    "prix_a_payer": 186.46364184543086,
    "date": "2026-11-27T15:56:23+00:00"
+  },
+  "APH": {
+   "ticker": "APH",
+   "name": "Amphenol Corporation",
+   "price": 74.6,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Technology",
+   "industry": "Electronic Components",
+   "cap": 184206884864.0,
+   "eps_ttm": 2.3000000000000003,
+   "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": 0.765
+    },
+    {
+     "annee": 2023,
+     "eps": 0.7775
+    },
+    {
+     "annee": 2024,
+     "eps": 0.96
+    },
+    {
+     "annee": 2025,
+     "eps": 1.67
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 18.452367782592773
+    },
+    {
+     "annee": 2023,
+     "prix": 24.26485252380371
+    },
+    {
+     "annee": 2024,
+     "prix": 34.28682327270508
+    },
+    {
+     "annee": 2025,
+     "prix": 67.2308578491211
+    },
+    {
+     "annee": 2026,
+     "prix": 74.5999984741211
+    }
+   ],
+   "regularite": 0.8163585448318935,
+   "cagr_hist": 0.2972340671812952,
+   "g_defaut": 0.25,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 7.019042968750001,
+   "prix_5ans": 119.32373046875001,
+   "rendement_estime": 0.09849377199281628,
+   "prix_a_payer": 59.32498275806621,
+   "date": "2026-11-27T16:12:27+00:00"
   }
  }
 }
