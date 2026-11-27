@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T13:49:36+00:00",
+ "updated": "2026-11-27T13:55:01+00:00",
  "aliases": {
   "NETFLIX": "NFLX",
   "ADYEN": "ADYEN.AS"
@@ -378,6 +378,69 @@
    "rendement_estime": 0.16408080717245221,
    "prix_a_payer": 71.44791401732321,
    "date": "2026-11-27T13:49:36+00:00"
+  },
+  "SYM": {
+   "ticker": "SYM",
+   "name": "Symbotic Inc.",
+   "price": 38.02,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Industrials",
+   "industry": "Specialty Industrial Machinery",
+   "cap": 23050860544.0,
+   "eps_ttm": 0.09,
+   "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": -0.13
+    },
+    {
+     "annee": 2023,
+     "eps": -0.37
+    },
+    {
+     "annee": 2024,
+     "eps": -0.08
+    },
+    {
+     "annee": 2025,
+     "eps": -0.16
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 11.9399995803833
+    },
+    {
+     "annee": 2023,
+     "prix": 51.33000183105469
+    },
+    {
+     "annee": 2024,
+     "prix": 23.709999084472656
+    },
+    {
+     "annee": 2025,
+     "prix": 59.5
+    },
+    {
+     "annee": 2026,
+     "prix": 38.02000045776367
+    }
+   ],
+   "regularite": null,
+   "cagr_hist": null,
+   "g_defaut": 0.25,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 0.274658203125,
+   "prix_5ans": 4.669189453125,
+   "rendement_estime": -0.3425755122255183,
+   "prix_a_payer": 2.321412368793895,
+   "date": "2026-11-27T13:55:01+00:00"
   }
  }
 }
