@@ -1,12 +1,13 @@
 {
- "updated": "2026-11-27T17:45:54+00:00",
+ "updated": "2026-11-27T17:50:03+00:00",
  "aliases": {
   "NETFLIX": "NFLX",
   "ADYEN": "ADYEN.AS",
   "XPENG": "XPEV",
   "LENNOX": "LII",
   "GOOGLE": "GOOG",
-  "VULCAN": "VMC"
+  "VULCAN": "VMC",
+  "ATD": "ATD.TO"
  },
  "fiches": {
   "NFLX": {
@@ -1318,6 +1319,66 @@
    "rendement_estime": 0.23283448902757953,
    "prix_a_payer": 892.9699578627182,
    "date": "2026-11-27T17:45:54+00:00"
+  },
+  "ATD.TO": {
+   "ticker": "ATD.TO",
+   "name": "Alimentation Couche-Tard Inc.",
+   "price": 85.1,
+   "currency": "CAD",
+   "devise_fin": "USD",
+   "devise_mix": true,
+   "sector": "Consumer Cyclical",
+   "industry": "Specialty Retail",
+   "cap": 78119026688.0,
+   "eps_ttm": 2.51,
+   "eps_base_note": "somme des 3 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2023,
+     "eps": 3.06
+    },
+    {
+     "annee": 2024,
+     "eps": 2.82
+    },
+    {
+     "annee": 2025,
+     "eps": 2.71
+    },
+    {
+     "annee": 2026,
+     "eps": 3.37
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2023,
+     "prix": 75.86907196044922
+    },
+    {
+     "annee": 2024,
+     "prix": 78.2267074584961
+    },
+    {
+     "annee": 2025,
+     "prix": 74.38202667236328
+    },
+    {
+     "annee": 2026,
+     "prix": 85.0999984741211
+    }
+   ],
+   "regularite": 0.11176795133532091,
+   "cagr_hist": 0.032688858368001616,
+   "g_defaut": 0.07178545894222688,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 3.5498747043779577,
+   "prix_5ans": 60.34786997442528,
+   "rendement_estime": -0.06643088169841238,
+   "prix_a_payer": 30.003556976090454,
+   "date": "2026-11-27T17:50:03+00:00",
+   "devise_note": "Devises différentes : cours en CAD, états financiers en USD. Le BPA n'est pas converti : la projection mélange les devises et n'est pas comparable au cours."
   }
  }
 }
