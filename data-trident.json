@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T12:43:38+00:00",
+ "updated": "2026-11-27T12:46:47+00:00",
  "aliases": {
   "NETFLIX": "NFLX"
  },
@@ -66,6 +66,69 @@
    "rendement_estime": 0.21746186079138052,
    "prix_a_payer": 79.00365353831305,
    "date": "2026-11-27T12:43:38+00:00"
+  },
+  "TTMI": {
+   "ticker": "TTMI",
+   "name": "TTM Technologies, Inc.",
+   "price": 58.17,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Technology",
+   "industry": "Electronic Components",
+   "cap": 6129693696.0,
+   "eps_ttm": 2.51,
+   "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": 0.91
+    },
+    {
+     "annee": 2023,
+     "eps": -0.18
+    },
+    {
+     "annee": 2024,
+     "eps": 0.54
+    },
+    {
+     "annee": 2025,
+     "eps": 1.68
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 15.079999923706055
+    },
+    {
+     "annee": 2023,
+     "prix": 15.8100004196167
+    },
+    {
+     "annee": 2024,
+     "prix": 24.75
+    },
+    {
+     "annee": 2025,
+     "prix": 69.0
+    },
+    {
+     "annee": 2026,
+     "prix": 58.16999816894531
+    }
+   ],
+   "regularite": null,
+   "cagr_hist": null,
+   "g_defaut": 0.25,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 7.659912109374999,
+   "prix_5ans": 130.21850585937497,
+   "rendement_estime": 0.17488329489506693,
+   "prix_a_payer": 64.74161161858528,
+   "date": "2026-11-27T12:46:47+00:00"
   }
  }
 }
