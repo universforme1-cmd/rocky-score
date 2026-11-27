@@ -1,7 +1,8 @@
 {
- "updated": "2026-11-27T12:46:47+00:00",
+ "updated": "2026-11-27T12:48:13+00:00",
  "aliases": {
-  "NETFLIX": "NFLX"
+  "NETFLIX": "NFLX",
+  "ADYEN": "ADYEN.AS"
  },
  "fiches": {
   "NFLX": {
@@ -129,6 +130,69 @@
    "rendement_estime": 0.17488329489506693,
    "prix_a_payer": 64.74161161858528,
    "date": "2026-11-27T12:46:47+00:00"
+  },
+  "ADYEN.AS": {
+   "ticker": "ADYEN.AS",
+   "name": "Adyen N.V.",
+   "price": 880.6,
+   "currency": "EUR",
+   "devise_fin": "EUR",
+   "devise_mix": false,
+   "sector": "Technology",
+   "industry": "Software - Infrastructure",
+   "cap": 27797614592.0,
+   "eps_ttm": 33.61,
+   "eps_base_note": "dernier BPA annuel (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": 18.17
+    },
+    {
+     "annee": 2023,
+     "eps": 22.41
+    },
+    {
+     "annee": 2024,
+     "eps": 29.59
+    },
+    {
+     "annee": 2025,
+     "eps": 33.61
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 1288.4000244140625
+    },
+    {
+     "annee": 2023,
+     "prix": 1166.5999755859375
+    },
+    {
+     "annee": 2024,
+     "prix": 1437.0
+    },
+    {
+     "annee": 2025,
+     "prix": 1375.0
+    },
+    {
+     "annee": 2026,
+     "prix": 880.5999755859375
+    }
+   ],
+   "regularite": 0.9821862637729386,
+   "cagr_hist": 0.22754624377041477,
+   "g_defaut": 0.15663409286031338,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 69.57423814640067,
+   "prix_5ans": 1182.7620484888114,
+   "rendement_estime": 0.06077613348493194,
+   "prix_a_payer": 588.0417739023849,
+   "date": "2026-11-27T12:48:13+00:00"
   }
  }
 }
