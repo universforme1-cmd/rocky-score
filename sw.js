@@ -1,8 +1,9 @@
-// Service worker — Rocky Score · DCF · Valeur (appli fusionnée)
+// Service worker — Rocky Score · DCF · Valeur · Valorisation (appli fusionnée)
 // Met en cache uniquement l'enveloppe de l'appli. Les fichiers de données
-// (data.json, data-dcf.json, data-valeur.json) passent toujours par le réseau.
+// (data.json, data-dcf.json, data-valeur.json, data-trident.json) passent toujours par le réseau.
+// v4 : nouvel onglet Valorisation (Trident) — force la mise à jour du cache.
 
-const CACHE = "rocky-fusion-v3";
+const CACHE = "rocky-fusion-v4";
 const SHELL = [
   "./",
   "./index.html",
