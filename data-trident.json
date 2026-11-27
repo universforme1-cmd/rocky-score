@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T13:55:01+00:00",
+ "updated": "2026-11-27T13:56:13+00:00",
  "aliases": {
   "NETFLIX": "NFLX",
   "ADYEN": "ADYEN.AS"
@@ -441,6 +441,69 @@
    "rendement_estime": -0.3425755122255183,
    "prix_a_payer": 2.321412368793895,
    "date": "2026-11-27T13:55:01+00:00"
+  },
+  "SNPS": {
+   "ticker": "SNPS",
+   "name": "Synopsys, Inc.",
+   "price": 405.09,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Technology",
+   "industry": "Software - Infrastructure",
+   "cap": 77630087168.0,
+   "eps_ttm": 5.66,
+   "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": 6.29
+    },
+    {
+     "annee": 2023,
+     "eps": 7.92
+    },
+    {
+     "annee": 2024,
+     "eps": 14.51
+    },
+    {
+     "annee": 2025,
+     "eps": 8.04
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 319.2900085449219
+    },
+    {
+     "annee": 2023,
+     "prix": 514.9099731445312
+    },
+    {
+     "annee": 2024,
+     "prix": 485.3599853515625
+    },
+    {
+     "annee": 2025,
+     "prix": 469.7200012207031
+    },
+    {
+     "annee": 2026,
+     "prix": 405.0899963378906
+    }
+   ],
+   "regularite": 0.23576573349891994,
+   "cagr_hist": 0.08526334391298396,
+   "g_defaut": 0.20373660740213428,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 14.30453591617773,
+   "prix_5ans": 243.17711057502143,
+   "rendement_estime": -0.09702810252173566,
+   "prix_a_payer": 120.9020019349604,
+   "date": "2026-11-27T13:56:13+00:00"
   }
  }
 }
