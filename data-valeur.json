@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T21:14:06+00:00",
+ "updated": "2026-11-27T04:28:28+00:00",
  "parametres": {
   "prime_risque": 4.5,
   "croissance_terminale_max": 2.5,
@@ -19,7 +19,7 @@
    "actions": 24147000000.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:47+00:00",
+   "date": "2026-11-27T04:28:15+00:00",
    "valeur": 313.6196073169889,
    "valeur_ponderee": 291.4578605287683,
    "ecart": 110.06001829671055,
@@ -101,7 +101,7 @@
    "actions": 7426194552.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:36+00:00",
+   "date": "2026-11-27T04:28:02+00:00",
    "valeur": 530.1525591806569,
    "valeur_ponderee": 523.4791348947743,
    "ecart": 8.209858383984825,
@@ -183,7 +183,7 @@
    "actions": 864657109.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:34+00:00",
+   "date": "2026-11-27T04:28:00+00:00",
    "nd": "Entreprise financière : le DCF sur flux à l'entreprise ne s'applique pas (Damodaran évalue les financières par les flux aux actionnaires / dividendes)."
   },
   "AVGO": {
@@ -277,7 +277,7 @@
    "actions": 743701257.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:35+00:00",
+   "date": "2026-11-27T04:28:01+00:00",
    "nd": "Capital investi comptable négatif ou nul (capitaux propres comptables négatifs, effet des rachats massifs) : la méthode exige un capital investi reconstruit — valeur non calculée."
   },
   "DELL": {
@@ -289,29 +289,29 @@
    "actions": 315433188.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:44+00:00",
-   "valeur": 1079.9439999666283,
-   "valeur_ponderee": 1088.1859751344248,
-   "ecart": 263.5440651607851,
-   "ecart_pondere": 266.3185804667154,
+   "date": "2026-11-27T04:28:13+00:00",
+   "valeur": 1161.4120806801234,
+   "valeur_ponderee": 1177.2799382964272,
+   "ecart": 290.9688550057643,
+   "ecart_pondere": 296.3104888899304,
    "scenarios": {
     "Pessimiste": {
-     "valeur": 356.092415995281,
+     "valeur": 367.38429780618543,
      "proba": 25
     },
     "Centrale": {
-     "valeur": 1079.9439999666283,
+     "valeur": 1161.4120806801234,
      "proba": 50
     },
     "Optimiste": {
-     "valeur": 1836.763484609162,
+     "valeur": 2018.9112940192767,
      "proba": 25
     }
    },
    "hypotheses": {
     "revenus": 151197000000.0,
     "marge_actuelle": 9.621222643306416,
-    "croissance_1_5": 19.600001,
+    "croissance_1_5": 21.040001999999998,
     "croissance_terminale": 2.5,
     "taux_sans_risque": 4.8480000495910645,
     "prime_risque": 4.5,
@@ -327,10 +327,10 @@
     "dette_nette": 22897000000.0
    },
    "controles": {
-    "revenu_an10": 575395478217.7714,
-    "multiple_revenu_10ans": 3.80560115754791,
-    "roc_an10": 31.948809827259378,
-    "part_valeur_terminale": 71.93126636351596
+    "revenu_an10": 626637469151.9961,
+    "multiple_revenu_10ans": 4.144509938371767,
+    "roc_an10": 31.555802969220558,
+    "part_valeur_terminale": 73.16534956083456
    },
    "sensibilite": {
     "wacc": [
@@ -345,19 +345,19 @@
     ],
     "valeurs": [
      [
-      1253.48,
-      1338.16,
-      1438.74
+      1349.6,
+      1441.77,
+      1551.25
      ],
      [
-      1023.47,
-      1079.94,
-      1145.28
+      1099.95,
+      1161.41,
+      1232.52
      ],
      [
-      852.03,
-      891.26,
-      935.77
+      914.04,
+      956.73,
+      1005.17
      ]
     ]
    }
@@ -453,7 +453,7 @@
    "actions": 126111808.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:57+00:00",
+   "date": "2026-11-27T04:28:26+00:00",
    "valeur": 497.738244580485,
    "valeur_ponderee": 488.6496286003202,
    "ecart": 159.3061967077286,
@@ -535,7 +535,7 @@
    "actions": 217974381.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:48+00:00",
+   "date": "2026-11-27T04:28:16+00:00",
    "valeur": 86.85872073792108,
    "valeur_ponderee": 84.54437801784152,
    "ecart": 61.38744098461739,
@@ -617,7 +617,7 @@
    "actions": 105375520.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:46+00:00",
+   "date": "2026-11-27T04:28:15+00:00",
    "valeur": 70.37760930840219,
    "valeur_ponderee": 74.46155510737529,
    "ecart": 20.986091298611285,
@@ -781,7 +781,7 @@
    "actions": 385060421.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:41+00:00",
+   "date": "2026-11-27T04:28:08+00:00",
    "valeur": 332.6486483257149,
    "valeur_ponderee": 313.6638560702354,
    "ecart": 91.87209339892419,
@@ -1027,7 +1027,7 @@
    "actions": 457594174.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:51+00:00",
+   "date": "2026-11-27T04:28:20+00:00",
    "valeur": 413.1348647056662,
    "valeur_ponderee": 406.8650150763936,
    "ecart": -24.012789511363795,
@@ -1519,7 +1519,7 @@
    "actions": 289900000.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:34+00:00",
+   "date": "2026-11-27T04:28:00+00:00",
    "nd": "Entreprise financière : le DCF sur flux à l'entreprise ne s'applique pas (Damodaran évalue les financières par les flux aux actionnaires / dividendes)."
   },
   "HLNE": {
@@ -1531,7 +1531,7 @@
    "actions": 43993851.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:36+00:00",
+   "date": "2026-11-27T04:28:03+00:00",
    "nd": "Entreprise financière : le DCF sur flux à l'entreprise ne s'applique pas (Damodaran évalue les financières par les flux aux actionnaires / dividendes)."
   },
   "TSM": {
@@ -1543,7 +1543,7 @@
    "actions": 5186472994.0,
    "devise": "USD",
    "devise_fin": "TWD",
-   "date": "2026-11-26T04:18:37+00:00",
+   "date": "2026-11-27T04:28:04+00:00",
    "nd": "Devises différentes : cours en USD, états financiers en TWD — non converti, valeur non calculée."
   },
   "FIX": {
@@ -1555,7 +1555,7 @@
    "actions": 34985904.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:38+00:00",
+   "date": "2026-11-27T04:28:05+00:00",
    "valeur": 2456.5902170791646,
    "valeur_ponderee": 2484.012556959966,
    "ecart": 123.41168601458419,
@@ -1637,7 +1637,7 @@
    "actions": 369460804.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:39+00:00",
+   "date": "2026-11-27T04:28:06+00:00",
    "valeur": 43.896288187670166,
    "valeur_ponderee": 52.73437365777762,
    "ecart": -34.70729110862686,
@@ -1719,7 +1719,7 @@
    "actions": 4106325903.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:39+00:00",
+   "date": "2026-11-27T04:28:07+00:00",
    "valeur": 70.31682947824635,
    "valeur_ponderee": 68.05177744588067,
    "ecart": 18.358575119081543,
@@ -1801,7 +1801,7 @@
    "actions": 566956729.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:40+00:00",
+   "date": "2026-11-27T04:28:08+00:00",
    "valeur": 94.74573243367078,
    "valeur_ponderee": 98.8520784785204,
    "ecart": 41.665269787187185,
@@ -1883,7 +1883,7 @@
    "actions": 380691004.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:41+00:00",
+   "date": "2026-11-27T04:28:09+00:00",
    "valeur": 125.685821382414,
    "valeur_ponderee": 125.68803564206371,
    "ecart": -62.24517230927786,
@@ -1965,7 +1965,7 @@
    "actions": 161908850.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:42+00:00",
+   "date": "2026-11-27T04:28:10+00:00",
    "valeur": 170.85778185616473,
    "valeur_ponderee": 166.64602560958912,
    "ecart": -37.161536647236204,
@@ -2047,7 +2047,7 @@
    "actions": 30502537.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:43+00:00",
+   "date": "2026-11-27T04:28:11+00:00",
    "valeur": 841.5988967943343,
    "valeur_ponderee": 839.8612093970298,
    "ecart": 222.82274522222264,
@@ -2129,7 +2129,7 @@
    "actions": 146942127.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:44+00:00",
+   "date": "2026-11-27T04:28:12+00:00",
    "valeur": 394.9619299127594,
    "valeur_ponderee": 382.2285000030594,
    "ecart": 331.60521244974245,
@@ -2211,7 +2211,7 @@
    "actions": 187951918.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:45+00:00",
+   "date": "2026-11-27T04:28:13+00:00",
    "valeur": 122.27504929578295,
    "valeur_ponderee": 116.13411415118807,
    "ecart": 14.49510678944046,
@@ -2289,26 +2289,26 @@
    "nom": "Intuit Inc.",
    "secteur": "Technology",
    "prix": 271.72,
-   "capi": 71738155008.0,
-   "actions": 264015000.0,
+   "capi": 71589896192.0,
+   "actions": 263469358.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:48+00:00",
-   "valeur": 308.8105451938256,
-   "valeur_ponderee": 301.34871711236104,
-   "ecart": 13.650281611153225,
-   "ecart_pondere": 10.904135548491457,
+   "date": "2026-11-27T04:28:17+00:00",
+   "valeur": 309.46732544478897,
+   "valeur_ponderee": 301.9891742916081,
+   "ecart": 13.891993760043043,
+   "ecart_pondere": 11.139840384074805,
    "scenarios": {
     "Pessimiste": {
-     "valeur": 214.34753680709156,
+     "valeur": 214.8005805175183,
      "proba": 25
     },
     "Centrale": {
-     "valeur": 308.8105451938256,
+     "valeur": 309.46732544478897,
      "proba": 50
     },
     "Optimiste": {
-     "valeur": 373.4262412547014,
+     "valeur": 374.22146575933624,
      "proba": 25
     }
    },
@@ -2320,13 +2320,13 @@
     "taux_sans_risque": 4.8480000495910645,
     "prime_risque": 4.5,
     "beta_sectoriel": 1.02,
-    "beta": 1.1022028096962084,
-    "cout_fonds_propres": 9.807912693224003,
+    "beta": 1.1023730472839923,
+    "cout_fonds_propres": 9.80867876236903,
     "cout_dette_apres_impot": 4.0847275364031415,
-    "wacc": 9.252444472828179,
+    "wacc": 9.252097563128112,
     "taux_impot": 25.023357209592028,
     "roc_actuel": 25.657047288894525,
-    "roc_stable": 17.45474588086135,
+    "roc_stable": 17.454572426011318,
     "ventes_sur_capital": 1.1499554016475155,
     "dette_nette": 824000000.0
    },
@@ -2334,7 +2334,7 @@
     "revenu_an10": 40467873186.6711,
     "multiple_revenu_10ans": 1.8464148006876442,
     "roc_an10": 25.657047288894532,
-    "part_valeur_terminale": 58.85248870616701
+    "part_valeur_terminale": 58.854038007658794
    },
    "sensibilite": {
     "wacc": [
@@ -2349,19 +2349,19 @@
     ],
     "valeurs": [
      [
-      352.68,
-      368.19,
-      386.47
+      353.44,
+      368.98,
+      387.3
      ],
      [
-      298.87,
-      308.81,
-      320.2
+      299.51,
+      309.47,
+      320.88
      ],
      [
-      258.35,
-      264.96,
-      272.38
+      258.9,
+      265.53,
+      272.96
      ]
     ]
    }
@@ -2375,7 +2375,7 @@
    "actions": 389200000.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:49+00:00",
+   "date": "2026-11-27T04:28:18+00:00",
    "valeur": 363.06982078420845,
    "valeur_ponderee": 350.8728311371653,
    "ecart": 55.93773172881864,
@@ -2457,7 +2457,7 @@
    "actions": 1350500000.0,
    "devise": "USD",
    "devise_fin": "CNY",
-   "date": "2026-11-26T04:18:50+00:00",
+   "date": "2026-11-27T04:28:19+00:00",
    "nd": "Devises différentes : cours en USD, états financiers en CNY — non converti, valeur non calculée."
   },
   "NOW": {
@@ -2469,7 +2469,7 @@
    "actions": 1037917000.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:51+00:00",
+   "date": "2026-11-27T04:28:19+00:00",
    "valeur": 0.9289754391866346,
    "valeur_ponderee": 2.443973735215352,
    "ecart": -98.99199713629923,
@@ -2551,7 +2551,7 @@
    "actions": 411998576.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:52+00:00",
+   "date": "2026-11-27T04:28:21+00:00",
    "valeur": 47.36794730724369,
    "valeur_ponderee": 52.49803741248145,
    "ecart": -71.53368551247374,
@@ -2633,7 +2633,7 @@
    "actions": 3815933617.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:52+00:00",
+   "date": "2026-11-27T04:28:21+00:00",
    "nd": "Entreprise financière : le DCF sur flux à l'entreprise ne s'applique pas (Damodaran évalue les financières par les flux aux actionnaires / dividendes)."
   },
   "DLO": {
@@ -2645,7 +2645,7 @@
    "actions": 177506876.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:53+00:00",
+   "date": "2026-11-27T04:28:22+00:00",
    "nd": "Capital investi comptable négatif ou nul (capitaux propres comptables négatifs, effet des rachats massifs) : la méthode exige un capital investi reconstruit — valeur non calculée."
   },
   "AXTI": {
@@ -2657,7 +2657,7 @@
    "actions": 65722351.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:54+00:00",
+   "date": "2026-11-27T04:28:23+00:00",
    "valeur": 6.639410386083517,
    "valeur_ponderee": 7.7936355752497875,
    "ecart": -79.23886683526105,
@@ -2739,7 +2739,7 @@
    "actions": 196958669.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:55+00:00",
+   "date": "2026-11-27T04:28:24+00:00",
    "valeur": 17.21785121525412,
    "valeur_ponderee": 30.621245847693103,
    "ecart": -91.22388948710224,
@@ -2821,7 +2821,7 @@
    "actions": 1249171000.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:55+00:00",
+   "date": "2026-11-27T04:28:25+00:00",
    "valeur": 240.99303753821732,
    "valeur_ponderee": 236.64288685458018,
    "ecart": 30.25946572521341,
@@ -2903,7 +2903,7 @@
    "actions": 793597443.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:56+00:00",
+   "date": "2026-11-27T04:28:26+00:00",
    "valeur": 251.19710063733015,
    "valeur_ponderee": 248.82162718318426,
    "ecart": -19.27594940634676,
@@ -2980,18 +2980,18 @@
    "ticker": "CSU.TO",
    "nom": "Constellation Software Inc.",
    "secteur": "Technology",
-   "prix": 3071.86,
-   "capi": 65097416704.0,
+   "prix": 3044.0,
+   "capi": 64507019264.0,
    "actions": 21191530.0,
    "devise": "CAD",
    "devise_fin": "USD",
-   "date": "2026-11-26T04:18:58+00:00",
+   "date": "2026-11-27T04:28:27+00:00",
    "nd": "Devises différentes : cours en CAD, états financiers en USD — non converti, valeur non calculée."
   },
   "TOI.TO": {
    "ticker": "TOI.TO",
    "erreur": "données introuvables ou incomplètes (ticker inconnu ou source indisponible)",
-   "date": "2026-11-26T04:18:58+00:00"
+   "date": "2026-11-27T04:28:28+00:00"
   },
   "VICR": {
    "ticker": "VICR",
