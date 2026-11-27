@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T14:07:59+00:00",
+ "updated": "2026-11-27T14:09:03+00:00",
  "aliases": {
   "NETFLIX": "NFLX",
   "ADYEN": "ADYEN.AS"
@@ -690,6 +690,69 @@
    "prix_a_payer": 2.9115095408487526,
    "date": "2026-11-27T14:07:59+00:00",
    "devise_note": "Devises différentes : cours en USD, états financiers en EUR. Le BPA n'est pas converti : la projection mélange les devises et n'est pas comparable au cours."
+  },
+  "AXON": {
+   "ticker": "AXON",
+   "name": "Axon Enterprise, Inc.",
+   "price": 343.05,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Industrials",
+   "industry": "Aerospace & Defense",
+   "cap": 27935490048.0,
+   "eps_ttm": 1.51,
+   "eps_base_note": "dernier BPA annuel (Yahoo) — trimestriel écarté (incohérent)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": 2.03
+    },
+    {
+     "annee": 2023,
+     "eps": 2.31
+    },
+    {
+     "annee": 2024,
+     "eps": 4.8
+    },
+    {
+     "annee": 2025,
+     "eps": 1.51
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 165.92999267578125
+    },
+    {
+     "annee": 2023,
+     "prix": 258.3299865722656
+    },
+    {
+     "annee": 2024,
+     "prix": 594.3200073242188
+    },
+    {
+     "annee": 2025,
+     "prix": 567.9299926757812
+    },
+    {
+     "annee": 2026,
+     "prix": 343.04998779296875
+    }
+   ],
+   "regularite": 0.0016883349671955594,
+   "cagr_hist": -0.09393302099393697,
+   "g_defaut": 0.1742444885384815,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 3.371084195610457,
+   "prix_5ans": 57.30843132537777,
+   "rendement_estime": -0.3008470097591216,
+   "prix_a_payer": 28.492418791417567,
+   "date": "2026-11-27T14:09:03+00:00"
   }
  }
 }
