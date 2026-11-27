@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T17:51:08+00:00",
+ "updated": "2026-11-27T17:52:03+00:00",
  "aliases": {
   "NETFLIX": "NFLX",
   "ADYEN": "ADYEN.AS",
@@ -8,7 +8,8 @@
   "GOOGLE": "GOOG",
   "VULCAN": "VMC",
   "ATD": "ATD.TO",
-  "ZYL": "2190.HK"
+  "ZYL": "2190.HK",
+  "XYLEM": "XYL"
  },
  "fiches": {
   "NFLX": {
@@ -1444,6 +1445,69 @@
    "prix_a_payer": 19.479229121257216,
    "date": "2026-11-27T17:51:08+00:00",
    "devise_note": "Devises différentes : cours en HKD, états financiers en CNY. Le BPA n'est pas converti : la projection mélange les devises et n'est pas comparable au cours."
+  },
+  "XYL": {
+   "ticker": "XYL",
+   "name": "Xylem Inc.",
+   "price": 95.91,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Industrials",
+   "industry": "Specialty Industrial Machinery",
+   "cap": 21995481088.0,
+   "eps_ttm": 3.1500000000000004,
+   "eps_base_note": "somme des 3 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": 1.96
+    },
+    {
+     "annee": 2023,
+     "eps": 2.79
+    },
+    {
+     "annee": 2024,
+     "eps": 3.65
+    },
+    {
+     "annee": 2025,
+     "eps": 3.92
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 105.0379638671875
+    },
+    {
+     "annee": 2023,
+     "prix": 110.05127716064453
+    },
+    {
+     "annee": 2024,
+     "prix": 112.88087463378906
+    },
+    {
+     "annee": 2025,
+     "prix": 134.07870483398438
+    },
+    {
+     "annee": 2026,
+     "prix": 95.91000366210938
+    }
+   ],
+   "regularite": 0.9308470184192703,
+   "cagr_hist": 0.2599210498948732,
+   "g_defaut": 0.06909999999999994,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 4.399488648955538,
+   "prix_5ans": 74.79130703224415,
+   "rendement_estime": -0.04852485826547981,
+   "prix_a_payer": 37.18449785898318,
+   "date": "2026-11-27T17:52:03+00:00"
   }
  }
 }
