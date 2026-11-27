@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T13:56:13+00:00",
+ "updated": "2026-11-27T14:03:40+00:00",
  "aliases": {
   "NETFLIX": "NFLX",
   "ADYEN": "ADYEN.AS"
@@ -504,6 +504,65 @@
    "rendement_estime": -0.09702810252173566,
    "prix_a_payer": 120.9020019349604,
    "date": "2026-11-27T13:56:13+00:00"
+  },
+  "SANM": {
+   "ticker": "SANM",
+   "name": "Sanmina Corporation",
+   "price": 138.57,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Technology",
+   "industry": "Electronic Components",
+   "cap": 7314099712.0,
+   "eps_ttm": 6.8500000000000005,
+   "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2023,
+     "eps": 5.18
+    },
+    {
+     "annee": 2024,
+     "eps": 3.91
+    },
+    {
+     "annee": 2025,
+     "eps": 4.46
+    },
+    {
+     "annee": 2026,
+     "eps": 6.85
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2023,
+     "prix": 51.369998931884766
+    },
+    {
+     "annee": 2024,
+     "prix": 75.66999816894531
+    },
+    {
+     "annee": 2025,
+     "prix": 150.07000732421875
+    },
+    {
+     "annee": 2026,
+     "prix": 138.57000732421875
+    }
+   ],
+   "regularite": 0.2705579929200268,
+   "cagr_hist": 0.09762402381252033,
+   "g_defaut": 0.25,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 20.904541015625,
+   "prix_5ans": 355.377197265625,
+   "rendement_estime": 0.2072690531951722,
+   "prix_a_payer": 176.6852747359798,
+   "date": "2026-11-27T14:03:40+00:00"
   }
  }
 }
