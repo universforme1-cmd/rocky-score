@@ -1,10 +1,11 @@
 {
- "updated": "2026-11-27T16:12:27+00:00",
+ "updated": "2026-11-27T17:03:48+00:00",
  "aliases": {
   "NETFLIX": "NFLX",
   "ADYEN": "ADYEN.AS",
   "XPENG": "XPEV",
-  "LENNOX": "LII"
+  "LENNOX": "LII",
+  "GOOGLE": "GOOG"
  },
  "fiches": {
   "NFLX": {
@@ -1005,6 +1006,69 @@
    "rendement_estime": 0.09849377199281628,
    "prix_a_payer": 59.32498275806621,
    "date": "2026-11-27T16:12:27+00:00"
+  },
+  "GOOG": {
+   "ticker": "GOOG",
+   "name": "Alphabet Inc.",
+   "price": 271.26,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Communication Services",
+   "industry": "Internet Content & Information",
+   "cap": 3334870401024.0,
+   "eps_ttm": 10.81,
+   "eps_base_note": "dernier BPA annuel (Yahoo) — trimestriel écarté (incohérent)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": 4.56
+    },
+    {
+     "annee": 2023,
+     "eps": 5.8
+    },
+    {
+     "annee": 2024,
+     "eps": 8.04
+    },
+    {
+     "annee": 2025,
+     "eps": 10.81
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 87.89747619628906
+    },
+    {
+     "annee": 2023,
+     "prix": 139.60765075683594
+    },
+    {
+     "annee": 2024,
+     "prix": 189.3309783935547
+    },
+    {
+     "annee": 2025,
+     "prix": 313.1871337890625
+    },
+    {
+     "annee": 2026,
+     "prix": 271.260009765625
+    }
+   ],
+   "regularite": 0.9966019654189362,
+   "cagr_hist": 0.3333790189024399,
+   "g_defaut": 0.18951110195954035,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 25.74353562063988,
+   "prix_5ans": 437.64010555087793,
+   "rendement_estime": 0.10038907856539203,
+   "prix_a_payer": 217.5844789133845,
+   "date": "2026-11-27T17:03:48+00:00"
   }
  }
 }
