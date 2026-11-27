@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T14:53:55+00:00",
+ "updated": "2026-11-27T15:18:05+00:00",
  "aliases": {
   "NETFLIX": "NFLX",
   "ADYEN": "ADYEN.AS"
@@ -812,6 +812,71 @@
    "rendement_estime": 0.028393648163690388,
    "prix_a_payer": 13.833866950640827,
    "date": "2026-11-27T14:53:55+00:00"
+  },
+  "XPEV": {
+   "ticker": "XPEV",
+   "name": "XPeng Inc.",
+   "price": 9.295,
+   "currency": "USD",
+   "devise_fin": "CNY",
+   "devise_mix": true,
+   "sector": "Consumer Cyclical",
+   "industry": "Auto Manufacturers",
+   "cap": 8904393728.0,
+   "eps_ttm": -3.76,
+   "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": -10.68
+    },
+    {
+     "annee": 2023,
+     "eps": -11.92
+    },
+    {
+     "annee": 2024,
+     "eps": -6.12
+    },
+    {
+     "annee": 2025,
+     "eps": -1.2
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 9.9399995803833
+    },
+    {
+     "annee": 2023,
+     "prix": 14.59000015258789
+    },
+    {
+     "annee": 2024,
+     "prix": 11.819999694824219
+    },
+    {
+     "annee": 2025,
+     "prix": 20.280000686645508
+    },
+    {
+     "annee": 2026,
+     "prix": 9.295000076293945
+    }
+   ],
+   "regularite": null,
+   "cagr_hist": null,
+   "g_defaut": null,
+   "g_source": "",
+   "per_final": 17.0,
+   "eps_5ans": null,
+   "prix_5ans": null,
+   "rendement_estime": null,
+   "prix_a_payer": null,
+   "date": "2026-11-27T15:18:05+00:00",
+   "nd": "BPA 12 mois négatif ou nul : pas de bénéfices à projeter.",
+   "devise_note": "Devises différentes : cours en USD, états financiers en CNY. Le BPA n'est pas converti : la projection mélange les devises et n'est pas comparable au cours."
   }
  }
 }
