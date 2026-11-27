@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T17:06:49+00:00",
+ "updated": "2026-11-27T17:07:57+00:00",
  "aliases": {
   "NETFLIX": "NFLX",
   "ADYEN": "ADYEN.AS",
@@ -1128,6 +1128,69 @@
    "rendement_estime": 0.020166497056026467,
    "prix_a_payer": 642.4129939485929,
    "date": "2026-11-27T17:06:49+00:00"
+  },
+  "NOW": {
+   "ticker": "NOW",
+   "name": "ServiceNow, Inc.",
+   "price": 92.565,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Technology",
+   "industry": "Software - Application",
+   "cap": 96074792960.0,
+   "eps_ttm": 1.3900000000000001,
+   "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": 0.32
+    },
+    {
+     "annee": 2023,
+     "eps": 1.684
+    },
+    {
+     "annee": 2024,
+     "eps": 1.368
+    },
+    {
+     "annee": 2025,
+     "eps": 1.67
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 77.65399932861328
+    },
+    {
+     "annee": 2023,
+     "prix": 141.29800415039062
+    },
+    {
+     "annee": 2024,
+     "prix": 212.0240020751953
+    },
+    {
+     "annee": 2025,
+     "prix": 153.19000244140625
+    },
+    {
+     "annee": 2026,
+     "prix": 92.56500244140625
+    }
+   ],
+   "regularite": 0.5872139947922623,
+   "cagr_hist": 0.7345580184539504,
+   "g_defaut": 0.17002858939429344,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 3.0478751222568534,
+   "prix_5ans": 51.81387707836651,
+   "rendement_estime": -0.1095698495988664,
+   "prix_a_payer": 25.760654248969157,
+   "date": "2026-11-27T17:07:57+00:00"
   }
  }
 }
