@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T17:54:30+00:00",
+ "updated": "2026-11-27T18:59:52+00:00",
  "aliases": {
   "NETFLIX": "NFLX",
   "ADYEN": "ADYEN.AS",
@@ -1634,6 +1634,69 @@
    "rendement_estime": 0.08966882933335318,
    "prix_a_payer": 98.53105831991866,
    "date": "2026-11-27T17:54:30+00:00"
+  },
+  "HSY": {
+   "ticker": "HSY",
+   "name": "The Hershey Company",
+   "price": 182.77,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Consumer Defensive",
+   "industry": "Confectioners",
+   "cap": 36733186048.0,
+   "eps_ttm": 4.34,
+   "eps_base_note": "dernier BPA annuel (Yahoo) — trimestriel écarté (incohérent)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": 7.96
+    },
+    {
+     "annee": 2023,
+     "eps": 9.06
+    },
+    {
+     "annee": 2024,
+     "eps": 10.92
+    },
+    {
+     "annee": 2025,
+     "eps": 4.34
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 207.1698455810547
+    },
+    {
+     "annee": 2023,
+     "prix": 170.13182067871094
+    },
+    {
+     "annee": 2024,
+     "prix": 159.06314086914062
+    },
+    {
+     "annee": 2025,
+     "prix": 176.53067016601562
+    },
+    {
+     "annee": 2026,
+     "prix": 182.77000427246094
+    }
+   ],
+   "regularite": 0.2788340690198736,
+   "cagr_hist": -0.18305612580255548,
+   "g_defaut": 0.22505929652404988,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 11.974993360703323,
+   "prix_5ans": 203.57488713195647,
+   "rendement_estime": 0.021795199918601904,
+   "prix_a_payer": 101.21269777298396,
+   "date": "2026-11-27T18:59:52+00:00"
   }
  }
 }
