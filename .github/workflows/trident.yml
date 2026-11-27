@@ -1,0 +1,78 @@
+name: Trident
+
+on:
+  schedule:
+    - cron: "30 22 * * 1-5"   # soirs de semaine, après la clôture de New York
+  workflow_dispatch:
+    inputs:
+      tickers:
+        description: "Tickers séparés par des espaces (vide = liste de tickers.txt)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: trident
+  cancel-in-progress: false
+
+jobs:
+  trident:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main          # toujours la dernière version, même si le lancement a attendu son tour
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Installer yfinance
+        run: pip install --quiet yfinance
+      - name: Calculer les fiches
+        env:
+          TICKERS: ${{ inputs.tickers }}
+        run: |
+          set -f
+          python trident.py --json data-trident.json "$TICKERS"
+      - name: Publier data-trident.json
+        run: |
+          git config user.name "rocky-bot"
+          git config user.email "rocky-bot@users.noreply.github.com"
+          cp data-trident.json /tmp/nouveau.json
+          for essai in 1 2 3 4 5; do
+            # On repart de la version en ligne et on y fusionne nos fiches :
+            # pour chaque ticker, la fiche la plus récente gagne. Aucun conflit possible.
+            # Les aliases (nom -> ticker) sont fusionnés aussi : sans eux,
+            # l'appli ne peut pas résoudre un nom tapé vers son ticker.
+            git fetch --quiet origin main
+            git reset --quiet --hard origin/main
+            python - <<'PY'
+          import json, os
+          def lire(p):
+              try:
+                  with open(p, encoding="utf-8") as f:
+                      d = json.load(f)
+                  return d if isinstance(d.get("fiches"), dict) else {"fiches": {}}
+              except Exception:
+                  return {"fiches": {}}
+          cle = lambda f: str(f.get("date_tentative") or f.get("date") or "")
+          en_ligne, nouveau = lire("data-trident.json"), lire("/tmp/nouveau.json")
+          fiches = en_ligne["fiches"]
+          for t, f in nouveau["fiches"].items():
+              if t not in fiches or cle(f) >= cle(fiches[t]):
+                  fiches[t] = f
+          aliases = dict(en_ligne.get("aliases") or {})
+          aliases.update(nouveau.get("aliases") or {})
+          out = {"updated": max(str(en_ligne.get("updated") or ""), str(nouveau.get("updated") or "")), "aliases": aliases, "fiches": fiches}
+          with open("data-trident.json", "w", encoding="utf-8") as f:
+              json.dump(out, f, ensure_ascii=False, indent=1)
+          PY
+            git add data-trident.json
+            if git diff --cached --quiet; then echo "Rien à publier."; exit 0; fi
+            git commit --quiet -m "Fiches Trident"
+            if git push --quiet origin HEAD:main; then echo "Publié (essai $essai)."; exit 0; fi
+            echo "Le dépôt a changé entre-temps, nouvel essai…"
+            sleep $((essai * 3))
+          done
+          echo "Impossible de publier après 5 essais."; exit 1
