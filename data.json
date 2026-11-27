@@ -1,8 +1,9 @@
 {
- "updated": "2026-11-27T04:28:16+00:00",
+ "updated": "2026-11-27T12:41:11+00:00",
  "aliases": {
   "VISTA": "VIST",
-  "ADYEN": "ADYEN.AS"
+  "ADYEN": "ADYEN.AS",
+  "NETFLIX": "NFLX"
  },
  "fiches": {
   "HOOD": {
@@ -6354,7 +6355,7 @@
      "ok": true
     }
    ],
-   "date": "2026-11-27T04:26:40+00:00",
+   "date": "2026-11-27T12:41:11+00:00",
    "compounders": {
     "verdict": "PASSE",
     "rows": [
