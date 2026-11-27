@@ -1,11 +1,12 @@
 {
- "updated": "2026-11-27T17:07:57+00:00",
+ "updated": "2026-11-27T17:33:19+00:00",
  "aliases": {
   "NETFLIX": "NFLX",
   "ADYEN": "ADYEN.AS",
   "XPENG": "XPEV",
   "LENNOX": "LII",
-  "GOOGLE": "GOOG"
+  "GOOGLE": "GOOG",
+  "VULCAN": "VMC"
  },
  "fiches": {
   "NFLX": {
@@ -1191,6 +1192,69 @@
    "rendement_estime": -0.1095698495988664,
    "prix_a_payer": 25.760654248969157,
    "date": "2026-11-27T17:07:57+00:00"
+  },
+  "VMC": {
+   "ticker": "VMC",
+   "name": "Vulcan Materials Company",
+   "price": 294.37,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Basic Materials",
+   "industry": "Building Materials",
+   "cap": 37780746240.0,
+   "eps_ttm": 8.45,
+   "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": 4.31
+    },
+    {
+     "annee": 2023,
+     "eps": 6.98
+    },
+    {
+     "annee": 2024,
+     "eps": 6.85
+    },
+    {
+     "annee": 2025,
+     "eps": 8.11
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 169.82745361328125
+    },
+    {
+     "annee": 2023,
+     "prix": 222.05569458007812
+    },
+    {
+     "annee": 2024,
+     "prix": 253.4085235595703
+    },
+    {
+     "annee": 2025,
+     "prix": 283.0672912597656
+    },
+    {
+     "annee": 2026,
+     "prix": 294.3699951171875
+    }
+   ],
+   "regularite": 0.7851488782309302,
+   "cagr_hist": 0.23456661319602468,
+   "g_defaut": 0.12281547905254664,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 15.079907053632352,
+   "prix_5ans": 256.35841991175,
+   "rendement_estime": -0.027273365337073252,
+   "prix_a_payer": 127.45544227795197,
+   "date": "2026-11-27T17:33:19+00:00"
   }
  }
 }
