@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T04:28:28+00:00",
+ "updated": "2026-11-28T04:09:22+00:00",
  "parametres": {
   "prime_risque": 4.5,
   "croissance_terminale_max": 2.5,
@@ -14,27 +14,27 @@
    "ticker": "NVDA",
    "nom": "NVIDIA Corporation",
    "secteur": "Technology",
-   "prix": 149.3,
-   "capi": 3605147156480.0,
+   "prix": 150.49,
+   "capi": 3633882071040.0,
    "actions": 24147000000.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-27T04:28:15+00:00",
-   "valeur": 313.6196073169889,
-   "valeur_ponderee": 291.4578605287683,
-   "ecart": 110.06001829671055,
-   "ecart_pondere": 95.2162495169245,
+   "date": "2026-11-28T04:09:13+00:00",
+   "valeur": 308.72568366366073,
+   "valeur_ponderee": 287.0017378096234,
+   "ecart": 105.14697565529984,
+   "ecart_pondere": 90.7115009699139,
    "scenarios": {
     "Pessimiste": {
-     "valeur": 123.42930692334318,
+     "valeur": 122.02476840726112,
      "proba": 25
     },
     "Centrale": {
-     "valeur": 313.6196073169889,
+     "valeur": 308.72568366366073,
      "proba": 50
     },
     "Optimiste": {
-     "valeur": 415.1629205577524,
+     "valeur": 408.5308155039111,
      "proba": 25
     }
    },
@@ -43,13 +43,13 @@
     "marge_actuelle": 65.68833523741375,
     "croissance_1_5": 30.0,
     "croissance_terminale": 2.5,
-    "taux_sans_risque": 4.8480000495910645,
+    "taux_sans_risque": 4.935999870300293,
     "prime_risque": 4.5,
     "beta_sectoriel": 1.02,
-    "beta": 1.0291060367121325,
-    "cout_fonds_propres": 9.47897721479566,
-    "cout_dette_apres_impot": 4.572067484060227,
-    "wacc": 9.427327704626773,
+    "beta": 1.0290340307466697,
+    "cout_fonds_propres": 9.566653008660305,
+    "cout_dette_apres_impot": 4.645918643238905,
+    "wacc": 9.515263273859288,
     "taux_impot": 16.078057223890557,
     "roc_actuel": 66.1856255913291,
     "roc_stable": 30.0,
@@ -60,13 +60,13 @@
     "revenu_an10": 1699989888615.758,
     "multiple_revenu_10ans": 6.911567547215467,
     "roc_an10": 66.1856255913291,
-    "part_valeur_terminale": 68.39757355610682
+    "part_valeur_terminale": 68.0653865977406
    },
    "sensibilite": {
     "wacc": [
-     8.43,
-     9.43,
-     10.43
+     8.52,
+     9.52,
+     10.52
     ],
     "g": [
      2.0,
@@ -75,19 +75,19 @@
     ],
     "valeurs": [
      [
-      358.33,
-      379.95,
-      405.4
+      352.35,
+      373.2,
+      397.68
      ],
      [
-      298.96,
-      313.62,
-      330.44
+      294.53,
+      308.73,
+      324.99
      ],
      [
-      254.3,
-      264.65,
-      276.3
+      250.9,
+      260.95,
+      272.25
      ]
     ]
    }
@@ -96,27 +96,27 @@
    "ticker": "MSFT",
    "nom": "Microsoft Corporation",
    "secteur": "Technology",
-   "prix": 489.93,
-   "capi": 3638315450368.0,
+   "prix": 492.85,
+   "capi": 3660000002048.0,
    "actions": 7426194552.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-27T04:28:02+00:00",
-   "valeur": 530.1525591806569,
-   "valeur_ponderee": 523.4791348947743,
-   "ecart": 8.209858383984825,
-   "ecart_pondere": 6.847740472062203,
+   "date": "2026-11-28T04:09:03+00:00",
+   "valeur": 521.7874177401492,
+   "valeur_ponderee": 515.3414423482136,
+   "ecart": 5.871445214598592,
+   "ecart_pondere": 4.563547194524409,
    "scenarios": {
     "Pessimiste": {
-     "valeur": 276.41035266427133,
+     "valeur": 273.2121442753512,
      "proba": 25
     },
     "Centrale": {
-     "valeur": 530.1525591806569,
+     "valeur": 521.7874177401492,
      "proba": 50
     },
     "Optimiste": {
-     "valeur": 757.2010685535122,
+     "valeur": 744.5787896372049,
      "proba": 25
     }
    },
@@ -125,16 +125,16 @@
     "marge_actuelle": 47.10444659325434,
     "croissance_1_5": 20.719999,
     "croissance_terminale": 2.5,
-    "taux_sans_risque": 4.8480000495910645,
+    "taux_sans_risque": 4.935999870300293,
     "prime_risque": 4.5,
     "beta_sectoriel": 1.02,
-    "beta": 1.0328795607463408,
-    "cout_fonds_propres": 9.495958072949598,
-    "cout_dette_apres_impot": 4.375647264273215,
-    "wacc": 9.41670477738372,
+    "beta": 1.0328032526861048,
+    "cout_fonds_propres": 9.583614507387765,
+    "cout_dette_apres_impot": 4.446325709801454,
+    "wacc": 9.504562285537975,
     "taux_impot": 19.683420990393387,
     "roc_actuel": 28.283380652669234,
-    "roc_stable": 18.850042715026476,
+    "roc_stable": 18.893971469103604,
     "ventes_sur_capital": 0.7475912519016432,
     "dette_nette": -7094000000.0
    },
@@ -142,13 +142,13 @@
     "revenu_an10": 1408990485269.675,
     "multiple_revenu_10ans": 4.066996161785204,
     "roc_an10": 28.283380652669237,
-    "part_valeur_terminale": 70.89018312713613
+    "part_valeur_terminale": 70.58179656659823
    },
    "sensibilite": {
     "wacc": [
-     8.42,
-     9.42,
-     10.42
+     8.5,
+     9.5,
+     10.5
     ],
     "g": [
      2.0,
@@ -157,19 +157,19 @@
     ],
     "valeurs": [
      [
-      613.82,
-      645.59,
-      682.89
+      603.41,
+      634.0,
+      669.82
      ],
      [
-      509.44,
-      530.15,
-      553.83
+      501.77,
+      521.79,
+      544.63
      ],
      [
-      431.15,
-      445.16,
-      460.86
+      425.29,
+      438.87,
+      454.07
      ]
     ]
    }
@@ -178,12 +178,12 @@
    "ticker": "MA",
    "nom": "Mastercard Incorporated",
    "secteur": "Financial Services",
-   "prix": 659.97,
-   "capi": 574950080512.0,
+   "prix": 666.96,
+   "capi": 581039620096.0,
    "actions": 864657109.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-27T04:28:00+00:00",
+   "date": "2026-11-28T04:09:02+00:00",
    "nd": "Entreprise financière : le DCF sur flux à l'entreprise ne s'applique pas (Damodaran évalue les financières par les flux aux actionnaires / dividendes)."
   },
   "AVGO": {
@@ -272,54 +272,54 @@
    "ticker": "BKNG",
    "nom": "Booking Holdings Inc.",
    "secteur": "Consumer Cyclical",
-   "prix": 149.5,
-   "capi": 111183339520.0,
+   "prix": 150.39,
+   "capi": 111845228544.0,
    "actions": 743701257.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-27T04:28:01+00:00",
+   "date": "2026-11-28T04:09:03+00:00",
    "nd": "Capital investi comptable négatif ou nul (capitaux propres comptables négatifs, effet des rachats massifs) : la méthode exige un capital investi reconstruit — valeur non calculée."
   },
   "DELL": {
    "ticker": "DELL",
    "nom": "Dell Technologies Inc.",
    "secteur": "Technology",
-   "prix": 297.06,
-   "capi": 188874522624.0,
+   "prix": 316.96,
+   "capi": 201527197696.0,
    "actions": 315433188.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-27T04:28:13+00:00",
-   "valeur": 1161.4120806801234,
-   "valeur_ponderee": 1177.2799382964272,
-   "ecart": 290.9688550057643,
-   "ecart_pondere": 296.3104888899304,
+   "date": "2026-11-28T04:09:11+00:00",
+   "valeur": 1150.0795466247178,
+   "valeur_ponderee": 1167.0441246782782,
+   "ecart": 262.8469039073441,
+   "ecart_pondere": 268.19918118320237,
    "scenarios": {
     "Pessimiste": {
-     "valeur": 367.38429780618543,
+     "valeur": 363.2038779572244,
      "proba": 25
     },
     "Centrale": {
-     "valeur": 1161.4120806801234,
+     "valeur": 1150.0795466247178,
      "proba": 50
     },
     "Optimiste": {
-     "valeur": 2018.9112940192767,
+     "valeur": 2004.8135275064524,
      "proba": 25
     }
    },
    "hypotheses": {
     "revenus": 151197000000.0,
     "marge_actuelle": 9.621222643306416,
-    "croissance_1_5": 21.040001999999998,
+    "croissance_1_5": 21.23,
     "croissance_terminale": 2.5,
-    "taux_sans_risque": 4.8480000495910645,
+    "taux_sans_risque": 4.935999870300293,
     "prime_risque": 4.5,
     "beta_sectoriel": 1.02,
-    "beta": 1.1732522955043967,
-    "cout_fonds_propres": 10.12763537936085,
-    "cout_dette_apres_impot": 4.485660653031849,
-    "wacc": 9.256963552175112,
+    "beta": 1.1636305098535074,
+    "cout_fonds_propres": 10.172337164641077,
+    "cout_dette_apres_impot": 4.558116110013512,
+    "wacc": 9.352399366611598,
     "taux_impot": 17.664085679137422,
     "roc_actuel": 55.78670450049316,
     "roc_stable": 30.0,
@@ -327,16 +327,16 @@
     "dette_nette": 22897000000.0
    },
    "controles": {
-    "revenu_an10": 626637469151.9961,
-    "multiple_revenu_10ans": 4.144509938371767,
-    "roc_an10": 31.555802969220558,
-    "part_valeur_terminale": 73.16534956083456
+    "revenu_an10": 633688119003.9951,
+    "multiple_revenu_10ans": 4.191142145703917,
+    "roc_an10": 31.507379960870946,
+    "part_valeur_terminale": 72.99421897187902
    },
    "sensibilite": {
     "wacc": [
-     8.26,
-     9.26,
-     10.26
+     8.35,
+     9.35,
+     10.35
     ],
     "g": [
      2.0,
@@ -345,19 +345,19 @@
     ],
     "valeurs": [
      [
-      1349.6,
-      1441.77,
-      1551.25
+      1335.08,
+      1424.56,
+      1530.53
      ],
      [
-      1099.95,
-      1161.41,
-      1232.52
+      1090.15,
+      1150.08,
+      1219.27
      ],
      [
-      914.04,
-      956.73,
-      1005.17
+      907.13,
+      948.89,
+      996.2
      ]
     ]
    }
@@ -448,27 +448,27 @@
    "ticker": "CLS",
    "nom": "Celestica Inc.",
    "secteur": "Technology",
-   "prix": 191.95,
-   "capi": 24207161344.0,
+   "prix": 203.24,
+   "capi": 25630963712.0,
    "actions": 126111808.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-27T04:28:26+00:00",
-   "valeur": 497.738244580485,
-   "valeur_ponderee": 488.6496286003202,
-   "ecart": 159.3061967077286,
-   "ecart_pondere": 154.57130950785114,
+   "date": "2026-11-28T04:09:21+00:00",
+   "valeur": 489.22110299362873,
+   "valeur_ponderee": 480.45731095349475,
+   "ecart": 140.7110327660051,
+   "ecart_pondere": 136.3989918094345,
    "scenarios": {
     "Pessimiste": {
-     "valeur": 145.53250357364485,
+     "valeur": 143.91343933527438,
      "proba": 25
     },
     "Centrale": {
-     "valeur": 497.738244580485,
+     "valeur": 489.22110299362873,
      "proba": 50
     },
     "Optimiste": {
-     "valeur": 813.5895216666661,
+     "valeur": 799.4735984914472,
      "proba": 25
     }
    },
@@ -477,16 +477,16 @@
     "marge_actuelle": 8.286250287983675,
     "croissance_1_5": 30.0,
     "croissance_terminale": 2.5,
-    "taux_sans_risque": 4.8480000495910645,
+    "taux_sans_risque": 4.935999870300293,
     "prime_risque": 4.5,
     "beta_sectoriel": 1.02,
-    "beta": 1.0495406110265313,
-    "cout_fonds_propres": 9.570932799210455,
-    "cout_dette_apres_impot": 4.664686228027868,
-    "wacc": 9.410410106904472,
+    "beta": 1.0478996273942205,
+    "cout_fonds_propres": 9.651548193574286,
+    "cout_dette_apres_impot": 4.7400334284674255,
+    "wacc": 9.499503421701903,
     "taux_impot": 14.378006872852234,
     "roc_actuel": 42.10990812888472,
-    "roc_stable": 25.7601591178946,
+    "roc_stable": 25.804705775293314,
     "ventes_sur_capital": 3.5,
     "dette_nette": -3142500000.0
    },
@@ -494,13 +494,13 @@
     "revenu_an10": 125999258699.2474,
     "multiple_revenu_10ans": 6.911567547215467,
     "roc_an10": 26.399171965610613,
-    "part_valeur_terminale": 81.68787793179206
+    "part_valeur_terminale": 81.47684890515617
    },
    "sensibilite": {
     "wacc": [
-     8.41,
-     9.41,
-     10.41
+     8.5,
+     9.5,
+     10.5
     ],
     "g": [
      2.0,
@@ -509,19 +509,19 @@
     ],
     "valeurs": [
      [
-      576.86,
-      613.35,
-      656.45
+      566.32,
+      601.46,
+      642.87
      ],
      [
-      473.48,
-      497.74,
-      525.69
+      465.76,
+      489.22,
+      516.2
      ],
      [
-      396.55,
-      413.31,
-      432.26
+      390.7,
+      406.96,
+      425.31
      ]
     ]
    }
@@ -530,27 +530,27 @@
    "ticker": "MLI",
    "nom": "Mueller Industries, Inc.",
    "secteur": "Industrials",
-   "prix": 53.82,
-   "capi": 11731381248.0,
+   "prix": 54.13,
+   "capi": 11798953984.0,
    "actions": 217974381.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-27T04:28:16+00:00",
-   "valeur": 86.85872073792108,
-   "valeur_ponderee": 84.54437801784152,
-   "ecart": 61.38744098461739,
-   "ecart_pondere": 57.08728728695935,
+   "date": "2026-11-28T04:09:13+00:00",
+   "valeur": 85.63822285931104,
+   "valeur_ponderee": 83.39067464296026,
+   "ecart": 58.20842944635329,
+   "ecart_pondere": 54.05629898939637,
    "scenarios": {
     "Pessimiste": {
-     "valeur": 53.24696360527823,
+     "valeur": 52.72861594582777,
      "proba": 25
     },
     "Centrale": {
-     "valeur": 86.85872073792108,
+     "valeur": 85.63822285931104,
      "proba": 50
     },
     "Optimiste": {
-     "valeur": 111.21310699024573,
+     "valeur": 109.5576369073912,
      "proba": 25
     }
    },
@@ -559,16 +559,16 @@
     "marge_actuelle": 20.68665356100898,
     "croissance_1_5": 10.870000000000001,
     "croissance_terminale": 2.5,
-    "taux_sans_risque": 4.8480000495910645,
+    "taux_sans_risque": 4.935999870300293,
     "prime_risque": 4.5,
     "beta_sectoriel": 0.87,
-    "beta": 0.8714811092041972,
-    "cout_fonds_propres": 8.76966504100995,
-    "cout_dette_apres_impot": 4.102647314616966,
-    "wacc": 8.759138165168409,
+    "beta": 0.8714726268759011,
+    "cout_fonds_propres": 8.857626691241848,
+    "cout_dette_apres_impot": 4.1689160783528605,
+    "wacc": 8.84711131707441,
     "taux_impot": 24.69443323656141,
     "roc_actuel": 37.87944253120783,
-    "roc_stable": 23.31929034818812,
+    "roc_stable": 23.36327692414112,
     "ventes_sur_capital": 2.4315670858545126,
     "dette_nette": -1454378000.0
    },
@@ -576,13 +576,13 @@
     "revenu_an10": 11119266097.289148,
     "multiple_revenu_10ans": 2.2230035874866925,
     "roc_an10": 37.87944253120784,
-    "part_valeur_terminale": 62.57332020818907
+    "part_valeur_terminale": 62.169217559214985
    },
    "sensibilite": {
     "wacc": [
-     7.76,
-     8.76,
-     9.76
+     7.85,
+     8.85,
+     9.85
     ],
     "g": [
      2.0,
@@ -591,19 +591,19 @@
     ],
     "valeurs": [
      [
-      98.42,
-      103.81,
-      110.29
+      96.9,
+      102.07,
+      108.28
      ],
      [
-      83.38,
-      86.86,
-      90.91
+      82.28,
+      85.64,
+      89.54
      ],
      [
-      72.3,
-      74.65,
-      77.33
+      71.46,
+      73.75,
+      76.34
      ]
     ]
    }
@@ -612,27 +612,27 @@
    "ticker": "TTMI",
    "nom": "TTM Technologies, Inc.",
    "secteur": "Technology",
-   "prix": 58.17,
-   "capi": 6129693696.0,
+   "prix": 63.16,
+   "capi": 6655517696.0,
    "actions": 105375520.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-27T04:28:15+00:00",
-   "valeur": 70.37760930840219,
-   "valeur_ponderee": 74.46155510737529,
-   "ecart": 20.986091298611285,
-   "ecart_pondere": 28.006799221893218,
+   "date": "2026-11-28T04:09:12+00:00",
+   "valeur": 67.87965457273782,
+   "valeur_ponderee": 71.96111327630429,
+   "ecart": 7.472537322257478,
+   "ecart_pondere": 13.934631533097352,
    "scenarios": {
     "Pessimiste": {
-     "valeur": 19.200510139848593,
+     "valeur": 18.539501032053888,
      "proba": 25
     },
     "Centrale": {
-     "valeur": 70.37760930840219,
+     "valeur": 67.87965457273782,
      "proba": 50
     },
     "Optimiste": {
-     "valeur": 137.89049167284819,
+     "valeur": 133.54564292768765,
      "proba": 25
     }
    },
@@ -641,16 +641,16 @@
     "marge_actuelle": 11.121086775655954,
     "croissance_1_5": 30.0,
     "croissance_terminale": 2.5,
-    "taux_sans_risque": 4.8480000495910645,
+    "taux_sans_risque": 4.935999870300293,
     "prime_risque": 4.5,
     "beta_sectoriel": 1.02,
-    "beta": 1.2504227884974881,
-    "cout_fonds_propres": 10.474902597829761,
-    "cout_dette_apres_impot": 4.259080756479518,
-    "wacc": 9.081413294345493,
+    "beta": 1.232218069064209,
+    "cout_fonds_propres": 10.480981181089232,
+    "cout_dette_apres_impot": 4.327876340096383,
+    "wacc": 9.18762716240659,
     "taux_impot": 21.823041158026207,
     "roc_actuel": 11.330862675131925,
-    "roc_stable": 10.206137984738708,
+    "roc_stable": 10.259244918769259,
     "ventes_sur_capital": 1.3032777313832422,
     "dette_nette": 894925000.0
    },
@@ -658,13 +658,13 @@
     "revenu_an10": 26458897442.08799,
     "multiple_revenu_10ans": 6.911567547215467,
     "roc_an10": 11.330862675131925,
-    "part_valeur_terminale": 136.46360293280034
+    "part_valeur_terminale": 137.57619758279887
    },
    "sensibilite": {
     "wacc": [
-     8.08,
-     9.08,
-     10.08
+     8.19,
+     9.19,
+     10.19
     ],
     "g": [
      2.0,
@@ -673,19 +673,19 @@
     ],
     "valeurs": [
      [
-      96.68,
-      101.33,
-      106.77
+      93.32,
+      97.69,
+      102.76
      ],
      [
-      68.24,
-      70.38,
-      72.77
+      65.88,
+      67.88,
+      70.11
      ],
      [
-      47.82,
-      48.61,
-      49.44
+      46.1,
+      46.83,
+      47.58
      ]
     ]
    }
@@ -776,27 +776,27 @@
    "ticker": "VRT",
    "nom": "Vertiv Holdings Co",
    "secteur": "Industrials",
-   "prix": 173.37,
-   "capi": 66757922816.0,
+   "prix": 178.71,
+   "capi": 68814151680.0,
    "actions": 385060421.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-27T04:28:08+00:00",
-   "valeur": 332.6486483257149,
-   "valeur_ponderee": 313.6638560702354,
-   "ecart": 91.87209339892419,
-   "ecart_pondere": 80.9216450771387,
+   "date": "2026-11-28T04:09:08+00:00",
+   "valeur": 326.7192159565503,
+   "valeur_ponderee": 308.1765871861033,
+   "ecart": 82.82089192353548,
+   "ecart_pondere": 72.44507144877359,
    "scenarios": {
     "Pessimiste": {
-     "valeur": 114.61813892249378,
+     "valeur": 113.15676461653074,
      "proba": 25
     },
     "Centrale": {
-     "valeur": 332.6486483257149,
+     "valeur": 326.7192159565503,
      "proba": 50
     },
     "Optimiste": {
-     "valeur": 474.7399887070181,
+     "valeur": 466.11115221478195,
      "proba": 25
     }
    },
@@ -805,16 +805,16 @@
     "marge_actuelle": 20.35207294573289,
     "croissance_1_5": 30.0,
     "croissance_terminale": 2.5,
-    "taux_sans_risque": 4.8480000495910645,
+    "taux_sans_risque": 4.935999870300293,
     "prime_risque": 4.5,
     "beta_sectoriel": 0.87,
-    "beta": 0.9050810662076575,
-    "cout_fonds_propres": 8.920864847525522,
-    "cout_dette_apres_impot": 4.368728396606678,
-    "wacc": 8.702921390801812,
+    "beta": 0.9040328123361062,
+    "cout_fonds_propres": 9.00414752581277,
+    "cout_dette_apres_impot": 4.439295083855068,
+    "wacc": 8.791822046195929,
     "taux_impot": 19.810419294423422,
     "roc_actuel": 41.58884164080212,
-    "roc_stable": 25.14588151580197,
+    "roc_stable": 25.190331843499024,
     "ventes_sur_capital": 2.548298103823438,
     "dette_nette": -354800000.0
    },
@@ -822,13 +822,13 @@
     "revenu_an10": 90656266889.8064,
     "multiple_revenu_10ans": 6.911567547215467,
     "roc_an10": 41.58884164080213,
-    "part_valeur_terminale": 74.82594491770158
+    "part_valeur_terminale": 74.51424108634896
    },
    "sensibilite": {
     "wacc": [
-     7.7,
-     8.7,
-     9.7
+     7.79,
+     8.79,
+     9.79
     ],
     "g": [
      2.0,
@@ -837,19 +837,19 @@
     ],
     "valeurs": [
      [
-      387.2,
-      414.63,
-      447.7
+      379.76,
+      406.09,
+      437.74
      ],
      [
-      314.95,
-      332.65,
-      353.32
+      309.64,
+      326.72,
+      346.62
      ],
      [
-      262.31,
-      274.31,
-      288.0
+      258.35,
+      269.98,
+      283.21
      ]
     ]
    }
@@ -1022,27 +1022,27 @@
    "ticker": "CAT",
    "nom": "Caterpillar Inc.",
    "secteur": "Industrials",
-   "prix": 543.69,
-   "capi": 248789385216.0,
+   "prix": 561.74,
+   "capi": 257048952832.0,
    "actions": 457594174.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-27T04:28:20+00:00",
-   "valeur": 413.1348647056662,
-   "valeur_ponderee": 406.8650150763936,
-   "ecart": -24.012789511363795,
-   "ecart_pondere": -25.165992555244067,
+   "date": "2026-11-28T04:09:16+00:00",
+   "valeur": 404.62780870796394,
+   "valeur_ponderee": 398.6294305615954,
+   "ecart": -27.968845247273844,
+   "ecart_pondere": -29.036666329334672,
    "scenarios": {
     "Pessimiste": {
-     "valeur": 215.27226590615453,
+     "valeur": 211.53350370795684,
      "proba": 25
     },
     "Centrale": {
-     "valeur": 413.1348647056662,
+     "valeur": 404.62780870796394,
      "proba": 50
     },
     "Optimiste": {
-     "valeur": 585.9180649880875,
+     "valeur": 573.728601122497,
      "proba": 25
     }
    },
@@ -1051,16 +1051,16 @@
     "marge_actuelle": 18.327697272832474,
     "croissance_1_5": 11.61,
     "croissance_terminale": 2.5,
-    "taux_sans_risque": 4.8480000495910645,
+    "taux_sans_risque": 4.935999870300293,
     "prime_risque": 4.5,
     "beta_sectoriel": 0.87,
-    "beta": 0.9922200147778122,
-    "cout_fonds_propres": 9.31299011609122,
-    "cout_dette_apres_impot": 4.212539498884599,
-    "wacc": 8.528796210637573,
+    "beta": 0.9882928076642876,
+    "cout_fonds_propres": 9.383317504789588,
+    "cout_dette_apres_impot": 4.280583316296131,
+    "wacc": 8.6202117180294,
     "taux_impot": 22.677322677322678,
     "roc_actuel": 18.75853021117254,
-    "roc_stable": 13.643663210905057,
+    "roc_stable": 13.689370964600972,
     "ventes_sur_capital": 1.3236830908007828,
     "dette_nette": 37272000000.0
    },
@@ -1068,13 +1068,13 @@
     "revenu_an10": 181209723352.17957,
     "multiple_revenu_10ans": 2.329982427734298,
     "roc_an10": 18.75853021117254,
-    "part_valeur_terminale": 69.50459765060835
+    "part_valeur_terminale": 69.13234496223959
    },
    "sensibilite": {
     "wacc": [
-     7.53,
-     8.53,
-     9.53
+     7.62,
+     8.62,
+     9.62
     ],
     "g": [
      2.0,
@@ -1083,19 +1083,19 @@
     ],
     "valeurs": [
      [
-      501.15,
-      530.43,
-      565.73
+      490.16,
+      518.08,
+      551.62
      ],
      [
-      395.97,
-      413.13,
-      433.07
+      388.18,
+      404.63,
+      423.69
      ],
      [
-      319.65,
-      330.1,
-      341.9
+      313.86,
+      323.91,
+      335.23
      ]
     ]
    }
@@ -1514,63 +1514,63 @@
    "ticker": "SPGI",
    "nom": "S&P Global Inc.",
    "secteur": "Financial Services",
-   "prix": 460.74,
-   "capi": 133568520192.0,
+   "prix": 461.24,
+   "capi": 133713469440.0,
    "actions": 289900000.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-27T04:28:00+00:00",
+   "date": "2026-11-28T04:09:02+00:00",
    "nd": "Entreprise financière : le DCF sur flux à l'entreprise ne s'applique pas (Damodaran évalue les financières par les flux aux actionnaires / dividendes)."
   },
   "HLNE": {
    "ticker": "HLNE",
    "nom": "Hamilton Lane Incorporated",
    "secteur": "Financial Services",
-   "prix": 85.33,
-   "capi": 5767606272.0,
+   "prix": 87.4,
+   "capi": 5907521536.0,
    "actions": 43993851.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-27T04:28:03+00:00",
+   "date": "2026-11-28T04:09:04+00:00",
    "nd": "Entreprise financière : le DCF sur flux à l'entreprise ne s'applique pas (Damodaran évalue les financières par les flux aux actionnaires / dividendes)."
   },
   "TSM": {
    "ticker": "TSM",
    "nom": "Taiwan Semiconductor Manufacturing Company Limited",
    "secteur": "Technology",
-   "prix": 342.34,
-   "capi": 1775537094656.0,
+   "prix": 353.34,
+   "capi": 1832588279808.0,
    "actions": 5186472994.0,
    "devise": "USD",
    "devise_fin": "TWD",
-   "date": "2026-11-27T04:28:04+00:00",
+   "date": "2026-11-28T04:09:04+00:00",
    "nd": "Devises différentes : cours en USD, états financiers en TWD — non converti, valeur non calculée."
   },
   "FIX": {
    "ticker": "FIX",
    "nom": "Comfort Systems USA, Inc.",
    "secteur": "Industrials",
-   "prix": 1099.58,
-   "capi": 38469799936.0,
+   "prix": 1128.64,
+   "capi": 39486492672.0,
    "actions": 34985904.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-27T04:28:05+00:00",
-   "valeur": 2456.5902170791646,
-   "valeur_ponderee": 2484.012556959966,
-   "ecart": 123.41168601458419,
-   "ecart_pondere": 125.90557821713438,
+   "date": "2026-11-28T04:09:05+00:00",
+   "valeur": 2414.797206435293,
+   "valeur_ponderee": 2442.2431564358963,
+   "ecart": 113.95637284123308,
+   "ecart_pondere": 116.3881447083123,
    "scenarios": {
     "Pessimiste": {
-     "valeur": 901.388840342733,
+     "valeur": 890.8772006369583,
      "proba": 25
     },
     "Centrale": {
-     "valeur": 2456.5902170791646,
+     "valeur": 2414.797206435293,
      "proba": 50
     },
     "Optimiste": {
-     "valeur": 4121.480953338802,
+     "valeur": 4048.50101223604,
      "proba": 25
     }
    },
@@ -1579,13 +1579,13 @@
     "marge_actuelle": 16.656338490565165,
     "croissance_1_5": 26.85,
     "croissance_terminale": 2.5,
-    "taux_sans_risque": 4.8480000495910645,
+    "taux_sans_risque": 4.935999870300293,
     "prime_risque": 4.5,
     "beta_sectoriel": 0.87,
-    "beta": 0.876573962374359,
-    "cout_fonds_propres": 8.79258288027568,
-    "cout_dette_apres_impot": 4.229517970471234,
-    "wacc": 8.748597918951102,
+    "beta": 0.876404696903043,
+    "cout_fonds_propres": 8.879821006363986,
+    "cout_dette_apres_impot": 4.297836035761241,
+    "wacc": 8.836780200121424,
     "taux_impot": 22.365676725926097,
     "roc_actuel": 104.53304631452394,
     "roc_stable": 30.0,
@@ -1596,13 +1596,13 @@
     "revenu_an10": 72694780129.29846,
     "multiple_revenu_10ans": 5.795480438713374,
     "roc_an10": 50.16705830756837,
-    "part_valeur_terminale": 72.59961262228167
+    "part_valeur_terminale": 72.26689949728029
    },
    "sensibilite": {
     "wacc": [
-     7.75,
-     8.75,
-     9.75
+     7.84,
+     8.84,
+     9.84
     ],
     "g": [
      2.0,
@@ -1611,19 +1611,19 @@
     ],
     "valeurs": [
      [
-      2833.46,
-      3033.09,
-      3273.77
+      2781.44,
+      2973.25,
+      3203.75
      ],
      [
-      2326.23,
-      2456.59,
-      2608.88
+      2288.93,
+      2414.8,
+      2561.5
      ],
      [
-      1955.36,
-      2044.74,
-      2146.79
+      1927.44,
+      2014.06,
+      2112.79
      ]
     ]
    }
@@ -1632,27 +1632,27 @@
    "ticker": "FLEX",
    "nom": "Flex Ltd.",
    "secteur": "Technology",
-   "prix": 67.23,
-   "capi": 24838850560.0,
+   "prix": 69.77,
+   "capi": 25777278976.0,
    "actions": 369460804.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-27T04:28:06+00:00",
-   "valeur": 43.896288187670166,
-   "valeur_ponderee": 52.73437365777762,
-   "ecart": -34.70729110862686,
-   "ecart_pondere": -21.561246976383142,
+   "date": "2026-11-28T04:09:06+00:00",
+   "valeur": 42.27440096845916,
+   "valeur_ponderee": 51.00699697718188,
+   "ecart": -39.40891361837586,
+   "ecart_pondere": -26.89265160214722,
    "scenarios": {
     "Pessimiste": {
-     "valeur": -6.345057447970195,
+     "valeur": -6.559443103923533,
      "proba": 25
     },
     "Centrale": {
-     "valeur": 43.896288187670166,
+     "valeur": 42.27440096845916,
      "proba": 50
     },
     "Optimiste": {
-     "valeur": 129.48997570374036,
+     "valeur": 126.03862907573273,
      "proba": 25
     }
    },
@@ -1661,16 +1661,16 @@
     "marge_actuelle": 5.233214626943456,
     "croissance_1_5": 30.0,
     "croissance_terminale": 2.5,
-    "taux_sans_risque": 4.8480000495910645,
+    "taux_sans_risque": 4.935999870300293,
     "prime_risque": 4.5,
     "beta_sectoriel": 1.02,
-    "beta": 1.2038397661188691,
-    "cout_fonds_propres": 10.265278997125975,
-    "cout_dette_apres_impot": 4.263578146559682,
-    "wacc": 9.100255627778415,
+    "beta": 1.1971470325422426,
+    "cout_fonds_propres": 10.323161516740385,
+    "cout_dette_apres_impot": 4.329424778572955,
+    "wacc": 9.194061645434022,
     "taux_impot": 25.17412935323383,
     "roc_actuel": 10.355481122011398,
-    "roc_stable": 9.727868374894907,
+    "roc_stable": 9.77477138372271,
     "ventes_sur_capital": 2.6445388767658207,
     "dette_nette": 2900000000.0
    },
@@ -1678,13 +1678,13 @@
     "revenu_an10": 159145754342.18335,
     "multiple_revenu_10ans": 6.911567547215467,
     "roc_an10": 10.355481122011396,
-    "part_valeur_terminale": 157.42433163897877
+    "part_valeur_terminale": 159.1331934924629
    },
    "sensibilite": {
     "wacc": [
-     8.1,
-     9.1,
-     10.1
+     8.19,
+     9.19,
+     10.19
     ],
     "g": [
      2.0,
@@ -1693,19 +1693,19 @@
     ],
     "valeurs": [
      [
-      63.92,
-      66.9,
-      70.35
+      61.72,
+      64.51,
+      67.75
      ],
      [
-      42.71,
-      43.9,
-      45.2
+      41.17,
+      42.27,
+      43.48
      ],
      [
-      27.56,
-      27.8,
-      28.01
+      26.44,
+      26.65,
+      26.83
      ]
     ]
    }
@@ -1714,59 +1714,59 @@
    "ticker": "NFLX",
    "nom": "Netflix, Inc.",
    "secteur": "Communication Services",
-   "prix": 59.41,
-   "capi": 243956826112.0,
+   "prix": 60.93,
+   "capi": 250198441984.0,
    "actions": 4106325903.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-27T04:28:07+00:00",
-   "valeur": 70.31682947824635,
-   "valeur_ponderee": 68.05177744588067,
-   "ecart": 18.358575119081543,
-   "ecart_pondere": 14.545998057365228,
+   "date": "2026-11-28T04:09:06+00:00",
+   "valeur": 69.15033587834948,
+   "valeur_ponderee": 66.95353473496175,
+   "ecart": 13.49144243943785,
+   "ecart_pondere": 9.885991687119233,
    "scenarios": {
     "Pessimiste": {
-     "valeur": 42.41767721184355,
+     "valeur": 41.902086369367204,
      "proba": 25
     },
     "Centrale": {
-     "valeur": 70.31682947824635,
+     "valeur": 69.15033587834948,
      "proba": 50
     },
     "Optimiste": {
-     "valeur": 89.15577361518648,
+     "valeur": 87.61138081378081,
      "proba": 25
     }
    },
    "hypotheses": {
     "revenus": 49734633000.0,
     "marge_actuelle": 31.295837650998653,
-    "croissance_1_5": 10.6800005,
+    "croissance_1_5": 10.67,
     "croissance_terminale": 2.5,
-    "taux_sans_risque": 4.8480000495910645,
+    "taux_sans_risque": 4.935999870300293,
     "prime_risque": 4.5,
     "beta_sectoriel": 0.84,
-    "beta": 0.883468529899289,
-    "cout_fonds_propres": 8.823608434137864,
-    "cout_dette_apres_impot": 4.5450441215968,
-    "wacc": 8.57371412783009,
+    "beta": 0.8823841351924298,
+    "cout_fonds_propres": 8.906728478666226,
+    "cout_dette_apres_impot": 4.618458780953508,
+    "wacc": 8.66215914165949,
     "taux_impot": 16.57408075945302,
     "roc_actuel": 35.874808412559034,
-    "roc_stable": 22.22426127019456,
+    "roc_stable": 22.26848377710926,
     "ventes_sur_capital": 1.374048332931536,
     "dette_nette": 6909441000.0
    },
    "controles": {
-    "revenu_an10": 109229151808.31845,
-    "multiple_revenu_10ans": 2.1962392244518716,
-    "roc_an10": 35.87480841255903,
-    "part_valeur_terminale": 63.46575577786781
+    "revenu_an10": 109159479313.18146,
+    "multiple_revenu_10ans": 2.1948383395767985,
+    "roc_an10": 35.87480841255904,
+    "part_valeur_terminale": 63.04498408647184
    },
    "sensibilite": {
     "wacc": [
-     7.57,
-     8.57,
-     9.57
+     7.66,
+     8.66,
+     9.66
     ],
     "g": [
      2.0,
@@ -1775,19 +1775,19 @@
     ],
     "valeurs": [
      [
-      81.03,
-      86.06,
-      92.16
+      79.56,
+      84.39,
+      90.21
      ],
      [
-      67.12,
-      70.32,
-      74.06
+      66.07,
+      69.15,
+      72.75
      ],
      [
-      56.95,
-      59.09,
-      61.53
+      56.16,
+      58.23,
+      60.59
      ]
     ]
    }
@@ -1796,27 +1796,27 @@
    "ticker": "SE",
    "nom": "Sea Limited",
    "secteur": "Consumer Cyclical",
-   "prix": 66.88,
-   "capi": 40962965504.0,
+   "prix": 69.11,
+   "capi": 42328805376.0,
    "actions": 566956729.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-27T04:28:08+00:00",
-   "valeur": 94.74573243367078,
-   "valeur_ponderee": 98.8520784785204,
-   "ecart": 41.665269787187185,
-   "ecart_pondere": 47.80514126573028,
+   "date": "2026-11-28T04:09:07+00:00",
+   "valeur": 93.08362479310469,
+   "valeur_ponderee": 97.12634935357487,
+   "ecart": 34.689082322536095,
+   "ecart_pondere": 40.53877782314408,
    "scenarios": {
     "Pessimiste": {
-     "valeur": 36.87280736549364,
+     "valeur": 36.461642415663825,
      "proba": 25
     },
     "Centrale": {
-     "valeur": 94.74573243367078,
+     "valeur": 93.08362479310469,
      "proba": 50
     },
     "Optimiste": {
-     "valeur": 169.04404168124637,
+     "valeur": 165.87650541242627,
      "proba": 25
     }
    },
@@ -1825,16 +1825,16 @@
     "marge_actuelle": 8.155578173988816,
     "croissance_1_5": 22.129999,
     "croissance_terminale": 2.5,
-    "taux_sans_risque": 4.8480000495910645,
+    "taux_sans_risque": 4.935999870300293,
     "prime_risque": 4.5,
     "beta_sectoriel": 0.94,
-    "beta": 0.9906160846924973,
-    "cout_fonds_propres": 9.305772430707302,
-    "cout_dette_apres_impot": 3.580771040314378,
-    "wacc": 8.872262228916625,
+    "beta": 0.9889828359857729,
+    "cout_fonds_propres": 9.386422632236272,
+    "cout_dette_apres_impot": 3.638610101746126,
+    "wacc": 8.96419744705097,
     "taux_impot": 34.273659917034024,
     "roc_actuel": 18.806630119717216,
-    "roc_stable": 13.839446174316922,
+    "roc_stable": 13.885413783384093,
     "ventes_sur_capital": 3.5,
     "dette_nette": -4662196000.0
    },
@@ -1842,13 +1842,13 @@
     "revenu_an10": 133961273410.60864,
     "multiple_revenu_10ans": 4.418332323329689,
     "roc_an10": 18.771517689202025,
-    "part_valeur_terminale": 82.45655768261778
+    "part_valeur_terminale": 82.2392863085386
    },
    "sensibilite": {
     "wacc": [
-     7.87,
-     8.87,
-     9.87
+     7.96,
+     8.96,
+     9.96
     ],
     "g": [
      2.0,
@@ -1857,19 +1857,19 @@
     ],
     "valeurs": [
      [
-      111.91,
-      117.43,
-      124.01
+      109.77,
+      115.04,
+      121.3
      ],
      [
-      91.45,
-      94.75,
-      98.54
+      89.92,
+      93.08,
+      96.72
      ],
      [
-      76.53,
-      78.56,
-      80.84
+      75.39,
+      77.35,
+      79.53
      ]
     ]
    }
@@ -1878,27 +1878,27 @@
    "ticker": "SYK",
    "nom": "Stryker Corporation",
    "secteur": "Healthcare",
-   "prix": 332.9,
-   "capi": 126732034048.0,
+   "prix": 334.27,
+   "capi": 127253577728.0,
    "actions": 380691004.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-27T04:28:09+00:00",
-   "valeur": 125.685821382414,
-   "valeur_ponderee": 125.68803564206371,
-   "ecart": -62.24517230927786,
-   "ecart_pondere": -62.244507166697595,
+   "date": "2026-11-28T04:09:08+00:00",
+   "valeur": 123.27549325097907,
+   "valeur_ponderee": 123.31204302533303,
+   "ecart": -63.120982065103334,
+   "ecart_pondere": -63.11004785791934,
    "scenarios": {
     "Pessimiste": {
-     "valeur": 87.63388185113472,
+     "valeur": 86.24046440798891,
      "proba": 25
     },
     "Centrale": {
-     "valeur": 125.685821382414,
+     "valeur": 123.27549325097907,
      "proba": 50
     },
     "Optimiste": {
-     "valeur": 163.74661795229213,
+     "valeur": 160.45672119138507,
      "proba": 25
     }
    },
@@ -1907,16 +1907,16 @@
     "marge_actuelle": 21.802281368821294,
     "croissance_1_5": 7.12,
     "croissance_terminale": 2.5,
-    "taux_sans_risque": 4.8480000495910645,
+    "taux_sans_risque": 4.935999870300293,
     "prime_risque": 4.5,
     "beta_sectoriel": 0.86,
-    "beta": 0.9317479756124643,
-    "cout_fonds_propres": 9.040865939847153,
-    "cout_dette_apres_impot": 3.8581126230782683,
-    "wacc": 8.494646852006435,
+    "beta": 0.9314539194145831,
+    "cout_fonds_propres": 9.127542507665916,
+    "cout_dette_apres_impot": 3.920431495327983,
+    "wacc": 8.580769324317503,
     "taux_impot": 29.18295543393276,
     "roc_actuel": 11.563530400439388,
-    "roc_stable": 10.029088626222912,
+    "roc_stable": 10.072149862378446,
     "ventes_sur_capital": 0.7489463492425106,
     "dette_nette": 11659000000.0
    },
@@ -1924,13 +1924,13 @@
     "revenu_an10": 45873188391.41151,
     "multiple_revenu_10ans": 1.7442276954909317,
     "roc_an10": 11.56353040043939,
-    "part_valeur_terminale": 67.60715103921667
+    "part_valeur_terminale": 67.25378754402378
    },
    "sensibilite": {
     "wacc": [
-     7.49,
-     8.49,
-     9.49
+     7.58,
+     8.58,
+     9.58
     ],
     "g": [
      2.0,
@@ -1939,19 +1939,19 @@
     ],
     "valeurs": [
      [
-      156.09,
-      162.02,
-      169.11
+      152.88,
+      158.51,
+      165.21
      ],
      [
-      122.88,
-      125.69,
-      128.88
+      120.61,
+      123.28,
+      126.3
      ],
      [
-      98.8,
-      99.98,
-      101.26
+      97.12,
+      98.23,
+      99.43
      ]
     ]
    }
@@ -1960,27 +1960,27 @@
    "ticker": "VEEV",
    "nom": "Veeva Systems Inc.",
    "secteur": "Healthcare",
-   "prix": 271.9,
-   "capi": 44023013376.0,
+   "prix": 271.6,
+   "capi": 43974443008.0,
    "actions": 161908850.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-27T04:28:10+00:00",
-   "valeur": 170.85778185616473,
-   "valeur_ponderee": 166.64602560958912,
-   "ecart": -37.161536647236204,
-   "ecart_pondere": -38.71054593247917,
+   "date": "2026-11-28T04:09:09+00:00",
+   "valeur": 168.92779522451426,
+   "valeur_ponderee": 164.83372930014602,
+   "ecart": -37.80272635327163,
+   "ecart_pondere": -39.31011439611708,
    "scenarios": {
     "Pessimiste": {
-     "valeur": 115.90246170996217,
+     "valeur": 115.10556140767552,
      "proba": 25
     },
     "Centrale": {
-     "valeur": 170.85778185616473,
+     "valeur": 168.92779522451426,
      "proba": 50
     },
     "Optimiste": {
-     "valeur": 208.96607701606487,
+     "valeur": 206.37376534388002,
      "proba": 25
     }
    },
@@ -1989,13 +1989,13 @@
     "marge_actuelle": 29.925670122709075,
     "croissance_1_5": 12.3,
     "croissance_terminale": 2.5,
-    "taux_sans_risque": 4.8480000495910645,
+    "taux_sans_risque": 4.935999870300293,
     "prime_risque": 4.5,
     "beta_sectoriel": 0.86,
-    "beta": 0.8622654901332408,
-    "cout_fonds_propres": 8.728194755190648,
-    "cout_dette_apres_impot": 5.044109881114662,
-    "wacc": 8.715543686841398,
+    "beta": 0.8622679923977824,
+    "cout_fonds_propres": 8.816205836090313,
+    "cout_dette_apres_impot": 5.111384928377393,
+    "wacc": 8.803469557028373,
     "taux_impot": 23.550926899018595,
     "roc_actuel": 232.55352439971108,
     "roc_stable": 30.0,
@@ -2006,7 +2006,171 @@
     "revenu_an10": 8416186404.036451,
     "multiple_revenu_10ans": 2.4337616817211227,
     "roc_an10": 109.60003483981416,
-    "part_valeur_terminale": 61.3467909024929
+    "part_valeur_terminale": 60.92950505668067
+   },
+   "sensibilite": {
+    "wacc": [
+     7.8,
+     8.8,
+     9.8
+    ],
+    "g": [
+     2.0,
+     2.5,
+     3.0
+    ],
+    "valeurs": [
+     [
+      185.95,
+      194.7,
+      205.21
+     ],
+     [
+      163.17,
+      168.93,
+      175.64
+     ],
+     [
+      146.31,
+      150.29,
+      154.82
+     ]
+    ]
+   }
+  },
+  "STRL": {
+   "ticker": "STRL",
+   "nom": "Sterling Infrastructure, Inc.",
+   "secteur": "Industrials",
+   "prix": 272.25,
+   "capi": 8304315392.0,
+   "actions": 30502537.0,
+   "devise": "USD",
+   "devise_fin": "USD",
+   "date": "2026-11-28T04:09:10+00:00",
+   "valeur": 827.2294022966537,
+   "valeur_ponderee": 825.7205701032858,
+   "ecart": 203.8491835800381,
+   "ecart_pondere": 203.29497524454942,
+   "scenarios": {
+    "Pessimiste": {
+     "valeur": 338.4376167412795,
+     "proba": 25
+    },
+    "Centrale": {
+     "valeur": 827.2294022966537,
+     "proba": 50
+    },
+    "Optimiste": {
+     "valeur": 1309.9858590785561,
+     "proba": 25
+    }
+   },
+   "hypotheses": {
+    "revenus": 4313394000.0,
+    "marge_actuelle": 18.61554961128058,
+    "croissance_1_5": 22.950001,
+    "croissance_terminale": 2.5,
+    "taux_sans_risque": 4.935999870300293,
+    "prime_risque": 4.5,
+    "beta_sectoriel": 0.87,
+    "beta": 0.8832128884849717,
+    "cout_fonds_propres": 8.910457868482666,
+    "cout_dette_apres_impot": 4.210931541699332,
+    "wacc": 8.818462768757813,
+    "taux_impot": 23.935483375094154,
+    "roc_actuel": 41.92502153548029,
+    "roc_stable": 25.371742152119054,
+    "ventes_sur_capital": 2.9608426064292397,
+    "dette_nette": -51131000.0
+   },
+   "controles": {
+    "revenu_an10": 19991040828.106857,
+    "multiple_revenu_10ans": 4.634642888664207,
+    "roc_an10": 41.92502153548029,
+    "part_valeur_terminale": 70.60702648085991
+   },
+   "sensibilite": {
+    "wacc": [
+     7.82,
+     8.82,
+     9.82
+    ],
+    "g": [
+     2.0,
+     2.5,
+     3.0
+    ],
+    "valeurs": [
+     [
+      955.82,
+      1018.98,
+      1094.82
+     ],
+     [
+      786.15,
+      827.23,
+      875.05
+     ],
+     [
+      661.55,
+      689.58,
+      721.46
+     ]
+    ]
+   }
+  },
+  "RDDT": {
+   "ticker": "RDDT",
+   "nom": "Reddit, Inc.",
+   "secteur": "Communication Services",
+   "prix": 93.83,
+   "capi": 18117984256.0,
+   "actions": 146942127.0,
+   "devise": "USD",
+   "devise_fin": "USD",
+   "date": "2026-11-28T04:09:10+00:00",
+   "valeur": 385.1474327236173,
+   "valeur_ponderee": 374.32316511972937,
+   "ecart": 310.47365738422394,
+   "ecart_pondere": 298.9376160287002,
+   "scenarios": {
+    "Pessimiste": {
+     "valeur": 155.70537392194555,
+     "proba": 25
+    },
+    "Centrale": {
+     "valeur": 385.1474327236173,
+     "proba": 50
+    },
+    "Optimiste": {
+     "valeur": 571.2924211097372,
+     "proba": 25
+    }
+   },
+   "hypotheses": {
+    "revenus": 3088880000.0,
+    "marge_actuelle": 29.39712776151874,
+    "croissance_1_5": 28.190001999999996,
+    "croissance_terminale": 2.5,
+    "taux_sans_risque": 4.935999870300293,
+    "prime_risque": 4.5,
+    "beta_sectoriel": 0.84,
+    "beta": 0.8414348896576206,
+    "cout_fonds_propres": 8.722456873759585,
+    "cout_dette_apres_impot": 6.588117730371035,
+    "wacc": 8.718763226417819,
+    "taux_impot": 1.4639865663781881,
+    "roc_actuel": 154.35079174084686,
+    "roc_stable": 30.0,
+    "ventes_sur_capital": 3.5,
+    "dette_nette": -3002023000.0
+   },
+   "controles": {
+    "revenu_an10": 19303321491.89242,
+    "multiple_revenu_10ans": 6.249294725561505,
+    "roc_an10": 107.27428967631323,
+    "part_valeur_terminale": 68.33061027144586
    },
    "sensibilite": {
     "wacc": [
@@ -2021,183 +2185,19 @@
     ],
     "valeurs": [
      [
-      188.34,
-      197.45,
-      208.42
+      439.8,
+      468.78,
+      503.69
      ],
      [
-      164.89,
-      170.86,
-      177.82
+      366.17,
+      385.15,
+      407.29
      ],
      [
-      147.61,
-      151.72,
-      156.4
-     ]
-    ]
-   }
-  },
-  "STRL": {
-   "ticker": "STRL",
-   "nom": "Sterling Infrastructure, Inc.",
-   "secteur": "Industrials",
-   "prix": 260.7,
-   "capi": 7952011264.0,
-   "actions": 30502537.0,
-   "devise": "USD",
-   "devise_fin": "USD",
-   "date": "2026-11-27T04:28:11+00:00",
-   "valeur": 841.5988967943343,
-   "valeur_ponderee": 839.8612093970298,
-   "ecart": 222.82274522222264,
-   "ecart_pondere": 222.15619846453006,
-   "scenarios": {
-    "Pessimiste": {
-     "valeur": 342.6241085488965,
-     "proba": 25
-    },
-    "Centrale": {
-     "valeur": 841.5988967943343,
-     "proba": 50
-    },
-    "Optimiste": {
-     "valeur": 1333.622935450554,
-     "proba": 25
-    }
-   },
-   "hypotheses": {
-    "revenus": 4313394000.0,
-    "marge_actuelle": 18.61554961128058,
-    "croissance_1_5": 22.950001,
-    "croissance_terminale": 2.5,
-    "taux_sans_risque": 4.8480000495910645,
-    "prime_risque": 4.5,
-    "beta_sectoriel": 0.87,
-    "beta": 0.8837982693403953,
-    "cout_fonds_propres": 8.825092261622842,
-    "cout_dette_apres_impot": 4.143994903446074,
-    "wacc": 8.729481088898881,
-    "taux_impot": 23.935483375094154,
-    "roc_actuel": 41.92502153548029,
-    "roc_stable": 25.327251312189585,
-    "ventes_sur_capital": 2.9608426064292397,
-    "dette_nette": -51131000.0
-   },
-   "controles": {
-    "revenu_an10": 19991040828.106857,
-    "multiple_revenu_10ans": 4.634642888664207,
-    "roc_an10": 41.92502153548029,
-    "part_valeur_terminale": 70.9549248444881
-   },
-   "sensibilite": {
-    "wacc": [
-     7.73,
-     8.73,
-     9.73
-    ],
-    "g": [
-     2.0,
-     2.5,
-     3.0
-    ],
-    "valeurs": [
-     [
-      973.79,
-      1039.57,
-      1118.81
-     ],
-     [
-      799.04,
-      841.6,
-      891.26
-     ],
-     [
-      671.2,
-      700.13,
-      733.09
-     ]
-    ]
-   }
-  },
-  "RDDT": {
-   "ticker": "RDDT",
-   "nom": "Reddit, Inc.",
-   "secteur": "Communication Services",
-   "prix": 91.51,
-   "capi": 17670006784.0,
-   "actions": 146942127.0,
-   "devise": "USD",
-   "devise_fin": "USD",
-   "date": "2026-11-27T04:28:12+00:00",
-   "valeur": 394.9619299127594,
-   "valeur_ponderee": 382.2285000030594,
-   "ecart": 331.60521244974245,
-   "ecart_pondere": 317.6904163512834,
-   "scenarios": {
-    "Pessimiste": {
-     "valeur": 158.01712850643833,
-     "proba": 25
-    },
-    "Centrale": {
-     "valeur": 394.9619299127594,
-     "proba": 50
-    },
-    "Optimiste": {
-     "valeur": 580.9730116802806,
-     "proba": 25
-    }
-   },
-   "hypotheses": {
-    "revenus": 3088880000.0,
-    "marge_actuelle": 29.39712776151874,
-    "croissance_1_5": 28.38,
-    "croissance_terminale": 2.5,
-    "taux_sans_risque": 4.8480000495910645,
-    "prime_risque": 4.5,
-    "beta_sectoriel": 0.84,
-    "beta": 0.8414712675860094,
-    "cout_fonds_propres": 8.634620753728106,
-    "cout_dette_apres_impot": 6.501406215215426,
-    "wacc": 8.630835625111406,
-    "taux_impot": 1.4639865663781881,
-    "roc_actuel": 154.35079174084686,
-    "roc_stable": 30.0,
-    "ventes_sur_capital": 3.5,
-    "dette_nette": -3002023000.0
-   },
-   "controles": {
-    "revenu_an10": 19509663953.83333,
-    "multiple_revenu_10ans": 6.316096434252327,
-    "roc_an10": 107.2084083953587,
-    "part_valeur_terminale": 68.76998006869303
-   },
-   "sensibilite": {
-    "wacc": [
-     7.63,
-     8.63,
-     9.63
-    ],
-    "g": [
-     2.0,
-     2.5,
-     3.0
-    ],
-    "valeurs": [
-     [
-      451.73,
-      482.22,
-      519.08
-     ],
-     [
-      375.1,
-      394.96,
-      418.19
-     ],
-     [
-      319.14,
-      332.76,
-      348.31
+      312.18,
+      325.25,
+      340.14
      ]
     ]
    }
@@ -2206,27 +2206,27 @@
    "ticker": "CRDO",
    "nom": "Credo Technology Group Holding Ltd",
    "secteur": "Technology",
-   "prix": 106.795,
-   "capi": 20072325120.0,
+   "prix": 115.57,
+   "capi": 21721604096.0,
    "actions": 187951918.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-27T04:28:13+00:00",
-   "valeur": 122.27504929578295,
-   "valeur_ponderee": 116.13411415118807,
-   "ecart": 14.49510678944046,
-   "ecart_pondere": 8.744898310958437,
+   "date": "2026-11-28T04:09:11+00:00",
+   "valeur": 120.22505110076774,
+   "valeur_ponderee": 114.22611291443172,
+   "ecart": 4.027906118168856,
+   "ecart_pondere": -1.162833854433043,
    "scenarios": {
     "Pessimiste": {
-     "valeur": 51.58441179296134,
+     "valeur": 50.97988561908397,
      "proba": 25
     },
     "Centrale": {
-     "valeur": 122.27504929578295,
+     "valeur": 120.22505110076774,
      "proba": 50
     },
     "Optimiste": {
-     "valeur": 168.40194622022506,
+     "valeur": 165.4744638371074,
      "proba": 25
     }
    },
@@ -2235,16 +2235,16 @@
     "marge_actuelle": 31.73782011193901,
     "croissance_1_5": 30.0,
     "croissance_terminale": 2.5,
-    "taux_sans_risque": 4.8480000495910645,
+    "taux_sans_risque": 4.935999870300293,
     "prime_risque": 4.5,
     "beta_sectoriel": 1.02,
-    "beta": 1.0213284756204055,
-    "cout_fonds_propres": 9.44397818988289,
-    "cout_dette_apres_impot": 6.582323919395979,
-    "wacc": 9.440247088667507,
+    "beta": 1.0212276070611046,
+    "cout_fonds_propres": 9.531524102075265,
+    "cout_dette_apres_impot": 6.670114662106388,
+    "wacc": 9.528076249740192,
     "taux_impot": 0.2375891190855228,
     "roc_actuel": 25.309178982132675,
-    "roc_stable": 17.37471303540009,
+    "roc_stable": 17.418627615936433,
     "ventes_sur_capital": 0.7993445660425323,
     "dette_nette": -738053000.0
    },
@@ -2252,13 +2252,13 @@
     "revenu_an10": 10996614988.159435,
     "multiple_revenu_10ans": 6.911567547215468,
     "roc_an10": 25.309178982132675,
-    "part_valeur_terminale": 80.29782023112942
+    "part_valeur_terminale": 80.08126295109874
    },
    "sensibilite": {
     "wacc": [
-     8.44,
-     9.44,
-     10.44
+     8.53,
+     9.53,
+     10.53
     ],
     "g": [
      2.0,
@@ -2267,19 +2267,19 @@
     ],
     "valeurs": [
      [
-      143.18,
-      150.76,
-      159.66
+      140.61,
+      147.91,
+      156.44
      ],
      [
-      117.39,
-      122.28,
-      127.85
+      115.51,
+      120.23,
+      125.6
      ],
      [
-      98.16,
-      101.42,
-      105.06
+      96.73,
+      99.89,
+      103.41
      ]
     ]
    }
@@ -2288,59 +2288,59 @@
    "ticker": "INTU",
    "nom": "Intuit Inc.",
    "secteur": "Technology",
-   "prix": 271.72,
-   "capi": 71589896192.0,
+   "prix": 271.94,
+   "capi": 71647854592.0,
    "actions": 263469358.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-27T04:28:17+00:00",
-   "valeur": 309.46732544478897,
-   "valeur_ponderee": 301.9891742916081,
-   "ecart": 13.891993760043043,
-   "ecart_pondere": 11.139840384074805,
+   "date": "2026-11-28T04:09:14+00:00",
+   "valeur": 304.98149652598244,
+   "valeur_ponderee": 297.71868116225255,
+   "ecart": 12.150289227764377,
+   "ecart_pondere": 9.479547386281006,
    "scenarios": {
     "Pessimiste": {
-     "valeur": 214.8005805175183,
+     "valeur": 212.47851697173346,
      "proba": 25
     },
     "Centrale": {
-     "valeur": 309.46732544478897,
+     "valeur": 304.98149652598244,
      "proba": 50
     },
     "Optimiste": {
-     "valeur": 374.22146575933624,
+     "valeur": 368.43321462531196,
      "proba": 25
     }
    },
    "hypotheses": {
     "revenus": 21917000000.0,
     "marge_actuelle": 29.757722316010405,
-    "croissance_1_5": 7.99,
+    "croissance_1_5": 7.969999999999999,
     "croissance_terminale": 2.5,
-    "taux_sans_risque": 4.8480000495910645,
+    "taux_sans_risque": 4.935999870300293,
     "prime_risque": 4.5,
     "beta_sectoriel": 1.02,
-    "beta": 1.1023730472839923,
-    "cout_fonds_propres": 9.80867876236903,
-    "cout_dette_apres_impot": 4.0847275364031415,
-    "wacc": 9.252097563128112,
+    "beta": 1.102306412908813,
+    "cout_fonds_propres": 9.896378728389951,
+    "cout_dette_apres_impot": 4.150706847632499,
+    "wacc": 9.338093504890933,
     "taux_impot": 25.023357209592028,
     "roc_actuel": 25.657047288894525,
-    "roc_stable": 17.454572426011318,
+    "roc_stable": 17.49757039689273,
     "ventes_sur_capital": 1.1499554016475155,
     "dette_nette": 824000000.0
    },
    "controles": {
-    "revenu_an10": 40467873186.6711,
-    "multiple_revenu_10ans": 1.8464148006876442,
-    "roc_an10": 25.657047288894532,
-    "part_valeur_terminale": 58.854038007658794
+    "revenu_an10": 40415127246.32203,
+    "multiple_revenu_10ans": 1.8440081784150217,
+    "roc_an10": 25.657047288894525,
+    "part_valeur_terminale": 58.44564521892045
    },
    "sensibilite": {
     "wacc": [
-     8.25,
-     9.25,
-     10.25
+     8.34,
+     9.34,
+     10.34
     ],
     "g": [
      2.0,
@@ -2349,19 +2349,19 @@
     ],
     "valeurs": [
      [
-      353.44,
-      368.98,
-      387.3
+      347.87,
+      362.81,
+      380.37
      ],
      [
-      299.51,
-      309.47,
-      320.88
+      295.37,
+      304.98,
+      315.97
      ],
      [
-      258.9,
-      265.53,
-      272.96
+      255.71,
+      262.12,
+      269.31
      ]
     ]
    }
@@ -2370,27 +2370,27 @@
    "ticker": "ADBE",
    "nom": "Adobe Inc.",
    "secteur": "Technology",
-   "prix": 232.83,
-   "capi": 90617438208.0,
+   "prix": 234.79,
+   "capi": 91380269056.0,
    "actions": 389200000.0,
    "devise": "USD",
    "devise_fin": "USD",
-   "date": "2026-11-27T04:28:18+00:00",
-   "valeur": 363.06982078420845,
-   "valeur_ponderee": 350.8728311371653,
-   "ecart": 55.93773172881864,
-   "ecart_pondere": 50.69915008253459,
+   "date": "2026-11-28T04:09:14+00:00",
+   "valeur": 358.0885672516316,
+   "valeur_ponderee": 346.2092332521139,
+   "ecart": 52.51440319077969,
+   "ecart_pondere": 47.45484614000337,
    "scenarios": {
     "Pessimiste": {
-     "valeur": 234.7979056136108,
+     "valeur": 232.37462729103277,
      "proba": 25
     },
     "Centrale": {
-     "valeur": 363.06982078420845,
+     "valeur": 358.0885672516316,
      "proba": 50
     },
     "Optimiste": {
-     "valeur": 442.55377736663354,
+     "valeur": 436.28517121415956,
      "proba": 25
     }
    },
@@ -2399,13 +2399,13 @@
     "marge_actuelle": 35.69888332691567,
     "croissance_1_5": 9.13,
     "croissance_terminale": 2.5,
-    "taux_sans_risque": 4.8480000495910645,
+    "taux_sans_risque": 4.935999870300293,
     "prime_risque": 4.5,
     "beta_sectoriel": 1.02,
-    "beta": 1.0797363554214567,
-    "cout_fonds_propres": 9.70681364898762,
-    "cout_dette_apres_impot": 4.2757496348692285,
-    "wacc": 9.329682136018471,
+    "beta": 1.0792376839343476,
+    "cout_fonds_propres": 9.792569448004857,
+    "cout_dette_apres_impot": 4.344814465603634,
+    "wacc": 9.417219259494567,
     "taux_impot": 21.517077901088243,
     "roc_actuel": 56.46117566377053,
     "roc_stable": 30.0,
@@ -2416,535 +2416,7 @@
     "revenu_an10": 51633909786.45382,
     "multiple_revenu_10ans": 1.9882136999019568,
     "roc_an10": 56.46117566377053,
-    "part_valeur_terminale": 57.268786440291244
-   },
-   "sensibilite": {
-    "wacc": [
-     8.33,
-     9.33,
-     10.33
-    ],
-    "g": [
-     2.0,
-     2.5,
-     3.0
-    ],
-    "valeurs": [
-     [
-      409.04,
-      430.73,
-      456.35
-     ],
-     [
-      348.42,
-      363.07,
-      379.93
-     ],
-     [
-      302.57,
-      312.88,
-      324.51
-     ]
-    ]
-   }
-  },
-  "JD": {
-   "ticker": "JD",
-   "nom": "JD.com, Inc.",
-   "secteur": "Consumer Cyclical",
-   "prix": 26.38,
-   "capi": 35626188800.0,
-   "actions": 1350500000.0,
-   "devise": "USD",
-   "devise_fin": "CNY",
-   "date": "2026-11-27T04:28:19+00:00",
-   "nd": "Devises différentes : cours en USD, états financiers en CNY — non converti, valeur non calculée."
-  },
-  "NOW": {
-   "ticker": "NOW",
-   "nom": "ServiceNow, Inc.",
-   "secteur": "Technology",
-   "prix": 92.16,
-   "capi": 95654436864.0,
-   "actions": 1037917000.0,
-   "devise": "USD",
-   "devise_fin": "USD",
-   "date": "2026-11-27T04:28:19+00:00",
-   "valeur": 0.9289754391866346,
-   "valeur_ponderee": 2.443973735215352,
-   "ecart": -98.99199713629923,
-   "ecart_pondere": -97.34811877689307,
-   "scenarios": {
-    "Pessimiste": {
-     "valeur": -0.3732845216158007,
-     "proba": 25
-    },
-    "Centrale": {
-     "valeur": 0.9289754391866346,
-     "proba": 50
-    },
-    "Optimiste": {
-     "valeur": 8.291228584103939,
-     "proba": 25
-    }
-   },
-   "hypotheses": {
-    "revenus": 15431000000.0,
-    "marge_actuelle": 9.6753288834165,
-    "croissance_1_5": 18.7,
-    "croissance_terminale": 2.5,
-    "taux_sans_risque": 4.8480000495910645,
-    "prime_risque": 4.5,
-    "beta_sectoriel": 1.02,
-    "beta": 1.0841262536646759,
-    "cout_fonds_propres": 9.726568191082105,
-    "cout_dette_apres_impot": 3.8933531511667105,
-    "wacc": 9.254897486982541,
-    "taux_impot": 28.536102868447085,
-    "roc_actuel": 6.311855088583088,
-    "roc_stable": 9.254897486982541,
-    "ventes_sur_capital": 0.9128608613345953,
-    "dette_nette": 3808000000.0
-   },
-   "controles": {
-    "revenu_an10": 55649268322.007195,
-    "multiple_revenu_10ans": 3.60632935791635,
-    "roc_an10": 6.311855088583088,
-    "part_valeur_terminale": 368.4990928763797
-   },
-   "sensibilite": {
-    "wacc": [
-     8.25,
-     9.25,
-     10.25
-    ],
-    "g": [
-     2.0,
-     2.5,
-     3.0
-    ],
-    "valeurs": [
-     [
-      5.07,
-      5.38,
-      5.75
-     ],
-     [
-      0.94,
-      0.93,
-      0.92
-     ],
-     [
-      -1.98,
-      -2.15,
-      -2.34
-     ]
-    ]
-   }
-  },
-  "DASH": {
-   "ticker": "DASH",
-   "nom": "DoorDash, Inc.",
-   "secteur": "Consumer Cyclical",
-   "prix": 166.4,
-   "capi": 72546459648.0,
-   "actions": 411998576.0,
-   "devise": "USD",
-   "devise_fin": "USD",
-   "date": "2026-11-27T04:28:21+00:00",
-   "valeur": 47.36794730724369,
-   "valeur_ponderee": 52.49803741248145,
-   "ecart": -71.53368551247374,
-   "ecart_pondere": -68.45069867038373,
-   "scenarios": {
-    "Pessimiste": {
-     "valeur": 14.672744833846554,
-     "proba": 25
-    },
-    "Centrale": {
-     "valeur": 47.36794730724369,
-     "proba": 50
-    },
-    "Optimiste": {
-     "valeur": 100.58351020159188,
-     "proba": 25
-    }
-   },
-   "hypotheses": {
-    "revenus": 17061000000.0,
-    "marge_actuelle": 5.550671121270734,
-    "croissance_1_5": 21.139999,
-    "croissance_terminale": 2.5,
-    "taux_sans_risque": 4.8480000495910645,
-    "prime_risque": 4.5,
-    "beta_sectoriel": 0.94,
-    "beta": 0.9810297691602884,
-    "cout_fonds_propres": 9.262634010812363,
-    "cout_dette_apres_impot": 6.3350362794986665,
-    "wacc": 9.135331141721025,
-    "taux_impot": 3.985507246376811,
-    "roc_actuel": 11.319024603221855,
-    "roc_stable": 10.22717787247144,
-    "ventes_sur_capital": 2.123864060749409,
-    "dette_nette": -2684000000.0
-   },
-   "controles": {
-    "revenu_an10": 71127237052.50246,
-    "multiple_revenu_10ans": 4.168995782926116,
-    "roc_an10": 11.319024603221855,
-    "part_valeur_terminale": 109.66483041357277
-   },
-   "sensibilite": {
-    "wacc": [
-     8.14,
-     9.14,
-     10.14
-    ],
-    "g": [
-     2.0,
-     2.5,
-     3.0
-    ],
-    "valeurs": [
-     [
-      58.69,
-      60.59,
-      62.81
-     ],
-     [
-      46.49,
-      47.37,
-      48.34
-     ],
-     [
-      37.63,
-      37.95,
-      38.28
-     ]
-    ]
-   }
-  },
-  "NU": {
-   "ticker": "NU",
-   "nom": "Nu Holdings Ltd.",
-   "secteur": "Financial Services",
-   "prix": 12.36,
-   "capi": 59804278784.0,
-   "actions": 3815933617.0,
-   "devise": "USD",
-   "devise_fin": "USD",
-   "date": "2026-11-27T04:28:21+00:00",
-   "nd": "Entreprise financière : le DCF sur flux à l'entreprise ne s'applique pas (Damodaran évalue les financières par les flux aux actionnaires / dividendes)."
-  },
-  "DLO": {
-   "ticker": "DLO",
-   "nom": "DLocal Limited",
-   "secteur": "Technology",
-   "prix": 12.57,
-   "capi": 3600927232.0,
-   "actions": 177506876.0,
-   "devise": "USD",
-   "devise_fin": "USD",
-   "date": "2026-11-27T04:28:22+00:00",
-   "nd": "Capital investi comptable négatif ou nul (capitaux propres comptables négatifs, effet des rachats massifs) : la méthode exige un capital investi reconstruit — valeur non calculée."
-  },
-  "AXTI": {
-   "ticker": "AXTI",
-   "nom": "AXT, Inc.",
-   "secteur": "Technology",
-   "prix": 31.98,
-   "capi": 2101800832.0,
-   "actions": 65722351.0,
-   "devise": "USD",
-   "devise_fin": "USD",
-   "date": "2026-11-27T04:28:23+00:00",
-   "valeur": 6.639410386083517,
-   "valeur_ponderee": 7.7936355752497875,
-   "ecart": -79.23886683526105,
-   "ecart_pondere": -75.62965736319642,
-   "scenarios": {
-    "Pessimiste": {
-     "valeur": 8.357571047101366,
-     "proba": 25
-    },
-    "Centrale": {
-     "valeur": 6.639410386083517,
-     "proba": 50
-    },
-    "Optimiste": {
-     "valeur": 9.53815048173075,
-     "proba": 25
-    }
-   },
-   "hypotheses": {
-    "revenus": 170964000.0,
-    "marge_actuelle": 20.351068061112283,
-    "croissance_1_5": 30.0,
-    "croissance_terminale": 2.5,
-    "taux_sans_risque": 4.8480000495910645,
-    "prime_risque": 4.5,
-    "beta_sectoriel": 1.02,
-    "beta": 1.0500571331904727,
-    "cout_fonds_propres": 9.573257148948192,
-    "cout_dette_apres_impot": 4.528634928040011,
-    "wacc": 9.400547477038918,
-    "taux_impot": 16.875277407900576,
-    "roc_actuel": 6.08721685710329,
-    "roc_stable": 9.400547477038918,
-    "ventes_sur_capital": 0.4,
-    "dette_nette": -438229000.0
-   },
-   "controles": {
-    "revenu_an10": 1181629234.1421454,
-    "multiple_revenu_10ans": 6.911567547215468,
-    "roc_an10": 6.659158265608002,
-    "part_valeur_terminale": null
-   },
-   "sensibilite": {
-    "wacc": [
-     8.4,
-     9.4,
-     10.4
-    ],
-    "g": [
-     2.0,
-     2.5,
-     3.0
-    ],
-    "valeurs": [
-     [
-      9.65,
-      9.9,
-      10.2
-     ],
-     [
-      6.63,
-      6.64,
-      6.65
-     ],
-     [
-      4.53,
-      4.42,
-      4.29
-     ]
-    ]
-   }
-  },
-  "COHR": {
-   "ticker": "COHR",
-   "nom": "Coherent Corp.",
-   "secteur": "Technology",
-   "prix": 196.19,
-   "capi": 38641324032.0,
-   "actions": 196958669.0,
-   "devise": "USD",
-   "devise_fin": "USD",
-   "date": "2026-11-27T04:28:24+00:00",
-   "valeur": 17.21785121525412,
-   "valeur_ponderee": 30.621245847693103,
-   "ecart": -91.22388948710224,
-   "ecart_pondere": -84.39204554376212,
-   "scenarios": {
-    "Pessimiste": {
-     "valeur": 9.597313213498275,
-     "proba": 25
-    },
-    "Centrale": {
-     "valeur": 17.21785121525412,
-     "proba": 50
-    },
-    "Optimiste": {
-     "valeur": 78.4519677467659,
-     "proba": 25
-    }
-   },
-   "hypotheses": {
-    "revenus": 7907127000.0,
-    "marge_actuelle": 14.110422154595467,
-    "croissance_1_5": 30.0,
-    "croissance_terminale": 2.5,
-    "taux_sans_risque": 4.8480000495910645,
-    "prime_risque": 4.5,
-    "beta_sectoriel": 1.02,
-    "beta": 1.129375602760503,
-    "cout_fonds_propres": 9.930190262013328,
-    "cout_dette_apres_impot": 5.574321487931708,
-    "wacc": 9.489724538372254,
-    "taux_impot": 4.679865925761999,
-    "roc_actuel": 7.6379573749938245,
-    "roc_stable": 9.489724538372254,
-    "ventes_sur_capital": 0.5678747762507336,
-    "dette_nette": 2594051000.0
-   },
-   "controles": {
-    "revenu_an10": 54650642364.9112,
-    "multiple_revenu_10ans": 6.911567547215468,
-    "roc_an10": 7.63795737499382,
-    "part_valeur_terminale": 535.7643542864514
-   },
-   "sensibilite": {
-    "wacc": [
-     8.49,
-     9.49,
-     10.49
-    ],
-    "g": [
-     2.0,
-     2.5,
-     3.0
-    ],
-    "valeurs": [
-     [
-      54.26,
-      57.63,
-      61.53
-     ],
-     [
-      16.74,
-      17.22,
-      17.72
-     ],
-     [
-      -9.74,
-      -10.75,
-      -11.94
-     ]
-    ]
-   }
-  },
-  "LRCX": {
-   "ticker": "LRCX",
-   "nom": "Lam Research Corporation",
-   "secteur": "Technology",
-   "prix": 185.01,
-   "capi": 231109115904.0,
-   "actions": 1249171000.0,
-   "devise": "USD",
-   "devise_fin": "USD",
-   "date": "2026-11-27T04:28:25+00:00",
-   "valeur": 240.99303753821732,
-   "valeur_ponderee": 236.64288685458018,
-   "ecart": 30.25946572521341,
-   "ecart_pondere": 27.908160020853035,
-   "scenarios": {
-    "Pessimiste": {
-     "valeur": 116.74894572971483,
-     "proba": 25
-    },
-    "Centrale": {
-     "valeur": 240.99303753821732,
-     "proba": 50
-    },
-    "Optimiste": {
-     "valeur": 347.83652661217127,
-     "proba": 25
-    }
-   },
-   "hypotheses": {
-    "revenus": 26127935000.0,
-    "marge_actuelle": 36.95062009301539,
-    "croissance_1_5": 20.599999999999998,
-    "croissance_terminale": 2.5,
-    "taux_sans_risque": 4.8480000495910645,
-    "prime_risque": 4.5,
-    "beta_sectoriel": 1.02,
-    "beta": 1.0343386748566337,
-    "cout_fonds_propres": 9.502524086445915,
-    "cout_dette_apres_impot": 4.738280797111165,
-    "wacc": 9.426743902238282,
-    "taux_impot": 13.027152092870683,
-    "roc_actuel": 82.2682430599279,
-    "roc_stable": 30.0,
-    "ventes_sur_capital": 2.5599223987300683,
-    "dette_nette": -3701940000.0
-   },
-   "controles": {
-    "revenu_an10": 105511341017.31042,
-    "multiple_revenu_10ans": 4.038257941827796,
-    "roc_an10": 82.2682430599279,
-    "part_valeur_terminale": 62.83813086167669
-   },
-   "sensibilite": {
-    "wacc": [
-     8.43,
-     9.43,
-     10.43
-    ],
-    "g": [
-     2.0,
-     2.5,
-     3.0
-    ],
-    "valeurs": [
-     [
-      272.9,
-      288.14,
-      306.07
-     ],
-     [
-      230.64,
-      240.99,
-      252.87
-     ],
-     [
-      198.7,
-      206.03,
-      214.27
-     ]
-    ]
-   }
-  },
-  "AMAT": {
-   "ticker": "AMAT",
-   "nom": "Applied Materials, Inc.",
-   "secteur": "Technology",
-   "prix": 311.18,
-   "capi": 246951641088.0,
-   "actions": 793597443.0,
-   "devise": "USD",
-   "devise_fin": "USD",
-   "date": "2026-11-27T04:28:26+00:00",
-   "valeur": 251.19710063733015,
-   "valeur_ponderee": 248.82162718318426,
-   "ecart": -19.27594940634676,
-   "ecart_pondere": -20.039325411920995,
-   "scenarios": {
-    "Pessimiste": {
-     "valeur": 128.81199203222528,
-     "proba": 25
-    },
-    "Centrale": {
-     "valeur": 251.19710063733015,
-     "proba": 50
-    },
-    "Optimiste": {
-     "valeur": 364.08031542585144,
-     "proba": 25
-    }
-   },
-   "hypotheses": {
-    "revenus": 24037000000.0,
-    "marge_actuelle": 32.0089861463577,
-    "croissance_1_5": 20.36,
-    "croissance_terminale": 2.5,
-    "taux_sans_risque": 4.8480000495910645,
-    "prime_risque": 4.5,
-    "beta_sectoriel": 1.02,
-    "beta": 1.0464323821177521,
-    "cout_fonds_propres": 9.556945769120949,
-    "cout_dette_apres_impot": 4.746070965187487,
-    "wacc": 9.417972060365761,
-    "taux_impot": 12.884160756501181,
-    "roc_actuel": 28.234941115442098,
-    "roc_stable": 18.826456587903927,
-    "ventes_sur_capital": 1.0125531825266438,
-    "dette_nette": -1887000000.0
-   },
-   "controles": {
-    "revenu_an10": 95698841602.40099,
-    "multiple_revenu_10ans": 3.9813138745434533,
-    "roc_an10": 28.234941115442098,
-    "part_valeur_terminale": 70.59487326712222
+    "part_valeur_terminale": 56.86736626252763
    },
    "sensibilite": {
     "wacc": [
@@ -2959,19 +2431,547 @@
     ],
     "valeurs": [
      [
-      290.42,
-      305.28,
-      322.73
+      402.96,
+      423.88,
+      448.52
      ],
      [
-      241.51,
-      251.2,
-      262.27
+      343.9,
+      358.09,
+      374.38
      ],
      [
-      204.81,
-      211.37,
-      218.71
+      299.08,
+      309.1,
+      320.38
+     ]
+    ]
+   }
+  },
+  "JD": {
+   "ticker": "JD",
+   "nom": "JD.com, Inc.",
+   "secteur": "Consumer Cyclical",
+   "prix": 27.35,
+   "capi": 36936175616.0,
+   "actions": 1350500000.0,
+   "devise": "USD",
+   "devise_fin": "CNY",
+   "date": "2026-11-28T04:09:15+00:00",
+   "nd": "Devises différentes : cours en USD, états financiers en CNY — non converti, valeur non calculée."
+  },
+  "NOW": {
+   "ticker": "NOW",
+   "nom": "ServiceNow, Inc.",
+   "secteur": "Technology",
+   "prix": 92.8,
+   "capi": 96318701568.0,
+   "actions": 1037917000.0,
+   "devise": "USD",
+   "devise_fin": "USD",
+   "date": "2026-11-28T04:09:16+00:00",
+   "valeur": 0.6724571843759236,
+   "valeur_ponderee": 2.1578318432379398,
+   "ecart": -99.27536941338802,
+   "ecart_pondere": -97.67475016892463,
+   "scenarios": {
+    "Pessimiste": {
+     "valeur": -0.4758596860078126,
+     "proba": 25
+    },
+    "Centrale": {
+     "valeur": 0.6724571843759236,
+     "proba": 50
+    },
+    "Optimiste": {
+     "valeur": 7.762272690207724,
+     "proba": 25
+    }
+   },
+   "hypotheses": {
+    "revenus": 15431000000.0,
+    "marge_actuelle": 9.6753288834165,
+    "croissance_1_5": 18.7,
+    "croissance_terminale": 2.5,
+    "taux_sans_risque": 4.935999870300293,
+    "prime_risque": 4.5,
+    "beta_sectoriel": 1.02,
+    "beta": 1.0836840051063403,
+    "cout_fonds_propres": 9.812577893278823,
+    "cout_dette_apres_impot": 3.9562412525143045,
+    "wacc": 9.342040978281725,
+    "taux_impot": 28.536102868447085,
+    "roc_actuel": 6.311855088583088,
+    "roc_stable": 9.342040978281725,
+    "ventes_sur_capital": 0.9128608613345953,
+    "dette_nette": 3808000000.0
+   },
+   "controles": {
+    "revenu_an10": 55649268322.007195,
+    "multiple_revenu_10ans": 3.60632935791635,
+    "roc_an10": 6.311855088583088,
+    "part_valeur_terminale": 383.56184689462106
+   },
+   "sensibilite": {
+    "wacc": [
+     8.34,
+     9.34,
+     10.34
+    ],
+    "g": [
+     2.0,
+     2.5,
+     3.0
+    ],
+    "valeurs": [
+     [
+      4.7,
+      4.99,
+      5.34
+     ],
+     [
+      0.69,
+      0.67,
+      0.66
+     ],
+     [
+      -2.16,
+      -2.32,
+      -2.51
+     ]
+    ]
+   }
+  },
+  "DASH": {
+   "ticker": "DASH",
+   "nom": "DoorDash, Inc.",
+   "secteur": "Consumer Cyclical",
+   "prix": 167.9,
+   "capi": 73200418816.0,
+   "actions": 411998576.0,
+   "devise": "USD",
+   "devise_fin": "USD",
+   "date": "2026-11-28T04:09:17+00:00",
+   "valeur": 46.53679910298262,
+   "valeur_ponderee": 51.609573227824605,
+   "ecart": -72.28302614473935,
+   "ecart_pondere": -69.26171934018785,
+   "scenarios": {
+    "Pessimiste": {
+     "valeur": 14.48569779400292,
+     "proba": 25
+    },
+    "Centrale": {
+     "valeur": 46.53679910298262,
+     "proba": 50
+    },
+    "Optimiste": {
+     "valeur": 98.87899691133025,
+     "proba": 25
+    }
+   },
+   "hypotheses": {
+    "revenus": 17061000000.0,
+    "marge_actuelle": 5.550671121270734,
+    "croissance_1_5": 21.190001,
+    "croissance_terminale": 2.5,
+    "taux_sans_risque": 4.935999870300293,
+    "prime_risque": 4.5,
+    "beta_sectoriel": 0.94,
+    "beta": 0.9806632166987411,
+    "cout_fonds_propres": 9.348984345444627,
+    "cout_dette_apres_impot": 6.419528860976731,
+    "wacc": 9.222689654164624,
+    "taux_impot": 3.985507246376811,
+    "roc_actuel": 11.319024603221855,
+    "roc_stable": 10.270857128693239,
+    "ventes_sur_capital": 2.123864060749409,
+    "dette_nette": -2684000000.0
+   },
+   "controles": {
+    "revenu_an10": 71336937343.3154,
+    "multiple_revenu_10ans": 4.18128699040592,
+    "roc_an10": 11.319024603221857,
+    "part_valeur_terminale": 110.08148952571935
+   },
+   "sensibilite": {
+    "wacc": [
+     8.22,
+     9.22,
+     10.22
+    ],
+    "g": [
+     2.0,
+     2.5,
+     3.0
+    ],
+    "valeurs": [
+     [
+      57.59,
+      59.4,
+      61.51
+     ],
+     [
+      45.71,
+      46.54,
+      47.46
+     ],
+     [
+      37.04,
+      37.34,
+      37.65
+     ]
+    ]
+   }
+  },
+  "NU": {
+   "ticker": "NU",
+   "nom": "Nu Holdings Ltd.",
+   "secteur": "Financial Services",
+   "prix": 12.91,
+   "capi": 62465474560.0,
+   "actions": 3815933617.0,
+   "devise": "USD",
+   "devise_fin": "USD",
+   "date": "2026-11-28T04:09:17+00:00",
+   "nd": "Entreprise financière : le DCF sur flux à l'entreprise ne s'applique pas (Damodaran évalue les financières par les flux aux actionnaires / dividendes)."
+  },
+  "DLO": {
+   "ticker": "DLO",
+   "nom": "DLocal Limited",
+   "secteur": "Technology",
+   "prix": 12.85,
+   "capi": 3681138944.0,
+   "actions": 177506876.0,
+   "devise": "USD",
+   "devise_fin": "USD",
+   "date": "2026-11-28T04:09:18+00:00",
+   "nd": "Capital investi comptable négatif ou nul (capitaux propres comptables négatifs, effet des rachats massifs) : la méthode exige un capital investi reconstruit — valeur non calculée."
+  },
+  "AXTI": {
+   "ticker": "AXTI",
+   "nom": "AXT, Inc.",
+   "secteur": "Technology",
+   "prix": 36.37,
+   "capi": 2390321920.0,
+   "actions": 65722351.0,
+   "devise": "USD",
+   "devise_fin": "USD",
+   "date": "2026-11-28T04:09:18+00:00",
+   "valeur": 6.445221047427562,
+   "valeur_ponderee": 7.5905829752424205,
+   "ecart": -82.2787433394898,
+   "ecart_pondere": -79.12954914698263,
+   "scenarios": {
+    "Pessimiste": {
+     "valeur": 8.281085203292614,
+     "proba": 25
+    },
+    "Centrale": {
+     "valeur": 6.445221047427562,
+     "proba": 50
+    },
+    "Optimiste": {
+     "valeur": 9.190804602821943,
+     "proba": 25
+    }
+   },
+   "hypotheses": {
+    "revenus": 170964000.0,
+    "marge_actuelle": 20.351068061112283,
+    "croissance_1_5": 30.0,
+    "croissance_terminale": 2.5,
+    "taux_sans_risque": 4.935999870300293,
+    "prime_risque": 4.5,
+    "beta_sectoriel": 1.02,
+    "beta": 1.0464291211232628,
+    "cout_fonds_propres": 9.644930915354974,
+    "cout_dette_apres_impot": 4.601784534886102,
+    "wacc": 9.492482408395173,
+    "taux_impot": 16.875277407900576,
+    "roc_actuel": 6.08721685710329,
+    "roc_stable": 9.492482408395173,
+    "ventes_sur_capital": 0.4,
+    "dette_nette": -438229000.0
+   },
+   "controles": {
+    "revenu_an10": 1181629234.1421454,
+    "multiple_revenu_10ans": 6.911567547215468,
+    "roc_an10": 6.659158265608002,
+    "part_valeur_terminale": null
+   },
+   "sensibilite": {
+    "wacc": [
+     8.49,
+     9.49,
+     10.49
+    ],
+    "g": [
+     2.0,
+     2.5,
+     3.0
+    ],
+    "valeurs": [
+     [
+      9.37,
+      9.6,
+      9.89
+     ],
+     [
+      6.44,
+      6.45,
+      6.45
+     ],
+     [
+      4.4,
+      4.29,
+      4.16
+     ]
+    ]
+   }
+  },
+  "COHR": {
+   "ticker": "COHR",
+   "nom": "Coherent Corp.",
+   "secteur": "Technology",
+   "prix": 223.79,
+   "capi": 44077379584.0,
+   "actions": 196958669.0,
+   "devise": "USD",
+   "devise_fin": "USD",
+   "date": "2026-11-28T04:09:19+00:00",
+   "valeur": 15.025250892022104,
+   "valeur_ponderee": 28.316776171678278,
+   "ecart": -93.28600433798556,
+   "ecart_pondere": -87.34671961585492,
+   "scenarios": {
+    "Pessimiste": {
+     "valeur": 8.830359361625852,
+     "proba": 25
+    },
+    "Centrale": {
+     "valeur": 15.025250892022104,
+     "proba": 50
+    },
+    "Optimiste": {
+     "valeur": 74.38624354104306,
+     "proba": 25
+    }
+   },
+   "hypotheses": {
+    "revenus": 7907127000.0,
+    "marge_actuelle": 14.110422154595467,
+    "croissance_1_5": 30.0,
+    "croissance_terminale": 2.5,
+    "taux_sans_risque": 4.935999870300293,
+    "prime_risque": 4.5,
+    "beta_sectoriel": 1.02,
+    "beta": 1.115886328709933,
+    "cout_fonds_propres": 9.95748834949499,
+    "cout_dette_apres_impot": 5.658203035016833,
+    "wacc": 9.571548144257763,
+    "taux_impot": 4.679865925761999,
+    "roc_actuel": 7.6379573749938245,
+    "roc_stable": 9.571548144257763,
+    "ventes_sur_capital": 0.5678747762507336,
+    "dette_nette": 2594051000.0
+   },
+   "controles": {
+    "revenu_an10": 54650642364.9112,
+    "multiple_revenu_10ans": 6.911567547215468,
+    "roc_an10": 7.63795737499382,
+    "part_valeur_terminale": 568.2302107428725
+   },
+   "sensibilite": {
+    "wacc": [
+     8.57,
+     9.57,
+     10.57
+    ],
+    "g": [
+     2.0,
+     2.5,
+     3.0
+    ],
+    "valeurs": [
+     [
+      51.1,
+      54.32,
+      58.05
+     ],
+     [
+      14.58,
+      15.03,
+      15.49
+     ],
+     [
+      -11.26,
+      -12.25,
+      -13.41
+     ]
+    ]
+   }
+  },
+  "LRCX": {
+   "ticker": "LRCX",
+   "nom": "Lam Research Corporation",
+   "secteur": "Technology",
+   "prix": 192.69,
+   "capi": 240702750720.0,
+   "actions": 1249171000.0,
+   "devise": "USD",
+   "devise_fin": "USD",
+   "date": "2026-11-28T04:09:19+00:00",
+   "valeur": 237.4929470203057,
+   "valeur_ponderee": 233.26749539642543,
+   "ecart": 23.25130884856801,
+   "ecart_pondere": 21.058433440461588,
+   "scenarios": {
+    "Pessimiste": {
+     "valeur": 115.51505966631161,
+     "proba": 25
+    },
+    "Centrale": {
+     "valeur": 237.4929470203057,
+     "proba": 50
+    },
+    "Optimiste": {
+     "valeur": 342.5690278787788,
+     "proba": 25
+    }
+   },
+   "hypotheses": {
+    "revenus": 26127935000.0,
+    "marge_actuelle": 36.95062009301539,
+    "croissance_1_5": 20.599999999999998,
+    "croissance_terminale": 2.5,
+    "taux_sans_risque": 4.935999870300293,
+    "prime_risque": 4.5,
+    "beta_sectoriel": 1.02,
+    "beta": 1.033767181552513,
+    "cout_fonds_propres": 9.587952187286602,
+    "cout_dette_apres_impot": 4.81481674733515,
+    "wacc": 9.51501031271263,
+    "taux_impot": 13.027152092870683,
+    "roc_actuel": 82.2682430599279,
+    "roc_stable": 30.0,
+    "ventes_sur_capital": 2.5599223987300683,
+    "dette_nette": -3701940000.0
+   },
+   "controles": {
+    "revenu_an10": 105511341017.31042,
+    "multiple_revenu_10ans": 4.038257941827796,
+    "roc_an10": 82.2682430599279,
+    "part_valeur_terminale": 62.46774532437885
+   },
+   "sensibilite": {
+    "wacc": [
+     8.52,
+     9.52,
+     10.52
+    ],
+    "g": [
+     2.0,
+     2.5,
+     3.0
+    ],
+    "valeurs": [
+     [
+      268.64,
+      283.33,
+      300.58
+     ],
+     [
+      227.47,
+      237.49,
+      248.97
+     ],
+     [
+      196.26,
+      203.37,
+      211.37
+     ]
+    ]
+   }
+  },
+  "AMAT": {
+   "ticker": "AMAT",
+   "nom": "Applied Materials, Inc.",
+   "secteur": "Technology",
+   "prix": 322.04,
+   "capi": 255570132992.0,
+   "actions": 793597443.0,
+   "devise": "USD",
+   "devise_fin": "USD",
+   "date": "2026-11-28T04:09:20+00:00",
+   "valeur": 257.16283895841053,
+   "valeur_ponderee": 255.25939216298303,
+   "ecart": -20.14568408942662,
+   "ecart_pondere": -20.736743211097064,
+   "scenarios": {
+    "Pessimiste": {
+     "valeur": 129.54883583092885,
+     "proba": 25
+    },
+    "Centrale": {
+     "valeur": 257.16283895841053,
+     "proba": 50
+    },
+    "Optimiste": {
+     "valeur": 377.16305490418216,
+     "proba": 25
+    }
+   },
+   "hypotheses": {
+    "revenus": 24037000000.0,
+    "marge_actuelle": 32.0089861463577,
+    "croissance_1_5": 21.209998,
+    "croissance_terminale": 2.5,
+    "taux_sans_risque": 4.935999870300293,
+    "prime_risque": 4.5,
+    "beta_sectoriel": 1.02,
+    "beta": 1.0455410132061413,
+    "cout_fonds_propres": 9.64093442972793,
+    "cout_dette_apres_impot": 4.822732747531107,
+    "wacc": 9.50631161615378,
+    "taux_impot": 12.884160756501181,
+    "roc_actuel": 28.234941115442098,
+    "roc_stable": 18.87062636579794,
+    "ventes_sur_capital": 1.0125531825266438,
+    "dette_nette": -1887000000.0
+   },
+   "controles": {
+    "revenu_an10": 100623963735.9232,
+    "multiple_revenu_10ans": 4.18621141306832,
+    "roc_an10": 28.23494111544209,
+    "part_valeur_terminale": 71.02612657262316
+   },
+   "sensibilite": {
+    "wacc": [
+     8.51,
+     9.51,
+     10.51
+    ],
+    "g": [
+     2.0,
+     2.5,
+     3.0
+    ],
+    "valeurs": [
+     [
+      297.29,
+      312.33,
+      329.94
+     ],
+     [
+      247.32,
+      257.16,
+      268.39
+     ],
+     [
+      209.74,
+      216.41,
+      223.88
      ]
     ]
    }
@@ -2980,18 +2980,18 @@
    "ticker": "CSU.TO",
    "nom": "Constellation Software Inc.",
    "secteur": "Technology",
-   "prix": 3044.0,
-   "capi": 64507019264.0,
+   "prix": 3070.25,
+   "capi": 65063297024.0,
    "actions": 21191530.0,
    "devise": "CAD",
    "devise_fin": "USD",
-   "date": "2026-11-27T04:28:27+00:00",
+   "date": "2026-11-28T04:09:21+00:00",
    "nd": "Devises différentes : cours en CAD, états financiers en USD — non converti, valeur non calculée."
   },
   "TOI.TO": {
    "ticker": "TOI.TO",
    "erreur": "données introuvables ou incomplètes (ticker inconnu ou source indisponible)",
-   "date": "2026-11-27T04:28:28+00:00"
+   "date": "2026-11-28T04:09:22+00:00"
   },
   "VICR": {
    "ticker": "VICR",
