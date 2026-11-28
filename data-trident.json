@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28T01:55:04+00:00",
+ "updated": "2026-11-28T04:05:00+00:00",
  "aliases": {
   "NETFLIX": "NFLX",
   "ADYEN": "ADYEN.AS",
@@ -16,13 +16,13 @@
   "NFLX": {
    "ticker": "NFLX",
    "name": "Netflix, Inc.",
-   "price": 59.41,
+   "price": 60.93,
    "currency": "USD",
    "devise_fin": "USD",
    "devise_mix": false,
    "sector": "Communication Services",
    "industry": "Entertainment",
-   "cap": 243956826112.0,
+   "cap": 250198441984.0,
    "eps_ttm": 3.46,
    "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
    "eps_hist": [
@@ -62,30 +62,30 @@
     },
     {
      "annee": 2026,
-     "prix": 59.40999984741211
+     "prix": 60.93000030517578
     }
    ],
    "regularite": 0.9701485841461758,
    "cagr_hist": 0.36489469824866827,
-   "g_defaut": 0.2198944949953665,
+   "g_defaut": 0.21977874998870184,
    "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
    "per_final": 17.0,
-   "eps_5ans": 9.347327434296806,
-   "prix_5ans": 158.9045663830457,
-   "rendement_estime": 0.21746186079138052,
-   "prix_a_payer": 79.00365353831305,
-   "date": "2026-11-27T12:43:38+00:00"
+   "eps_5ans": 9.342893849281834,
+   "prix_5ans": 158.82919543779118,
+   "rendement_estime": 0.2112110703005987,
+   "prix_a_payer": 78.96618085781506,
+   "date": "2026-11-28T04:04:08+00:00"
   },
   "TTMI": {
    "ticker": "TTMI",
    "name": "TTM Technologies, Inc.",
-   "price": 58.17,
+   "price": 63.16,
    "currency": "USD",
    "devise_fin": "USD",
    "devise_mix": false,
    "sector": "Technology",
    "industry": "Electronic Components",
-   "cap": 6129693696.0,
+   "cap": 6655517696.0,
    "eps_ttm": 2.51,
    "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
    "eps_hist": [
@@ -125,7 +125,7 @@
     },
     {
      "annee": 2026,
-     "prix": 58.16999816894531
+     "prix": 63.15999984741211
     }
    ],
    "regularite": null,
@@ -135,9 +135,9 @@
    "per_final": 17.0,
    "eps_5ans": 7.659912109374999,
    "prix_5ans": 130.21850585937497,
-   "rendement_estime": 0.17488329489506693,
+   "rendement_estime": 0.1557026718398511,
    "prix_a_payer": 64.74161161858528,
-   "date": "2026-11-27T12:46:47+00:00"
+   "date": "2026-11-28T04:04:19+00:00"
   },
   "ADYEN.AS": {
    "ticker": "ADYEN.AS",
@@ -268,13 +268,13 @@
   "MLI": {
    "ticker": "MLI",
    "name": "Mueller Industries, Inc.",
-   "price": 53.82,
+   "price": 54.13,
    "currency": "USD",
    "devise_fin": "USD",
    "devise_mix": false,
    "sector": "Industrials",
    "industry": "Metal Fabrication",
-   "cap": 11731381248.0,
+   "cap": 11798953984.0,
    "eps_ttm": 3.9,
    "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
    "eps_hist": [
@@ -298,15 +298,15 @@
    "prix_hist": [
     {
      "annee": 2022,
-     "prix": 14.050047874450684
+     "prix": 14.050048828125
     },
     {
      "annee": 2023,
-     "prix": 22.814563751220703
+     "prix": 22.814565658569336
     },
     {
      "annee": 2024,
-     "prix": 38.90129089355469
+     "prix": 38.90128707885742
     },
     {
      "annee": 2025,
@@ -314,7 +314,7 @@
     },
     {
      "annee": 2026,
-     "prix": 53.81999969482422
+     "prix": 54.130001068115234
     }
    ],
    "regularite": 0.2779840980206504,
@@ -324,20 +324,20 @@
    "per_final": 17.0,
    "eps_5ans": 10.159221480928453,
    "prix_5ans": 172.70676517578372,
-   "rendement_estime": 0.26262135764600547,
+   "rendement_estime": 0.26117183850667547,
    "prix_a_payer": 85.86578567402454,
-   "date": "2026-11-27T13:31:58+00:00"
+   "date": "2026-11-28T04:04:21+00:00"
   },
   "FLEX": {
    "ticker": "FLEX",
    "name": "Flex Ltd.",
-   "price": 67.23,
+   "price": 69.77,
    "currency": "USD",
    "devise_fin": "USD",
    "devise_mix": false,
    "sector": "Technology",
    "industry": "Electronic Components",
-   "cap": 24838850560.0,
+   "cap": 25777278976.0,
    "eps_ttm": 2.77,
    "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
    "eps_hist": [
@@ -373,7 +373,7 @@
     },
     {
      "annee": 2026,
-     "prix": 67.2300033569336
+     "prix": 69.7699966430664
     }
    ],
    "regularite": 0.6044973552056621,
@@ -383,9 +383,9 @@
    "per_final": 17.0,
    "eps_5ans": 8.453369140625,
    "prix_5ans": 143.707275390625,
-   "rendement_estime": 0.16408080717245221,
+   "rendement_estime": 0.15547886591659998,
    "prix_a_payer": 71.44791401732321,
-   "date": "2026-11-27T13:49:36+00:00"
+   "date": "2026-11-28T04:04:07+00:00"
   },
   "SYM": {
    "ticker": "SYM",
@@ -575,13 +575,13 @@
   "CLS": {
    "ticker": "CLS",
    "name": "Celestica Inc.",
-   "price": 191.95,
+   "price": 203.24,
    "currency": "USD",
    "devise_fin": "USD",
    "devise_mix": false,
    "sector": "Technology",
    "industry": "Electronic Components",
-   "cap": 24207161344.0,
+   "cap": 25630963712.0,
    "eps_ttm": 10.607455999999999,
    "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
    "eps_hist": [
@@ -621,7 +621,7 @@
     },
     {
      "annee": 2026,
-     "prix": 191.9499969482422
+     "prix": 203.24000549316406
     }
    ],
    "regularite": 0.978011051464755,
@@ -631,9 +631,9 @@
    "per_final": 17.0,
    "eps_5ans": 32.371386718749996,
    "prix_5ans": 550.31357421875,
-   "rendement_estime": 0.2344810333475078,
+   "rendement_estime": 0.2204506072972443,
    "prix_a_payer": 273.60310622041123,
-   "date": "2026-11-27T14:04:49+00:00"
+   "date": "2026-11-28T04:04:37+00:00"
   },
   "NOK": {
    "ticker": "NOK",
@@ -1137,13 +1137,13 @@
   "NOW": {
    "ticker": "NOW",
    "name": "ServiceNow, Inc.",
-   "price": 92.565,
+   "price": 92.8,
    "currency": "USD",
    "devise_fin": "USD",
    "devise_mix": false,
    "sector": "Technology",
    "industry": "Software - Application",
-   "cap": 96074792960.0,
+   "cap": 96318701568.0,
    "eps_ttm": 1.3900000000000001,
    "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
    "eps_hist": [
@@ -1183,7 +1183,7 @@
     },
     {
      "annee": 2026,
-     "prix": 92.56500244140625
+     "prix": 92.80000305175781
     }
    ],
    "regularite": 0.5872139947922623,
@@ -1193,9 +1193,9 @@
    "per_final": 17.0,
    "eps_5ans": 3.0478751222568534,
    "prix_5ans": 51.81387707836651,
-   "rendement_estime": -0.1095698495988664,
+   "rendement_estime": -0.11002127926455851,
    "prix_a_payer": 25.760654248969157,
-   "date": "2026-11-27T17:07:57+00:00"
+   "date": "2026-11-28T04:04:26+00:00"
   },
   "VMC": {
    "ticker": "VMC",
@@ -1736,11 +1736,11 @@
     },
     {
      "annee": 2024,
-     "prix": 133.9398651123047
+     "prix": 133.93984985351562
     },
     {
      "annee": 2025,
-     "prix": 186.0646209716797
+     "prix": 186.06460571289062
     },
     {
      "annee": 2026,
@@ -1756,7 +1756,1672 @@
    "prix_5ans": 254.21142578125003,
    "rendement_estime": 0.11054838491349783,
    "prix_a_payer": 126.38800674544541,
-   "date": "2026-11-28T01:55:04+00:00"
+   "date": "2026-11-28T04:04:20+00:00"
+  },
+  "MA": {
+   "ticker": "MA",
+   "name": "Mastercard Incorporated",
+   "price": 666.96,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Financial Services",
+   "industry": "Credit Services",
+   "cap": 581039620096.0,
+   "eps_ttm": 19.119999999999997,
+   "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": 10.22
+    },
+    {
+     "annee": 2023,
+     "eps": 11.83
+    },
+    {
+     "annee": 2024,
+     "eps": 13.89
+    },
+    {
+     "annee": 2025,
+     "eps": 16.52
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 339.4880676269531
+    },
+    {
+     "annee": 2023,
+     "prix": 418.9414978027344
+    },
+    {
+     "annee": 2024,
+     "prix": 520.2177124023438
+    },
+    {
+     "annee": 2025,
+     "prix": 567.233642578125
+    },
+    {
+     "annee": 2026,
+     "prix": 666.9600219726562
+    }
+   ],
+   "regularite": 0.9985679790115463,
+   "cagr_hist": 0.17359895932136804,
+   "g_defaut": 0.16723934135206386,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 41.42738040504309,
+   "prix_5ans": 704.2654668857325,
+   "rendement_estime": 0.010944516716322683,
+   "prix_a_payer": 350.1444056095744,
+   "date": "2026-11-28T04:03:58+00:00"
+  },
+  "SPGI": {
+   "ticker": "SPGI",
+   "name": "S&P Global Inc.",
+   "price": 461.24,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Financial Services",
+   "industry": "Financial Data & Stock Exchanges",
+   "cap": 133713469440.0,
+   "eps_ttm": 16.810000000000002,
+   "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": 10.2
+    },
+    {
+     "annee": 2023,
+     "eps": 8.23
+    },
+    {
+     "annee": 2024,
+     "eps": 12.35
+    },
+    {
+     "annee": 2025,
+     "eps": 14.66
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 306.3533630371094
+    },
+    {
+     "annee": 2023,
+     "prix": 406.8218078613281
+    },
+    {
+     "annee": 2024,
+     "prix": 463.51361083984375
+    },
+    {
+     "annee": 2025,
+     "prix": 489.96771240234375
+    },
+    {
+     "annee": 2026,
+     "prix": 461.239990234375
+    }
+   ],
+   "regularite": 0.6019606732452731,
+   "cagr_hist": 0.12852521260492766,
+   "g_defaut": 0.06313896551673803,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 22.830629859394122,
+   "prix_5ans": 388.12070760970005,
+   "rendement_estime": -0.033931391804575384,
+   "prix_a_payer": 192.9645863110528,
+   "date": "2026-11-28T04:04:00+00:00"
+  },
+  "BKNG": {
+   "ticker": "BKNG",
+   "name": "Booking Holdings Inc.",
+   "price": 150.39,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Consumer Cyclical",
+   "industry": "Travel Services",
+   "cap": 111845228544.0,
+   "eps_ttm": 7.5,
+   "eps_base_note": "somme des 3 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": 3.054
+    },
+    {
+     "annee": 2023,
+     "eps": 4.696
+    },
+    {
+     "annee": 2024,
+     "eps": 6.9076
+    },
+    {
+     "annee": 2025,
+     "eps": 6.6228
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 78.74427795410156
+    },
+    {
+     "annee": 2023,
+     "prix": 138.60275268554688
+    },
+    {
+     "annee": 2024,
+     "prix": 195.85545349121094
+    },
+    {
+     "annee": 2025,
+     "prix": 212.67605590820312
+    },
+    {
+     "annee": 2026,
+     "prix": 150.38999938964844
+    }
+   ],
+   "regularite": 0.8531022730267728,
+   "cagr_hist": 0.29436730925723564,
+   "g_defaut": 0.15808245759229078,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 15.622793007558734,
+   "prix_5ans": 265.5874811284985,
+   "rendement_estime": 0.12046353749480088,
+   "prix_a_payer": 132.04391680356306,
+   "date": "2026-11-28T04:04:01+00:00"
+  },
+  "MSFT": {
+   "ticker": "MSFT",
+   "name": "Microsoft Corporation",
+   "price": 492.85,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Technology",
+   "industry": "Software - Infrastructure",
+   "cap": 3660000002048.0,
+   "eps_ttm": 19.16,
+   "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2023,
+     "eps": 9.68
+    },
+    {
+     "annee": 2024,
+     "eps": 11.8
+    },
+    {
+     "annee": 2025,
+     "eps": 13.64
+    },
+    {
+     "annee": 2026,
+     "eps": 17.95
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2023,
+     "prix": 367.469970703125
+    },
+    {
+     "annee": 2024,
+     "prix": 414.9740295410156
+    },
+    {
+     "annee": 2025,
+     "prix": 479.6446228027344
+    },
+    {
+     "annee": 2026,
+     "prix": 492.8500061035156
+    }
+   ],
+   "regularite": 0.9845251677760316,
+   "cagr_hist": 0.22855998285745227,
+   "g_defaut": 0.1841297472865886,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 44.605864620604564,
+   "prix_5ans": 758.2996985502775,
+   "rendement_estime": 0.08999680387540487,
+   "prix_a_payer": 377.00896850290434,
+   "date": "2026-11-28T04:04:02+00:00"
+  },
+  "HLNE": {
+   "ticker": "HLNE",
+   "name": "Hamilton Lane Incorporated",
+   "price": 87.4,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Financial Services",
+   "industry": "Asset Management",
+   "cap": 5907521536.0,
+   "eps_ttm": 5.17,
+   "eps_base_note": "somme des 3 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2023,
+     "eps": 3.01
+    },
+    {
+     "annee": 2024,
+     "eps": 3.69
+    },
+    {
+     "annee": 2025,
+     "eps": 5.41
+    },
+    {
+     "annee": 2026,
+     "eps": 5.92
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2023,
+     "prix": 108.00118255615234
+    },
+    {
+     "annee": 2024,
+     "prix": 142.99623107910156
+    },
+    {
+     "annee": 2025,
+     "prix": 131.70037841796875
+    },
+    {
+     "annee": 2026,
+     "prix": 87.4000015258789
+    }
+   ],
+   "regularite": 0.9530101933488093,
+   "cagr_hist": 0.2529057538842201,
+   "g_defaut": 0.13161420987896744,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 9.59361983512991,
+   "prix_5ans": 163.09153719720848,
+   "rendement_estime": 0.132880231957899,
+   "prix_a_payer": 81.08531801848773,
+   "date": "2026-11-28T04:04:03+00:00"
+  },
+  "TSM": {
+   "ticker": "TSM",
+   "name": "Taiwan Semiconductor Manufacturing Company Limited",
+   "price": 353.34,
+   "currency": "USD",
+   "devise_fin": "TWD",
+   "devise_mix": true,
+   "sector": "Technology",
+   "industry": "Semiconductors",
+   "cap": 1832588279808.0,
+   "eps_ttm": 327.35,
+   "eps_base_note": "dernier BPA annuel (Yahoo) — trimestriel écarté (incohérent)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": 196.0
+    },
+    {
+     "annee": 2023,
+     "eps": 161.7
+    },
+    {
+     "annee": 2024,
+     "eps": 226.25
+    },
+    {
+     "annee": 2025,
+     "eps": 327.35
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 70.53727722167969
+    },
+    {
+     "annee": 2023,
+     "prix": 100.39552307128906
+    },
+    {
+     "annee": 2024,
+     "prix": 193.34413146972656
+    },
+    {
+     "annee": 2025,
+     "prix": 301.51922607421875
+    },
+    {
+     "annee": 2026,
+     "prix": 353.3399963378906
+    }
+   ],
+   "regularite": 0.6584798123091861,
+   "cagr_hist": 0.1864572412783072,
+   "g_defaut": 0.25,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 998.9929199218751,
+   "prix_5ans": 16982.87963867188,
+   "rendement_estime": 1.169520236343618,
+   "prix_a_payer": 8443.492654718686,
+   "date": "2026-11-28T04:04:04+00:00",
+   "devise_note": "Devises différentes : cours en USD, états financiers en TWD. Le BPA n'est pas converti : la projection mélange les devises et n'est pas comparable au cours."
+  },
+  "FIX": {
+   "ticker": "FIX",
+   "name": "Comfort Systems USA, Inc.",
+   "price": 1128.64,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Industrials",
+   "industry": "Engineering & Construction",
+   "cap": 39486492672.0,
+   "eps_ttm": 28.88,
+   "eps_base_note": "dernier BPA annuel (Yahoo) — trimestriel écarté (incohérent)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": 6.82
+    },
+    {
+     "annee": 2023,
+     "eps": 9.01
+    },
+    {
+     "annee": 2024,
+     "eps": 14.6
+    },
+    {
+     "annee": 2025,
+     "eps": 28.88
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 113.4536361694336
+    },
+    {
+     "annee": 2023,
+     "prix": 203.78057861328125
+    },
+    {
+     "annee": 2024,
+     "prix": 421.596923828125
+    },
+    {
+     "annee": 2025,
+     "prix": 931.1550903320312
+    },
+    {
+     "annee": 2026,
+     "prix": 1128.6400146484375
+    }
+   ],
+   "regularite": 0.9660194027504324,
+   "cagr_hist": 0.6178475841689988,
+   "g_defaut": 0.25,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 88.134765625,
+   "prix_5ans": 1498.291015625,
+   "rendement_estime": 0.05829841932779156,
+   "prix_a_payer": 744.9154356751966,
+   "date": "2026-11-28T04:04:06+00:00"
+  },
+  "SE": {
+   "ticker": "SE",
+   "name": "Sea Limited",
+   "price": 69.11,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Consumer Cyclical",
+   "industry": "Internet Retail",
+   "cap": 42328805376.0,
+   "eps_ttm": 1.3,
+   "eps_base_note": "somme des 2 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": -2.96
+    },
+    {
+     "annee": 2023,
+     "eps": 0.25
+    },
+    {
+     "annee": 2024,
+     "eps": 0.74
+    },
+    {
+     "annee": 2025,
+     "eps": 2.52
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 52.029998779296875
+    },
+    {
+     "annee": 2023,
+     "prix": 40.5
+    },
+    {
+     "annee": 2024,
+     "prix": 106.0999984741211
+    },
+    {
+     "annee": 2025,
+     "prix": 127.56999969482422
+    },
+    {
+     "annee": 2026,
+     "prix": 69.11000061035156
+    }
+   ],
+   "regularite": null,
+   "cagr_hist": null,
+   "g_defaut": 0.22612197883285656,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 3.6025642875185833,
+   "prix_5ans": 61.243592887815915,
+   "rendement_estime": -0.023878331521974272,
+   "prix_a_payer": 30.448889569901883,
+   "date": "2026-11-28T04:04:09+00:00"
+  },
+  "VRT": {
+   "ticker": "VRT",
+   "name": "Vertiv Holdings Co",
+   "price": 178.71,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Industrials",
+   "industry": "Electrical Equipment & Parts",
+   "cap": 68814151680.0,
+   "eps_ttm": 3.41,
+   "eps_base_note": "dernier BPA annuel (Yahoo) — trimestriel écarté (incohérent)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": 0.04
+    },
+    {
+     "annee": 2023,
+     "eps": 1.19
+    },
+    {
+     "annee": 2024,
+     "eps": 1.28
+    },
+    {
+     "annee": 2025,
+     "eps": 3.41
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 13.59998607635498
+    },
+    {
+     "annee": 2023,
+     "prix": 47.84547805786133
+    },
+    {
+     "annee": 2024,
+     "prix": 113.30911254882812
+    },
+    {
+     "annee": 2025,
+     "prix": 161.81118774414062
+    },
+    {
+     "annee": 2026,
+     "prix": 178.7100067138672
+    }
+   ],
+   "regularite": 0.7928610312795245,
+   "cagr_hist": 3.4011360702802804,
+   "g_defaut": 0.25,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 10.406494140625,
+   "prix_5ans": 176.910400390625,
+   "rendement_estime": -0.0020221503707021915,
+   "prix_a_payer": 87.95573530652425,
+   "date": "2026-11-28T04:04:10+00:00"
+  },
+  "SYK": {
+   "ticker": "SYK",
+   "name": "Stryker Corporation",
+   "price": 334.27,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Healthcare",
+   "industry": "Medical Devices",
+   "cap": 127253577728.0,
+   "eps_ttm": 9.39,
+   "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": 6.17
+    },
+    {
+     "annee": 2023,
+     "eps": 8.25
+    },
+    {
+     "annee": 2024,
+     "eps": 7.76
+    },
+    {
+     "annee": 2025,
+     "eps": 8.4
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 235.46620178222656
+    },
+    {
+     "annee": 2023,
+     "prix": 291.5067138671875
+    },
+    {
+     "annee": 2024,
+     "prix": 353.7206115722656
+    },
+    {
+     "annee": 2025,
+     "prix": 348.4847412109375
+    },
+    {
+     "annee": 2026,
+     "prix": 334.2699890136719
+    }
+   ],
+   "regularite": 0.6161493407307521,
+   "cagr_hist": 0.10831881855201275,
+   "g_defaut": 0.09318946456778487,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 14.660297391110607,
+   "prix_5ans": 249.22505564888033,
+   "rendement_estime": -0.057027863673829504,
+   "prix_a_payer": 123.90889952204495,
+   "date": "2026-11-28T04:04:11+00:00"
+  },
+  "VEEV": {
+   "ticker": "VEEV",
+   "name": "Veeva Systems Inc.",
+   "price": 271.6,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Healthcare",
+   "industry": "Health Information Services",
+   "cap": 43974443008.0,
+   "eps_ttm": 6.08,
+   "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2023,
+     "eps": 3.0
+    },
+    {
+     "annee": 2024,
+     "eps": 3.22
+    },
+    {
+     "annee": 2025,
+     "eps": 4.32
+    },
+    {
+     "annee": 2026,
+     "eps": 5.44
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2023,
+     "prix": 192.52000427246094
+    },
+    {
+     "annee": 2024,
+     "prix": 210.25
+    },
+    {
+     "annee": 2025,
+     "prix": 223.22999572753906
+    },
+    {
+     "annee": 2026,
+     "prix": 271.6000061035156
+    }
+   ],
+   "regularite": 0.9537518323446063,
+   "cagr_hist": 0.21943656983611137,
+   "g_defaut": 0.12525333147696105,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 10.968698935313869,
+   "prix_5ans": 186.46788190033578,
+   "rendement_estime": -0.07245528673317392,
+   "prix_a_payer": 92.70749276119602,
+   "date": "2026-11-28T04:04:13+00:00"
+  },
+  "STRL": {
+   "ticker": "STRL",
+   "name": "Sterling Infrastructure, Inc.",
+   "price": 272.25,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Industrials",
+   "industry": "Engineering & Construction",
+   "cap": 8304315392.0,
+   "eps_ttm": 9.38,
+   "eps_base_note": "dernier BPA annuel (Yahoo) — trimestriel écarté (incohérent)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": 3.48
+    },
+    {
+     "annee": 2023,
+     "eps": 4.44
+    },
+    {
+     "annee": 2024,
+     "eps": 8.27
+    },
+    {
+     "annee": 2025,
+     "eps": 9.38
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 32.79999923706055
+    },
+    {
+     "annee": 2023,
+     "prix": 87.93000030517578
+    },
+    {
+     "annee": 2024,
+     "prix": 168.4499969482422
+    },
+    {
+     "annee": 2025,
+     "prix": 306.2300109863281
+    },
+    {
+     "annee": 2026,
+     "prix": 272.25
+    }
+   ],
+   "regularite": 0.9394457007472803,
+   "cagr_hist": 0.39168580700582534,
+   "g_defaut": 0.25,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 28.625488281250004,
+   "prix_5ans": 486.63330078125006,
+   "rendement_estime": 0.12317334237409572,
+   "prix_a_payer": 241.94275576985265,
+   "date": "2026-11-28T04:04:14+00:00"
+  },
+  "RDDT": {
+   "ticker": "RDDT",
+   "name": "Reddit, Inc.",
+   "price": 93.83,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Communication Services",
+   "industry": "Internet Content & Information",
+   "cap": 18117984256.0,
+   "eps_ttm": 2.62,
+   "eps_base_note": "dernier BPA annuel (Yahoo) — trimestriel écarté (incohérent)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": -1.072791
+    },
+    {
+     "annee": 2023,
+     "eps": -0.571245
+    },
+    {
+     "annee": 2024,
+     "eps": -3.33
+    },
+    {
+     "annee": 2025,
+     "eps": 2.62
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2024,
+     "prix": 163.44000244140625
+    },
+    {
+     "annee": 2025,
+     "prix": 229.8699951171875
+    },
+    {
+     "annee": 2026,
+     "prix": 93.83000183105469
+    }
+   ],
+   "regularite": null,
+   "cagr_hist": null,
+   "g_defaut": 0.25,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 7.99560546875,
+   "prix_5ans": 135.92529296875,
+   "rendement_estime": 0.0769405067043678,
+   "prix_a_payer": 67.57889340266672,
+   "date": "2026-11-28T04:04:15+00:00"
+  },
+  "DELL": {
+   "ticker": "DELL",
+   "name": "Dell Technologies Inc.",
+   "price": 316.96,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Technology",
+   "industry": "Computer Hardware",
+   "cap": 201527197696.0,
+   "eps_ttm": 8.68,
+   "eps_base_note": "dernier BPA annuel (Yahoo) — trimestriel écarté (incohérent)",
+   "eps_hist": [
+    {
+     "annee": 2023,
+     "eps": 3.24
+    },
+    {
+     "annee": 2024,
+     "eps": 4.546
+    },
+    {
+     "annee": 2025,
+     "eps": 6.38
+    },
+    {
+     "annee": 2026,
+     "eps": 8.68
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2023,
+     "prix": 73.21684265136719
+    },
+    {
+     "annee": 2024,
+     "prix": 112.000244140625
+    },
+    {
+     "annee": 2025,
+     "prix": 124.56640625
+    },
+    {
+     "annee": 2026,
+     "prix": 316.9599914550781
+    }
+   ],
+   "regularite": 0.9994725797553818,
+   "cagr_hist": 0.388859258627138,
+   "g_defaut": 0.04696418143124648,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 10.918898899475144,
+   "prix_5ans": 185.62128129107745,
+   "rendement_estime": -0.10148638640890628,
+   "prix_a_payer": 92.28658263418342,
+   "date": "2026-11-28T04:04:17+00:00"
+  },
+  "CRDO": {
+   "ticker": "CRDO",
+   "name": "Credo Technology Group Holding Ltd",
+   "price": 115.57,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Technology",
+   "industry": "Semiconductors",
+   "cap": 21721604096.0,
+   "eps_ttm": 1.93,
+   "eps_base_note": "somme des 3 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2023,
+     "eps": -0.11
+    },
+    {
+     "annee": 2024,
+     "eps": -0.18
+    },
+    {
+     "annee": 2025,
+     "eps": 0.29
+    },
+    {
+     "annee": 2026,
+     "eps": 2.51
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2023,
+     "prix": 19.469999313354492
+    },
+    {
+     "annee": 2024,
+     "prix": 67.20999908447266
+    },
+    {
+     "annee": 2025,
+     "prix": 143.88999938964844
+    },
+    {
+     "annee": 2026,
+     "prix": 115.56999969482422
+    }
+   ],
+   "regularite": null,
+   "cagr_hist": null,
+   "g_defaut": 0.25,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 5.889892578125,
+   "prix_5ans": 100.128173828125,
+   "rendement_estime": -0.02827755012016142,
+   "prix_a_payer": 49.78139857524686,
+   "date": "2026-11-28T04:04:18+00:00"
+  },
+  "INTU": {
+   "ticker": "INTU",
+   "name": "Intuit Inc.",
+   "price": 271.94,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Technology",
+   "industry": "Software - Application",
+   "cap": 71647854592.0,
+   "eps_ttm": 17.5,
+   "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2023,
+     "eps": 8.42
+    },
+    {
+     "annee": 2024,
+     "eps": 10.43
+    },
+    {
+     "annee": 2025,
+     "eps": 13.67
+    },
+    {
+     "annee": 2026,
+     "eps": 16.46
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2023,
+     "prix": 608.6569213867188
+    },
+    {
+     "annee": 2024,
+     "prix": 615.694580078125
+    },
+    {
+     "annee": 2025,
+     "prix": 653.2113647460938
+    },
+    {
+     "annee": 2026,
+     "prix": 271.94000244140625
+    }
+   ],
+   "regularite": 0.9954173608341446,
+   "cagr_hist": 0.25037201912000007,
+   "g_defaut": 0.03300997091025204,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 20.5854618928627,
+   "prix_5ans": 349.9528521786659,
+   "rendement_estime": 0.05173732989197566,
+   "prix_a_payer": 173.98841655451415,
+   "date": "2026-11-28T04:04:22+00:00"
+  },
+  "ADBE": {
+   "ticker": "ADBE",
+   "name": "Adobe Inc.",
+   "price": 234.79,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Technology",
+   "industry": "Software - Application",
+   "cap": 91380269056.0,
+   "eps_ttm": 17.92,
+   "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": 10.1
+    },
+    {
+     "annee": 2023,
+     "eps": 11.82
+    },
+    {
+     "annee": 2024,
+     "eps": 12.36
+    },
+    {
+     "annee": 2025,
+     "eps": 16.7
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 336.5299987792969
+    },
+    {
+     "annee": 2023,
+     "prix": 596.5999755859375
+    },
+    {
+     "annee": 2024,
+     "prix": 444.67999267578125
+    },
+    {
+     "annee": 2025,
+     "prix": 349.989990234375
+    },
+    {
+     "annee": 2026,
+     "prix": 234.7899932861328
+    }
+   ],
+   "regularite": 0.909772762502509,
+   "cagr_hist": 0.18249242076044214,
+   "g_defaut": 0.14404407694808685,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 35.11978028507505,
+   "prix_5ans": 597.0362648462759,
+   "rendement_estime": 0.20521415339862692,
+   "prix_a_payer": 296.8325410109566,
+   "date": "2026-11-28T04:04:24+00:00"
+  },
+  "JD": {
+   "ticker": "JD",
+   "name": "JD.com, Inc.",
+   "price": 27.35,
+   "currency": "USD",
+   "devise_fin": "CNY",
+   "devise_mix": true,
+   "sector": "Consumer Cyclical",
+   "industry": "Internet Retail",
+   "cap": 36936175616.0,
+   "eps_ttm": 11.059999999999999,
+   "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": 6.42
+    },
+    {
+     "annee": 2023,
+     "eps": 15.22
+    },
+    {
+     "annee": 2024,
+     "eps": 26.86
+    },
+    {
+     "annee": 2025,
+     "eps": 12.9
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 50.420169830322266
+    },
+    {
+     "annee": 2023,
+     "prix": 26.34149742126465
+    },
+    {
+     "annee": 2024,
+     "prix": 32.51787567138672
+    },
+    {
+     "annee": 2025,
+     "prix": 27.71204948425293
+    },
+    {
+     "annee": 2026,
+     "prix": 27.350000381469727
+    }
+   ],
+   "regularite": 0.33986503868916607,
+   "cagr_hist": 0.2618804948091573,
+   "g_defaut": 0.25,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 33.75244140624999,
+   "prix_5ans": 573.7915039062499,
+   "rendement_estime": 0.8380586140877548,
+   "prix_a_payer": 285.2757866540053,
+   "date": "2026-11-28T04:04:25+00:00",
+   "devise_note": "Devises différentes : cours en USD, états financiers en CNY. Le BPA n'est pas converti : la projection mélange les devises et n'est pas comparable au cours."
+  },
+  "CAT": {
+   "ticker": "CAT",
+   "name": "Caterpillar Inc.",
+   "price": 561.74,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Industrials",
+   "industry": "Farm & Heavy Construction Machinery",
+   "cap": 257048952832.0,
+   "eps_ttm": 25.49,
+   "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": 12.64
+    },
+    {
+     "annee": 2023,
+     "eps": 20.12
+    },
+    {
+     "annee": 2024,
+     "eps": 22.05
+    },
+    {
+     "annee": 2025,
+     "eps": 18.81
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 225.69203186035156
+    },
+    {
+     "annee": 2023,
+     "prix": 284.2563781738281
+    },
+    {
+     "annee": 2024,
+     "prix": 354.35009765625
+    },
+    {
+     "annee": 2025,
+     "prix": 568.03955078125
+    },
+    {
+     "annee": 2026,
+     "prix": 561.739990234375
+    }
+   ],
+   "regularite": 0.45685957645581976,
+   "cagr_hist": 0.1416874853216783,
+   "g_defaut": 0.25,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 77.789306640625,
+   "prix_5ans": 1322.418212890625,
+   "rendement_estime": 0.18677036892875076,
+   "prix_a_payer": 657.4755697839598,
+   "date": "2026-11-28T04:04:27+00:00"
+  },
+  "DASH": {
+   "ticker": "DASH",
+   "name": "DoorDash, Inc.",
+   "price": 167.9,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Consumer Cyclical",
+   "industry": "Internet Retail",
+   "cap": 73200418816.0,
+   "eps_ttm": 2.42,
+   "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": -3.68
+    },
+    {
+     "annee": 2023,
+     "eps": -1.42
+    },
+    {
+     "annee": 2024,
+     "eps": 0.3
+    },
+    {
+     "annee": 2025,
+     "eps": 2.13
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 48.81999969482422
+    },
+    {
+     "annee": 2023,
+     "prix": 98.88999938964844
+    },
+    {
+     "annee": 2024,
+     "prix": 167.75
+    },
+    {
+     "annee": 2025,
+     "prix": 226.47999572753906
+    },
+    {
+     "annee": 2026,
+     "prix": 167.89999389648438
+    }
+   ],
+   "regularite": null,
+   "cagr_hist": null,
+   "g_defaut": 0.25,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 7.38525390625,
+   "prix_5ans": 125.54931640625,
+   "rendement_estime": -0.056476478708463174,
+   "prix_a_payer": 62.4201992497914,
+   "date": "2026-11-28T04:04:28+00:00"
+  },
+  "NU": {
+   "ticker": "NU",
+   "name": "Nu Holdings Ltd.",
+   "price": 12.91,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Financial Services",
+   "industry": "Banks - Regional",
+   "cap": 62465474560.0,
+   "eps_ttm": 0.6173,
+   "eps_base_note": "somme des 3 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": -0.078
+    },
+    {
+     "annee": 2023,
+     "eps": 0.2121
+    },
+    {
+     "annee": 2024,
+     "eps": 0.4034
+    },
+    {
+     "annee": 2025,
+     "eps": 0.5846
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 4.070000171661377
+    },
+    {
+     "annee": 2023,
+     "prix": 8.329999923706055
+    },
+    {
+     "annee": 2024,
+     "prix": 10.359999656677246
+    },
+    {
+     "annee": 2025,
+     "prix": 16.739999771118164
+    },
+    {
+     "annee": 2026,
+     "prix": 12.90999984741211
+    }
+   ],
+   "regularite": null,
+   "cagr_hist": null,
+   "g_defaut": 0.25,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 1.8838500976562498,
+   "prix_5ans": 32.02545166015624,
+   "rendement_estime": 0.1992612584166671,
+   "prix_a_payer": 15.922309502849679,
+   "date": "2026-11-28T04:04:30+00:00"
+  },
+  "DLO": {
+   "ticker": "DLO",
+   "name": "DLocal Limited",
+   "price": 12.85,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Technology",
+   "industry": "Software - Infrastructure",
+   "cap": 3681138944.0,
+   "eps_ttm": 0.73,
+   "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": 0.35
+    },
+    {
+     "annee": 2023,
+     "eps": 0.49
+    },
+    {
+     "annee": 2024,
+     "eps": 0.39
+    },
+    {
+     "annee": 2025,
+     "eps": 0.65
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 14.598542213439941
+    },
+    {
+     "annee": 2023,
+     "prix": 16.58626937866211
+    },
+    {
+     "annee": 2024,
+     "prix": 10.557456970214844
+    },
+    {
+     "annee": 2025,
+     "prix": 13.90614128112793
+    },
+    {
+     "annee": 2026,
+     "prix": 12.850000381469727
+    }
+   ],
+   "regularite": 0.5889270035732674,
+   "cagr_hist": 0.2291789212788069,
+   "g_defaut": 0.17507912703821793,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 1.6355296430660473,
+   "prix_5ans": 27.804003932122804,
+   "rendement_estime": 0.1669193534701141,
+   "prix_a_payer": 13.82350390319363,
+   "date": "2026-11-28T04:04:31+00:00"
+  },
+  "AXTI": {
+   "ticker": "AXTI",
+   "name": "AXT, Inc.",
+   "price": 36.37,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Technology",
+   "industry": "Semiconductor Equipment & Materials",
+   "cap": 2390321920.0,
+   "eps_ttm": 0.45,
+   "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": 0.37
+    },
+    {
+     "annee": 2023,
+     "eps": -0.42
+    },
+    {
+     "annee": 2024,
+     "eps": -0.27
+    },
+    {
+     "annee": 2025,
+     "eps": -0.49
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 4.380000114440918
+    },
+    {
+     "annee": 2023,
+     "prix": 2.4000000953674316
+    },
+    {
+     "annee": 2024,
+     "prix": 2.1700000762939453
+    },
+    {
+     "annee": 2025,
+     "prix": 16.350000381469727
+    },
+    {
+     "annee": 2026,
+     "prix": 36.369998931884766
+    }
+   ],
+   "regularite": null,
+   "cagr_hist": null,
+   "g_defaut": 0.25,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 1.373291015625,
+   "prix_5ans": 23.345947265625,
+   "rendement_estime": -0.08484714308184016,
+   "prix_a_payer": 11.607061843969475,
+   "date": "2026-11-28T04:04:32+00:00"
+  },
+  "COHR": {
+   "ticker": "COHR",
+   "name": "Coherent Corp.",
+   "price": 223.79,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Technology",
+   "industry": "Scientific & Technical Instruments",
+   "cap": 44077379584.0,
+   "eps_ttm": 4.82,
+   "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2023,
+     "eps": -2.93
+    },
+    {
+     "annee": 2024,
+     "eps": -1.84
+    },
+    {
+     "annee": 2025,
+     "eps": -0.52
+    },
+    {
+     "annee": 2026,
+     "eps": 4.12
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2023,
+     "prix": 43.529998779296875
+    },
+    {
+     "annee": 2024,
+     "prix": 94.7300033569336
+    },
+    {
+     "annee": 2025,
+     "prix": 184.57000732421875
+    },
+    {
+     "annee": 2026,
+     "prix": 223.7899932861328
+    }
+   ],
+   "regularite": null,
+   "cagr_hist": null,
+   "g_defaut": 0.25,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 14.70947265625,
+   "prix_5ans": 250.06103515625,
+   "rendement_estime": 0.02244762314275106,
+   "prix_a_payer": 124.32452908429526,
+   "date": "2026-11-28T04:04:33+00:00"
+  },
+  "LRCX": {
+   "ticker": "LRCX",
+   "name": "Lam Research Corporation",
+   "price": 192.69,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Technology",
+   "industry": "Semiconductor Equipment & Materials",
+   "cap": 240702750720.0,
+   "eps_ttm": 6.71,
+   "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2023,
+     "eps": 3.321
+    },
+    {
+     "annee": 2024,
+     "eps": 2.9
+    },
+    {
+     "annee": 2025,
+     "eps": 4.15
+    },
+    {
+     "annee": 2026,
+     "eps": 5.76
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2023,
+     "prix": 76.60625457763672
+    },
+    {
+     "annee": 2024,
+     "prix": 71.36273193359375
+    },
+    {
+     "annee": 2025,
+     "prix": 170.67347717285156
+    },
+    {
+     "annee": 2026,
+     "prix": 192.69000244140625
+    }
+   ],
+   "regularite": 0.7497919376672211,
+   "cagr_hist": 0.20148366120497108,
+   "g_defaut": 0.25,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 20.477294921875,
+   "prix_5ans": 348.114013671875,
+   "rendement_estime": 0.12556988780743716,
+   "prix_a_payer": 173.07418882896707,
+   "date": "2026-11-28T04:04:34+00:00"
+  },
+  "AMAT": {
+   "ticker": "AMAT",
+   "name": "Applied Materials, Inc.",
+   "price": 322.04,
+   "currency": "USD",
+   "devise_fin": "USD",
+   "devise_mix": false,
+   "sector": "Technology",
+   "industry": "Semiconductor Equipment & Materials",
+   "cap": 255570132992.0,
+   "eps_ttm": 12.62,
+   "eps_base_note": "somme des 4 derniers trimestres (Yahoo)",
+   "eps_hist": [
+    {
+     "annee": 2023,
+     "eps": 8.11
+    },
+    {
+     "annee": 2024,
+     "eps": 8.61
+    },
+    {
+     "annee": 2025,
+     "eps": 8.66
+    },
+    {
+     "annee": 2026,
+     "eps": 12.62
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2023,
+     "prix": 158.41635131835938
+    },
+    {
+     "annee": 2024,
+     "prix": 160.20498657226562
+    },
+    {
+     "annee": 2025,
+     "prix": 255.69210815429688
+    },
+    {
+     "annee": 2026,
+     "prix": 322.0400085449219
+    }
+   ],
+   "regularite": 0.7224146043268953,
+   "cagr_hist": 0.15881159896875796,
+   "g_defaut": 0.25,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 38.51318359375,
+   "prix_5ans": 654.72412109375,
+   "rendement_estime": 0.15247020062269034,
+   "prix_a_payer": 325.5136010464328,
+   "date": "2026-11-28T04:04:35+00:00"
+  },
+  "CSU.TO": {
+   "ticker": "CSU.TO",
+   "name": "Constellation Software Inc.",
+   "price": 3070.25,
+   "currency": "CAD",
+   "devise_fin": "USD",
+   "devise_mix": true,
+   "sector": "Technology",
+   "industry": "Software - Application",
+   "cap": 65063297024.0,
+   "eps_ttm": 24.15,
+   "eps_base_note": "dernier BPA annuel (Yahoo) — trimestriel écarté (incohérent)",
+   "eps_hist": [
+    {
+     "annee": 2022,
+     "eps": 24.18
+    },
+    {
+     "annee": 2023,
+     "eps": 26.67
+    },
+    {
+     "annee": 2024,
+     "eps": 34.48
+    },
+    {
+     "annee": 2025,
+     "eps": 24.15
+    }
+   ],
+   "prix_hist": [
+    {
+     "annee": 2022,
+     "prix": 2100.963623046875
+    },
+    {
+     "annee": 2023,
+     "prix": 3271.259033203125
+    },
+    {
+     "annee": 2024,
+     "prix": 4431.9814453125
+    },
+    {
+     "annee": 2025,
+     "prix": 3296.1572265625
+    },
+    {
+     "annee": 2026,
+     "prix": 3070.25
+    }
+   ],
+   "regularite": 0.037892833692750094,
+   "cagr_hist": -0.0004137360836334869,
+   "g_defaut": 0.25,
+   "g_source": "parcours BPA forward (Yahoo, plafonné à 25 %)",
+   "per_final": 17.0,
+   "eps_5ans": 73.699951171875,
+   "prix_5ans": 1252.899169921875,
+   "rendement_estime": -0.16411125755448042,
+   "prix_a_payer": 622.9123189596952,
+   "date": "2026-11-28T04:04:38+00:00",
+   "devise_note": "Devises différentes : cours en CAD, états financiers en USD. Le BPA n'est pas converti : la projection mélange les devises et n'est pas comparable au cours."
+  },
+  "TOI.TO": {
+   "ticker": "TOI.TO",
+   "erreur": "'currentTradingPeriod'",
+   "date": "2026-11-28T04:05:00+00:00"
   }
  }
 }
